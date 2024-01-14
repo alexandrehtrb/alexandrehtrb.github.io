@@ -1,0 +1,4 @@
+Sitemap: https://alexandrehtrb.github.io/sitemap.xml
+
+User-agent: *
+Disallow:
