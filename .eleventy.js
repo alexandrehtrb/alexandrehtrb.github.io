@@ -1,12 +1,11 @@
 //const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
-import Shikiji from 'markdown-it-shikiji'
 
 module.exports = function(eleventyConfig) {
   // Plugins
-  //eleventyConfig.addPlugin(syntaxHighlight)
-  eleventyConfig.addPlugin(require("libs/shikiji.js"), { theme: "dark-plus" });
+  //eleventyConfig.addPlugin(syntaxHighlight)  
+  eleventyConfig.addPlugin(require("./src/libs/shiki.js"), { theme: "vitesse-dark" });
   
   // To enable merging of tags
   eleventyConfig.setDataDeepMerge(true)
@@ -50,12 +49,6 @@ module.exports = function(eleventyConfig) {
       class: 'header-anchor',
     })
   });
-  md.use(await Shikiji({
-    themes: {
-      light: 'vitesse-light',
-      dark: 'vitesse-dark',
-    }
-  }));
   eleventyConfig.setLibrary('md', md);
 
   // asset_img shortcode
