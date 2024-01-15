@@ -1,11 +1,16 @@
-name: Eleventy Build
+name: Eleventy Build And Deploy
+
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
-  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build_deploy:
