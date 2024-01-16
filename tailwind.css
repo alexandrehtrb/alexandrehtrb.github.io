@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+pre {
+  /* this is to avoid background colour in mermaid diagrams */
+  --tw-prose-pre-bg: rgba(255, 255, 255, 0);
+}
+
 .paginator-text {
   @apply text-gray-600 font-bold py-2 px-4;
 }

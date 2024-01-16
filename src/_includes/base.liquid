@@ -37,6 +37,11 @@
         localStorage.theme = 'dark'
         document.documentElement.classList.add('dark')
       }
+      {% if enableMermaid %}
+        // this is to reload mermaid diagrams with the appropriate theme, dark or default
+        // if post has no diagrams, then reloading is not required
+        window.location.reload();
+      {% endif %}
     });
   </script>
   </body>
