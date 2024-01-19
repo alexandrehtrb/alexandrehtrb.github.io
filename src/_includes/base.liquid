@@ -5,9 +5,12 @@
   	<meta name='viewport' content='width=device-width'>
     {% if published %}
       <title>{{ title }} - {{ site.title }}</title>
+      <meta property="og:title" content="{{ title }} - {{ site.title }}"/>
     {% else %}
       <title>{{ site.title }}</title>
-    {% endif %}    
+      <meta property="og:title" content="{{ site.title }}"/>
+    {% endif %}
+    <meta property="og:type" content="website">
     <meta name='description' content={{ site.description }}>
     <meta name="theme-color" content="#ffffff"/>
 

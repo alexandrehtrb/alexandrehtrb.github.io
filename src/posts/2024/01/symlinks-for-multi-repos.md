@@ -171,7 +171,7 @@ Organizing files with symlinks is good in situations with many projects that sha
 
 If there are few files in common, or if there are not too many repos, it's OK to have repeated files!
 
-In some cases, like pipelines, it's better to use other reusability approaches. GitHub Actions, for example, suggests to adopt [*reusable workflows*](https://github.blog/2022-02-10-using-reusable-workflows-github-actions/).
+In some cases, like pipelines, it's better to choose other reusability approaches. GitHub Actions, for example, suggests to adopt [*reusable workflows*](https://github.blog/2022-02-10-using-reusable-workflows-github-actions/).
 
 Symbolic directories can be a good alternative to Git submodules, in some cases.
 
