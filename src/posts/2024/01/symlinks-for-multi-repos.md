@@ -9,9 +9,7 @@ tags:
 - architecture
 - git
 ---
-Tired of having repeated files across many projects? Know more about symlinks - files that point to other files.
-
-<!-- excerpt -->
+Tired of having repeated files across many projects? Know more about symlinks - files that point to other files.<!-- excerpt -->
 
 [Ler em português](../links-simbolicos-em-multi-repos)
 
