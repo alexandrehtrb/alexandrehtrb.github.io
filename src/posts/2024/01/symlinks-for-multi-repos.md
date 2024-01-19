@@ -10,11 +10,14 @@ tags:
 - git
 ---
 Tired of having repeated files across many projects? Know more about symlinks - files that point to other files.
+
 <!-- excerpt -->
+
+[Ler em português](../links-simbolicos-em-multi-repos)
 
 ## Repeated files
 
-Tell me something: does the file organization below looks familiar?
+Tell me: does the file organization below looks familiar?
 
 ```
 > tree C:\MyProjects\ /F
@@ -52,15 +55,11 @@ Notice that there are files with the same name and content in each project's dir
   - `runtestcoverage.ps1` (general scripts)
   - `CMakeLists.txt`
   - `Makefile` (for C/C++ compilation)
-
-- CI/CD pipelines files:
   - `Jenkinsfile`
-  - `/.github/workflows/*.yml`
-  - `azure-pipeline.yml`
 
-- Secrets and app configuration file:
+- Secrets and app configuration files:
   - `appsettings.json` (.NET)
-  - `Web.config` (ASP.NET Framework)
+  - `Web.config` (ASP NET Framework)
   - `.env` (npm)
   - others
 
@@ -76,7 +75,7 @@ Symbolic links are a mature technology, that showed as early as in 1960's comput
 
 In a file system, each element, file or directory, is represented by an *inode*.
 
-An inode of a file is composed by metadata and the address of its content bytes in the hard drive. Directory inodes are lists of other inodes.
+An inode of a file is composed by metadata and content address in the hard drive. Directory inodes are lists of other inodes.
 
 There are two types of links: *hardlinks* and *symlinks*.
 
@@ -106,7 +105,7 @@ graph TD;
 
 Considering the scenario in the beginning of the article, we can unify files of many projects through the use of symlinks.
 
-Inside each repository, let's create links that will point to files in a Configs folder, located one level above. The Configs folder can become a repository itself, separated from Repo1 and Repo2.
+Inside each repository, let's create links that will point to files in a Configs folder, located one level above. The Configs folder can become a repository itself, separate from Repo1 and Repo2.
 
 The diagram below shows better. `-->` indicates a symlink.
 
@@ -171,6 +170,8 @@ On online navigation and in pull requests, the file content appears as a symlink
 Organizing files with symlinks is good in situations with many projects that share many common files.
 
 If there are few files in common, or if there are not too many repos, it's OK to have repeated files!
+
+In some cases, like pipelines, it's better to use other reusability approaches. GitHub Actions, for example, suggests to adopt [*reusable workflows*](https://github.blog/2022-02-10-using-reusable-workflows-github-actions/).
 
 Symbolic directories can be a good alternative to Git submodules.
 

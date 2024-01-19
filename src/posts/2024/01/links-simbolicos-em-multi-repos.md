@@ -10,11 +10,14 @@ tags:
 - git
 ---
 Cansado de ter vários arquivos repetidos nos seus projetos? Saiba mais sobre os links simbólicos - arquivos que apontam para outros arquivos.
+
 <!-- excerpt -->
+
+[Read in english](../symlinks-for-multi-repos)
 
 ## Arquivos repetidos
 
-Diga-me uma coisa: a organização de arquivos abaixo é familiar?
+Diga: a organização de arquivos abaixo lhe é familiar?
 
 ```
 > tree C:\MeusProjetos\ /F
@@ -52,19 +55,15 @@ Note que há arquivos iguais em conteúdo e com uma cópia deles em cada diretó
   - `runtestcoverage.ps1` (scripts gerais)
   - `CMakeLists.txt`
   - `Makefile` (compilação para C/C++)
-
-- Arquivos de esteiras automatizadas, CI/CD:
   - `Jenkinsfile`
-  - `/.github/workflows/*.yml`
-  - `azure-pipeline.yml`
 
 - Arquivos de segredos e configurações de execução:
   - `appsettings.json` (.NET)
-  - `Web.config` (ASP.NET Framework)
+  - `Web.config` (ASP NET Framework)
   - `.env` (npm)
   - outros
 
-Se você tem vários repositórios com arquivos repetidos, é cansativo alterar esses arquivos, pois o esforço precisa ser feito em cada repositório.
+Se você tem vários repositórios com arquivos repetidos, fica cansativo alterar esses arquivos, pois o esforço precisa ser feito em cada repositório.
 
 ## Ponteiros?
 
@@ -171,6 +170,8 @@ Na navegação online e em pull requests, o conteúdo do arquivo aparece como um
 Organizar arquivos com *symlinks* é bom em situações com muitos projetos, que usam vários arquivos em comum.
 
 Se há poucos arquivos em comum, ou se há poucos repositórios, tudo bem ter arquivos replicados!
+
+Em alguns casos, como pipelines, é melhor usar outras abordagens de reuso. O GitHub Actions, por exemplo, sugere adotar [*reusable workflows*](https://github.blog/2022-02-10-using-reusable-workflows-github-actions/).
 
 Diretórios simbólicos podem ser uma boa alternativa a submódulos do Git.
 

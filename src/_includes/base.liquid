@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
   	<meta name='viewport' content='width=device-width'>
-
-    <title>{{ site.title }}</title>
+    {% if published %}
+      <title>{{ title }} - {{ site.title }}</title>
+    {% else %}
+      <title>{{ site.title }}</title>
+    {% endif %}    
     <meta name='description' content={{ site.description }}>
     <meta name="theme-color" content="#ffffff"/>
 
