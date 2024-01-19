@@ -17,7 +17,7 @@ Tired of having repeated files across many projects? Know more about symlinks - 
 
 ## Repeated files
 
-Tell me: does the file organization below looks familiar?
+Tell me: does the file organization below look familiar?
 
 ```
 > tree C:\MyProjects\ /F
@@ -43,7 +43,7 @@ C:\MyProjects\
 │ ...
 ```
 
-Notice that there are files with the same name and content in each project's directory. Some examples of repeated files are:
+Notice that there are files with the same name and content in each project directory. Some examples of repeated files are:
 
 - Code style files:
   - `.editorconfig` (many languages)
@@ -75,7 +75,7 @@ Symbolic links are a mature technology, that showed as early as in 1960's comput
 
 In a file system, each element, file or directory, is represented by an *inode*.
 
-An inode of a file is composed by metadata and content address in the hard drive. Directory inodes are lists of other inodes.
+An inode of a file is composed by metadata and address in the hard drive. Directory inodes are lists of other inodes.
 
 There are two types of links: *hardlinks* and *symlinks*.
 
@@ -157,11 +157,11 @@ New-Item -ItemType SymbolicLink -Path symlinked_file.txt -Value ../Configs/origi
 
 Git supports symlink files committed in repositories.
 
-On GitHub, they appear with an arrow and name in blue.
+On GitHub, they appear with an arrow and name coloured in blue.
 
 {% asset_img '2024_01_github_symlink_repo.png' 'Symlinks repo' %}
 
-On online navigation and in pull requests, the file content appears as a symlink path, either absolute or relative.
+On online navigation and in pull requests, the file content appears as the symlink's path, either absolute or relative.
 
 {% asset_img '2024_01_github_symlink_file.png' 'Symlinks repo file' %}
 
@@ -173,7 +173,7 @@ If there are few files in common, or if there are not too many repos, it's OK to
 
 In some cases, like pipelines, it's better to use other reusability approaches. GitHub Actions, for example, suggests to adopt [*reusable workflows*](https://github.blog/2022-02-10-using-reusable-workflows-github-actions/).
 
-Symbolic directories can be a good alternative to Git submodules.
+Symbolic directories can be a good alternative to Git submodules, in some cases.
 
 ## Important details
 

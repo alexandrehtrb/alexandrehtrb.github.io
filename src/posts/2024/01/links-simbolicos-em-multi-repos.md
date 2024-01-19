@@ -75,7 +75,7 @@ Os links simbólicos são uma tecnologia consolidada, tendo surgido já na déca
 
 Em um sistema de arquivos, cada elemento, arquivo ou pasta, é representado por um *inode*.
 
-Um *inode* de arquivo é composto por metadados e o endereço do conteúdo no disco rígido. *Inodes* de diretórios são listas de outros *inodes*.
+Um *inode* de arquivo é composto por metadados e o endereço no disco rígido. *Inodes* de diretórios são listas de outros *inodes*.
 
 Existem dois tipos de ligações: os *hardlinks* e os *symlinks*.
 
