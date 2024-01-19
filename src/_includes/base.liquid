@@ -6,7 +6,7 @@
     {% if published %}
       <title>{{ title }} - {{ site.title }}</title>
       <meta property="og:title" content="{{ title }} - {{ site.title }}"/>
-      <meta name='description' content="{{ post.data.post_excerpt }}">
+      <meta name='description' content="{{ post_excerpt }}">
     {% else %}
       <title>{{ site.title }}</title>
       <meta property="og:title" content="{{ site.title }}"/>

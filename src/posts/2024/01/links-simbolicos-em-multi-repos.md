@@ -9,9 +9,7 @@ tags:
 - architecture
 - git
 ---
-Cansado de ter vários arquivos repetidos nos seus projetos? Saiba mais sobre os links simbólicos - arquivos que apontam para outros arquivos.
-
-<!-- excerpt -->
+Cansado de ter vários arquivos repetidos nos seus projetos? Saiba mais sobre os links simbólicos - arquivos que apontam para outros arquivos.<!-- excerpt -->
 
 [Read in english](../symlinks-for-multi-repos)
 
