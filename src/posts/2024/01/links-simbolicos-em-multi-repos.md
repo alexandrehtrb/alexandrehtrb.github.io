@@ -171,7 +171,7 @@ Organizar arquivos com *symlinks* é bom em situações com muitos projetos, que
 
 Se há poucos arquivos em comum, ou se há poucos repositórios, tudo bem ter arquivos replicados!
 
-Em alguns casos, como pipelines, é melhor usar outras abordagens de reuso. O GitHub Actions, por exemplo, sugere adotar [*reusable workflows*](https://github.blog/2022-02-10-using-reusable-workflows-github-actions/).
+Em alguns casos, como pipelines, é melhor escolher outras abordagens de reuso. O GitHub Actions, por exemplo, sugere adotar [*reusable workflows*](https://github.blog/2022-02-10-using-reusable-workflows-github-actions/).
 
 Diretórios simbólicos podem ser uma boa alternativa a submódulos do Git.
 
