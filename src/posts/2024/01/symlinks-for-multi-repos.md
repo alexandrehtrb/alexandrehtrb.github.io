@@ -81,7 +81,7 @@ There are two types of links: *hardlinks* and *symlinks*.
 
 A ***hardlink*** is when a file points to the same inode as other file. Both access the same content in the disk. When one of these files is deleted, the content of the other file is not lost.
 
-A ***symlink*** is when a file points to other file. In this case, the pointer file depends on the target file to access its content. If the target file is deleted or moved, the symlink becomes invalid.
+A ***symlink*** is when a file points to another file. In this case, the pointer file depends on the target file to access its content. If the target file is deleted or moved, the symlink becomes invalid.
 
 *Symlinks* can have absolute or relative paths.
 
