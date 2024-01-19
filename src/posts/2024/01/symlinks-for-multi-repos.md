@@ -67,7 +67,7 @@ If you have many repositories with repeated files, it becomes tiresome to change
 
 ## Pointers?
 
-In programming, there is the concept of pointers - something that points to something else. Usually, we think about memory pointers, that point to a value or structure in RAM memory. However, this concept also exists in file systems: it's called symbolic links, ***symlinks*, files that point to other files.**
+In programming, there is the concept of pointers - something that points to something else. Usually, we think on memory pointers, that point to a value or structure in RAM memory. However, this concept also exists in file systems: it's called symbolic links, ***symlinks*, files that point to other files.**
 
 Symbolic links are a mature technology, that showed as early as in 1960's computers. They are fully supported on Linux, Mac OSX and Windows, even in older versions.
 
