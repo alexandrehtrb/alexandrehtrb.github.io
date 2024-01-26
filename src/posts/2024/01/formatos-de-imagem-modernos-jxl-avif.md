@@ -1,5 +1,6 @@
 ---
-title: Formatos de imagem modernos: JXL e AVIF
+title: >
+  Formatos de imagem modernos: JXL e AVIF
 date: 2024-01-22
 published: true
 enableMermaid: false
@@ -14,11 +15,11 @@ Conheça os formatos de imagem de última geração, com qualidade gráfica supe
 
 ## Computação, fotografia e imagens
 
-{% asset_img '2024_01_hires_images_examples.jpg' 'Exemplos de imagens de alta resolução' %}
-
 A visualização de imagens é fundamental em vários setores, como artes plásticas, fotografias profissionais, cartografia, astrofotografia, medicina diagnóstica, preservações históricas e cinema. A qualidade das imagens é muito importante para se notar detalhes, como um toque artístico, uma imprecisão ou um elemento imperceptível à primeira vista.
 
 Em uma tela de computador, uma imagem é representada por milhares de *pixels* (**pic**ture **el**ement), cada *pixel* correspondendo a uma cor e sua intensidade. Considere uma imagem de tamanho 1.024px x 768px = 786.432 *pixels*; se cada pixel for RGBA e tiver 4 *bytes*, 1 para vermelho, 1 para verde, 1 para azul e 1 para transparência, essa imagem terá um tamanho de 3,1MB, o que é bastante alto. Contudo, escolhendo técnicas de compressão e um formato de arquivo adequados, podemos ter essa imagem com a mesma qualidade e ocupando muito menos espaço em memória.
+
+{% asset_img '2024_01_hires_images_examples.jpg' 'Exemplos de imagens de alta resolução' %}
 
 ## Novos formatos
 
@@ -38,9 +39,7 @@ O JXL, ou JPEG-XL, começou em 2017 com uma chamada de propostas para um formato
 
 O AVIF é um formato criado pela Alliance for Open Media, um consórcio de várias empresas de tecnologia, como a Netflix, Meta e Google, com o objetivo de formar padrões de mercado para mídia digital. A primeira especificação do AVIF é de 2018.
 
-## Comparação entre JXL e AVIF
-
-### Quando devo usar o JXL?
+## Quando devo usar o JXL?
 
 O JXL é melhor para:
 
@@ -50,22 +49,22 @@ O JXL é melhor para:
 - *Decoding* progressivo - a imagem pode ser visualizada conforme é baixada.
 - Imagens de dimensões muito grandes, pois suporta tamanhos de mais de 1 bilhão x 1 bilhão de pixels. O AVIF suporta imagens em no máximo 8K (8193px x 4320px).
 
-### Quando devo usar o AVIF?
+## Quando devo usar o AVIF?
 
 O AVIF é melhor para:
 
 - Imagens em páginas Web, pois a maioria dos navegadores suporta AVIF (88%), enquanto que poucos navegadores suportam JXL (9,5%). Dados obtidos pelo [caniuse](https://caniuse.com/avif) (26/01/2024).
 - Vídeos e animações, pois tem excelente taxa de compressão para eles, acima de 90% em alguns casos. É um ótimo substituto aos GIFs.
 
-### Testes de compressão e performance
+## Testes de compressão e performance
 
 A imagem original abaixo é um JPG de dimensões 8192x5464, com tamanho de 10.982kB. Em formato JXL (q=90), o tamanho ficou em 7.344kB. Em AVIF (q=90), ficou em 8.312kB.
 
 {% asset_img '2024_01_subway_escalators.jpg' 'Escadas-rolantes de uma estação de metrô' %}
 
-O GIF original abaixo tem tamanho de 3.174kB. Em formato JXL (q=90), o tamanho ficou em 2.558kB. Em AVIF (q=90), ficou em 79kB.
+O GIF original abaixo tem tamanho de 3.174kB. Em formato JXL (q=90), o tamanho ficou em 2.558kB. Em AVIF (q=90), ficou em 79kB. Impressionante!
 
-{% asset_img '2024_01_emilia_clarke.jpg' 'Emilia Clarke' %}
+{% asset_img '2024_01_emilia_clarke.gif' 'Emilia Clarke' %}
 
 Este repositório no GitHub ([link](https://github.com/alexandrehtrb/jxl-avif-simple-benchmark)) executa testes para comparar as velocidades e taxas de compressão do JXL e do AVIF. A comparação não é qualitativa, nem científica. Como imagens de entrada, estão:
 

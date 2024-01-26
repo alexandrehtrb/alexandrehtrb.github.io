@@ -1,5 +1,6 @@
 ---
-title: Modern image formats: JXL and AVIF
+title: >
+  Modern image formats: JXL and AVIF
 date: 2024-01-22
 published: true
 enableMermaid: false
@@ -14,11 +15,11 @@ Meet the next generation image formats, with superior graphics and reduced size 
 
 ## Computers, photography and images
 
-{% asset_img '2024_01_hires_images_examples.jpg' 'Examples of high-resolution images' %}
-
 The visualization of images is fundamental in many areas, such as arts, professional photography, cartography, astrophotography, diagnostic medicine, historic preservation and movies. The quality of the images is very important to highlight details, like an artistic touch, an imprecision or an element that is imperceptible at first sight.
 
 On a computer screen, an image is represented by thousands of *pixels* (**pic**ture **el**ement), each *pixel* corresponding to a colour and its intensity. Consider an image of 1,024px x 768px = 768,432 *pixels*; if each pixel is RGBA and has 4 *bytes*, 1 for red, 1 for green, 1 for blue and 1 for transparency, this image will have a size of 3.1MB, which is quite large. However, by choosing proper compression techniques and file formats, we can have this image with the same quality and with a much lower file size.
+
+{% asset_img '2024_01_hires_images_examples.jpg' 'Examples of high-resolution images' %}
 
 ## Newer formats
 
@@ -26,7 +27,7 @@ Around 2019, two new image file formats, JXL and AVIF, came to market promising 
 
 Both share characteristics like:
 
-- Support for lossless and lossy compression at more efficient rate than previous formats, like JPEG and PNG, with better quality retention.
+- Support for lossless and lossy compression at more efficient rates than previous formats, like JPEG and PNG, and with better quality retention.
 - Support for animations and transparencies.
 - Open-source and royalty-free licenses.
 
@@ -38,9 +39,7 @@ JXL, or JPEG-XL, began in 2017 with a call for papers for a next-generation imag
 
 AVIF is a format created by the Alliance for Open Media, an industry-consortium of companies like Netflix, Meta and Google, with the objective of forming standards for multimedia delivery. AVIF's first specification is from 2018.
 
-## Comparison between JXL and AVIF
-
-### When should I use JXL?
+## When should I use JXL?
 
 JXL is better for:
 
@@ -50,24 +49,24 @@ JXL is better for:
 - Progressive decoding - the image can be rendered as it is downloaded. 
 - Images with very high dimensions, because it supports sizes of over 1 billion x 1 billion pixels. AVIF supports images at most of 8K resolution (8193px x 4320px).
 
-### When should I use AVIF?
+## When should I use AVIF?
 
 AVIF is better for:
 
 - Images in Web pages, because most of the browsers support AVIF (88%), while only few browsers support JXL (9,5%). Data obtained from [caniuse](https://caniuse.com/avif) (01/26/2024).
 - Videos and animations, because it has excellent compression rates for them, over 90% in some cases. It's a great substitute for GIFs.
 
-### Compression and performance tests
+## Compression and performance tests
 
 The original image below is a JPEG of 8192x5464, file size 10.982kB. In JXL format (q=90), the size is 7.344kB. In AVIF (q=90), is 8.312kB.
 
 {% asset_img '2024_01_subway_escalators.jpg' 'Escalators in a subway station' %}
 
-The original GIF below has a file size of 3.174kB. In JXL format (q=90), the size is 2.558kB. In AVIF (q=90), is 79kB.
+The original GIF below has a file size of 3.174kB. In JXL format (q=90), the size is 2.558kB. In AVIF (q=90), is 79kB. Impressive!
 
-{% asset_img '2024_01_emilia_clarke.jpg' 'Emilia Clarke' %}
+{% asset_img '2024_01_emilia_clarke.gif' 'Emilia Clarke' %}
 
-This [GitHub repo](https://github.com/alexandrehtrb/jxl-avif-simple-benchmark) executes tests to compare compression rates and speeds of JXL and AVID. The comparison is not qualitative, nor scientific. The input images include:
+This [GitHub repo](https://github.com/alexandrehtrb/jxl-avif-simple-benchmark) executes tests to compare compression rates and speeds of JXL and AVIF. The comparison is not qualitative, nor scientific. The input images include:
 
 - Animated GIFs of high, medium and low complexity.
 - JPEG photographies of medium, high and very high resolution.
@@ -89,7 +88,7 @@ To convert an image to JXL, using the [official tool](https://github.com/libjxl/
 cjxl input_image.jpg output_image.jxl -q 90 --lossless_jpeg=0
 ```
 
-### Conversão para `.avif`
+### Conversion to `.avif`
 
 There are two main tools: [cavif-rs](https://github.com/kornelski/cavif-rs) and [ffmpeg](https://ffmpeg.org/). `cavif-rs` currently doesn't support GIFs, so we need to use `ffmpeg` for them.
 
