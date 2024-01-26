@@ -147,6 +147,8 @@ There is a [more thorough tutorial](https://codelabs.developers.google.com/codel
 
 [How JPEG XL Compares to Other Image Codecs](https://cloudinary.com/blog/how_jpeg_xl_compares_to_other_image_codecs) ([WebArchive](https://web.archive.org/web/20240121174134/https://cloudinary.com/blog/how_jpeg_xl_compares_to_other_image_codecs))
 
+[The Current Role of Image Compression Standards in Medical Imaging](https://www.mdpi.com/2078-2489/8/4/131) ([WebArchive](https://web.archive.org/web/20240126221119/https://www.mdpi.com/2078-2489/8/4/131))
+
 ## Images used in this article
 
 * Galaxy: [Unsplash](https://unsplash.com/photos/black-hole-galaxy-illustration-Oze6U2m1oYU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
