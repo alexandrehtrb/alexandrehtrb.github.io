@@ -58,13 +58,16 @@ AVIF is better for:
 
 ## Compression and performance tests
 
-The original image below is a JPEG of 8192x5464, file size 10.982kB. In JXL format (q=90), the size is 7.344kB. In AVIF (q=90), is 8.312kB.
+The original image below is a JPEG of 8192x5464, file size 11MB. In JXL format (q=90), the size is 7.3MB. In AVIF (q=90), is 8.3MB.
 
 {% asset_img '2024_01_subway_escalators.jpg' 'Escalators in a subway station' %}
 
-The original GIF below has a file size of 3.174kB. In JXL format (q=90), the size is 2.558kB. In AVIF (q=90), is 79kB. Impressive!
+The original GIF below has a file size of 3.1MB. In JXL format (q=90), the size is 2.5MB. In AVIF (q=90), is 79kB. Impressive!
 
-{% asset_img '2024_01_emilia_clarke.gif' 'Emilia Clarke' %}
+<picture class="my-4">
+  <source type="image/avif" srcset="/assets/img/posts/2024_01_emilia_clarke.avif" alt="Emilia Clarke" />
+  <img src="/assets/img/posts/2024_01_emilia_clarke.gif" alt="Emilia Clarke" />
+</picture>
 
 This [GitHub repo](https://github.com/alexandrehtrb/jxl-avif-simple-benchmark) executes tests to compare compression rates and speeds of JXL and AVIF. The comparison is not qualitative, nor scientific. The input images include:
 
@@ -133,7 +136,12 @@ If the browser supports, it will first try to load the picture in AVIF format. I
 
 The logic is the same for JXl, only the MIME type changes to `image/jxl`.
 
-There is a [more thorough tutorial](https://codelabs.developers.google.com/codelabs/avif#5) made by Google.
+The animation below is inside a `<picture>` tag. If your browser supports it, the image will be an AVIF, otherwise, it will be a GIF. You can verify which format is by saving the picture.
+
+<picture class="my-4">
+  <source type="image/avif" srcset="/assets/img/posts/2024_01_curtains.avif" alt="Curtains moving with the wind" />
+  <img src="/assets/img/posts/2024_01_curtains.gif" alt="Curtains moving with the wind" />
+</picture>
 
 ## Read more
 
@@ -148,6 +156,8 @@ There is a [more thorough tutorial](https://codelabs.developers.google.com/codel
 [How JPEG XL Compares to Other Image Codecs](https://cloudinary.com/blog/how_jpeg_xl_compares_to_other_image_codecs) ([WebArchive](https://web.archive.org/web/20240121174134/https://cloudinary.com/blog/how_jpeg_xl_compares_to_other_image_codecs))
 
 [The Current Role of Image Compression Standards in Medical Imaging](https://www.mdpi.com/2078-2489/8/4/131) ([WebArchive](https://web.archive.org/web/20240126221119/https://www.mdpi.com/2078-2489/8/4/131))
+
+[Serving AVIF images codelab](https://codelabs.developers.google.com/codelabs/avif#0)
 
 ## Images used in this article
 
