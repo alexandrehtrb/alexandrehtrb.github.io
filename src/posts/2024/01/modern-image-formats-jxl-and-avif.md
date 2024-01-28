@@ -1,7 +1,7 @@
 ---
 title: >
   Modern image formats: JXL and AVIF
-date: 2024-01-22
+date: 2024-01-28
 published: true
 enableMermaid: false
 tags:
