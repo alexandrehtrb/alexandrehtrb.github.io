@@ -15,7 +15,7 @@ Meet the next generation image formats, with superior graphics and reduced size 
 
 ## Computers, photography and images
 
-The visualization of images is fundamental in many areas, such as arts, professional photography, cartography, astrophotography, diagnostic medicine, historic preservation and movies. The quality of the images is very important to highlight details, like an artistic touch, an imprecision or an element that is imperceptible at first sight.
+The visualization of images is fundamental in many areas, such as arts, professional photography, cartography, astrophotography, diagnostic medicine, historic preservation and movies. The quality of the images is very important to highlight details, like an artistic touch, an imprecision, or an element that is imperceptible at first sight.
 
 On a computer screen, an image is represented by thousands of *pixels* (**pic**ture **el**ement), each *pixel* corresponding to a colour and its intensity. Consider an image of 1,024px x 768px = 768,432 *pixels*; if each pixel is RGBA and has 4 *bytes*, 1 for red, 1 for green, 1 for blue and 1 for transparency, this image will have a size of 3.1MB, which is quite large. However, by choosing proper compression techniques and file formats, we can have this image with the same quality and with a much lower file size.
 
@@ -23,9 +23,9 @@ On a computer screen, an image is represented by thousands of *pixels* (**pic**t
 
 ## Newer formats
 
-Around 2019, two new image file formats, JXL and AVIF, came to market promising lower disk usage and better preservation of details.
+Around 2019, two new file formats, JXL and AVIF, came to market promising lower disk usage and better preservation of details.
 
-Both share characteristics like:
+Both share as characteristics:
 
 - Support for lossless and lossy compression at more efficient rates than previous formats, like JPEG and PNG, and with better quality retention.
 - Support for animations and transparencies.
@@ -46,7 +46,7 @@ JXL is better for:
 - Images with high and extremely high resolution and level of details.
 - When processing speed is important. JXL encoding is 5 to 10 times faster than AVIF's.
 - Very high colour precision.
-- Progressive decoding - the image can be rendered as it is downloaded. 
+- Progressive decoding: the image can be rendered as it is downloaded. 
 - Images with very high dimensions, because it supports sizes of over 1 billion x 1 billion pixels. AVIF supports images at most of 8K resolution (8193px x 4320px).
 
 ## When should I use AVIF?
@@ -57,6 +57,8 @@ AVIF is better for:
 - Videos and animations, because it has excellent compression rates for them, over 90% in some cases. It's a great substitute for GIFs.
 
 ## Compression and performance tests
+
+Examples:
 
 The original image below is a JPEG of 8192x5464, file size 11MB. In JXL format (q=90), the size is 7.3MB. In AVIF (q=90), is 8.3MB.
 
@@ -93,7 +95,7 @@ cjxl input_image.jpg output_image.jxl -q 90 --lossless_jpeg=0
 
 ### Conversion to `.avif`
 
-There are two main tools: [cavif-rs](https://github.com/kornelski/cavif-rs) and [ffmpeg](https://ffmpeg.org/). `cavif-rs` currently doesn't support GIFs, so we need to use `ffmpeg` for them.
+There are two main tools: [cavif-rs](https://github.com/kornelski/cavif-rs) and [ffmpeg](https://ffmpeg.org/). cavif-rs currently doesn't support GIFs, so we need to use ffmpeg for them.
 
 To convert a static image to AVIF, using cavif-rs:
 
@@ -132,16 +134,14 @@ If you want to use these new formats, but also want to guarantee compatibility w
 </html>
 ```
 
-If the browser supports, it will first try to load the picture in AVIF format. If it doesn't support, then will load the picture in GIF format. The web page will load much faster when AVIF is supported.
-
-The logic is the same for JXl, only the MIME type changes to `image/jxl`.
-
-The animation below is inside a `<picture>` tag. If your browser supports it, the image will be an AVIF, otherwise, it will be a GIF. You can verify which format is by saving the picture.
+If the browser supports, it will first try to load the picture in AVIF format; else, a GIF will be loaded. The animation below is inside a `<picture>` tag - you can verify which format is it by saving the picture.
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_01_curtains.avif" alt="Curtains moving with the wind" />
   <img src="/assets/img/posts/2024_01_curtains.gif" alt="Curtains moving with the wind" />
 </picture>
+
+Due to the reduced file size of the images, the web pages will load faster.
 
 ## Read more
 
@@ -161,6 +161,8 @@ The animation below is inside a `<picture>` tag. If your browser supports it, th
 
 ## Images used in this article
 
-* Galaxy: [Unsplash](https://unsplash.com/photos/black-hole-galaxy-illustration-Oze6U2m1oYU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
-* Dental radiography: [Unsplash](https://unsplash.com/photos/teeth-x-ray-KeVKEs1_RDU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
-* Subway escalators: [Unsplash](https://unsplash.com/photos/an-underground-subway-station-with-escalators-and-stairs-hLIi1IU5IU0)
+All taken from Unsplash:
+
+* [Galaxy](https://unsplash.com/photos/black-hole-galaxy-illustration-Oze6U2m1oYU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
+* [Dental radiography](https://unsplash.com/photos/teeth-x-ray-KeVKEs1_RDU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
+* [Subway escalators](https://unsplash.com/photos/an-underground-subway-station-with-escalators-and-stairs-hLIi1IU5IU0?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)

@@ -15,7 +15,7 @@ Conheça os formatos de imagem de última geração, com qualidade gráfica supe
 
 ## Computação, fotografia e imagens
 
-A visualização de imagens é fundamental em vários setores, como artes plásticas, fotografias profissionais, cartografia, astrofotografia, medicina diagnóstica, preservações históricas e cinema. A qualidade das imagens é muito importante para se notar detalhes, como um toque artístico, uma imprecisão ou um elemento imperceptível à primeira vista.
+A visualização de imagens é fundamental em vários setores, como artes plásticas, fotografias profissionais, cartografia, astrofotografia, medicina diagnóstica, preservações históricas e cinema. A qualidade das imagens é muito importante para se notar detalhes, como um toque artístico, uma imprecisão, ou um elemento imperceptível à primeira vista.
 
 Em uma tela de computador, uma imagem é representada por milhares de *pixels* (**pic**ture **el**ement), cada *pixel* correspondendo a uma cor e sua intensidade. Considere uma imagem de tamanho 1.024px x 768px = 786.432 *pixels*; se cada pixel for RGBA e tiver 4 *bytes*, 1 para vermelho, 1 para verde, 1 para azul e 1 para transparência, essa imagem terá um tamanho de 3,1MB, o que é bastante alto. Contudo, escolhendo técnicas de compressão e um formato de arquivo adequados, podemos ter essa imagem com a mesma qualidade e ocupando muito menos espaço em memória.
 
@@ -23,7 +23,7 @@ Em uma tela de computador, uma imagem é representada por milhares de *pixels* (
 
 ## Novos formatos
 
-Por volta de 2019, surgiram no mercado dois novos formatos de imagem, o JXL e o AVIF, prometendo menor consumo de memória em disco e maior preservação de detalhes.
+Por volta de 2019, surgiram no mercado dois novos formatos de arquivo, o JXL e o AVIF, prometendo menor consumo de memória em disco e maior preservação de detalhes.
 
 Ambos compartilham como características:
 
@@ -44,9 +44,9 @@ O AVIF é um formato criado pela Alliance for Open Media, um consórcio de vári
 O JXL é melhor para:
 
 - Imagens de alta e extrema alta resolução e nível de detalhes.
-- Situações em que a velocidade de processamento é importante. O *encoding* do JXL é de 5 a 10 vezes mais rápido do que o AVIF.
+- Situações em que a velocidade de processamento é importante, pois o *encoding* do JXL é de 5 a 10 vezes mais rápido do que o AVIF.
 - Altíssima precisão de côres.
-- *Decoding* progressivo - a imagem pode ser visualizada conforme é baixada.
+- *Decoding* progressivo: a imagem pode ser visualizada conforme é baixada.
 - Imagens de dimensões muito grandes, pois suporta tamanhos de mais de 1 bilhão x 1 bilhão de pixels. O AVIF suporta imagens em no máximo 8K (8193px x 4320px).
 
 ## Quando devo usar o AVIF?
@@ -134,16 +134,14 @@ Se você quer usar esses novos formatos, mas quer garantir compatibilidade com n
 </html>
 ```
 
-Se o navegador tiver suporte, tentará primeiro carregar a imagem em formato AVIF. Se não tiver suporte, então carregará a imagem em formato GIF. A página carregará muito mais rápida quando suportar AVIF.
-
-A lógica é a mesma para JXL, só alterar o MIME type para `image/jxl`.
-
-A animação abaixo está dentro de uma tag `<picture>`. Se seu browser suportar, será um AVIF, senão, será um GIF. Você pode conferir a extensão salvando o arquivo.
+Se o navegador tiver suporte, tentará primeiro carregar a imagem em formato AVIF; senão, carregará a imagem em formato GIF. A animação abaixo está dentro de uma tag `<picture>` - você pode conferir o formato ao salvar o arquivo.
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_01_curtains.avif" alt="Cortinas balançando com o vento" />
   <img src="/assets/img/posts/2024_01_curtains.gif" alt="Cortinas balançando com o vento" />
 </picture>
+
+Devido ao tamanho menor das imagens, as páginas carregam mais rápido.
 
 ## Para ler mais
 
@@ -163,6 +161,8 @@ A animação abaixo está dentro de uma tag `<picture>`. Se seu browser suportar
 
 ## Fontes das imagens
 
-* Galáxia: [Unsplash](https://unsplash.com/photos/black-hole-galaxy-illustration-Oze6U2m1oYU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
-* Radiografia dental: [Unsplash](https://unsplash.com/photos/teeth-x-ray-KeVKEs1_RDU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
-* Escadas-rolantes na estação de metrô: [Unsplash](https://unsplash.com/photos/an-underground-subway-station-with-escalators-and-stairs-hLIi1IU5IU0)
+Todas extraídas do Unsplash:
+
+* [Galáxia](https://unsplash.com/photos/black-hole-galaxy-illustration-Oze6U2m1oYU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
+* [Radiografia dental](https://unsplash.com/photos/teeth-x-ray-KeVKEs1_RDU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
+* [Escadas-rolantes na estação de metrô](https://unsplash.com/photos/an-underground-subway-station-with-escalators-and-stairs-hLIi1IU5IU0?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
