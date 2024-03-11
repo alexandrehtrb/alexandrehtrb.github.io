@@ -21,7 +21,7 @@ In the beginning of the 1990s, Tim Berners-Lee and his team at [CERN](https://ho
 * A web browser to view hypertext (the first browser, WorldWideWeb)
 * A server to transmit the data (an early version of httpd)
 
-HTTP reused the existing TCP/IP protocols for data transport: HTTP message bytes reside in the [application layer](https://en.wikipedia.org/wiki/Application_layer), light blue in the image below.
+HTTP reused for data transport the existing TCP/IP protocols, with HTTP message bytes residing in the [application layer](https://en.wikipedia.org/wiki/Application_layer), light blue in the image below.
 
 {% asset_img '2024_03_osi_model_tcp_ip.png' 'OSI model' %}
 
