@@ -184,7 +184,7 @@ The head-of-line blocking related to TLS (SSL) happens on TCP because the crypto
 |---|:---:|:---:|:---:|
 | **Transport**<br>**protocol** | TCP,<br>persistent connection | TCP,<br>persistent connection | UDP,<br>persistent connection |
 | **Head-of-line**<br>**blocking** | HTTP/1.x HOL<br>TCP HOL<br>TLS HOL | TCP HOL<br>TLS HOL | - |
-| **Message format** | ASCII text | Binary | Binary |
+| **Message format** | ASCII text | binary | binary |
 | **Header compression** | - | HPACK | QPACK |
 | **Number of roundtrips**<br>**before start**<br>**(handshakes)** | **3**<br>1 from TCP<br>+2 from TLS 1.2\* | **2**<br>1 from TCP<br>+1 from TLS 1.3\* | **0**<br>0 from UDP<br>+0 from TLS 1.3 with 0-RTT\* |
 | **Connection identification** | source IP and port | source IP and port | connection ID,<br>resistent to IP changes |

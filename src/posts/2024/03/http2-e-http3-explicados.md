@@ -184,7 +184,7 @@ O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TC
 |---|:---:|:---:|:---:|
 | **Protocolo**<br>**de transporte** | TCP,<br> conexão persistente | TCP,<br> conexão persistente | UDP,<br>conexão persistente |
 | **Bloqueio de**<br>**cabeça de fila**<br>**(*HOL blocking*)** | HTTP/1.x HOL<br>TCP HOL<br>TLS HOL | TCP HOL<br>TLS HOL | - |
-| **Formato das mensagens** | Texto em ASCII | Binário | Binário |
+| **Formato das mensagens** | texto em ASCII | binário | binário |
 | **Compressão de cabeçalhos** | - | HPACK | QPACK |
 | **Nº de idas-e-voltas**<br>**para iniciar**<br>**(handshakes)** | **3**<br>1 do TCP<br>+2 do TLS 1.2\* | **2**<br>1 do TCP<br>+1 do TLS 1.3\* | **0**<br>0 do UDP<br>+0 do TLS 1.3 com 0-RTT\* |
 | **Identificação de conexão** | IP e porta de origem | IP e porta de origem | connection ID,<br>resistente a mudanças de IP |
