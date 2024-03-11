@@ -8,6 +8,7 @@ tags:
 - em português
 - network
 - http
+- quic
 ---
 Entenda melhor como funciona o protocolo HTTP em cada uma de suas versões.<!-- excerpt -->
 
@@ -132,7 +133,7 @@ sequenceDiagram
     Servidor-->>-Cliente: res1: #9993;2/2
 ```
 
-A imagem abaixo mostra como os *frames* entram em pacotes TCP. O *stream* 1 representa dados de um arquivo JavaScript e o *stream* 2 representa dados de um arquivo CSS, transmitidos via HTTP/2.
+A imagem abaixo mostra como os *frames* entram em pacotes TCP. O *stream* 1 representa uma resposta HTTP de um arquivo JavaScript e o *stream* 2 representa uma resposta HTTP de um arquivo CSS, transmitidos via HTTP/2.
 
 {% asset_img '2024_03_http2_tcp_packets.png' 'Frames HTTP2 em pacotes TCP' %}
 
@@ -144,9 +145,9 @@ O HTTP/3 surgiu diante de um novo protocolo de transporte proposto pelo Google, 
 * ter conexões mais resilientes quanto a perda de pacotes;
 * resolver o bloqueio de cabeça de fila que existe no protocolo TCP e no TLS.
 
-O HTTP/2 consegue resolver o bloqueio de cabeça de fila relacionado ao HTTP; porém, esse tipo de bloqueio também existe relacionado ao protocolo TCP e ao TLS. O TCP entende que os dados que deve enviar fazem parte de uma seqüência de pacotes contígüos, e se um desses pacotes for perdido, ele deve ser reenviado para o destinatário, a fim de que se preserve a integridade da informação. *No TCP, pacotes subseqüentes não podem ser enviados enquanto o pacote perdido não for reenviado.*
+O HTTP/2 consegue resolver o bloqueio de cabeça de fila relacionado ao HTTP, porém, esse tipo de bloqueio também existe no protocolo TCP e no TLS. O TCP entende que os dados que deve enviar fazem parte de uma seqüência de pacotes contígüos, e se um desses pacotes for perdido, ele deve ser reenviado para o destinatário, a fim de que se preserve a integridade da informação. *No TCP, pacotes subseqüentes não podem ser enviados enquanto o pacote perdido não chegar com sucesso no destino.*
 
-O diagrama abaixo explica visualmente como isso ocorre no HTTP/2, com cada linha correspondendo a um pacote TCP enviado. O terceiro pacote tinha *frames* tanto da resposta 1 como resposta 2 e a perda desse pacote atrasa a chegada de ambas as respostas - ou seja, não há paralelismo nesse caso.
+O diagrama abaixo explica visualmente como isso ocorre no HTTP/2, com cada linha correspondendo a um pacote TCP enviado. O terceiro pacote tinha *frames* tanto da resposta 1 como resposta 2 e a perda desse pacote atrasa ambas - ou seja, não há paralelismo nesse caso.
 
 ```mermaid
 sequenceDiagram
@@ -175,7 +176,7 @@ sequenceDiagram
     Servidor-->>-Cliente: res1: #9993;1/1 + res2: #9993;1/2
 ```
 
-O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TCP porque a criptografia é geralmente aplicada sobre o conteúdo inteiro de dados, de modo que eles precisam chegar todos ao destinatário para então ocorrer a decriptação. No caso do QUIC, a criptografia é individual para cada pacote QUIC, que é decriptado ao chegar no destinatário, sem haver a necessidade de receber todos os pacotes.
+O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TCP porque a criptografia é geralmente aplicada sobre a mensagem inteira, de modo que todos os seus pacotes precisam chegar ao destino para então ocorrer a decriptação. No caso do QUIC, a criptografia é individual para cada pacote QUIC, que é decriptado na chegada, sem haver a necessidade de receber todos os pacotes primeiro.
 
 ## Tabela de comparação
 
@@ -195,7 +196,7 @@ O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TC
 
 As duas melhores versões atualmente são o HTTP/2 e o HTTP/3.
 
-O HTTP/3 foi desenhado para conexões instáveis, como redes de telefonia celular e de satélite, pois há grande independência dos fluxos de dados e resiliência caso pacotes sejam perdidos. Porém, o HTTP/3 tem desvantagens de performance, em razão de: 1) o protocolo UDP não ter sido otimizado pelos sistemas operacionais e roteadores ao longo das últimas décadas, devido ao baixo uso dele em geral, tornando-o comparativamente mais lento do que o TCP; e 2) a criptografia individualizada por pacote no QUIC é menos eficiente do que a criptografia por mensagem inteira no TCP, pois requer um número maior de operações matemáticas. Há ainda o problema de o protocolo UDP (usado pelo QUIC) ser restringido em algumas redes para proteger contra, por exemplo, [ataque de inundação de UDP](https://www.cloudflare.com/learning/ddos/udp-flood-ddos-attack/) e [ataque de amplificação de DNS](https://blog.cloudflare.com/deep-inside-a-dns-amplification-ddos-attack).
+O HTTP/3 foi desenhado para conexões instáveis, como redes de telefonia celular e de satélite, pois no QUIC há grande independência dos fluxos de dados e resiliência caso pacotes sejam perdidos. Porém, o HTTP/3 tem desvantagens de performance, em razão de: 1) o protocolo UDP não ter sido otimizado pelos sistemas operacionais e roteadores ao longo das últimas décadas, devido ao baixo uso dele em geral, tornando-o comparativamente mais lento do que o TCP; e 2) a criptografia pacote-por-pacote no QUIC requer um número maior de operações matemáticas, tornando-a menos eficiente do que a criptografia de mensagem inteira no TCP. Há ainda o problema de o protocolo UDP (usado pelo QUIC) ser restringido em algumas redes para proteger contra, por exemplo, [ataque de inundação de UDP](https://www.cloudflare.com/learning/ddos/udp-flood-ddos-attack/) e [ataque de amplificação de DNS](https://blog.cloudflare.com/deep-inside-a-dns-amplification-ddos-attack).
 
 Em conexões confiáveis e plenas, o HTTP/2 muitas vezes oferece performance melhor do que o HTTP/3.
 
