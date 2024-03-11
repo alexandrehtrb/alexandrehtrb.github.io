@@ -176,7 +176,7 @@ sequenceDiagram
     Server-->>-Client: res1: #9993;1/1 + res2: #9993;1/2
 ```
 
-The head-of-line blocking related to TLS (SSL) happens on TCP because the cryptography is usually applied over the entire message content, meaning that all data (all packets) needs to received for the decryption to happen. With QUIC, the cryptography is individual for each QUIC packet, that is decrypted on arrival, without having the need to receive all packets first.
+The head-of-line blocking related to TLS (SSL) happens on TCP because the cryptography is usually applied over the entire message content, meaning that all data (all packets) needs to be received for the decryption to happen. With QUIC, the cryptography is individual for each QUIC packet, that is decrypted on arrival, without having to receive all packets beforehand.
 
 ## Comparison table
 
