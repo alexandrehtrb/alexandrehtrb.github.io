@@ -110,7 +110,7 @@ In 2015, after many years of observation and studies on the performance of the I
 
 Among its differences, were the multiplexing of many messages in a single TCP packet; binary format of the messages; and HPACK compression for headers.
 
-In HTTP/1.1, two requests cannot ride together the same TCP connection - it is necessary that the first one ends for the subsequent to begin. This is called *head-of-line blocking*. In the diagram below, request 2 cannot be sent until response 1 arrives, considering the scenario that only one TCP connection is used.
+In HTTP/1.1, two requests cannot ride together the same TCP connection - it is necessary that the first one ends for the subsequent to begin. This is called *head-of-line blocking*. In the diagram below, request 2 cannot be sent until response 1 arrives, considering that only one TCP connection is used.
 
 ```mermaid
 sequenceDiagram
@@ -122,7 +122,7 @@ sequenceDiagram
 
 With HTTP/2, this problem is solved with *streams*, each stream corresponds to a message. Many streams can be interleaved in a single TCP packet. If a stream can't emit its data for some reason, other streams can take its place in the TCP packet.
 
-HTTP/2 streams are composed by *frames*, each one identifying the frame type, the stream that it belongs to, and the length in bytes. In the diagram below, one **✉** is a HTTP/2 *frame* and each line is a TCP packet.
+HTTP/2 streams are composed by *frames*, each one identifying the frame type, the stream that it belongs to, and the length in bytes. In the diagram below, one ✉ is a HTTP/2 frame and each line is one TCP packet.
 
 ```mermaid
 sequenceDiagram
@@ -140,13 +140,13 @@ The image below shows how frames go inside a TCP packet. Stream 1 carries a HTTP
 
 HTTP/3 was born from a new transport protocol, QUIC, created by Google in 2012. QUIC is a modified version of UDP and compared to TCP, it proposes:
 
-* fewer packet roundtrips to estabilish the connection and the TLS authentication;
+* fewer packet roundtrips to estabilish connection and TLS authentication;
 * more resilient connections regarding packet losses;
-* to solve to head-of-line blocking that exists in TCP and TLS.
+* to solve the head-of-line blocking that exists in TCP and TLS.
 
-HTTP/2 manages to solve the HTTP head-of-line blocking, but, this issue also happens with TCP and TLS. TCP understands that the data it needs to send is a contiguous sequence of packets, and if any packet is lost, it must be resent, in order to preserve information integrity. *With TCP, subsequent packets cannot be sent until the lost packet is successfully resent to the destination.*
+HTTP/2 solves the HTTP head-of-line blocking, but, this problem also happens with TCP and TLS. TCP understands that the data it needs to send is a contiguous sequence of packets, and if any packet is lost, it must be resent, in order to preserve information integrity. *With TCP, subsequent packets cannot be sent until the lost packet is successfully resent to the destination.*
 
-The diagram below explains visually how this happens in HTTP/2, with each line corresponding to a TCP packet. The third packet had frames of both response 1 and response 2 and its loss delays the arrival of both responses - that means that in this case, there is no parallelism.
+The diagram below explains visually how this happens in HTTP/2, with each line corresponding to a TCP packet. The third packet had frames of both response 1 and response 2 and its loss delays both responses - that means that in this case, there is no parallelism.
 
 ```mermaid
 sequenceDiagram
@@ -158,7 +158,7 @@ sequenceDiagram
     Server-->>-Client: res1: #9993;2/2
 ```
 
-To solve TCP's head-of-line blocking, QUIC decided to use UDP for its transport protocol, because UDP does not care for guarantees of arrival. The data integrity responsibility, that in TCP lays in the transport layer, is moved in QUIC to the application layer, and the frames of a message can arrive out of order, without blocking unrelated streams.
+To solve TCP's head-of-line blocking, QUIC decided to use UDP for its transport protocol, because UDP does not care for guarantees of arrival. The data integrity responsibility, that in TCP is part of the transport layer, is moved in QUIC to the application layer, and the frames of a message can arrive out of order, without blocking unrelated streams.
 
 {% asset_img '2024_03_http3_quic_packets.png' 'HTTP3 QUIC packets' %}
 
@@ -185,7 +185,7 @@ The head-of-line blocking related to TLS (SSL) happens on TCP because the crypto
 | **Head-of-line**<br>**blocking** | HTTP/1.x HOL<br>TCP HOL<br>TLS HOL | TCP HOL<br>TLS HOL | - |
 | **Message format** | ASCII text | Binary | Binary |
 | **Header compression** | - | HPACK | QPACK |
-| **Number of roundtrips**<br>**before start**<br>**(*handshakes*)** | **3**<br>1 from TCP<br>+2 from TLS 1.2\* | **2**<br>1 from TCP<br>+1 from TLS 1.3\* | **0**<br>0 from UDP<br>+0 from TLS 1.3 with 0-RTT\* |
+| **Number of roundtrips**<br>**before start**<br>**(handshakes)** | **3**<br>1 from TCP<br>+2 from TLS 1.2\* | **2**<br>1 from TCP<br>+1 from TLS 1.3\* | **0**<br>0 from UDP<br>+0 from TLS 1.3 with 0-RTT\* |
 | **Connection identification** | source IP and port | source IP and port | connection ID,<br>resistent to IP changes |
 | **Cryptography** | optional;<br>applied over the entire message | optional;<br>applied over the entire message | embedded TLS 1.3;<br>applied over each QUIC packet |
 
@@ -195,9 +195,9 @@ The head-of-line blocking related to TLS (SSL) happens on TCP because the crypto
 
 The two best versions currently are HTTP/2 and HTTP/3.
 
-HTTP/3 was designed for scenarios of unstable connections, such as cellphone and satellite networks, with a great degree of independence between the data streams, with good resilience if packets are lost. Nevertheless, HTTP/3 has performance penalties, mainly for: 1) the UDP protocol wasn't optimized by routers and operating systems over the last decades due to its low usage, making it comparatively slower than TCP; and 2) the packet-by-packet cryptography used by QUIC is less efficient than the entire message cryptography used in TCP, because it requires a greater number of mathematical operations. Also, there is the issue that the UDP protocol is restricted in some networks to protect against attacks like [UDP flood attack](https://www.cloudflare.com/learning/ddos/udp-flood-ddos-attack/) and [DNS amplification attack](https://blog.cloudflare.com/deep-inside-a-dns-amplification-ddos-attack).
+HTTP/3 was designed for unstable connections, such as cellphone and satellite networks, with a great degree of independence between the data streams and good resilience if packets are lost. Nevertheless, HTTP/3 has performance penalties, mainly for: 1) the UDP protocol wasn't optimized by routers and operating systems over the last decades due to its low usage, making it comparatively slower than TCP; and 2) the packet-by-packet cryptography used by QUIC is less efficient than the entire message cryptography used in TCP, because it requires a greater number of mathematical operations. Also, there is the issue that the UDP protocol is restricted in some networks to protect against attacks like [UDP flood attack](https://www.cloudflare.com/learning/ddos/udp-flood-ddos-attack/) and [DNS amplification attack](https://blog.cloudflare.com/deep-inside-a-dns-amplification-ddos-attack).
 
-In scenarios of reliable connections, HTTP/2 many times offers better performance than HTTP/3.
+On reliable and stable connections, HTTP/2 many times offers better performance than HTTP/3.
 
 Generally speaking, it's recommended to run compatibility and performance tests to determine which version is the most appropriate, and furthermore, a server can accept both HTTP/2 and HTTP/3 connections, leaving to the client the decision of which version to use.
 
@@ -206,7 +206,7 @@ Generally speaking, it's recommended to run compatibility and performance tests 
 * [MDN - Evolution of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP)
 * [MDN - Connection management in HTTP/1.x](https://developer.mozilla.org/en-US/docs/Web/HTTP/Connection_management_in_HTTP_1.x)
 * [David Wills - OSI reference model](https://davidwills.us/cmit265/osi.html)
-* [Web Performance Calendar - Head-of-Line Blocking in QUIC and HTTP/3: The Details](https://calendar.perfplanet.com/2020/head-of-line-blocking-in-quic-and-http-3-the-details/) **(recommended reading)**
-* [Wikipédia - QUIC](https://en.wikipedia.org/wiki/QUIC)
+* [Web Performance Calendar - Head-of-Line Blocking in QUIC and HTTP/3: The Details](https://calendar.perfplanet.com/2020/head-of-line-blocking-in-quic-and-http-3-the-details/) ([WebArchive](https://web.archive.org/web/20240311184108/https://calendar.perfplanet.com/2020/head-of-line-blocking-in-quic-and-http-3-the-details/)) **(recommended reading)**
+* [Wikipedia - QUIC](https://en.wikipedia.org/wiki/QUIC)
 * [Cloudflare - Introducing Zero Round Trip Time Resumption (0-RTT)](https://blog.cloudflare.com/introducing-0-rtt)
 * [HTTP/3 explained - QUIC connections](https://http3-explained.haxx.se/en/quic/quic-connections)

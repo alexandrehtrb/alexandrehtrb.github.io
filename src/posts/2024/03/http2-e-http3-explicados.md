@@ -110,7 +110,7 @@ Em 2015, após muitos anos de observação e estudos sobre a performance da inte
 
 Dentre as principais mudanças, estão a multiplexação de várias mensagens dentro de um único pacote TCP; formato binário das mensagens; e compressão dos cabeçalhos, com HPACK.
 
-No HTTP/1.1, duas requisições HTTP não podem trafegar juntas em uma mesma conexão TCP - é necessário que a primeira delas termine para que a subseqüente se inicie. Isso se chama bloqueio de cabeça de fila (*head-of-line blocking*, em inglês). No diagrama abaixo, a requisição 2 não pode começar até que a resposta 1 tenha chegado, no cenário em que apenas uma conexão TCP é usada.
+No HTTP/1.1, duas requisições HTTP não podem trafegar juntas em uma mesma conexão TCP - é necessário que a primeira delas termine para que a subseqüente se inicie. Isso se chama bloqueio de cabeça de fila (*head-of-line blocking*, em inglês). No diagrama abaixo, a requisição 2 não pode começar até que a resposta 1 tenha chegado, considerando que apenas uma conexão TCP é usada.
 
 ```mermaid
 sequenceDiagram
@@ -122,7 +122,7 @@ sequenceDiagram
 
 Com o HTTP/2, esse problema é resolvido através de *streams*: cada *stream* corresponde a uma mensagem. Vários *streams* podem estar entremeados em um mesmo pacote TCP. Se um *stream* não puder emitir dados por algum motivo, outros podem aproveitar e entrar em seu lugar no pacote TCP.
 
-Os *streams* são compostos por *frames*, cada um identificando o tipo do *frame*, o *stream* ao qual pertence, e o comprimento em bytes. No diagrama abaixo, um **✉** é um *frame* HTTP/2 e cada linha é um pacote TCP.
+Os *streams* são compostos por *frames*, cada um identificando o tipo do *frame*, o *stream* ao qual pertence, e o comprimento em bytes. No diagrama abaixo, um ✉ é um *frame* HTTP/2 e cada linha é um pacote TCP.
 
 ```mermaid
 sequenceDiagram
@@ -140,7 +140,7 @@ A imagem abaixo mostra como os *frames* entram em pacotes TCP. O *stream* 1 repr
 
 O HTTP/3 surgiu diante de um novo protocolo de transporte proposto pelo Google, o QUIC, em 2012. O QUIC é uma versão adaptada do UDP e comparado ao TCP, propõe:
 
-* menos *roundtrips* (ida-e-volta) de pacotes para estabelecimento de conexão e estabelecimento de criptografia TLS;
+* menos *roundtrips* (idas-e-voltas) de pacotes para estabelecimento de conexão e estabelecimento de criptografia TLS;
 * ter conexões mais resilientes quanto a perda de pacotes;
 * resolver o bloqueio de cabeça de fila que existe no protocolo TCP e no TLS.
 
@@ -185,7 +185,7 @@ O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TC
 | **Bloqueio de**<br>**cabeça de fila**<br>**(*HOL blocking*)** | HTTP/1.x HOL<br>TCP HOL<br>TLS HOL | TCP HOL<br>TLS HOL | - |
 | **Formato das mensagens** | Texto em ASCII | Binário | Binário |
 | **Compressão de cabeçalhos** | - | HPACK | QPACK |
-| **Nº de idas-e-voltas**<br>**para iniciar**<br>**(*handshakes*)** | **3**<br>1 do TCP<br>+2 do TLS 1.2\* | **2**<br>1 do TCP<br>+1 do TLS 1.3\* | **0**<br>0 do UDP<br>+0 do TLS 1.3 com 0-RTT\* |
+| **Nº de idas-e-voltas**<br>**para iniciar**<br>**(handshakes)** | **3**<br>1 do TCP<br>+2 do TLS 1.2\* | **2**<br>1 do TCP<br>+1 do TLS 1.3\* | **0**<br>0 do UDP<br>+0 do TLS 1.3 com 0-RTT\* |
 | **Identificação de conexão** | IP e porta de origem | IP e porta de origem | connection ID,<br>resistente a mudanças de IP |
 | **Criptografia** | não obrigatória;<br>aplicada na mensagem inteira | não obrigatória;<br>aplicada na mensagem inteira | TLS 1.3 embutido;<br>aplicada por pacote QUIC |
 
@@ -195,9 +195,9 @@ O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TC
 
 As duas melhores versões atualmente são o HTTP/2 e o HTTP/3.
 
-O HTTP/3 foi desenhado para cenários de conexões instáveis, como redes de telefonia celular e de satélite, pois há grande independência dos fluxos de dados, com resiliência caso pacotes sejam perdidos. Porém, o HTTP/3 tem desvantagens de performance, em razão de: 1) o protocolo UDP não ter sido otimizado pelos sistemas operacionais e roteadores ao longo das últimas décadas, devido ao baixo uso dele em geral, tornando-o comparativamente mais lento do que o TCP; e 2) a criptografia individualizada por pacote no QUIC é menos eficiente do que a criptografia por mensagem inteira no TCP, pois requer um número maior de operações matemáticas. Há ainda o problema de o protocolo UDP (usado pelo QUIC) ser restringido em algumas redes para proteger contra, por exemplo, [ataque de inundação de UDP](https://www.cloudflare.com/learning/ddos/udp-flood-ddos-attack/) e [ataque de amplificação de DNS](https://blog.cloudflare.com/deep-inside-a-dns-amplification-ddos-attack).
+O HTTP/3 foi desenhado para conexões instáveis, como redes de telefonia celular e de satélite, pois há grande independência dos fluxos de dados e resiliência caso pacotes sejam perdidos. Porém, o HTTP/3 tem desvantagens de performance, em razão de: 1) o protocolo UDP não ter sido otimizado pelos sistemas operacionais e roteadores ao longo das últimas décadas, devido ao baixo uso dele em geral, tornando-o comparativamente mais lento do que o TCP; e 2) a criptografia individualizada por pacote no QUIC é menos eficiente do que a criptografia por mensagem inteira no TCP, pois requer um número maior de operações matemáticas. Há ainda o problema de o protocolo UDP (usado pelo QUIC) ser restringido em algumas redes para proteger contra, por exemplo, [ataque de inundação de UDP](https://www.cloudflare.com/learning/ddos/udp-flood-ddos-attack/) e [ataque de amplificação de DNS](https://blog.cloudflare.com/deep-inside-a-dns-amplification-ddos-attack).
 
-Em cenários de conexões confiáveis e plenas, o HTTP/2 muitas vezes oferece performance melhor do que o HTTP/3.
+Em conexões confiáveis e plenas, o HTTP/2 muitas vezes oferece performance melhor do que o HTTP/3.
 
 De modo geral, recomenda-se realizar testes de compatibilidade e de performance para decidir qual é a versão mais indicada, além disso, um servidor pode aceitar conexões tanto de HTTP/2 como de HTTP/3, cabendo ao cliente decidir qual versão usar.
 
@@ -206,7 +206,7 @@ De modo geral, recomenda-se realizar testes de compatibilidade e de performance 
 * [MDN - Evolution of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP)
 * [MDN - Connection management in HTTP/1.x](https://developer.mozilla.org/en-US/docs/Web/HTTP/Connection_management_in_HTTP_1.x)
 * [David Wills - OSI reference model](https://davidwills.us/cmit265/osi.html)
-* [Web Performance Calendar - Head-of-Line Blocking in QUIC and HTTP/3: The Details](https://calendar.perfplanet.com/2020/head-of-line-blocking-in-quic-and-http-3-the-details/) **(leitura recomendada)**
+* [Web Performance Calendar - Head-of-Line Blocking in QUIC and HTTP/3: The Details](https://calendar.perfplanet.com/2020/head-of-line-blocking-in-quic-and-http-3-the-details/) ([WebArchive](https://web.archive.org/web/20240311184108/https://calendar.perfplanet.com/2020/head-of-line-blocking-in-quic-and-http-3-the-details/)) **(leitura recomendada)**
 * [Wikipédia - QUIC](https://en.wikipedia.org/wiki/QUIC)
 * [Cloudflare - Introducing Zero Round Trip Time Resumption (0-RTT)](https://blog.cloudflare.com/introducing-0-rtt)
 * [HTTP/3 explained - QUIC connections](https://http3-explained.haxx.se/en/quic/quic-connections)
