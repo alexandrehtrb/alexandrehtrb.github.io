@@ -141,7 +141,7 @@ The image below shows how frames go inside a TCP packet. Stream 1 carries a HTTP
 
 HTTP/3 was born from a new transport protocol, QUIC, created by Google in 2012. QUIC is a modified version of UDP and compared to TCP, it proposes:
 
-* fewer packet roundtrips to estabilish connection and TLS authentication;
+* fewer packet roundtrips to establish connection and TLS authentication;
 * more resilient connections regarding packet losses;
 * to solve the head-of-line blocking that exists in TCP and TLS.
 
