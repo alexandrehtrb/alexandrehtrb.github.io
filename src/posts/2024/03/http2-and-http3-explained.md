@@ -123,7 +123,7 @@ sequenceDiagram
 
 With HTTP/2, this problem is solved with *streams*, each stream corresponds to a message. Many streams can be interleaved in a single TCP packet. If a stream can't emit its data for some reason, other streams can take its place in the TCP packet.
 
-HTTP/2 streams are composed by *frames*, each one identifying the frame type, the stream that it belongs to, and the length in bytes. In the diagram below, one ✉ is a HTTP/2 frame and each line is one TCP packet.
+HTTP/2 streams are composed by *frames*, each one containing: the frame type, the stream that it belongs to, and the length in bytes. In the diagram below, one ✉ is a HTTP/2 frame and each line is one TCP packet. The third TCP packet carries frames of two different streams.
 
 ```mermaid
 sequenceDiagram

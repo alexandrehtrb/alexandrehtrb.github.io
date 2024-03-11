@@ -121,9 +121,9 @@ sequenceDiagram
     Servidor-->>-Cliente: res 2
 ```
 
-Com o HTTP/2, esse problema é resolvido através de *streams*: cada *stream* corresponde a uma mensagem. Vários *streams* podem estar entremeados em um mesmo pacote TCP. Se um *stream* não puder emitir dados por algum motivo, outros podem aproveitar e entrar em seu lugar no pacote TCP.
+Com o HTTP/2, esse problema é resolvido através de *streams*: cada *stream* corresponde a uma mensagem. Vários *streams* podem estar entremeados dentro de um mesmo pacote TCP. Se um *stream* não puder emitir dados por algum motivo, outros podem aproveitar e entrar em seu lugar no pacote TCP.
 
-Os *streams* são compostos por *frames*, cada um identificando o tipo do *frame*, o *stream* ao qual pertence, e o comprimento em bytes. No diagrama abaixo, um ✉ é um *frame* HTTP/2 e cada linha é um pacote TCP.
+Os *streams* são divididos em *frames*, cada um contendo: o tipo do *frame*, o *stream* ao qual pertence, e o comprimento em bytes. No diagrama abaixo, um ✉ é um *frame* HTTP/2 e cada linha é um pacote TCP. O terceiro pacote TCP carrega *frames* de dois *streams* diferentes.
 
 ```mermaid
 sequenceDiagram
