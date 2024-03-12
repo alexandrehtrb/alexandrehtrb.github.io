@@ -152,7 +152,7 @@ HTTP/3 was born from a new transport protocol, QUIC, created by Google in 2012. 
 
 HTTP/2 solves the HTTP head-of-line blocking, but, this problem also happens with TCP and TLS. TCP understands that the data it needs to send is a contiguous sequence of packets, and if any packet is lost, it must be resent, in order to preserve information integrity. *With TCP, subsequent packets cannot be sent until the lost packet is successfully resent to the destination.*
 
-The diagram below explains visually how this happens in HTTP/2. The third packet only had frames of response 1, but its loss delays both of responses - that means that in this case, there is no parallelism.
+The diagram below explains visually how this happens in HTTP/2. The second packet only had frames of response 1, but its loss delays both of responses - that means that in this case, there is no parallelism.
 
 ```mermaid
 sequenceDiagram
@@ -183,7 +183,7 @@ sequenceDiagram
     rect rgb(179, 205, 230)
         Server--xClient: res1: #9993;1/2<br>+<br>res2: #9993;1/2
     end
-    Note over Client,Server: lost QUIC packet<br>doesn't block sending<br>other packets
+    Note over Client,Server: lost QUIC packet<br>doesn't block sending<br>the next packets
     rect rgb(179, 205, 230)
         Server-->>Client: res1: #9993;2/2<br>+<br>res2: #9993;2/2<br>+<br>res3: #9993;1/1
     end
