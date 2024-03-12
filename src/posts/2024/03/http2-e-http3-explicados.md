@@ -270,7 +270,7 @@ function afterMermaidRenderCallback()
         // light pink --> dark pink
         else if (currentRectFill == "rgb(253, 213, 224)")
         {
-            rect.setAttribute("fill", "rgb(125, 78, 87)");
+            rect.setAttribute("fill", "rgb(53, 1, 44)");
         }
         // light blue --> dark blue
         else if (currentRectFill == "rgb(179, 205, 230)")
