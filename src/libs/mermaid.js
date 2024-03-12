@@ -7,12 +7,14 @@ module.exports = (eleventyConfig, options) => {
               import mermaid from "${src}";
               const config = ${JSON.stringify(mermaid_config)};
               config.theme=isDarkMode()?'dark':'default';
-              mermaid.initialize(config);
-              await mermaid.run({suppressErrors: true});
-              if (afterMermaidRenderCallback != undefined)
-              {
-                afterMermaidRenderCallback();
-              }
+              document.addEventListener("DOMContentLoaded", function (event) {
+                mermaid.initialize(config);
+                await mermaid.run();
+                if (afterMermaidRenderCallback != undefined)
+                {
+                  afterMermaidRenderCallback();
+                }
+              });
             </script>`
   });
   return {}
