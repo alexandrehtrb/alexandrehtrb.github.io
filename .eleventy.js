@@ -6,7 +6,7 @@ module.exports = function(eleventyConfig) {
   // Plugins
   //eleventyConfig.addPlugin(syntaxHighlight)  
   eleventyConfig.addPlugin(require("./src/libs/shiki.js"), { theme: "vitesse-dark" });
-  eleventyConfig.addPlugin(require("./src/libs/mermaid.js"), { mermaid_config: {'startOnLoad': true, 'theme': 'default' }});
+  eleventyConfig.addPlugin(require("./src/libs/mermaid.js"), { mermaid_config: {'startOnLoad': false, 'theme': 'default' }});
   
   // To enable merging of tags
   eleventyConfig.setDataDeepMerge(true)

@@ -6,12 +6,15 @@ module.exports = (eleventyConfig, options) => {
     return `<script type="module" async>
               import mermaid from "${src}";
               const config = ${JSON.stringify(mermaid_config)};
-              config.theme=isDarkMode()?'dark':'default';
-              document.addEventListener("DOMContentLoaded", function (event) {
-                mermaid.initialize(config);
-                if (afterMermaidRenderCallback != undefined)
-                {
-                  afterMermaidRenderCallback();
+              config.theme = isDarkMode() ? 'dark' : 'default';
+              mermaid.initialize(config);
+              await mermaid.run({
+                querySelector: '.mermaid',
+                postRenderCallback: (id) => {
+                  if (afterMermaidRenderCallback != undefined)
+                  {
+                    afterMermaidRenderCallback();
+                  }
                 }
               });
             </script>`
