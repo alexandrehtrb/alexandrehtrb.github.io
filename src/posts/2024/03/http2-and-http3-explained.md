@@ -123,7 +123,7 @@ sequenceDiagram
 
 With HTTP/2, this problem is solved with *streams*, each stream corresponds to a message. Many streams can be interleaved in a single TCP packet. If a stream can't emit its data for some reason, other streams can take its place in the TCP packet.
 
-HTTP/2 streams are composed by *frames*, each one containing: the frame type, the stream that it belongs to, and the length in bytes. In the diagram below, a coloured rectangle is a TCP packet and a ✉ is a HTTP/2 frame inside it. The first and third TCP packets carry frames of different streams.
+HTTP/2 streams are divided in *frames*, each one containing: the frame type, the stream that it belongs to, and the length in bytes. In the diagram below, a coloured rectangle is a TCP packet and a ✉ is a HTTP/2 frame inside it. The first and third TCP packets carry frames of different streams.
 
 ```mermaid
 sequenceDiagram
@@ -162,7 +162,7 @@ sequenceDiagram
     rect rgb(197, 234, 189)
         Server--xClient: res1: #9993;1/2
     end
-    Note over Client,Server: lost TCP packet<br>must be resent.<br>delays res1 and res2
+    Note over Client,Server: lost TCP packet<br>must be resent.<br>delays both res1 and res2
     rect rgb(197, 234, 189)
         Server-->>Client: res1: #9993;1/2
     end
@@ -183,7 +183,7 @@ sequenceDiagram
     rect rgb(179, 205, 230)
         Server--xClient: res1: #9993;1/2<br>+<br>res2: #9993;1/2
     end
-    Note over Client,Server: lost QUIC packet<br>doesn't block sending<br>the next packets
+    Note over Client,Server: lost QUIC packet<br>doesn't block sending<br>other packets
     rect rgb(179, 205, 230)
         Server-->>Client: res1: #9993;2/2<br>+<br>res2: #9993;2/2<br>+<br>res3: #9993;1/1
     end
@@ -249,6 +249,7 @@ Generally speaking, it's recommended to run compatibility and performance tests 
 * [Erik Sy*, Christian Burkert, Hannes Federrath, and Mathias Fischer - A QUIC Look at Web Tracking](https://svs.informatik.uni-hamburg.de/publications/2019/2019-02-26-Sy-PET_Symposium-A_QUIC_Look_at_Web_Tracking.pdf)
 
 <script>
+// gambiarra para escurecer retângulos coloridos no dark mode
 function afterMermaidRenderCallback()
 {
     if (!isDarkMode()) return;

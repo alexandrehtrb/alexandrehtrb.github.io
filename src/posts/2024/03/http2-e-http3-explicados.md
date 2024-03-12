@@ -162,7 +162,7 @@ sequenceDiagram
     rect rgb(197, 234, 189)
         Servidor--xCliente: res1: #9993;1/2
     end
-    Note over Cliente,Servidor: pacote TCP perdido<br>precisa ser reenviado.<br>atrasa res1 e res2
+    Note over Cliente,Servidor: pacote TCP perdido<br>precisa ser reenviado.<br>atrasa tanto res1 como res2
     rect rgb(197, 234, 189)
         Servidor-->>Cliente: res1: #9993;1/2
     end
@@ -249,6 +249,7 @@ De modo geral, recomenda-se realizar testes de compatibilidade e de performance 
 * [Erik Sy*, Christian Burkert, Hannes Federrath, and Mathias Fischer - A QUIC Look at Web Tracking](https://svs.informatik.uni-hamburg.de/publications/2019/2019-02-26-Sy-PET_Symposium-A_QUIC_Look_at_Web_Tracking.pdf)
 
 <script>
+// gambiarra para escurecer retângulos coloridos no dark mode
 function afterMermaidRenderCallback()
 {
     if (!isDarkMode()) return;
