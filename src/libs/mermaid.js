@@ -9,7 +9,6 @@ module.exports = (eleventyConfig, options) => {
               config.theme=isDarkMode()?'dark':'default';
               document.addEventListener("DOMContentLoaded", function (event) {
                 mermaid.initialize(config);
-                await mermaid.run();
                 if (afterMermaidRenderCallback != undefined)
                 {
                   afterMermaidRenderCallback();
