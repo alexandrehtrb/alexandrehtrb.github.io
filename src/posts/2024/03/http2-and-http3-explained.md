@@ -192,7 +192,7 @@ The head-of-line blocking related to TLS (SSL) happens on TCP because the crypto
 
 \* TLS 1.2 requires 2 roundtrips for cryptographic handshake and TLS 1.3 requires only 1, with the option for 0-RTT (*zero roundtrip time resumption*), where there is no need of previous handshake. **However, 0-RTT enables [replay attacks](https://blog.cloudflare.com/introducing-0-rtt) and therefore is unsafe.**
 
-\*\* QUIC's connection ID can be used for fingerprinting, affecting user privacy, according to a [research](https://svs.informatik.uni-hamburg.de/publications/2019/2019-02-26-Sy-PET_Symposium-A_QUIC_Look_at_Web_Tracking.pdf).
+\*\* QUIC's connection ID can be used for fingerprinting, posing a risk to user privacy, according to a [research](/assets/misc/2024_03_research_A_QUIC_Look_at_Web_Tracking.pdf).
 
 ## Which is the best version?
 

@@ -192,7 +192,7 @@ O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TC
 
 \* O TLS 1.2 requer 2 *roundtrips* para *handshake* criptográfico e o TLS 1.3 requer apenas 1, com a opção de 0-RTT (*zero roundtrip time resumption*), em que não há necessidade de *handshake* prévio. **Porém, o 0-RTT possibilita [ataques de replay](https://blog.cloudflare.com/introducing-0-rtt) e por isso é inseguro.**
 
-\*\* O connection ID do QUIC pode ser usado para *fingerprinting*, afetando a privacidade dos usuários, segundo [pesquisa](https://svs.informatik.uni-hamburg.de/publications/2019/2019-02-26-Sy-PET_Symposium-A_QUIC_Look_at_Web_Tracking.pdf).
+\*\* O connection ID do QUIC pode ser usado para *fingerprinting*, colocando em risco a privacidade dos usuários, segundo [pesquisa](/assets/misc/2024_03_research_A_QUIC_Look_at_Web_Tracking.pdf).
 
 ## Qual é a melhor versão?
 
