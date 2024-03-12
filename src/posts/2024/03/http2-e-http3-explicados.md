@@ -114,7 +114,6 @@ Dentre as principais mudanças, estão a multiplexação de várias mensagens de
 No HTTP/1.1, duas requisições HTTP não podem trafegar juntas em uma mesma conexão TCP - é necessário que a primeira delas termine para que a subseqüente se inicie. Isso se chama bloqueio de cabeça de fila (*head-of-line blocking*, em inglês). No diagrama abaixo, a requisição 2 não pode começar até que a resposta 1 tenha chegado, considerando que apenas uma conexão TCP é usada.
 
 ```mermaid
-%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
     Cliente->>+Servidor: req 1
     Servidor-->>-Cliente: res 1
@@ -182,18 +181,18 @@ Para resolver o bloqueio de cabeça de fila do TCP, o QUIC opta por utilizar o U
 %%{init: {'theme':'neutral'}}%%
 sequenceDiagram
     rect rgb(253, 213, 224)
-        Client->>Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
+        Cliente->>Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
     end
     rect rgb(179, 205, 230)
-        Server--xClient: res1: #9993;1/2<br>+<br>res2: #9993;1/2
+        Servidor--xCliente: res1: #9993;1/2<br>+<br>res2: #9993;1/2
     end
-    Note over Client,Server: pacote QUIC perdido<br>não bloqueia outros pacotes
+    Note over Cliente,Servidor: pacote QUIC perdido<br>não bloqueia outros pacotes
     rect rgb(179, 205, 230)
-        Server-->>Client: res1: #9993;2/2<br>+<br>res2: #9993;2/2<br>+<br>res3: #9993;1/1
+        Servidor-->>Cliente: res1: #9993;2/2<br>+<br>res2: #9993;2/2<br>+<br>res3: #9993;1/1
     end
-    Note over Client,Server: reenvio do pacote perdido.<br>res3 não foi afetado
+    Note over Cliente,Servidor: reenvio do pacote perdido.<br>res3 não foi afetado
     rect rgb(179, 205, 230)
-        Server-->>Client: res1: #9993;1/2<br>+<br>res2: #9993;1/2
+        Servidor-->>Cliente: res1: #9993;1/2<br>+<br>res2: #9993;1/2
     end
 ```
 
