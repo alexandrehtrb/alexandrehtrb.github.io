@@ -256,28 +256,26 @@ function afterMermaidRenderCallback()
     var rects = document.querySelectorAll("rect.rect");
     rects.forEach(rect => {
         var currentRectFill = rect.getAttribute("fill");
-        var nextRectFill = "";
         // light orange --> dark yellow
         if (currentRectFill == "rgb(239, 190, 125)")
         {
-            nextRectFill = "rgb(93, 60, 24)";
+            rect.setAttribute("fill", "rgb(93, 60, 24)");
         }
         // light green --> dark green
         else if (currentRectFill == "rgb(197, 234, 189)")
         {
-            nextRectFill = "rgb(6, 58, 33)";
+            rect.setAttribute("fill", "rgb(6, 58, 33)");
         }
         // light pink --> dark pink
         else if (currentRectFill == "rgb(253, 213, 224)")
         {
-            nextRectFill = "rgb(125, 78, 87)";
+            rect.setAttribute("fill", "rgb(125, 78, 87)");
         }
         // light blue --> dark blue
         else if (currentRectFill == "rgb(179, 205, 230)")
         {
-            nextRectFill = "rgb(0, 30, 69)";
+            rect.setAttribute("fill", "rgb(0, 30, 69)");
         }
-        rect.setAttribute("fill", nextRectFill);
     });
 }
 </script>
