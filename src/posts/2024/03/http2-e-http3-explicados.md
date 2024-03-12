@@ -114,6 +114,7 @@ Dentre as principais mudanças, estão a multiplexação de várias mensagens de
 No HTTP/1.1, duas requisições HTTP não podem trafegar juntas em uma mesma conexão TCP - é necessário que a primeira delas termine para que a subseqüente se inicie. Isso se chama bloqueio de cabeça de fila (*head-of-line blocking*, em inglês). No diagrama abaixo, a requisição 2 não pode começar até que a resposta 1 tenha chegado, considerando que apenas uma conexão TCP é usada.
 
 ```mermaid
+%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
     Cliente->>+Servidor: req 1
     Servidor-->>-Cliente: res 1
@@ -126,6 +127,7 @@ Com o HTTP/2, esse problema é resolvido através de *streams*: cada *stream* co
 Os *streams* são divididos em *frames*, cada um contendo: o tipo do *frame*, o *stream* ao qual pertence, e o comprimento em bytes. No diagrama abaixo, um retângulo colorido é um pacote TCP e um ✉ é um *frame* HTTP/2. O primeiro e o terceiro pacotes TCP carregam *frames* de *streams* diferentes.
 
 ```mermaid
+%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
     rect rgb(239,190,125)
         Cliente->>+Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1
@@ -155,6 +157,7 @@ O HTTP/2 consegue resolver o bloqueio de cabeça de fila relacionado ao HTTP, po
 O diagrama abaixo explica visualmente como isso ocorre no HTTP/2. O segundo pacote tinha *frames* apenas da resposta 1, porém a perda dele atrasa ambas as respostas - ou seja, não há paralelismo nesse caso.
 
 ```mermaid
+%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
     rect rgb(239,190,125)
         Cliente->>+Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1
@@ -176,6 +179,7 @@ Para resolver o bloqueio de cabeça de fila do TCP, o QUIC opta por utilizar o U
 {% asset_img '2024_03_http3_quic_packets.png' 'Pacotes QUIC HTTP3' %}
 
 ```mermaid
+%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
     rect rgb(253, 213, 224)
         Client->>Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
