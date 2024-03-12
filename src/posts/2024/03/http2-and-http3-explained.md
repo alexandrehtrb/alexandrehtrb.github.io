@@ -177,7 +177,7 @@ To solve TCP's head-of-line blocking, QUIC decided to use UDP for its transport 
 
 ```mermaid
 sequenceDiagram
-    rect rgb(253, 213, 224)
+    rect rgb(223, 204, 251)
         Client->>Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
     end
     rect rgb(179, 205, 230)
@@ -268,7 +268,7 @@ function afterMermaidRenderCallback()
             rect.setAttribute("fill", "rgb(6, 58, 33)");
         }
         // light pink --> dark pink
-        else if (currentRectFill == "rgb(253, 213, 224)")
+        else if (currentRectFill == "rgb(223, 204, 251)")
         {
             rect.setAttribute("fill", "rgb(53, 1, 44)");
         }
