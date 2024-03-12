@@ -126,9 +126,8 @@ With HTTP/2, this problem is solved with *streams*, each stream corresponds to a
 HTTP/2 streams are composed by *frames*, each one containing: the frame type, the stream that it belongs to, and the length in bytes. In the diagram below, a coloured rectangle is a TCP packet and a ✉ is a HTTP/2 frame inside it. The first and third TCP packets carry frames of different streams.
 
 ```mermaid
-%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
-    rect rgb(239,190,125)
+    rect rgb(239, 190, 125)
         Client->>+Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1
     end
     rect rgb(197, 234, 189)
@@ -156,9 +155,8 @@ HTTP/2 solves the HTTP head-of-line blocking, but, this problem also happens wit
 The diagram below explains visually how this happens in HTTP/2. The second packet only had frames of response 1, but its loss delays both of responses - that means that in this case, there is no parallelism.
 
 ```mermaid
-%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
-    rect rgb(239,190,125)
+    rect rgb(239, 190, 125)
         Client->>+Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1
     end
     rect rgb(197, 234, 189)
@@ -178,7 +176,6 @@ To solve TCP's head-of-line blocking, QUIC decided to use UDP for its transport 
 {% asset_img '2024_03_http3_quic_packets.png' 'HTTP3 QUIC packets' %}
 
 ```mermaid
-%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
     rect rgb(253, 213, 224)
         Client->>Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
@@ -250,3 +247,34 @@ Generally speaking, it's recommended to run compatibility and performance tests 
 * [Cloudflare - Introducing Zero Round Trip Time Resumption (0-RTT)](https://blog.cloudflare.com/introducing-0-rtt)
 * [HTTP/3 explained - QUIC connections](https://http3-explained.haxx.se/en/quic/quic-connections)
 * [Erik Sy*, Christian Burkert, Hannes Federrath, and Mathias Fischer - A QUIC Look at Web Tracking](https://svs.informatik.uni-hamburg.de/publications/2019/2019-02-26-Sy-PET_Symposium-A_QUIC_Look_at_Web_Tracking.pdf)
+
+<script>
+function afterMermaidRenderCallback()
+{
+    if (!isDarkMode()) return;
+
+    var rects = document.querySelectorAll("rect.rect");
+    for (var rect in rects) {
+        // light orange --> dark yellow
+        if (rect.getAttribute("fill") == "rgb(239, 190, 125)")
+        {
+            rect.setAttribute("fill", "rgb(93, 60, 24)");
+        }
+        // light green --> dark green
+        else if (rect.getAttribute("fill") == "rgb(197, 234, 189)")
+        {
+            rect.setAttribute("fill", "rgb(6, 58, 33)");
+        }
+        // light pink --> dark pink
+        else if (rect.getAttribute("fill") == "rgb(253, 213, 224)")
+        {
+            rect.setAttribute("fill", "rgb(125, 78, 87)");
+        }
+        // light blue --> dark blue
+        else if (rect.getAttribute("fill") == "rgb(179, 205, 230)")
+        {
+            rect.setAttribute("fill", "rgb(0, 30, 69)");
+        }
+    }
+}
+</script>

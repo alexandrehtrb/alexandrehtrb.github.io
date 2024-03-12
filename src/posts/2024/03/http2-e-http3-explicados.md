@@ -126,9 +126,8 @@ Com o HTTP/2, esse problema é resolvido através de *streams*: cada *stream* co
 Os *streams* são divididos em *frames*, cada um contendo: o tipo do *frame*, o *stream* ao qual pertence, e o comprimento em bytes. No diagrama abaixo, um retângulo colorido é um pacote TCP e um ✉ é um *frame* HTTP/2. O primeiro e o terceiro pacotes TCP carregam *frames* de *streams* diferentes.
 
 ```mermaid
-%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
-    rect rgb(239,190,125)
+    rect rgb(239, 190, 125)
         Cliente->>+Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1
     end
     rect rgb(197, 234, 189)
@@ -156,9 +155,8 @@ O HTTP/2 consegue resolver o bloqueio de cabeça de fila relacionado ao HTTP, po
 O diagrama abaixo explica visualmente como isso ocorre no HTTP/2. O segundo pacote tinha *frames* apenas da resposta 1, porém a perda dele atrasa ambas as respostas - ou seja, não há paralelismo nesse caso.
 
 ```mermaid
-%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
-    rect rgb(239,190,125)
+    rect rgb(239, 190, 125)
         Cliente->>+Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1
     end
     rect rgb(197, 234, 189)
@@ -178,7 +176,6 @@ Para resolver o bloqueio de cabeça de fila do TCP, o QUIC opta por utilizar o U
 {% asset_img '2024_03_http3_quic_packets.png' 'Pacotes QUIC HTTP3' %}
 
 ```mermaid
-%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
     rect rgb(253, 213, 224)
         Cliente->>Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
@@ -250,3 +247,34 @@ De modo geral, recomenda-se realizar testes de compatibilidade e de performance 
 * [Cloudflare - Introducing Zero Round Trip Time Resumption (0-RTT)](https://blog.cloudflare.com/introducing-0-rtt)
 * [HTTP/3 explained - QUIC connections](https://http3-explained.haxx.se/en/quic/quic-connections)
 * [Erik Sy*, Christian Burkert, Hannes Federrath, and Mathias Fischer - A QUIC Look at Web Tracking](https://svs.informatik.uni-hamburg.de/publications/2019/2019-02-26-Sy-PET_Symposium-A_QUIC_Look_at_Web_Tracking.pdf)
+
+<script>
+function afterMermaidRenderCallback()
+{
+    if (!isDarkMode()) return;
+
+    var rects = document.querySelectorAll("rect.rect");
+    for (var rect in rects) {
+        // light orange --> dark yellow
+        if (rect.getAttribute("fill") == "rgb(239, 190, 125)")
+        {
+            rect.setAttribute("fill", "rgb(93, 60, 24)");
+        }
+        // light green --> dark green
+        else if (rect.getAttribute("fill") == "rgb(197, 234, 189)")
+        {
+            rect.setAttribute("fill", "rgb(6, 58, 33)");
+        }
+        // light pink --> dark pink
+        else if (rect.getAttribute("fill") == "rgb(253, 213, 224)")
+        {
+            rect.setAttribute("fill", "rgb(125, 78, 87)");
+        }
+        // light blue --> dark blue
+        else if (rect.getAttribute("fill") == "rgb(179, 205, 230)")
+        {
+            rect.setAttribute("fill", "rgb(0, 30, 69)");
+        }
+    }
+}
+</script>
