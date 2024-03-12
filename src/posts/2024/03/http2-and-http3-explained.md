@@ -123,14 +123,19 @@ sequenceDiagram
 
 With HTTP/2, this problem is solved with *streams*, each stream corresponds to a message. Many streams can be interleaved in a single TCP packet. If a stream can't emit its data for some reason, other streams can take its place in the TCP packet.
 
-HTTP/2 streams are composed by *frames*, each one containing: the frame type, the stream that it belongs to, and the length in bytes. In the diagram below, one ✉ is a HTTP/2 frame and each line is one TCP packet. The third TCP packet carries frames of two different streams.
+HTTP/2 streams are composed by *frames*, each one containing: the frame type, the stream that it belongs to, and the length in bytes. In the diagram below, a coloured rectangle is a TCP packet and a ✉ is a HTTP/2 frame inside it. The first and third TCP packets carry frames of different streams.
 
 ```mermaid
 sequenceDiagram
-    Client->>+Server: req1: #9993;1/1
-    Client->>+Server: req2: #9993;1/1
-    Server-->>-Client: res1: #9993;1/2 + res2: #9993;1/1
-    Server-->>-Client: res1: #9993;2/2
+    rect rgb(239,190,125)
+        Client->>+Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1
+    end
+    rect rgb(197, 234, 189)
+        Server-->>Client: res1: #9993;1/2
+    end
+    rect rgb(197, 234, 189)
+        Server-->>-Client: res1: #9993;2/2<br>+<br>res2: #9993;1/1
+    end
 ```
 
 The image below shows how frames go inside a TCP packet. Stream 1 carries a HTTP response for a JavaScript file and stream 2 carries a HTTP response for a CSS file.
@@ -147,16 +152,23 @@ HTTP/3 was born from a new transport protocol, QUIC, created by Google in 2012. 
 
 HTTP/2 solves the HTTP head-of-line blocking, but, this problem also happens with TCP and TLS. TCP understands that the data it needs to send is a contiguous sequence of packets, and if any packet is lost, it must be resent, in order to preserve information integrity. *With TCP, subsequent packets cannot be sent until the lost packet is successfully resent to the destination.*
 
-The diagram below explains visually how this happens in HTTP/2, with each line corresponding to a TCP packet. The third packet had frames of both response 1 and response 2 and its loss delays both responses - that means that in this case, there is no parallelism.
+The diagram below explains visually how this happens in HTTP/2. The third packet only had frames of response 1, but its loss delays both of responses - that means that in this case, there is no parallelism.
 
 ```mermaid
 sequenceDiagram
-    Client->>+Server: req1: #9993;1/1
-    Client->>+Server: req2: #9993;1/1
-    Server--xClient: res1: #9993;1/2 + res2: #9993;1/1
-    Note over Client,Server: lost TCP packet delays res1 and res2
-    Server-->>-Client: res1: #9993;1/2 + res2: #9993;1/1
-    Server-->>-Client: res1: #9993;2/2
+    rect rgb(239,190,125)
+        Client->>+Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1
+    end
+    rect rgb(197, 234, 189)
+        Server--xClient: res1: #9993;1/2
+    end
+    Note over Client,Server: lost TCP packet<br>must be resent.<br>delays res1 and res2
+    rect rgb(197, 234, 189)
+        Server-->>Client: res1: #9993;1/2
+    end
+    rect rgb(197, 234, 189)
+        Server-->>-Client: res1: #9993;2/2<br>+<br>res2: #9993;1/1
+    end
 ```
 
 To solve TCP's head-of-line blocking, QUIC decided to use UDP for its transport protocol, because UDP does not care for guarantees of arrival. The data integrity responsibility, that in TCP is part of the transport layer, is moved in QUIC to the application layer, and the frames of a message can arrive out of order, without blocking unrelated streams.
@@ -165,15 +177,20 @@ To solve TCP's head-of-line blocking, QUIC decided to use UDP for its transport 
 
 ```mermaid
 sequenceDiagram
-    Client->>+Server: req1: #9993;1/1
-    Client->>+Server: req2: #9993;1/1
-    Client->>+Server: req3: #9993;1/1
-    Server--xClient: res1: #9993;1/1 + res2: #9993;1/2
-    Note over Client,Server: res2: #9993;2/2 can be sent even <br>without res2: #9993;1/2 arriving
-    Server-->>Client: res2: #9993;2/2 + res3: #9993;1/2
-    Server-->>-Client: res3: #9993;2/2
-    Note over Client,Server: resent of the lost packet.<br> res3 was unharmed
-    Server-->>-Client: res1: #9993;1/1 + res2: #9993;1/2
+    rect rgb(253, 213, 224)
+        Client->>Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
+    end
+    rect rgb(179, 205, 230)
+        Server--xClient: res1: #9993;1/2<br>+<br>res2: #9993;1/2
+    end
+    Note over Client,Server: lost QUIC packet<br>doesn't block sending<br>other packets
+    rect rgb(179, 205, 230)
+        Server-->>Client: res1: #9993;2/2<br>+<br>res2: #9993;2/2<br>+<br>res3: #9993;1/1
+    end
+    Note over Client,Server: resending lost packet.<br>res3 wasn't delayed
+    rect rgb(179, 205, 230)
+        Server-->>Client: res1: #9993;1/2<br>+<br>res2: #9993;1/2
+    end
 ```
 
 The head-of-line blocking related to TLS (SSL) happens on TCP because the cryptography is usually applied over the entire message content, meaning that all data (all packets) needs to be received for the decryption to happen. With QUIC, the cryptography is individual for each QUIC packet, that is decrypted on arrival, without having to receive all packets beforehand.

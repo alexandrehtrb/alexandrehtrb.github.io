@@ -123,14 +123,19 @@ sequenceDiagram
 
 Com o HTTP/2, esse problema é resolvido através de *streams*: cada *stream* corresponde a uma mensagem. Vários *streams* podem estar entremeados dentro de um mesmo pacote TCP. Se um *stream* não puder emitir dados por algum motivo, outros podem aproveitar e entrar em seu lugar no pacote TCP.
 
-Os *streams* são divididos em *frames*, cada um contendo: o tipo do *frame*, o *stream* ao qual pertence, e o comprimento em bytes. No diagrama abaixo, um ✉ é um *frame* HTTP/2 e cada linha é um pacote TCP. O terceiro pacote TCP carrega *frames* de dois *streams* diferentes.
+Os *streams* são divididos em *frames*, cada um contendo: o tipo do *frame*, o *stream* ao qual pertence, e o comprimento em bytes. No diagrama abaixo, um retângulo colorido é um pacote TCP e um ✉ é um *frame* HTTP/2. O primeiro e o terceiro pacotes TCP carregam *frames* de *streams* diferentes.
 
 ```mermaid
 sequenceDiagram
-    Cliente->>+Servidor: req1: #9993;1/1
-    Cliente->>+Servidor: req2: #9993;1/1
-    Servidor-->>-Cliente: res1: #9993;1/2 + res2: #9993;1/1
-    Servidor-->>-Cliente: res1: #9993;2/2
+    rect rgb(239,190,125)
+        Cliente->>+Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1
+    end
+    rect rgb(197, 234, 189)
+        Servidor-->>Cliente: res1: #9993;1/2
+    end
+    rect rgb(197, 234, 189)
+        Servidor-->>-Cliente: res1: #9993;2/2<br>+<br>res2: #9993;1/1
+    end
 ```
 
 A imagem abaixo mostra como os *frames* entram em pacotes TCP. O *stream* 1 representa uma resposta HTTP de um arquivo JavaScript e o *stream* 2 representa uma resposta HTTP de um arquivo CSS, transmitidos via HTTP/2.
@@ -147,16 +152,23 @@ O HTTP/3 surgiu diante de um novo protocolo de transporte proposto pelo Google, 
 
 O HTTP/2 consegue resolver o bloqueio de cabeça de fila relacionado ao HTTP, porém, esse tipo de bloqueio também existe no protocolo TCP e no TLS. O TCP entende que os dados que deve enviar fazem parte de uma seqüência de pacotes contígüos, e se um desses pacotes for perdido, ele deve ser reenviado para o destinatário, a fim de que se preserve a integridade da informação. *No TCP, pacotes subseqüentes não podem ser enviados enquanto o pacote perdido não chegar com sucesso no destino.*
 
-O diagrama abaixo explica visualmente como isso ocorre no HTTP/2, com cada linha correspondendo a um pacote TCP enviado. O terceiro pacote tinha *frames* tanto da resposta 1 como resposta 2 e a perda desse pacote atrasa ambas - ou seja, não há paralelismo nesse caso.
+O diagrama abaixo explica visualmente como isso ocorre no HTTP/2. O terceiro pacote tinha *frames* apenas da resposta 1, porém a perda dele atrasa ambas as respostas - ou seja, não há paralelismo nesse caso.
 
 ```mermaid
 sequenceDiagram
-    Cliente->>+Servidor: req1: #9993;1/1
-    Cliente->>+Servidor: req2: #9993;1/1
-    Servidor--xCliente: res1: #9993;1/2 + res2: #9993;1/1
-    Note over Cliente,Servidor: pacote TCP perdido atrasa res1 e res2
-    Servidor-->>-Cliente: res1: #9993;1/2 + res2: #9993;1/1
-    Servidor-->>-Cliente: res1: #9993;2/2
+    rect rgb(239,190,125)
+        Cliente->>+Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1
+    end
+    rect rgb(197, 234, 189)
+        Servidor--xCliente: res1: #9993;1/2
+    end
+    Note over Cliente,Servidor: pacote TCP perdido<br>precisa ser reenviado.<br>atrasa res1 e res2
+    rect rgb(197, 234, 189)
+        Servidor-->>Cliente: res1: #9993;1/2
+    end
+    rect rgb(197, 234, 189)
+        Servidor-->>-Cliente: res1: #9993;2/2<br>+<br>res2: #9993;1/1
+    end
 ```
 
 Para resolver o bloqueio de cabeça de fila do TCP, o QUIC opta por utilizar o UDP como protocolo de transporte, pois este é um protocolo sem garantias de recebimento. A responsabilidade de garantia de integridade, que no TCP fica na camada de transporte, passa no QUIC para a camada de aplicação, de modo que os *frames* de uma mensagem podem chegar fora de ordem, sem bloquear *streams* não-relacionados.
@@ -165,15 +177,20 @@ Para resolver o bloqueio de cabeça de fila do TCP, o QUIC opta por utilizar o U
 
 ```mermaid
 sequenceDiagram
-    Cliente->>+Servidor: req1: #9993;1/1
-    Cliente->>+Servidor: req2: #9993;1/1
-    Cliente->>+Servidor: req3: #9993;1/1
-    Servidor--xCliente: res1: #9993;1/1 + res2: #9993;1/2
-    Note over Cliente,Servidor: res2: #9993;2/2 pode ser enviado mesmo <br> sem res2: #9993;1/2 ter chegado
-    Servidor-->>Cliente: res2: #9993;2/2 + res3: #9993;1/2
-    Servidor-->>-Cliente: res3: #9993;2/2
-    Note over Cliente,Servidor: reenvio do pacote perdido. <br> res3 não foi afetado
-    Servidor-->>-Cliente: res1: #9993;1/1 + res2: #9993;1/2
+    rect rgb(253, 213, 224)
+        Client->>Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
+    end
+    rect rgb(179, 205, 230)
+        Server--xClient: res1: #9993;1/2<br>+<br>res2: #9993;1/2
+    end
+    Note over Client,Server: lost QUIC packet<br>doesn't block other packets
+    rect rgb(179, 205, 230)
+        Server-->>Client: res1: #9993;2/2<br>+<br>res2: #9993;2/2<br>+<br>res3: #9993;1/1
+    end
+    Note over Client,Server: resending lost packet.<br>res3 unaffected
+    rect rgb(179, 205, 230)
+        Server-->>Client: res1: #9993;1/2<br>+<br>res2: #9993;1/2
+    end
 ```
 
 O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TCP porque a criptografia é geralmente aplicada sobre a mensagem inteira, de modo que todos os seus pacotes precisam chegar ao destino para então ocorrer a decriptação. No caso do QUIC, a criptografia é individual para cada pacote QUIC, que é decriptado na chegada, sem haver a necessidade de receber todos os pacotes primeiro.
