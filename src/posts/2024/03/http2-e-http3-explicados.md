@@ -183,11 +183,11 @@ sequenceDiagram
     rect rgb(179, 205, 230)
         Server--xClient: res1: #9993;1/2<br>+<br>res2: #9993;1/2
     end
-    Note over Client,Server: lost QUIC packet<br>doesn't block other packets
+    Note over Client,Server: pacote QUIC perdido<br>não bloqueia outros pacotes
     rect rgb(179, 205, 230)
         Server-->>Client: res1: #9993;2/2<br>+<br>res2: #9993;2/2<br>+<br>res3: #9993;1/1
     end
-    Note over Client,Server: resending lost packet.<br>res3 unaffected
+    Note over Client,Server: reenvio do pacote perdido.<br>res3 não foi afetado
     rect rgb(179, 205, 230)
         Server-->>Client: res1: #9993;1/2<br>+<br>res2: #9993;1/2
     end
