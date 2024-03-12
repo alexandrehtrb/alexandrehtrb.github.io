@@ -246,3 +246,4 @@ Generally speaking, it's recommended to run compatibility and performance tests 
 * [Wikipedia - QUIC](https://en.wikipedia.org/wiki/QUIC)
 * [Cloudflare - Introducing Zero Round Trip Time Resumption (0-RTT)](https://blog.cloudflare.com/introducing-0-rtt)
 * [HTTP/3 explained - QUIC connections](https://http3-explained.haxx.se/en/quic/quic-connections)
+* [Erik Sy*, Christian Burkert, Hannes Federrath, and Mathias Fischer - A QUIC Look at Web Tracking](https://svs.informatik.uni-hamburg.de/publications/2019/2019-02-26-Sy-PET_Symposium-A_QUIC_Look_at_Web_Tracking.pdf)
