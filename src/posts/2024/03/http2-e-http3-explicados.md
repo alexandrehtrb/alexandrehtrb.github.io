@@ -195,6 +195,22 @@ sequenceDiagram
 
 O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TCP porque a criptografia é geralmente aplicada sobre a mensagem inteira, de modo que todos os seus pacotes precisam chegar ao destino para então ocorrer a decriptação. No caso do QUIC, a criptografia é individual para cada pacote QUIC, que é decriptado na chegada, sem haver a necessidade de receber todos os pacotes primeiro.
 
+TLS com TCP:
+
+1) Dados de entrada: `A+B+C`
+2) Dados encriptados: `crypt(A+B+C) = D+E+F` 
+3) Pacotes: `D, E, F`
+4) Recebimento: `decrypt(D+E+F)`
+5) `A+B+C`
+
+TLS com QUIC:
+
+1) Dados de entrada: `A+B+C`
+2) Dados encriptados: `crypt(A) = X, crypt(B) = Y, crypt(C) = Z`
+3) Pacotes: `X, Y, Z`
+4) Recebimento: `decrypt(X) + decrypt(Y) + decrypt(Z)`
+5) `A+B+C`
+
 ## Tabela de comparação
 
 |   | HTTP/1.1 | HTTP/2 | HTTP/3 |

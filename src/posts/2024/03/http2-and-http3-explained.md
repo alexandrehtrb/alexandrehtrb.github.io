@@ -195,6 +195,22 @@ sequenceDiagram
 
 The head-of-line blocking related to TLS (SSL) happens on TCP because the cryptography is usually applied over the entire message content, meaning that all data (all packets) needs to be received for the decryption to happen. With QUIC, the cryptography is individual for each QUIC packet, that is decrypted on arrival, without having to receive all packets beforehand.
 
+TLS with TCP:
+
+1) Input data: `A+B+C`
+2) Encrypted data: `crypt(A+B+C) = D+E+F` 
+3) Packets: `D, E, F`
+4) Received: `decrypt(D+E+F)`
+5) `A+B+C`
+
+TLS with QUIC:
+
+1) Input data: `A+B+C`
+2) Encrypted data: `crypt(A) = X, crypt(B) = Y, crypt(C) = Z`
+3) Packets: `X, Y, Z`
+4) Received: `decrypt(X) + decrypt(Y) + decrypt(Z)`
+5) `A+B+C`
+
 ## Comparison table
 
 |   | HTTP/1.1 | HTTP/2 | HTTP/3 |
