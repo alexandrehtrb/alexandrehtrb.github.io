@@ -144,7 +144,7 @@ A imagem abaixo mostra como os *frames* entram em pacotes TCP. O *stream* 1 repr
 
 ## HTTP/3
 
-O HTTP/3 surgiu diante de um novo protocolo de transporte proposto pelo Google, o QUIC, em 2012. O QUIC é uma versão adaptada do UDP e comparado ao TCP, propõe:
+O HTTP/3 surgiu diante de um novo protocolo de transporte proposto pelo Google, o QUIC, em 2012. O QUIC é encapsulado dentro do UDP, e comparado ao TCP, propõe:
 
 * menos *roundtrips* (idas-e-voltas) de pacotes para estabelecimento de conexão e estabelecimento de criptografia TLS;
 * ter conexões mais resilientes quanto a perda de pacotes;

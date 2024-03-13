@@ -144,7 +144,7 @@ The image below shows how frames go inside a TCP packet. Stream 1 carries a HTTP
 
 ## HTTP/3
 
-HTTP/3 was born from a new transport protocol, QUIC, created by Google in 2012. QUIC is a modified version of UDP and compared to TCP, it proposes:
+HTTP/3 was born from a new transport protocol, QUIC, created by Google in 2012. QUIC is encapsulated inside UDP, and compared to TCP, it proposes:
 
 * fewer packet roundtrips to establish connection and TLS authentication;
 * more resilient connections regarding packet losses;
@@ -220,7 +220,7 @@ TLS with QUIC:
 | **Message format** | ASCII text | binary | binary |
 | **Header compression** | - | HPACK | QPACK |
 | **Number of roundtrips**<br>**before start**<br>**(handshakes)** | **3**<br>1 from TCP<br>+2 from TLS 1.2\* | **2**<br>1 from TCP<br>+1 from TLS 1.3\* | **0**<br>0 from UDP<br>+0 from TLS 1.3 with 0-RTT\* |
-| **Connection identification** | source IP and port | source IP and port | connection ID\*\*,<br>resistent to IP changes |
+| **Connection identification** | source IP and port | source IP and port | connection ID\*\*,<br>resistant to IP changes |
 | **Cryptography** | optional;<br>applied over the entire message | optional;<br>applied over the entire message | embedded TLS 1.3;<br>applied over each QUIC packet |
 
 \* TLS 1.2 requires 2 roundtrips for cryptographic handshake and TLS 1.3 requires only 1, with the option for 0-RTT (*zero roundtrip time resumption*), where there is no need of previous handshake. **However, 0-RTT enables [replay attacks](https://blog.cloudflare.com/introducing-0-rtt) and therefore is unsafe.**
