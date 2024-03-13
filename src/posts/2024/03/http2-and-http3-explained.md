@@ -152,7 +152,7 @@ HTTP/3 was born from a new transport protocol, QUIC, created by Google in 2012. 
 
 HTTP/2 solves the HTTP head-of-line blocking, but, this problem also happens with TCP and TLS. TCP understands that the data it needs to send is a contiguous sequence of packets, and if any packet is lost, it must be resent, in order to preserve information integrity. *With TCP, subsequent packets cannot be sent until the lost packet is successfully resent to the destination.*
 
-The diagram below explains visually how this happens in HTTP/2. The second packet only had frames of response 1, but its loss delays both of responses - that means that in this case, there is no parallelism.
+The diagram below explains visually how this happens in HTTP/2. The second packet only had frames of response 1, but its loss delays both response 1 and response 2 - that means that in this case, there is no parallelism.
 
 ```mermaid
 sequenceDiagram
@@ -171,7 +171,7 @@ sequenceDiagram
     end
 ```
 
-To solve TCP's head-of-line blocking, QUIC decided to use UDP for its transport protocol, because UDP does not care for guarantees of arrival. The data integrity responsibility, that in TCP is part of the transport layer, is moved in QUIC to the application layer, and the frames of a message can arrive out of order, without blocking unrelated streams.
+To solve TCP's head-of-line blocking, QUIC decided to use UDP for its transport protocol, because UDP does not care for guarantees of arrival. The responsibility of data integrity, that in TCP is part of the transport layer, is moved in QUIC to the application layer, and the frames of a message can arrive out of order, without blocking unrelated streams.
 
 {% asset_img '2024_03_http3_quic_packets.png' 'HTTP3 QUIC packets' %}
 

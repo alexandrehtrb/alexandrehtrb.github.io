@@ -152,7 +152,7 @@ O HTTP/3 surgiu diante de um novo protocolo de transporte proposto pelo Google, 
 
 O HTTP/2 consegue resolver o bloqueio de cabeça de fila relacionado ao HTTP, porém, esse tipo de bloqueio também existe no protocolo TCP e no TLS. O TCP entende que os dados que deve enviar fazem parte de uma seqüência de pacotes contígüos, e se um desses pacotes for perdido, ele deve ser reenviado para o destinatário, a fim de que se preserve a integridade da informação. *No TCP, pacotes subseqüentes não podem ser enviados enquanto o pacote perdido não chegar com sucesso no destino.*
 
-O diagrama abaixo explica visualmente como isso ocorre no HTTP/2. O segundo pacote tinha *frames* apenas da resposta 1, porém a perda dele atrasa ambas as respostas - ou seja, não há paralelismo nesse caso.
+O diagrama abaixo explica visualmente como isso ocorre no HTTP/2. O segundo pacote tinha *frames* apenas da resposta 1, porém a perda dele atrasa tanto a resposta 1 como a resposta 2 - ou seja, não há paralelismo nesse caso.
 
 ```mermaid
 sequenceDiagram
