@@ -173,11 +173,9 @@ sequenceDiagram
 
 Para resolver o bloqueio de cabeça de fila do TCP, o QUIC opta por utilizar o UDP como protocolo de transporte, pois este é um protocolo sem garantias de recebimento. A responsabilidade de garantia de integridade, que no TCP fica na camada de transporte, passa no QUIC para a camada de aplicação, de modo que os *frames* de uma mensagem podem chegar fora de ordem, sem bloquear *streams* não-relacionados.
 
-{% asset_img '2024_03_http3_quic_packets.png' 'Pacotes QUIC HTTP3' %}
-
 ```mermaid
 sequenceDiagram
-    rect rgb(223, 204, 251)
+    rect rgb(255, 179, 217)
         Cliente->>Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
     end
     rect rgb(179, 205, 230)
@@ -192,6 +190,8 @@ sequenceDiagram
         Servidor-->>Cliente: res1: #9993;1/2<br>+<br>res2: #9993;1/2
     end
 ```
+
+{% asset_img '2024_03_http3_quic_packets.png' 'Pacotes QUIC HTTP3' %}
 
 O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TCP porque a criptografia é geralmente aplicada sobre a mensagem inteira, de modo que todos os seus pacotes precisam chegar ao destino para então ocorrer a decriptação. No caso do QUIC, a criptografia é individual para cada pacote QUIC, que é decriptado na chegada, sem haver a necessidade de receber todos os pacotes primeiro.
 
@@ -223,7 +223,7 @@ TLS com QUIC:
 | **Identificação de conexão** | IP e porta de origem | IP e porta de origem | connection ID\*\*,<br>resistente a mudanças de IP |
 | **Criptografia** | não obrigatória;<br>aplicada na mensagem inteira | não obrigatória;<br>aplicada na mensagem inteira | TLS 1.3 embutido;<br>aplicada por pacote QUIC |
 
-\* O TLS 1.2 requer 2 *roundtrips* para *handshake* criptográfico e o TLS 1.3 requer apenas 1, com a opção de 0-RTT (*zero roundtrip time resumption*), em que não há necessidade de *handshake* prévio. **Porém, o 0-RTT possibilita [ataques de replay](https://blog.cloudflare.com/introducing-0-rtt) e por isso é inseguro.**
+\* O TLS 1.2 requer 2 *roundtrips* para *handshake* criptográfico e o TLS 1.3 requer apenas 1, com a opção de 0-RTT (*zero roundtrip time resumption*), em que não há necessidade de *handshake* prévio. **Porém, o 0-RTT possibilita [ataques de replay](https://blog.cloudflare.com/introducing-0-rtt) e por isso é inseguro. Ele é opcional e pode ser deixado desabilitado.**
 
 \*\* O connection ID do QUIC pode ser usado para *fingerprinting*, colocando em risco a privacidade dos usuários, segundo [pesquisa](/assets/misc/2024_03_research_A_QUIC_Look_at_Web_Tracking.pdf).
 
@@ -268,7 +268,7 @@ function afterMermaidRenderCallback()
             rect.setAttribute("fill", "rgb(6, 58, 33)");
         }
         // light pink --> dark pink
-        else if (currentRectFill == "rgb(223, 204, 251)")
+        else if (currentRectFill == "rgb(255, 179, 217)")
         {
             rect.setAttribute("fill", "rgb(53, 1, 44)");
         }

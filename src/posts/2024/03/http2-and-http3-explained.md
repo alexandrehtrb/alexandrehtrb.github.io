@@ -150,7 +150,7 @@ HTTP/3 was born from a new transport protocol, QUIC, created by Google in 2012. 
 * more resilient connections regarding packet losses;
 * to solve the head-of-line blocking that exists in TCP and TLS.
 
-HTTP/2 solves the HTTP head-of-line blocking, but, this problem also happens with TCP and TLS. TCP understands that the data it needs to send is a contiguous sequence of packets, and if any packet is lost, it must be resent, in order to preserve information integrity. *With TCP, subsequent packets cannot be sent until the lost packet is successfully resent to the destination.*
+HTTP/2 solves the HTTP head-of-line blocking, but, this problem also happens with TCP and TLS. TCP understands that the data it needs to send is a contiguous sequence of packets, and if any packet is lost, it must be resent, in order to preserve information integrity. *With TCP, subsequent packets cannot be sent until the lost packet successfully arrives to the destination.*
 
 The diagram below explains visually how this happens in HTTP/2. The second packet only had frames of response 1, but its loss delays both response 1 and response 2 - that means that in this case, there is no parallelism.
 
@@ -173,11 +173,9 @@ sequenceDiagram
 
 To solve TCP's head-of-line blocking, QUIC decided to use UDP for its transport protocol, because UDP does not care for guarantees of arrival. The responsibility of data integrity, that in TCP is part of the transport layer, is moved in QUIC to the application layer, and the frames of a message can arrive out of order, without blocking unrelated streams.
 
-{% asset_img '2024_03_http3_quic_packets.png' 'HTTP3 QUIC packets' %}
-
 ```mermaid
 sequenceDiagram
-    rect rgb(223, 204, 251)
+    rect rgb(255, 179, 217)
         Client->>Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
     end
     rect rgb(179, 205, 230)
@@ -192,6 +190,8 @@ sequenceDiagram
         Server-->>Client: res1: #9993;1/2<br>+<br>res2: #9993;1/2
     end
 ```
+
+{% asset_img '2024_03_http3_quic_packets.png' 'HTTP3 QUIC packets' %}
 
 The head-of-line blocking related to TLS (SSL) happens on TCP because the cryptography is usually applied over the entire message content, meaning that all data (all packets) needs to be received for the decryption to happen. With QUIC, the cryptography is individual for each QUIC packet, that is decrypted on arrival, without having to receive all packets beforehand.
 
@@ -223,7 +223,7 @@ TLS with QUIC:
 | **Connection identification** | source IP and port | source IP and port | connection ID\*\*,<br>resistant to IP changes |
 | **Cryptography** | optional;<br>applied over the entire message | optional;<br>applied over the entire message | embedded TLS 1.3;<br>applied over each QUIC packet |
 
-\* TLS 1.2 requires 2 roundtrips for cryptographic handshake and TLS 1.3 requires only 1, with the option for 0-RTT (*zero roundtrip time resumption*), where there is no need of previous handshake. **However, 0-RTT enables [replay attacks](https://blog.cloudflare.com/introducing-0-rtt) and therefore is unsafe.**
+\* TLS 1.2 requires 2 roundtrips for cryptographic handshake and TLS 1.3 requires only 1, with the option for 0-RTT (*zero roundtrip time resumption*), where there is no need of previous handshake. **However, 0-RTT enables [replay attacks](https://blog.cloudflare.com/introducing-0-rtt) and therefore is unsafe. This is an optional feature, that can be disabled.**
 
 \*\* QUIC's connection ID can be used for fingerprinting, posing a risk to user privacy, according to a [research](/assets/misc/2024_03_research_A_QUIC_Look_at_Web_Tracking.pdf).
 
@@ -268,7 +268,7 @@ function afterMermaidRenderCallback()
             rect.setAttribute("fill", "rgb(6, 58, 33)");
         }
         // light pink --> dark pink
-        else if (currentRectFill == "rgb(223, 204, 251)")
+        else if (currentRectFill == "rgb(255, 179, 217)")
         {
             rect.setAttribute("fill", "rgb(53, 1, 44)");
         }
