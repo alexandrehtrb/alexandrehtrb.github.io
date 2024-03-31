@@ -235,7 +235,7 @@ O HTTP/3 foi desenhado para conexões instáveis, como redes de telefonia celula
 
 Em conexões confiáveis e plenas, o HTTP/2 muitas vezes oferece performance melhor do que o HTTP/3.
 
-Para evitar o bloqueio de cabeça de fila no HTTP/1.x, muitos navegadores e HTTP clients abrem várias conexões TCP, para que as requisições corram em paralelo. Se há muitas requisições em paralelo, essa técnica *pode* fazer com que o HTTP/1.x ofereça maior taxa de transferência (*throughput*), porém, é uma forma menos eficiente de se resolver o problema. Uma solução alternativa é ter mais de uma conexão HTTP/2-3 ao mesmo tempo ([exemplo em C#](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.socketshttphandler.enablemultiplehttp2connections?view=net-8.0#system-net-http-socketshttphandler-enablemultiplehttp2connections)).
+Para evitar o bloqueio de cabeça de fila no HTTP/1.x, muitos navegadores e HTTP clients abrem várias conexões TCP, para que as requisições corram em paralelo. Essa técnica *pode* fazer com que o HTTP/1.x ofereça maior taxa de transferência (*throughput*), porém, é uma forma menos eficiente de se resolver o problema. Uma solução alternativa é ter mais de uma conexão HTTP/2-3 ao mesmo tempo ([exemplo em C#](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.socketshttphandler.enablemultiplehttp2connections?view=net-8.0#system-net-http-socketshttphandler-enablemultiplehttp2connections)).
 
 De modo geral, recomenda-se realizar testes de compatibilidade e de performance para decidir qual é a versão mais indicada, além disso, um servidor pode aceitar conexões tanto de HTTP/2 como de HTTP/3, cabendo ao cliente decidir qual versão usar.
 
