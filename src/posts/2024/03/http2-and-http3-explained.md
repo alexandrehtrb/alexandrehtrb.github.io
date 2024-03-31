@@ -235,7 +235,7 @@ HTTP/3 was designed for unstable connections, such as cellphone and satellite ne
 
 On reliable and stable connections, HTTP/2 many times offers better performance than HTTP/3.
 
-In cases where only HTTP/1.x is allowed, web browsers and many HTTP clients avoid the HOL blocking by opening multiple TCP connections, so the requests go in parallel. If there is a great number of parallel requests, this technique *may* make HTTP/1.x offer a better throughput, however, it is a less efficient way to solve the problem. An alternative solution is having more than one HTTP/2-3 connection at the same time ([C# example](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.socketshttphandler.enablemultiplehttp2connections?view=net-8.0#system-net-http-socketshttphandler-enablemultiplehttp2connections)).
+To avoid HOL blocking with HTTP/1.x, many web browsers and HTTP clients open multiple TCP connections, so the requests go in parallel. If there are many parallel requests, this technique *may* make HTTP/1.x offer a better throughput, however, it is a less efficient way to solve the problem. An alternative solution is having more than one HTTP/2-3 connection at the same time ([C# example](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.socketshttphandler.enablemultiplehttp2connections?view=net-8.0#system-net-http-socketshttphandler-enablemultiplehttp2connections)).
 
 Generally speaking, it's recommended to run compatibility and performance tests to determine which version is the most appropriate, and furthermore, a server can accept both HTTP/2 and HTTP/3 connections, leaving to the client the decision of which version to use.
 
