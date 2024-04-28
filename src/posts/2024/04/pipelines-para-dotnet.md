@@ -1,5 +1,5 @@
 ---
-title: Monte sua própria pipeline para .NET
+title: Pipelines para .NET
 date: 2024-04-29
 published: true
 enableMermaid: true
@@ -40,7 +40,7 @@ flowchart TD
 
 ### clone
 
-Obtém o código da branch em questão, no Git. Se for um processo de CI, pega o código da branch que pretende ser mergeada; se for CD, pega o código da branch de publicação, como `develop`, `master` ou `release_candidate`.
+Obtém o código da branch em questão, no Git. Se for um processo de CI, pega o código da branch que pretende ser mergeada; se for CD, pega o código da branch de publicação, como *develop*, *master* ou *release_candidate*.
 
 Linha de comando: `git clone`
 
@@ -60,7 +60,7 @@ Linha de comando: `dotnet restore`
 
 Verifica se há algum pacote NuGet do projeto com problemas de segurança, conferindo nas listas de vulnerabilidades [CVE](https://cve.mitre.org/) (*Common Vulnerabilities and Exposures*) e [GHSA](https://github.com/advisories) (*GitHub Advisory Database*).
 
-Linha de comando: `dotnet list package --vulnerable`
+Linha de comando: `dotnet list package --vulnerable --include-transitive`
 
 ### build
 
@@ -129,10 +129,11 @@ on:
       version:
         required: true
         type: string
-      runtime_identifier:
+      rid:
         required: true
         default: linux-x64 # onde o programa vai rodar
         type: string
+        # https://learn.microsoft.com/en-us/dotnet/core/rid-catalog
 
 jobs:
   gerar_programa:
@@ -140,9 +141,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      OUTPUT_FOLDER: ${{ format('./out/{0}/', inputs.runtime_identifier) }}
-      VERSION_NAME: ${{ inputs.version }}
-      RID: ${{ inputs.runtime_identifier }}
+      OUTPUT_FOLDER: ${{ '{{' }} format('./out/{0}/', inputs.rid) {{ '}}' }}
+      VERSION_NAME: ${{ '{{' }} inputs.version {{ '}}' }}
+      RID: ${{ '{{' }} inputs.rid {{ '}}' }}
 
     steps:
     - name: Checkout
@@ -195,7 +196,6 @@ jobs:
     - name: Publicar programa
       shell: pwsh
       run: |
-        [void](New-Item $env:OUTPUT_FOLDER -ItemType Directory -ErrorAction Ignore);
         dotnet publish ./src/MeuProjeto.Console/MeuProjeto.Console.csproj `
         --verbosity quiet `
         --nologo `
@@ -207,7 +207,7 @@ jobs:
         --output ${env:OUTPUT_FOLDER};
 
     - name: Setar atributos de execução (UNIX apenas)
-      if: ${{ startsWith(inputs.runtime_identifier, 'linux') || startsWith(inputs.runtime_identifier, 'osx') }}
+      if: ${{ '{{' }} startsWith(inputs.rid, 'linux') {{ '||' }} startsWith(inputs.rid, 'osx') {{ '}}' }}
       shell: pwsh
       run: chmod +x "${env:OUTPUT_FOLDER}/MeuProjeto.Console"
 
@@ -231,8 +231,8 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         compression-level: 0 # não precisa comprimir pq passo anterior já comprime
-        name: ${{ env.OUTPUT_FILE_NAME }}
-        path: ${{ format('./out/{0}', env.OUTPUT_FILE_NAME) }}
+        name: ${{ '{{' }} env.OUTPUT_FILE_NAME {{ '}}' }}
+        path: ${{ '{{' }} format('./out/{0}', env.OUTPUT_FILE_NAME) {{ '}}' }}
     
     - name: Subir relatório de cobertura para resultados do workflow
       uses: actions/upload-artifact@v4
@@ -264,7 +264,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      VERSION_NAME: ${{ inputs.version }}
+      VERSION_NAME: ${{ '{{' }} inputs.version {{ '}}' }}
 
     steps:
     - name: Checkout
@@ -326,14 +326,14 @@ jobs:
         # portal web para testes do NuGet: https://int.nugettest.org
         # source para testes: https://apiint.nugettest.org/v3/index.json
       env:
-        NUGET_API_KEY: ${{ secrets.MINHA_NUGET_API_KEY }}
+        NUGET_API_KEY: ${{ '{{' }} secrets.MINHA_NUGET_API_KEY {{ '}}' }}
 
     - name: Subir pacote NuGet para resultados do workflow
       uses: actions/upload-artifact@v4
       with:
         compression-level: 0 # não precisa comprimir pq .nupkg já é um zip
-        name: ${{ format('MeuProjeto.Biblioteca.{0}.nupkg', env.VERSION_NAME) }}
-        path: ${{ format('./src/MeuProjeto.Biblioteca/bin/Release/MeuProjeto.Biblioteca.{0}.nupkg', env.VERSION_NAME) }}
+        name: ${{ '{{' }} format('MeuProjeto.Biblioteca.{0}.nupkg', env.VERSION_NAME) {{ '}}' }}
+        path: ${{ '{{' }} format('./src/MeuProjeto.Biblioteca/bin/Release/MeuProjeto.Biblioteca.{0}.nupkg', env.VERSION_NAME) {{ '}}' }}
 
     - name: Subir SBOM para resultados do workflow
       uses: actions/upload-artifact@v4
