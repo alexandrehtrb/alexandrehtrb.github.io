@@ -115,7 +115,7 @@ Command line: `dotnet nuget push`
 
 There are many pipeline engines available, such as GitHub Actions, GitLab CI, Jenkins, Azure Pipelines, CircleCI and many others.
 
-You can also have your pipeline as a script, to run locally in your machine. This is a good practice for being a safeguard when your remote pipeline is unavailable or offline, and you can test modifications before commiting them into the remote pipeline.
+You can also have your pipeline as a script, to run locally in your machine. This is a good practice for being a safeguard when your remote pipeline is unavailable or offline, and you can test modifications before commiting them.
 
 I personally recommend using [PowerShell](https://github.com/PowerShell/PowerShell) scripts for local pipelines, because it's a multiplatform and friendly language, with easy interaction with XML and JSON. Nevertheless, you can use other scripting languages, like Batch, Shell, Python and others you like.
 
