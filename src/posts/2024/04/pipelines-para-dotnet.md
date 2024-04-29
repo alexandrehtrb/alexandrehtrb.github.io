@@ -41,7 +41,7 @@ flowchart TD
 
 ### checkout
 
-Obtém o código da branch em questão, no Git. Se for um processo de CI (integração), pega o código da branch que pretende ser mergeada; se for CD (*deploy*), pega o código da branch de publicação, como *develop*, *master* ou *release_candidate*.
+Obtém o código da branch em questão, no Git. Se for um processo de integração (CI), pega o código da branch que pretende ser mergeada; se for um *deploy* (CD), pega o código da branch de publicação, como *develop*, *master* ou *release_candidate*.
 
 Linha de comando: `git clone`
 

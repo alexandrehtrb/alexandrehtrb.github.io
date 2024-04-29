@@ -41,7 +41,7 @@ flowchart TD
 
 ### checkout
 
-Fetches the code from the Git branch. If it's a (integration) CI process, the branch is the one that intends to be merged; if it's a CD (deployment), the code is from the release branch, such as *develop*, *master* or *release_candidate*.
+Fetches the code from the Git branch. If it's an integration (CI) process, the branch is the one that intends to be merged; if it's a deployment (CD), the code is from the release branch, such as *develop*, *master* or *release_candidate*.
 
 Command line: `git clone`
 
