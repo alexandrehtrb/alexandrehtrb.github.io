@@ -20,7 +20,7 @@ Having a pipeline means having a consistent process that mitigates the risk of h
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_04_conveyor_belt.avif" alt="Conveyor belt" />
-  <img src="/assets/img/posts/2024_04_conveyor_belt.gif" alt="Conveyor belt" />
+  <img src="/assets/img/posts/2024_04_conveyor_belt.jpg" alt="Conveyor belt" />
 </picture>
 
 ## Steps

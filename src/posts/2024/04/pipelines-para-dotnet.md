@@ -20,7 +20,7 @@ Ter uma *pipeline* significa ter um processo consistente que minimiza o risco de
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_04_conveyor_belt.avif" alt="Esteira de produção" />
-  <img src="/assets/img/posts/2024_04_conveyor_belt.gif" alt="Esteira de produção" />
+  <img src="/assets/img/posts/2024_04_conveyor_belt.jpg" alt="Esteira de produção" />
 </picture>
 
 ## Etapas
