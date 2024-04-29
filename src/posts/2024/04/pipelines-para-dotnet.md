@@ -4,18 +4,19 @@ date: 2024-04-29
 published: true
 enableMermaid: true
 tags:
+- em português
 - pipeline
 - dotnet
 ---
-Saiba como montar sua própria esteira automatizada para seu programa ou biblioteca em .NET, com exemplos em GitHub Actions.<!-- excerpt -->
+Saiba como montar uma esteira automatizada para seu programa ou biblioteca em .NET, com exemplos em GitHub Actions.<!-- excerpt -->
 
-[Read in english](../make-your-own-pipeline-for-dotnet)
+[Read in english](../pipelines-for-dotnet)
 
 ## *Pipelines*
 
 As esteiras automatizadas, também conhecidas como *pipelines*, são seqüências de comandos executados para garantir a integridade do seu código e para gerar um artefato final, como um programa executável ou uma biblioteca.
 
-Ter uma *pipeline* significa ter um processo consistente de compilação que minimiza o risco de erros humanos no produto final, e também economiza tempo do programador, pois ele pode se ocupar de outras tarefas enquanto o código é compilado, verificado e empacotado.
+Ter uma *pipeline* significa ter um processo consistente que minimiza o risco de erros humanos no produto final, e também economiza tempo do programador, pois ele pode se ocupar de outras tarefas enquanto o código é compilado, verificado e empacotado.
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_04_conveyor_belt.avif" alt="Esteira de produção" />
@@ -64,11 +65,11 @@ Linha de comando: `dotnet list package --vulnerable --include-transitive`
 
 ### build
 
-Compila o código da solução ou de um projeto específico.
+Compila o código da solução.
 
 Linha de comando: `dotnet build`
 
-### testes unitários + relatório
+### unit tests
 
 Roda os testes unitários da solução para assegurar que estão passando.
 
@@ -83,9 +84,9 @@ Linha de comando:
 
 O SBOM, em inglês, *software bill of materials*, é um documento que informa quais componentes foram utilizados para a produção de um programa ou biblioteca.
 
-Esse documento é de suma importância para *softwares* críticos, pois através dele, as organizações podem facilmente saber quais de suas aplicações estão em perigo quando uma vulnerabilidade em uma de suas bibliotecas é reportada. Após o [ciberataque ao governo dos EUA em 2020](https://www.eetimes.com/solarwinds-fallout-are-sboms-the-answer/), a produção de SBOMs tornou-se uma boa prática.
+Esse documento é de suma importância para *softwares* críticos, pois através dele, as organizações podem facilmente saber quais de suas aplicações estão em perigo quando uma vulnerabilidade em uma biblioteca é reportada. Após o [ciberataque ao governo dos EUA em 2020](https://www.eetimes.com/solarwinds-fallout-are-sboms-the-answer/), a produção de SBOMs tornou-se uma prática fundamental.
 
-Recomendo o formato CycloneDX, por ser mais sucinto e de leitura mais fácil.
+Recomendo o formato [CycloneDX](https://github.com/CycloneDX/cyclonedx-dotnet), por ser mais sucinto e de leitura mais fácil.
 
 Linha de comando:
 
@@ -110,13 +111,13 @@ Sobe o pacote para um servidor NuGet, privado ou público, para que possa ser ut
 
 Linha de comando: `dotnet nuget push`
 
-## Motor de *pipeline*
+## Motores de *pipeline*
 
 Existem vários motores de *pipeline* disponíveis, como o GitHub Actions, GitLab CI, Jenkins, Azure Pipelines, CircleCI e diversos outros.
 
 Além desses, você pode ter sua pipeline como um script para rodar localmente. Essa é uma boa prática por ser uma salvaguarda caso sua pipeline remota esteja fora do ar, e também porque permite testar modificações antes de commitá-las na pipeline remota.
 
-Recomendo pessoalmente usar scripts [PowerShell](https://github.com/PowerShell/PowerShell) para pipelines locais, pois é uma linguagem multiplataforma, amigável, orientada a objetos e com fácil interação com XML e JSON. Contudo, você pode usar scripts Batch, Shell, Python ou de outras linguagens que você preferir.
+Recomendo pessoalmente usar scripts [PowerShell](https://github.com/PowerShell/PowerShell) para pipelines locais, pois é uma linguagem multiplataforma, amigável e com fácil interação com XML e JSON. Contudo, você pode usar outras linguagens de script, como Batch, Shell, Python e outras que você preferir.
 
 ## Exemplo em GitHub Actions para programa .NET
 
@@ -234,16 +235,22 @@ jobs:
         name: ${{ '{{' }} env.OUTPUT_FILE_NAME {{ '}}' }}
         path: ${{ '{{' }} format('./out/{0}', env.OUTPUT_FILE_NAME) {{ '}}' }}
     
+    - name: Subir SBOM para resultados do workflow
+      uses: actions/upload-artifact@v4
+      with:
+        name: sbom.json
+        path: ./out/sbom.json
+    
     - name: Subir relatório de cobertura para resultados do workflow
       uses: actions/upload-artifact@v4
       with:
-        compression-level: 0
         name: relatorio_de_cobertura
         path: TestResults
     
     # outras etapas subseqüentes podem ser adicionadas aqui,
     # como docker e kubernetes,
     # ou geração de instalador, no caso de programas desktop.
+
 ```
 
 ## Exemplo em GitHub Actions para pacote NuGet
@@ -253,18 +260,11 @@ name: Publicar pacote NuGet
 
 on:
   workflow_dispatch: # acionamento manual
-    inputs:
-      version:
-        required: true
-        type: string
 
 jobs:
   gerar_pacote_nuget:
 
     runs-on: ubuntu-latest
-
-    env:
-      VERSION_NAME: ${{ '{{' }} inputs.version {{ '}}' }}
 
     steps:
     - name: Checkout
@@ -309,6 +309,15 @@ jobs:
         reports: TestResults/**/coverage.cobertura.xml
         targetdir: TestResults
         reporttypes: JsonSummary;Html
+    
+    - name: Ler versão do pacote
+      shell: pwsh
+      run: |
+        # o PackageVersion deve estar declarado no .csproj
+        ([XML]$nugetCsprojXml = Get-Content ./src/MeuProjeto.Biblioteca/MeuProjeto.Biblioteca.csproj)
+        $versionName = $nugetCsprojXml.Project.PropertyGroup.PackageVersion
+        # adiciona às variáveis de ambiente do workflow
+        echo "VERSION_NAME=${versionName}" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
 
     - name: Gerar SBOM
       shell: pwsh
@@ -338,16 +347,15 @@ jobs:
     - name: Subir SBOM para resultados do workflow
       uses: actions/upload-artifact@v4
       with:
-        compression-level: 0
         name: sbom_meuprojeto_biblioteca.json
         path: ./out/sbom_meuprojeto_biblioteca.json
     
     - name: Subir relatório de cobertura para resultados do workflow
       uses: actions/upload-artifact@v4
       with:
-        compression-level: 0
         name: relatorio_de_cobertura
         path: TestResults
+
 ```
 
 ## Fonte da imagem
