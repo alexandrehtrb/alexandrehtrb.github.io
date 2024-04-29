@@ -27,7 +27,7 @@ Ter uma *pipeline* significa ter um processo consistente que minimiza o risco de
 
 ```mermaid
 flowchart TD
-    clone -->
+    checkout -->
     clean --> 
     restore -->
     audit -->
@@ -39,9 +39,9 @@ flowchart TD
     unittests --se for pacote nuget--> pack --> nugetpush[nuget push]
 ```
 
-### clone
+### checkout
 
-Obtém o código da branch em questão, no Git. Se for um processo de CI, pega o código da branch que pretende ser mergeada; se for CD, pega o código da branch de publicação, como *develop*, *master* ou *release_candidate*.
+Obtém o código da branch em questão, no Git. Se for um processo de CI (integração), pega o código da branch que pretende ser mergeada; se for CD (*deploy*), pega o código da branch de publicação, como *develop*, *master* ou *release_candidate*.
 
 Linha de comando: `git clone`
 
@@ -63,6 +63,19 @@ Verifica se há algum pacote NuGet do projeto com problemas de segurança, confe
 
 Linha de comando: `dotnet list package --vulnerable --include-transitive`
 
+### sbom
+
+O SBOM, em inglês, *software bill of materials*, é um documento que informa quais componentes foram utilizados para a produção de um programa ou biblioteca.
+
+Esse documento é de suma importância para *softwares* críticos, pois através dele, as organizações podem facilmente saber quais de suas aplicações estão em perigo quando uma vulnerabilidade em uma biblioteca é reportada. Após o [ciberataque ao governo dos EUA em 2020](https://www.eetimes.com/solarwinds-fallout-are-sboms-the-answer/), os SBOMs tornaram-se uma prática endossada pela Casa Branca.
+
+Recomendo o formato [CycloneDX](https://github.com/CycloneDX/cyclonedx-dotnet), por ser mais sucinto e de leitura mais fácil.
+
+Linha de comando:
+
+* Em formato CycloneDX: `dotnet CycloneDX`
+* Em formato SPDX: `sbom-tool generate`
+
 ### build
 
 Compila o código da solução.
@@ -73,25 +86,12 @@ Linha de comando: `dotnet build`
 
 Roda os testes unitários da solução para assegurar que estão passando.
 
-Nessa etapa, podemos produzir um relatório que exibe o nível de cobertura dos testes unitários em relação ao código, mostrando quais classes, métodos e linhas foram abrangidos pelos testes. O [reportgenerator](https://reportgenerator.io) é a principal ferramenta para esses relatórios em projetos .NET.
+Nessa etapa, podemos produzir um relatório que exibe o nível de cobertura dos testes unitários em relação ao código, mostrando quais classes, métodos e linhas foram abrangidos pelos testes. O [ReportGenerator](https://reportgenerator.io) é a principal ferramenta para esses relatórios em projetos .NET.
 
 Linha de comando:
 
 * Testes unitários: `dotnet test`
 * Relatório de cobertura: `reportgenerator`
-
-### sbom
-
-O SBOM, em inglês, *software bill of materials*, é um documento que informa quais componentes foram utilizados para a produção de um programa ou biblioteca.
-
-Esse documento é de suma importância para *softwares* críticos, pois através dele, as organizações podem facilmente saber quais de suas aplicações estão em perigo quando uma vulnerabilidade em uma biblioteca é reportada. Após o [ciberataque ao governo dos EUA em 2020](https://www.eetimes.com/solarwinds-fallout-are-sboms-the-answer/), a produção de SBOMs tornou-se uma prática fundamental.
-
-Recomendo o formato [CycloneDX](https://github.com/CycloneDX/cyclonedx-dotnet), por ser mais sucinto e de leitura mais fácil.
-
-Linha de comando:
-
-* Em formato SPDX: `sbom-tool generate`
-* Em formato CycloneDX: `dotnet CycloneDX`
 
 ### publish
 
@@ -115,9 +115,9 @@ Linha de comando: `dotnet nuget push`
 
 Existem vários motores de *pipeline* disponíveis, como o GitHub Actions, GitLab CI, Jenkins, Azure Pipelines, CircleCI e diversos outros.
 
-Além desses, você pode ter sua pipeline como um script para rodar localmente. Essa é uma boa prática por ser uma salvaguarda caso sua pipeline remota esteja fora do ar, e também porque permite testar modificações antes de commitá-las na pipeline remota.
+Além desses, você pode ter sua pipeline como um script para rodar localmente na sua máquina. Essa é uma boa prática por ser uma salvaguarda caso sua pipeline remota esteja fora do ar, e também porque permite testar modificações antes de commitá-las na pipeline remota.
 
-Recomendo pessoalmente usar scripts [PowerShell](https://github.com/PowerShell/PowerShell) para pipelines locais, pois é uma linguagem multiplataforma, amigável e com fácil interação com XML e JSON. Contudo, você pode usar outras linguagens de script, como Batch, Shell, Python e outras que você preferir.
+Recomendo pessoalmente usar scripts [PowerShell](https://github.com/PowerShell/PowerShell) para pipelines locais, pois é uma linguagem multiplataforma e amigável, com fácil interação com XML e JSON. Contudo, você pode usar outras linguagens de script, como Batch, Shell, Python e outras que você preferir.
 
 ## Exemplo em GitHub Actions para programa .NET
 

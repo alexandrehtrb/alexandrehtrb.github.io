@@ -27,7 +27,7 @@ Having a pipeline means having a consistent process that mitigates the risk of h
 
 ```mermaid
 flowchart TD
-    clone -->
+    checkout -->
     clean --> 
     restore -->
     audit -->
@@ -35,13 +35,13 @@ flowchart TD
     build -->
     unittests[unit tests]
     unittests --if program--> publish --with docker--> dockerk8s[docker / kubernetes]
-    publish --without docker--> zipinstaller[zip / installer]
+    publish --no docker--> zipinstaller[zip / installer]
     unittests --if nuget package--> pack --> nugetpush[nuget push]
 ```
 
-### clone
+### checkout
 
-Fetches the code from the Git branch. If it's a CI process, the branch is the one that intends to be merged; if it's a CD, the code is from the release branch, such as *develop*, *master* or *release_candidate*.
+Fetches the code from the Git branch. If it's a (integration) CI process, the branch is the one that intends to be merged; if it's a CD (deployment), the code is from the release branch, such as *develop*, *master* or *release_candidate*.
 
 Command line: `git clone`
 
@@ -63,6 +63,19 @@ Verifies if there are any NuGet packages in the project with security problems, 
 
 Command line: `dotnet list package --vulnerable --include-transitive`
 
+### sbom
+
+SBOM, *software bill of materials*, is a document that informs which components were used to produce a program or a library.
+
+This document is of utmost importance for critical software, because with it, organizations can easily know which of its applications are in danger when a vulnerability in a library is reported. After the [2020 cyberattack on the USA government](https://www.eetimes.com/solarwinds-fallout-are-sboms-the-answer/), SBOMs became endorsed by the White House.
+
+I recommend the [CycloneDX](https://github.com/CycloneDX/cyclonedx-dotnet) format, for being more succinct and easier to read.
+
+Command line:
+
+* In CycloneDX format: `dotnet CycloneDX`
+* In SPDX format: `sbom-tool generate`
+
 ### build
 
 Compiles the solution code.
@@ -73,25 +86,12 @@ Command line: `dotnet build`
 
 Runs the solution's unit tests to ensure that they are passing.
 
-In this step, we can produce a report that shows the coverage level of the unit tests against the code, revealing which classes, methods and lines were covered by the tests. [reportgenerator](https://reportgenerator.io) is the main tool for these reports in .NET projects.
+In this step, we can produce a report that shows the coverage level of the unit tests against the code, revealing which classes, methods and lines were covered by the tests. [ReportGenerator](https://reportgenerator.io) is the main tool for these reports in .NET projects.
 
 Command line:
 
 * Unit tests: `dotnet test`
 * Coverage report: `reportgenerator`
-
-### sbom
-
-SBOM, *software bill of materials*, is a document that informs which components were used to produce a program or a library.
-
-This document is of utmost importance for critical software, because with it, organizations can easily know which of its applications are in danger when a vulnerability in a library is reported. After the [2020 cyberattack on the USA government](https://www.eetimes.com/solarwinds-fallout-are-sboms-the-answer/), SBOMs became a fundamental practice.
-
-I recommend the [CycloneDX](https://github.com/CycloneDX/cyclonedx-dotnet) format, for being more succinct and easier to read.
-
-Command line:
-
-* In SPDX format: `sbom-tool generate`
-* In CycloneDX format: `dotnet CycloneDX`
 
 ### publish
 
@@ -115,9 +115,9 @@ Command line: `dotnet nuget push`
 
 There are many pipeline engines available, such as GitHub Actions, GitLab CI, Jenkins, Azure Pipelines, CircleCI and many others.
 
-You can also have your pipeline as a script, to run locally. This is a good practice because it can be run when your remote pipeline is offline and you can test modifications before commiting them into the remote pipeline.
+You can also have your pipeline as a script, to run locally in your machine. This is a good practice for being a safeguard when your remote pipeline is unavailable or offline, and you can test modifications before commiting them into the remote pipeline.
 
-I personally recommend using [PowerShell](https://github.com/PowerShell/PowerShell) scripts for local pipelines, because it's multiplatform, friendly and with easy interaction with XML and JSON. Nevertheless, you can use other scripting languages, like Batch, Shell, Python and others you like.
+I personally recommend using [PowerShell](https://github.com/PowerShell/PowerShell) scripts for local pipelines, because it's a multiplatform and friendly language, with easy interaction with XML and JSON. Nevertheless, you can use other scripting languages, like Batch, Shell, Python and others you like.
 
 ## GitHub Actions example for .NET program
 
