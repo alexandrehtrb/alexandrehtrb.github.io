@@ -16,7 +16,7 @@ Learn how to make a pipeline for your .NET program or library, with GitHub Actio
 
 Pipelines are sequences of commands that are executed to ensure the integrity of the code and to produce a final artifact, such as an executable program or a library.
 
-Having a pipeline means having a consistent process that mitigates the risk of human errors in the final product, and also saves the programmer's time, because he/she can take care of other tasks while the code is compiled, verified and packed.
+Having a pipeline means having a consistent process that mitigates the risk of human errors in the final product and saves the programmer's time, because he/she can take care of other tasks while the code is compiled, verified and packed.
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_04_conveyor_belt.avif" alt="Conveyor belt" />
@@ -107,7 +107,7 @@ Command line: `dotnet pack`
 
 ### nuget push
 
-Upload a package to a NuGet server, private or public, so it can be used by other people.
+Uploads the package to a NuGet server, private or public, so it can be used by other people.
 
 Command line: `dotnet nuget push`
 
@@ -115,7 +115,7 @@ Command line: `dotnet nuget push`
 
 There are many pipeline engines available, such as GitHub Actions, GitLab CI, Jenkins, Azure Pipelines, CircleCI and many others.
 
-You can also have your pipeline as a script, to run locally in your machine. This is a good practice for being a safeguard when your remote pipeline is unavailable or offline, and also because you can test modifications before commiting them.
+You can also have your pipeline as a script, to run locally in your machine. This is a good practice for being a safeguard when your remote pipeline is unavailable or offline and because you can test modifications before commiting them.
 
 I personally recommend using [PowerShell](https://github.com/PowerShell/PowerShell) scripts for local pipelines, because it's a multiplatform and friendly language, with easy interaction with XML and JSON. Nevertheless, you can use other scripting languages, like Batch, Shell, Python and others you like.
 
@@ -212,7 +212,7 @@ jobs:
       shell: pwsh
       run: chmod +x "${env:OUTPUT_FOLDER}/MyProject.Console"
 
-    - name: Make zip package
+    - name: Pack program
       shell: pwsh
       run: |
         $zipName = "MyProject.Console_${env:VERSION_NAME}_${env:RID}.zip";
@@ -323,7 +323,7 @@ jobs:
       shell: pwsh
       run: dotnet CycloneDX ./src/MyProject.Library/MyProject.Library.csproj -o ./out/ -f sbom_MyProject_Library.json -sv $env:VERSION_NAME --json
 
-    - name: Make NuGet package
+    - name: Generate package
       run: dotnet pack ./src/MyProject.Library/MyProject.Library.csproj --nologo --verbosity quiet --configuration Release
     
     - name: Upload package to NuGet server
@@ -337,7 +337,7 @@ jobs:
       env:
         NUGET_API_KEY: ${{ '{{' }} secrets.MY_NUGET_API_KEY {{ '}}' }}
 
-    - name: Upload NuGet package to workflow results
+    - name: Upload package to workflow results
       uses: actions/upload-artifact@v4
       with:
         compression-level: 0 # .nupkg already is a compressed zip

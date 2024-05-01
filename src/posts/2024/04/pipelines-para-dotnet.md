@@ -16,7 +16,7 @@ Saiba como montar uma esteira automatizada para seu programa ou biblioteca em .N
 
 As esteiras automatizadas, também conhecidas como *pipelines*, são seqüências de comandos executados para garantir a integridade do seu código e para gerar um artefato final, como um programa executável ou uma biblioteca.
 
-Ter uma *pipeline* significa ter um processo consistente que minimiza o risco de erros humanos no produto final, e também economiza tempo do programador, pois ele pode se ocupar de outras tarefas enquanto o código é compilado, verificado e empacotado.
+Ter uma *pipeline* significa ter um processo consistente que minimiza o risco de erros humanos no produto final e economiza tempo do programador, pois ele pode se ocupar de outras tarefas enquanto o código é compilado, verificado e empacotado.
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_04_conveyor_belt.avif" alt="Esteira de produção" />
@@ -115,7 +115,7 @@ Linha de comando: `dotnet nuget push`
 
 Existem vários motores de *pipeline* disponíveis, como o GitHub Actions, GitLab CI, Jenkins, Azure Pipelines, CircleCI e diversos outros.
 
-Além desses, você pode ter sua pipeline como um script para rodar localmente na sua máquina. Essa é uma boa prática por ser uma salvaguarda caso sua pipeline remota esteja fora do ar, e também porque permite testar modificações antes de commitá-las.
+Além desses, você pode ter sua pipeline como um script para rodar localmente na sua máquina. Essa é uma boa prática por ser uma salvaguarda caso sua pipeline remota esteja fora do ar e porque permite testar modificações antes de commitá-las.
 
 Recomendo pessoalmente usar scripts [PowerShell](https://github.com/PowerShell/PowerShell) para pipelines locais, pois é uma linguagem multiplataforma e amigável, com fácil interação com XML e JSON. Contudo, você pode usar outras linguagens de script, como Batch, Shell, Python e outras que você preferir.
 
@@ -212,7 +212,7 @@ jobs:
       shell: pwsh
       run: chmod +x "${env:OUTPUT_FOLDER}/MeuProjeto.Console"
 
-    - name: Empacotar zip
+    - name: Empacotar programa
       shell: pwsh
       run: |
         $zipName = "MeuProjeto.Console_${env:VERSION_NAME}_${env:RID}.zip";
@@ -323,7 +323,7 @@ jobs:
       shell: pwsh
       run: dotnet CycloneDX ./src/MeuProjeto.Biblioteca/MeuProjeto.Biblioteca.csproj -o ./out/ -f sbom_meuprojeto_biblioteca.json -sv $env:VERSION_NAME --json
 
-    - name: Empacotar NuGet
+    - name: Gerar pacote
       run: dotnet pack ./src/MeuProjeto.Biblioteca/MeuProjeto.Biblioteca.csproj --nologo --verbosity quiet --configuration Release
     
     - name: Subir pacote para servidor NuGet
@@ -337,7 +337,7 @@ jobs:
       env:
         NUGET_API_KEY: ${{ '{{' }} secrets.MINHA_NUGET_API_KEY {{ '}}' }}
 
-    - name: Subir pacote NuGet para resultados do workflow
+    - name: Subir pacote para resultados do workflow
       uses: actions/upload-artifact@v4
       with:
         compression-level: 0 # não precisa comprimir pq .nupkg já é um zip
