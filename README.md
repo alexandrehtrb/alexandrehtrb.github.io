@@ -72,6 +72,8 @@ Just commit and push to `master` branch, a GitHub Action will start and deploy.
 
 ### Netlify / Surge / Firebase hosting / etc hosting providers
 
+[<img src="https://www.netlify.com/img/deploy/button.svg" />](https://app.netlify.com/start/deploy?repository=https://github.com/alexandrehtrb/alexandrehtrb.github.io)
+
 Build Command: `npm run build` or `pnpm dev`
 
 Output folder: `_site`
