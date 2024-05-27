@@ -52,26 +52,26 @@ Created new post at src/posts/2021/01/new-blog-post.md
 Create your blogpost under `src/posts`. I like to have mine sorted by YY/MM.
 
 Navigate to localhost:8080 after starting the server.
-```
-npm start
+
+```sh
+npm install
+npm run dev
+
+# or
+
+pnpm install
+pnpm dev
 ```
 
 
 ## Deployment
-[<img src="https://www.netlify.com/img/deploy/button.svg" />](
-https://app.netlify.com/start/deploy?repository=https://github.com/kohrongying/11ty-blog-starter)
 
+### GitHub Pages
 
+Just commit and push to `master` branch, a GitHub Action will start and deploy.
 
-On Netlify / Surge / Firebase hosting / etc hosting providers
+### Netlify / Surge / Firebase hosting / etc hosting providers
 
-Build Command: `npm run build`
+Build Command: `npm run build` or `pnpm dev`
 
 Output folder: `_site`
-
-<!--
-## Future Improvemeents
-
-- [ ] Minification of assets
-- [ ] Make next/prev posts
--->
