@@ -241,7 +241,7 @@ De modo geral, recomenda-se realizar testes de compatibilidade e de performance 
 
 ## Ferramenta de testes
 
-Recomendo o [Pororoca](https://pororoca.io) (feito por mim, 😁).
+Recomendo o [Pororoca](https://pororoca.io) (feito por mim, 🙂).
 
 ## Bibliografia
 

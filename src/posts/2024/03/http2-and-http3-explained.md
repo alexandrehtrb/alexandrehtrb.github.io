@@ -241,7 +241,7 @@ Generally speaking, it's recommended to run compatibility and performance tests 
 
 ## Testing tools
 
-I recommend [Pororoca](https://pororoca.io) (made by myself, 😁).
+I recommend [Pororoca](https://pororoca.io) (made by myself, 🙂).
 
 ## Bibliography
 
