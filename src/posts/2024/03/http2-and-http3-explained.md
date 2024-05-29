@@ -239,6 +239,10 @@ To avoid HOL blocking with HTTP/1.x, many web browsers and HTTP clients open mul
 
 Generally speaking, it's recommended to run compatibility and performance tests to determine which version is the most appropriate, and furthermore, a server can accept both HTTP/2 and HTTP/3 connections, leaving to the client the decision of which version to use.
 
+## Testing tools
+
+I recommend [Pororoca](https://pororoca.io) (made by myself, 😁).
+
 ## Bibliography
 
 * [MDN - Evolution of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP)

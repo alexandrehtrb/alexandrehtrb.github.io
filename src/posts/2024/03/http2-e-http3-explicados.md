@@ -239,6 +239,10 @@ Para evitar o bloqueio de cabeça de fila no HTTP/1.x, muitos navegadores e HTTP
 
 De modo geral, recomenda-se realizar testes de compatibilidade e de performance para decidir qual é a versão mais indicada, além disso, um servidor pode aceitar conexões tanto de HTTP/2 como de HTTP/3, cabendo ao cliente decidir qual versão usar.
 
+## Ferramenta de testes
+
+Recomendo o [Pororoca](https://pororoca.io) (feito por mim, 😁).
+
 ## Bibliografia
 
 * [MDN - Evolution of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP)
