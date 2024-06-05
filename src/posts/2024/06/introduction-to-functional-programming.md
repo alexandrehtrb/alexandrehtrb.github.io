@@ -28,7 +28,7 @@ There are some programming paradigms that are the most popular, among them:
 
 * **Object-oriented programming (OOP)**: The protagonism is on *who (or what)* performs an action. Each object is an actor responsible for an action and can call other objects to execute other actions.
 
-* **Functional programming (FP)**: In this paradigm, the model revolves around *how actions interconnect*: they are like Lego blocks, joined together for something larger and more complex; like a production line, where the end of a step is the beginning of the next step and in the end there is a final product.
+* **Functional programming (FP)**: In this paradigm, the model revolves around *how actions interconnect*: they are like Lego blocks, joined together for something larger and more complex; like a production line, where the end of a step arrives at the beginning of the next step and in the end there is a final product.
 
 ## A little bit about FP
 
@@ -81,7 +81,7 @@ FP excels in mathematical-related tasks. Think on engineering calculus, accounti
 
 Artificial intelligence and machine learning need heavy mathematics and therefore benefit from functional programming.
 
-> "Can I call a functional code from a OOP or imperative project?"
+> Can I call a functional code from a OOP or imperative project?
 
 Yes, you can! Some object-oriented languages allow invoking functional languages, such as C# code interacting with F#, or Java code interacting with Scala.
 
@@ -162,16 +162,16 @@ In poker, a player has a hand with deck cards, each card defined by a suit with 
 
 | Combination | Example | Description | Chance |
 |---|---|---|---|
-| **Royal Straight Flush** | <span style="color:red">**A♦️**</span>️, <span style="color:red">**K♦️**</span>️, <span style="color:red">**Q♦️**</span>️, <span style="color:red">**J♦️**</span>️, <span style="color:red">**10♦️**</span>️  | Consecutive sequence of a same suit, from 10 to ace. | 0,000154% |
+| **Royal Straight Flush** | **<span style="color:red">A️♦️</span>**, **<span style="color:red">K♦️</span>️**️, **<span style="color:red">Q♦️</span>️**️, **<span style="color:red">J♦️</span>️**️, **<span style="color:red">10♦️</span>️**  | Consecutive sequence of a same suit, from 10 to ace. | 0,000154% |
 | **Straight Flush** | **5♣️**, **6♣️**,️ **7♣️**,️ **8♣️**, **9♣️**  | Consecutive sequence of a same suit (except the royal, above). | 0,00139% |
-| **Four of a kind** | **J♣️**, **J♠️**,️ <span style="color:red">**J♦️**</span>️,️ <span style="color:red">**J♥️**</span>️, 2♣️️  | Four cards with the same rank. | 0,02401% |
-| **Full House** | **4♣️**, <span style="color:red">**4♦️**</span>️,️ <span style="color:red">**10♦️**</span>️, **10♣️️**, **10♠️**  | Three cards of a rank and two of another rank. | 0,1441% |
-| **Flush** | <span style="color:red">**4♥️**</span>️, <span style="color:red">**7♥️**</span>️,️ <span style="color:red">**8♥️**</span>️, <span style="color:red">**J♥️**</span>️, <span style="color:red">**A♥️**</span>️ | All cards with the same suit, but no consecutive sequence. | 0,1965% |
-| **Straight** | <span style="color:red">**A♥️**</span>️, **2♣️**,️ <span style="color:red">**3♥️**</span>️, <span style="color:red">**4♦️**</span>️, **5♠️**  | Consecutive sequence of ranks, but cards with different suits. | 0,3925% |
-| **Three of a kind** | <span style="color:red">2♦️</span>️, K♣️,️ <span style="color:red">**7♦️**</span>️, **7♣️**, **7♠️**  | Three cards with the same rank. | 2,1128% |
-| **Two pair** | <span style="color:red">**8♥️**</span>️,️ <span style="color:red">**8♦️**</span>️, <span style="color:red">**9♥️**</span>️, **9♠️**, <span style="color:red">7♥️</span>️  | One pair of a rank and another pair of a different rank. | 4,7539% |
-| **Pair** | <span style="color:red">10♦️</span>️,️ **K♠️**, <span style="color:red">**K♥️**</span>️, 2♠️, 5♠️  | Two cards with the same rank. | 42,2569% |
-| **High card** | <span style="color:red">6♦️</span>️, <span style="color:red">3♦️</span>️, <span style="color:red">**10♥️**</span>️,️ <span style="color:red">7♦️</span>️, <span style="color:red">2♦️</span>️  | When the combination does not match one of the above. | 50,1177% |
+| **Four of a kind** | **J♣️**, **J♠️**,️ **<span style="color:red">J♦️</span>️**️,️ **<span style="color:red">J♥️</span>️**️, 2♣️️  | Four cards with the same rank. | 0,02401% |
+| **Full House** | **4♣️**, **<span style="color:red">4♦️</span>️**️,️ **<span style="color:red">10♦️</span>️**, **10♣️️**, **10♠️**  | Three cards of a rank and two of another rank. | 0,1441% |
+| **Flush** | **<span style="color:red">4♥️</span>️**️, **<span style="color:red">7♥️</span>️**️,️ **<span style="color:red">8♥️</span>️**️, **<span style="color:red">J♥️</span>️**️, **<span style="color:red">A♥️</span>️**️ | All cards with the same suit, but no consecutive sequence. | 0,1965% |
+| **Straight** | **<span style="color:red">A♥️</span>️**️, **2♣️**,️ **<span style="color:red">3♥️</span>️**️, **<span style="color:red">4♦️</span>️**️, **5♠️**  | Consecutive sequence of ranks, but cards with different suits. | 0,3925% |
+| **Three of a kind** | <span style="color:red">2♦️</span>️, K♣️,️ **<span style="color:red">7♦️</span>️**️, **7♣️**, **7♠️**  | Three cards with the same rank. | 2,1128% |
+| **Two pair** | **<span style="color:red">8♥️</span>️**️,️ **<span style="color:red">8♦️</span>️**️, **<span style="color:red">9♥️</span>️**️, **9♠️**, <span style="color:red">7♥️</span>️  | One pair of a rank and another pair of a different rank. | 4,7539% |
+| **Pair** | <span style="color:red">10♦️</span>️,️ **K♠️**, **<span style="color:red">K♥️</span>️**️, 2♠️, 5♠️  | Two cards with the same rank. | 42,2569% |
+| **High card** | <span style="color:red">6♦️</span>️, <span style="color:red">3♦️</span>️, **<span style="color:red">10♥️</span>️**,️ <span style="color:red">7♦️</span>️, <span style="color:red">2♦️</span>️  | When the combination does not match one of the above. | 50,1177% |
 
 ### Domain code for a poker game
 
@@ -249,7 +249,7 @@ In only one file, we were able to describe the logic of the problem that needs t
 
 The last method, `getHandRanking`, compares the quantities of cards by rank to know if there is a combination by quantity (four-of-a-kind, full house, three-of-a-kind, two pairs, pair). If there are none, then analyses if the combination is sequential and/or by suits (straight, flush, straight flush and royal straight flush). In the end, if there are no matches, then it is a high card ranking.
 
-I confess that when I first used a programming language I found it difficult, a bit because of the syntax which is very different, and because many code examples on the internet use implicit typing, which make the code less obvious:
+I confess that when I first used a programming language I found it difficult, a bit because of the syntax which is very different, and because many code examples on the internet use implicit typing, which is less obvious to understand:
 
 ```fs
 // implicit typing (inference)

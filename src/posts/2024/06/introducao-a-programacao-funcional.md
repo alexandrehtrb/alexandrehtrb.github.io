@@ -28,7 +28,7 @@ Existem alguns paradigmas de programação que são os mais difundidos, entre el
 
 * **Programação orientada a objetos (POO)**: O protagonismo é em *quem (ou o quê)* realiza uma ação. Cada objeto é um ator responsável por uma ação e pode chamar outros objetos para realizarem outras ações.
 
-* **Programação funcional (PF)**: Neste paradigma, o modelo é em torno de *como se juntam* as ações: elas são como blocos de Lego, que se encaixam para algo maior e mais complexo; como em uma esteira de produção industrial, em que o resultado de uma etapa é usado para o início da etapa seguinte e ao fim há um produto bem-acabado.
+* **Programação funcional (PF)**: Neste paradigma, o modelo é em torno de *como se juntam* as ações: elas são como blocos de Lego, que se encaixam para algo maior e mais complexo; como em uma linha de produção industrial, em que o resultado de uma etapa desemboca no início da etapa seguinte e ao fim há um produto bem-acabado.
 
 ## Um pouco sobre PF
 
@@ -81,13 +81,13 @@ A PF se destaca em tarefas de natureza matemática. Pense em cálculos de engenh
 
 As áreas de inteligência artificial e aprendizado de máquina necessitam de matemática pesada e portanto podem se beneficiar da programação funcional.
 
-> "Posso chamar um código funcional em um projeto POO ou imperativo?"
+> Posso chamar um código funcional em um projeto POO ou imperativo?
 
 Pode! Algumas linguagens orientadas a objeto permitem invocar código de linguagens funcionais, por exemplo, C# pode interagir com F#, e Java pode interagir com Scala.
 
 ## Quando não usar programação funcional
 
-Para tarefas como envio e recebimento de mensagens, ler e salvar informações em um banco de dados, ou publicação em filas, há poucas vantagens em se optar pela PF, pois a maioria das ações não requer entrelace. Nesses casos, uma linguagem POO ou imperativa normalmente é melhor.
+Para tarefas como envio e recebimento de mensagens, ler e salvar informações em um banco de dados, ou publicação em filas, há poucas vantagens em se optar pela PF, pois a maioria das ações não se entrelaça. Nesses casos, uma linguagem POO ou imperativa normalmente é melhor.
 
 ## Linguagem F#
 
@@ -101,8 +101,8 @@ Para preparar sua máquina para desenvolver em F#, você vai precisar instalar:
 Para criar um projeto F# via linha de comando:
 
 ```sh
-mkdir MyFSharpProject
-cd ./MyFSharpProject/
+mkdir MeuProjetoFSharp
+cd ./MeuProjetoFSharp/
 dotnet new console --language F#
 ```
 
@@ -162,16 +162,16 @@ No pôquer, um jogador tem uma mão com cartas de baralho, cada carta definida p
 
 | Combinação | Exemplo | Descrição | Chance |
 |---|---|---|---|
-| **Royal Straight Flush** | <span style="color:red">**A♦️**</span>️, <span style="color:red">**K♦️**</span>️, <span style="color:red">**Q♦️**</span>️, <span style="color:red">**J♦️**</span>️, <span style="color:red">**10♦️**</span>️  | Seqüência consecutiva de mesmo naipe, de 10 a ás. | 0,000154% |
+| **Royal Straight Flush** | **<span style="color:red">A️♦️</span>**, **<span style="color:red">K♦️</span>️**️, **<span style="color:red">Q♦️</span>️**️, **<span style="color:red">J♦️</span>️**️, **<span style="color:red">10♦️</span>️**  | Seqüência consecutiva de mesmo naipe, de 10 a ás. | 0,000154% |
 | **Straight Flush** | **5♣️**, **6♣️**,️ **7♣️**,️ **8♣️**, **9♣️**  | Seqüência consecutiva de mesmo naipe (que não seja a real, acima). | 0,00139% |
-| **Quadra** | **J♣️**, **J♠️**,️ <span style="color:red">**J♦️**</span>️,️ <span style="color:red">**J♥️**</span>️, 2♣️️  | Quatro cartas de mesma face. | 0,02401% |
-| **Full House** | **4♣️**, <span style="color:red">**4♦️**</span>️,️ <span style="color:red">**10♦️**</span>️, **10♣️️**, **10♠️**  | Uma trinca e um par. | 0,1441% |
-| **Flush** | <span style="color:red">**4♥️**</span>️, <span style="color:red">**7♥️**</span>️,️ <span style="color:red">**8♥️**</span>️, <span style="color:red">**J♥️**</span>️, <span style="color:red">**A♥️**</span>️ | Cartas de mesmo naipe, mas sem formar seqüência consecutiva. | 0,1965% |
-| **Straight** | <span style="color:red">**A♥️**</span>️, **2♣️**,️ <span style="color:red">**3♥️**</span>️, <span style="color:red">**4♦️**</span>️, **5♠️**  | Seqüência consecutiva de faces, mas com naipes distintos. | 0,3925% |
-| **Trinca** | <span style="color:red">2♦️</span>️, K♣️,️ <span style="color:red">**7♦️**</span>️, **7♣️**, **7♠️**  | Três cartas de faces iguais. | 2,1128% |
-| **Dois pares** | <span style="color:red">**8♥️**</span>️,️ <span style="color:red">**8♦️**</span>️, <span style="color:red">**9♥️**</span>️, **9♠️**, <span style="color:red">7♥️</span>️  | Dois pares de cartas. | 4,7539% |
-| **Par** | <span style="color:red">10♦️</span>️,️ **K♠️**, <span style="color:red">**K♥️**</span>️, 2♠️, 5♠️  | Duas cartas de mesma face. | 42,2569% |
-| **Carta mais alta** | <span style="color:red">6♦️</span>️, <span style="color:red">3♦️</span>️, <span style="color:red">**10♥️**</span>️,️ <span style="color:red">7♦️</span>️, <span style="color:red">2♦️</span>️  | Quando a mão não corresponde a uma das combinações acima. | 50,1177% |
+| **Quadra** | **J♣️**, **J♠️**,️ **<span style="color:red">J♦️</span>️**️,️ **<span style="color:red">J♥️</span>️**️, 2♣️️ | Quatro cartas de mesma face. | 0,02401% |
+| **Full House** | **4♣️**, **<span style="color:red">4♦️</span>️**️,️ **<span style="color:red">10♦️</span>️**, **10♣️️**, **10♠️** | Uma trinca e um par. | 0,1441% |
+| **Flush** | **<span style="color:red">4♥️</span>️**️, **<span style="color:red">7♥️</span>️**️,️ **<span style="color:red">8♥️</span>️**️, **<span style="color:red">J♥️</span>️**️, **<span style="color:red">A♥️</span>️**️ | Cartas de mesmo naipe, mas sem formar seqüência consecutiva. | 0,1965% |
+| **Straight** | **<span style="color:red">A♥️</span>️**️, **2♣️**,️ **<span style="color:red">3♥️</span>️**️, **<span style="color:red">4♦️</span>️**️, **5♠️**  | Seqüência consecutiva de faces, mas com naipes distintos. | 0,3925% |
+| **Trinca** | <span style="color:red">2♦️</span>️, K♣️,️ **<span style="color:red">7♦️</span>️**️, **7♣️**, **7♠️** | Três cartas de faces iguais. | 2,1128% |
+| **Dois pares** | **<span style="color:red">8♥️</span>️**️,️ **<span style="color:red">8♦️</span>️**️, **<span style="color:red">9♥️</span>️**️, **9♠️**, <span style="color:red">7♥️</span>️ | Dois pares de cartas. | 4,7539% |
+| **Par** | <span style="color:red">10♦️</span>️,️ **K♠️**, **<span style="color:red">K♥️</span>️**️, 2♠️, 5♠️  | Duas cartas de mesma face. | 42,2569% |
+| **Carta mais alta** | <span style="color:red">6♦️</span>️, <span style="color:red">3♦️</span>️, **<span style="color:red">10♥️</span>️**,️ <span style="color:red">7♦️</span>️, <span style="color:red">2♦️</span>️  | Quando a mão não corresponde a uma das combinações acima. | 50,1177% |
 
 ### Domínio de um jogo de pôquer
 
@@ -249,7 +249,7 @@ Em apenas um arquivo, conseguimos descrever a lógica do problema a ser resolvid
 
 O último método, `obterCombinacaoMao`, compara as quantidades de cartas por face para saber se há uma combinação por quantidade (quadras, trincas, full houses, dois pares e pares). Se não houver, então analisa se a combinação é seqüencial e/ou de naipe (straight, flush, straight flush e royal straight flush). Por fim, se não houver correspondência, então é carta mais alta.
 
-Confesso que quando mexi com linguagem funcional pela primeira vez eu achei difícil, um pouco por causa da sintaxe que é bem diferente, e também porque vários exemplos de código na internet usam tipagem implícita, que deixa o código menos óbvio:
+Confesso que quando mexi com linguagem funcional pela primeira vez eu achei difícil, um pouco por causa da sintaxe que é bem diferente, e também porque vários exemplos de código na internet usam tipagem implícita, que é menos óbvia de se entender:
 
 ```fs
 // tipagem implícita (inferência)
