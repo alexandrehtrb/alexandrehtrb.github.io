@@ -48,7 +48,7 @@ f ○ g (x) = f(g(x)) = 3(2x) + 1 = 6x + 1
 g ○ f (x) = g(f(x)) = 2(3x + 1) = 6x + 2
 ```
 
-The same rationale applies for functional programming: the return of a method is frequently used and the input of other method. The concrete example below shows function composition in F#.
+The same rationale applies for functional programming: the return of a method is frequently used as the input of other method. The concrete example below shows function composition in F#.
 
 ```fs
 module Program =
