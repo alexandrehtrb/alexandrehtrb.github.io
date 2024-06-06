@@ -158,7 +158,7 @@ let doubledIncrementedNumbers =
 
 ## Case study: poker
 
-In poker, a player has a hand with deck cards, each card defined by a suit with a rank. There are four suits (diamonds ♦️, clubs ♣️, hearts ♥️ and spades ♠️) and thirteen ranks (2 to 10, jack J, queen Q, king K, ace A). The cards of a hand can form special combinations and the player that has the rarest combination wins the round.
+In poker, a player has a hand with five deck cards, each card defined by a suit with a rank. There are four suits (diamonds ♦️, clubs ♣️, hearts ♥️ and spades ♠️) and thirteen ranks (2 to 10, jack J, queen Q, king K, ace A). The cards of a hand can form special combinations and the player that has the rarest combination wins the round.
 
 | Combination | Example | Description | Chance |
 |---|---|---|---|
@@ -249,7 +249,7 @@ In only one file, we were able to describe the logic of the problem that needs t
 
 The last method, `getHandRanking`, compares the quantities of cards by rank to know if there is a combination by quantity (four-of-a-kind, full house, three-of-a-kind, two pairs, pair). If there are none, then analyses if the combination is sequential and/or by suits (straight, flush, straight flush and royal straight flush). In the end, if there are no matches, then it is a high card ranking.
 
-I confess that when I first used a programming language I found it difficult, a bit because of the syntax which is very different, and because many code examples on the internet use implicit typing, which is less obvious to understand:
+I confess that when I first used a functional language I found it difficult, a bit because of the syntax which is very unique, and because many code examples on the internet use implicit typing, which is less obvious to understand:
 
 ```fs
 // implicit typing (inference)

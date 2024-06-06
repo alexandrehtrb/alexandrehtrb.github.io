@@ -158,7 +158,7 @@ let numerosIncrementadosDobrados =
 
 ## Estudo de caso: pôquer
 
-No pôquer, um jogador tem uma mão com cartas de baralho, cada carta definida por um naipe mais uma face. Existem quatro naipes (ouros ♦️, paus ♣️, copas ♥️ e espadas ♠️) e treze faces (2 a 10, valete J, dama Q, rei K, ás A). As cartas da mão podem formar combinações especiais e o jogador que tiver a combinação mais rara vence a rodada do jogo.
+No pôquer, um jogador tem uma mão com cinco cartas de baralho, cada carta definida por um naipe mais uma face. Existem quatro naipes (ouros ♦️, paus ♣️, copas ♥️ e espadas ♠️) e treze faces (2 a 10, valete J, dama Q, rei K, ás A). As cartas da mão podem formar combinações especiais e o jogador que tiver a combinação mais rara vence a rodada do jogo.
 
 | Combinação | Exemplo | Descrição | Chance |
 |---|---|---|---|
