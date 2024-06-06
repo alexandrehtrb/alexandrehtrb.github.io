@@ -96,7 +96,7 @@ In this article, we will use the F# functional language for a case study. F# use
 To setup your machine for F# development, you will need:
   * [.NET SDK](https://dotnet.microsoft.com/)
   * [Visual Studio](https://visualstudio.microsoft.com/) or
-  * [VS Code](https://code.visualstudio.com/)[^1] with [F# language server updated extension](https://marketplace.visualstudio.com/items?itemName=faldor20.fsharp-language-server-updated) (the Ionide extension is no good)
+  * [VS Code](https://code.visualstudio.com/)<sup>[1](#fs-files-for-compilation)</sup> with [F# language server updated extension](https://marketplace.visualstudio.com/items?itemName=faldor20.fsharp-language-server-updated) (the Ionide extension is no good)
 
 To create an F# project, enter on the command line:
 
@@ -265,7 +265,9 @@ Nevertheless, if you have a situation where a functional approach is better, I s
 
 The code above is available on [GitHub](https://github.com/alexandrehtrb/FunctionalPoker/), with unit tests and showing how to integrate a F# project with a C# project.
 
-[^1]: If you are using VS Code, whenever you add a new `.fs` file to your project, remember to include it in your `.fsproj`:
+#### fs files for compilation
+
+If you are using VS Code, whenever you add a new `.fs` file to your project, remember to include it in your `.fsproj`:
 
 ```xml
 <ItemGroup>
