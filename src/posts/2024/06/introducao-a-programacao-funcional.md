@@ -108,6 +108,15 @@ dotnet new console --language F#
 
 Antes de começar, algumas dicas de sintaxe:
 
+* Todos os arquivos `.fs` devem estar declarados no `.fsproj`:
+
+```xml
+<ItemGroup>
+  <Compile Include="Library.fs" />
+  <Compile Include="Module2.fs" />
+</ItemGroup>
+```
+
 * Declaração de função:
 
 ```fs
