@@ -96,7 +96,7 @@ In this article, we will use the F# functional language for a case study. F# use
 To setup your machine for F# development, you will need:
   * [.NET SDK](https://dotnet.microsoft.com/)
   * [Visual Studio](https://visualstudio.microsoft.com/) or
-  * [VS Code](https://code.visualstudio.com/)<sup>[1](#fs-files-for-compilation)</sup> with [F# language server updated extension](https://marketplace.visualstudio.com/items?itemName=faldor20.fsharp-language-server-updated) (the Ionide extension is no good)
+  * [VS Code](https://code.visualstudio.com/) with [F# language server updated extension](https://marketplace.visualstudio.com/items?itemName=faldor20.fsharp-language-server-updated) (the Ionide extension is no good)
 
 To create an F# project, enter on the command line:
 
