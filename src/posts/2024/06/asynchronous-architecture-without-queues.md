@@ -13,11 +13,11 @@ Meet cheaper and more pratical alternatives to dedicated queues.<!-- excerpt -->
 
 [Ler em português](../arquitetura-assincrona-sem-filas)
 
-{% asset_img '2024_06_fila_ingressos_paul_mccartney.jpg' 'People in a queue to buy tickets for Paul McCartney's concert' %}
+{% asset_img '2024_06_fila_ingressos_paul_mccartney.jpg' 'People in a queue to buy tickets for Paul McCartney concert' %}
 
 ## Asynchronous architecture
 
-A common strategy in complex systems is asynchronism, which is leaving heavier tasks running on background and getting a return from them only when they are finished. The idea is to deliver an immediate response to the user, allowing him / her to do other activities in the meanwhile. This approach exists both in programming languages, by the use of the `async / await` keywords, and in systems architecture, with an event or message oriented processing, through queues.
+A common strategy in complex systems is asynchronism, which is leaving heavier tasks running on background and getting a return from them only when they are finished. The idea is to deliver an immediate response to the user, allowing him / her to do other activities in the meanwhile. This approach exists both in programming languages, by the use of the `async / await` keywords, and in systems architectures, with an event or message oriented processing, through queues.
 
 There are dedicated queue systems that are very popular today, among them, Apache Kafka, RabbitMQ, Azure Service Bus and Amazon SQS. They adopt partitions and consumer groups to deal with high volumes of messages received and processed in parallel, also taking care of concurrency and post-processing confirmation.
 
@@ -59,7 +59,7 @@ Here, if there is more than one simultaneous consumer, we must prepare against c
 
 ### Database locks
 
-A lock (mutex) restrains access for only the routine that detains this lock.
+A lock (mutex) restrains access for only the transaction that detains this lock.
 
 When a consumer goes to take the next message for processing, it should lock for reading, to block other consumers from taking this same message at the same time. If a consumer cannot open the lock, it is because another consumer arrived earlier, which means that it should wait until the lock is released.
 

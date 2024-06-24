@@ -121,7 +121,7 @@ Não há como o banco de dados proativamente invocar um consumidor, alertando es
 
 ## Mensagens em caches distribuídos
 
-Caches distribuídos, como o Redis, podem armazenar mensagens, que podem ficar tanto dentro de pares chave-valor, filas e outras estruturas de dados.
+Caches distribuídos, como o Redis, podem armazenar mensagens, que podem ficar dentro de pares chave-valor, filas e outras estruturas de dados.
 
 Esta implementação pode ser considerada uma variação da apresentada acima.
 
@@ -157,8 +157,8 @@ A comunicação entre as threads de produção e consumo se dá através de fila
 
 Alguns cenários reais em que essa opção pode ser boa:
 
-* **Cadastro de usuários**: uma API recebe uma chamada para cadastrar um usuário, sendo que diversas etapas são executadas, como verificação de identidade, verificação anti-fraudes e envio de email de confirmação para o usuário. Essas etapas podem ser leves o suficiente para não necessitarem rodar em uma aplicação apartada.
-* **Logs e métricas**: na maioria dos programas, o envio de logs e métricas se dá em threads em plano de fundo.
+* **Cadastro de usuários**: uma API recebe uma chamada para cadastrar um usuário, sendo que diversas etapas são executadas, como verificação de identidade, prevenção anti-fraudes e envio de email de confirmação para o usuário. Essas etapas podem ser leves o suficiente para não necessitarem rodar em uma aplicação apartada.
+* **Logs e métricas**: na maioria dos programas, o envio de logs e métricas se dá em threads em background.
 
 Devemos levar em conta que esse processamento implica maior consumo de CPU e memória RAM na aplicação e pode competir com outras tarefas dela por esses recursos. Soluções para isso são escalabilidade vertical (aumentar CPU e RAM disponíveis) ou horizontal (distribuir a carga entre outras instâncias).
 
@@ -270,7 +270,7 @@ Para decidir se uma arquitetura assíncrona é recomendada para seu caso, consid
 * As mensagens podem ser processadas em lotes (várias juntas de uma vez)?
 * O volume de mensagens é alto?
 
-Várias respostas sim acima indicam que ela é adequada.
+Várias respostas positivas acima indicam que ela é adequada.
 
 Para escolher qual implementação usar, pergunte-se:
 
