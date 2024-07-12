@@ -10,6 +10,7 @@ h2 > a.header-anchor {
   font-weight: 700;
 }
 
+/* Shiki alternate between light and dark colour themes */
 html.dark .shiki,
 html.dark .shiki span {
   color: var(--shiki-dark) !important;
@@ -18,4 +19,45 @@ html.dark .shiki span {
   font-style: var(--shiki-dark-font-style) !important;
   font-weight: var(--shiki-dark-font-weight) !important;
   text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+/* Copy code buttons on code blocks */
+/* https://junges.dev/2-how-to-add-github-copy-to-clipboard-button-on-your-docsblog */
+pre[class*="shiki"] {
+  position: relative;
+  margin: 5px 0;
+  padding: 1.75rem 0 1.75rem 1rem;
+}
+
+pre > .button-copy-code {
+  @apply rounded;
+  @apply bg-gray-300;
+  @apply py-2 px-2;
+  position: absolute;
+  top: 30px;
+  right: 16px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  pre > .button-copy-code {
+    visibility: hidden;
+  }
+}
+
+pre > .button-copy-code:hover {
+  @apply border-2 border-gray-600;
+  @apply bg-gray-200;
+}
+
+pre > .button-copy-code:focus {
+  @apply bg-gray-300;
+}
+
+.copy-docs-icon {
+  fill: #0a001f;
+}
+
+.docs-copied-icon {
+  color: #148a25 !important;
+  fill: #148a25 !important;
 }
