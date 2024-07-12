@@ -1,13 +1,34 @@
-const shiki = require('shiki');
 const htmlencode = require('htmlencode');
 
 module.exports = (eleventyConfig, options) => {
   // empty call to notify 11ty that we use this feature
   // eslint-disable-next-line no-empty-function
-  eleventyConfig.amendLibrary('md', () => {});
+  eleventyConfig.amendLibrary('md', () => { });
 
   eleventyConfig.on('eleventy.before', async () => {
-    const highlighter = await shiki.getHighlighter(options);
+    const shiki = await import('shiki');
+    const fs = await import('fs');
+
+    // Load the theme object from a file, a network request, or anywhere
+    const darkColourTheme = JSON.parse(fs.readFileSync('src/libs/nomos-black-colour-theme.json', 'utf8'))
+    const highlighter = await shiki.createHighlighter(
+    {
+      themes: ["light-plus"],
+      langs: [
+        'shell',
+        'html',
+        'batch',
+        'powershell',
+        'yaml',
+        'sql',
+        'csharp',
+        'fsharp',
+        'xml'
+      ],
+    });
+
+    await highlighter.loadTheme(darkColourTheme);
+
     eleventyConfig.amendLibrary('md', (mdLib) =>
       mdLib.set({
         highlight: (code, lang) => {
@@ -16,7 +37,14 @@ module.exports = (eleventyConfig, options) => {
             return `<div class="mermaid${extra_classes}">${htmlencode.htmlEncode(code)}</div>`;
           }
           else {
-            return highlighter.codeToHtml(code, { lang });
+            return highlighter.codeToHtml(code,
+               {
+                lang: lang,
+                themes: {
+                  light: "light-plus",
+                  dark: "NomosBlack"
+                }
+              });
           }
         }
       })
