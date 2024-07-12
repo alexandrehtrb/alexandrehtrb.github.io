@@ -34,7 +34,7 @@ pre > .button-copy-code {
   @apply bg-gray-300;
   @apply py-2 px-2;
   position: absolute;
-  top: 30px;
+  top: 32px;
   right: 16px;
 }
 
