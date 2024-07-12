@@ -11,7 +11,7 @@ module.exports = (eleventyConfig, options) => {
               await mermaid.run({
                 querySelector: '.mermaid',
                 postRenderCallback: (id) => {
-                  if (afterMermaidRenderCallback != undefined)
+                  if (typeof afterMermaidRenderCallback === "function")
                   {
                     afterMermaidRenderCallback();
                   }
