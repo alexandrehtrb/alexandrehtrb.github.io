@@ -40,7 +40,7 @@ pre > .button-copy-code {
 
 @media only screen and (max-device-width: 480px) {
   pre > .button-copy-code {
-    visibility: hidden;
+    display: none;
   }
 }
 
