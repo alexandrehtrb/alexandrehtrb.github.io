@@ -26,6 +26,7 @@
     "markdown-it": "14.1.0",
     "markdown-it-anchor": "9.0.1",
     "shiki": "1.10.3",
-    "tailwindcss": "3.4.4"
+    "tailwindcss": "3.4.4",
+    "html-minifier-terser": "7.2.0"
   }
 }
