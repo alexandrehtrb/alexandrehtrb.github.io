@@ -13,6 +13,7 @@ async function do_minifyhtml(source, output_path) {
       decodeEntities: true,
       keepClosingSlash: true,
       minifyCSS: true,
+      minifyJS: true,
       quoteCharacter: `"`,
       removeComments: true,
       removeAttributeQuotes: true,
@@ -31,7 +32,6 @@ async function do_minifyhtml(source, output_path) {
 
 module.exports = function(eleventyConfig) {
   // Plugins
-  //eleventyConfig.addPlugin(syntaxHighlight)  
   eleventyConfig.addPlugin(require("./src/libs/shiki.js"), { });
   eleventyConfig.addPlugin(require("./src/libs/mermaid.js"), { mermaid_config: {'startOnLoad': false, 'theme': 'default' }});
   
