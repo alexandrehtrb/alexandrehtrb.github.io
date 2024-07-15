@@ -68,10 +68,10 @@ Durante o trancamento, a mensagem é obtida e marcada como *EmProcessamento*, e 
 Essa técnica existe em vários bancos de dados:
 
 * **SQL Server**: `sp_getapplock` com `sp_releaseapplock`
-* **PostgreSQL**: `LOCK TABLE table1 IN ACCESS EXCLUSIVE MODE`
+* **PostgreSQL**: `pg_advisory_xact_lock()`
 * **MongoDB**: `db.coll.findAndModify()`
 
-O código abaixo é uma stored procedure em SQL Server que pega a próxima mensagem a ser lida usando uma tranca.
+O código abaixo é uma stored procedure em SQL Server que pega a próxima mensagem a ser lida usando uma tranca de aplicação (*app lock*).
 
 ```sql
 CREATE OR ALTER PROCEDURE PegarMensagemParaProcessar
@@ -289,10 +289,10 @@ As perguntas acima podem te ajudar a decidir qual estratégia de assincronia é 
 
 * [No Rio, fãs fazem fila para comprar ingressos do show de McCartney (11/04/2011)](https://g1.globo.com/pop-arte/noticia/2011/04/no-rio-fas-fazem-fila-para-comprar-ingressos-de-show-de-mccartney.html) (imagem inicial)
 * [Application Locks (or Mutexes) in SQL Server 2005](https://www.sqlteam.com/articles/application-locks-or-mutexes-in-sql-server-2005)
-* [Documentação do PostgreSQL - LOCK](https://www.postgresql.org/docs/current/sql-lock.html)
+* [Application-level locking with Postgres advisory locks](https://aarniala.fi/blog/postgres-advisory-locks/)
 * [Locking Documents In Mongo](https://www.mongodb.com/community/forums/t/locking-documents-in-mongo/6865)
 * [Glossário do Redis - Queue](https://redis.io/glossary/redis-queue/)
 * [Documentação do Redis - Distributed Locks](https://redis.io/docs/latest/develop/use/patterns/distributed-locks/)
 * [.NET Core - Apresentando a classe Channel<T>](https://www.macoratti.net/20/12/net_chanel1.htm)
 * [Documentação do .NET - Canais](https://learn.microsoft.com/pt-br/dotnet/core/extensions/channels)
-* [Documentação do Java - ConcurrentLinkedQueue<E>](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentLinkedQueue.html)
+* [Documentação do Java - ConcurrentLinkedQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentLinkedQueue.html)

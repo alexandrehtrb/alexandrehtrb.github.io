@@ -68,10 +68,10 @@ During the locking, the message is retrieved and marked as *InProcess*, and afte
 This technique exists in many databases:
 
 * **SQL Server**: `sp_getapplock` with `sp_releaseapplock`
-* **PostgreSQL**: `LOCK TABLE table1 IN ACCESS EXCLUSIVE MODE`
+* **PostgreSQL**: `pg_advisory_xact_lock()`
 * **MongoDB**: `db.coll.findAndModify()`
 
-The code below is a SQL Server stored procedure that takes the next message to be consumed using a lock.
+The code below is a SQL Server stored procedure that takes the next message to be consumed using an app lock.
 
 ```sql
 CREATE OR ALTER PROCEDURE TakeMessageToProcess
@@ -289,10 +289,10 @@ The questions above can help you to decide which asynchronous strategy is the be
 
 * [No Rio, fãs fazem fila para comprar ingressos do show de McCartney (11/04/2011)](https://g1.globo.com/pop-arte/noticia/2011/04/no-rio-fas-fazem-fila-para-comprar-ingressos-de-show-de-mccartney.html) (initial image)
 * [Application Locks (or Mutexes) in SQL Server 2005](https://www.sqlteam.com/articles/application-locks-or-mutexes-in-sql-server-2005)
-* [PostgreSQL docs - LOCK](https://www.postgresql.org/docs/current/sql-lock.html)
+* [Application-level locking with Postgres advisory locks](https://aarniala.fi/blog/postgres-advisory-locks/)
 * [Locking Documents In Mongo](https://www.mongodb.com/community/forums/t/locking-documents-in-mongo/6865)
 * [Redis glossary - Queue](https://redis.io/glossary/redis-queue/)
 * [Redis - Distributed Locks](https://redis.io/docs/latest/develop/use/patterns/distributed-locks/)
 * [Using Channels In C# .NET](https://dotnetcoretutorials.com/using-channels-in-net-core-part-1-getting-started/)
 * [.NET docs - Channels](https://learn.microsoft.com/en-us/dotnet/core/extensions/channels)
-* [Java docs - ConcurrentLinkedQueue<E>](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentLinkedQueue.html)
+* [Java docs - ConcurrentLinkedQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentLinkedQueue.html)
