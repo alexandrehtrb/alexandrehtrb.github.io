@@ -68,7 +68,7 @@ Durante o trancamento, a mensagem é obtida e marcada como *EmProcessamento*, e 
 Essa técnica existe em vários bancos de dados:
 
 * **SQL Server**: `sp_getapplock` com `sp_releaseapplock`
-* **PostgreSQL**: `pg_advisory_xact_lock()`
+* **PostgreSQL**: `pg_advisory_xact_lock()` com `SET LOCAL lock_timeout = '4s'`
 * **MongoDB**: `db.coll.findAndModify()`
 
 O código abaixo é uma stored procedure em SQL Server que pega a próxima mensagem a ser lida usando uma tranca de aplicação (*app lock*).
@@ -290,6 +290,7 @@ As perguntas acima podem te ajudar a decidir qual estratégia de assincronia é 
 * [No Rio, fãs fazem fila para comprar ingressos do show de McCartney (11/04/2011)](https://g1.globo.com/pop-arte/noticia/2011/04/no-rio-fas-fazem-fila-para-comprar-ingressos-de-show-de-mccartney.html) (imagem inicial)
 * [Application Locks (or Mutexes) in SQL Server 2005](https://www.sqlteam.com/articles/application-locks-or-mutexes-in-sql-server-2005)
 * [Application-level locking with Postgres advisory locks](https://aarniala.fi/blog/postgres-advisory-locks/)
+* [Stack Overflow - Controlling duration of PostgreSQL lock waits](https://stackoverflow.com/a/20963803)
 * [Locking Documents In Mongo](https://www.mongodb.com/community/forums/t/locking-documents-in-mongo/6865)
 * [Glossário do Redis - Queue](https://redis.io/glossary/redis-queue/)
 * [Documentação do Redis - Distributed Locks](https://redis.io/docs/latest/develop/use/patterns/distributed-locks/)
