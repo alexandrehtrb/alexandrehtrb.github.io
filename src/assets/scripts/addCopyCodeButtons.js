@@ -9,23 +9,26 @@ blocks.forEach((block) => {
 
     let button = document.createElement("button");
     button.className = "button-copy-code";
+    button.ariaLabel = button.title = "Copy";
     button.innerHTML = copyCodeIconSvg;
     block.appendChild(button);
 
     button.addEventListener("click", async () => {
-        await copyCode(block);
+        await copyCode(button, block);
     });
 });
 
-async function copyCode(block) {
+async function copyCode(button, block) {
     let copiedCode = block.cloneNode(true);
     copiedCode.removeChild(copiedCode.querySelector("button.button-copy-code"));
 
     const html = copiedCode.outerHTML.replace(/<[^>]*>?/gm, "");
 
     block.querySelector("button.button-copy-code").innerHTML = codeCopiedIconSvg;
+    button.ariaLabel = button.title = "Copied!";
     setTimeout(function () {
         block.querySelector("button.button-copy-code").innerHTML = copyCodeIconSvg;
+        button.ariaLabel = button.title = "Copy";
     }, 2000);
 
     const parsedHTML = htmlDecode(html);
