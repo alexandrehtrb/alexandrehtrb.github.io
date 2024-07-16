@@ -21,6 +21,19 @@ html.dark .shiki span {
   text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
+/* Shiki code line diffs */
+.shiki span.line.diff.add,
+.shiki span.line.diff.add span
+{
+  background-color: rgba(16, 185, 129, 0.14) !important
+}
+
+.shiki span.line.diff.remove,
+.shiki span.line.diff.remove span
+{
+  background-color: rgba(244, 63, 94, 0.14) !important
+}
+
 /* Copy code buttons on code blocks */
 /* https://junges.dev/2-how-to-add-github-copy-to-clipboard-button-on-your-docsblog */
 pre[class*="shiki"] {
@@ -30,9 +43,6 @@ pre[class*="shiki"] {
 }
 
 pre > .button-copy-code {
-  @apply rounded;
-  @apply bg-gray-300;
-  @apply py-2 px-2;
   position: absolute;
   top: 32px;
   right: 16px;
@@ -42,22 +52,4 @@ pre > .button-copy-code {
   pre > .button-copy-code {
     display: none;
   }
-}
-
-pre > .button-copy-code:hover {
-  @apply border-2 border-gray-600;
-  @apply bg-gray-200;
-}
-
-pre > .button-copy-code:focus {
-  @apply bg-gray-300;
-}
-
-.copy-docs-icon {
-  fill: #0a001f;
-}
-
-.docs-copied-icon {
-  color: #148a25 !important;
-  fill: #148a25 !important;
 }

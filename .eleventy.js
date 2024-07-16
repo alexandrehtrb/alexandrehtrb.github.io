@@ -32,8 +32,8 @@ async function do_minifyhtml(source, output_path) {
 
 module.exports = function(eleventyConfig) {
   // Plugins
-  eleventyConfig.addPlugin(require("./src/libs/shiki.js"), { });
-  eleventyConfig.addPlugin(require("./src/libs/mermaid.js"), { mermaid_config: {'startOnLoad': false, 'theme': 'default' }});
+  eleventyConfig.addPlugin(require("./src/libs/shiki.js"));
+  eleventyConfig.addPlugin(require("./src/libs/mermaid.js"));
   
   // To enable merging of tags
   eleventyConfig.setDataDeepMerge(true)

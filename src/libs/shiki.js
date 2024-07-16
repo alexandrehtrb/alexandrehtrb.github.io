@@ -8,6 +8,7 @@ module.exports = (eleventyConfig, options) => {
   eleventyConfig.on('eleventy.before', async () => {
     const shiki = await import('shiki');
     const fs = await import('fs');
+    const { transformerNotationDiff } = await import('@shikijs/transformers');
 
     // Load the theme object from a file, a network request, or anywhere
     const darkColourTheme = JSON.parse(fs.readFileSync('src/libs/nomos-black-colour-theme.json', 'utf8'))
@@ -23,7 +24,9 @@ module.exports = (eleventyConfig, options) => {
         'sql',
         'csharp',
         'fsharp',
-        'xml'
+        'xml',
+        'javascript',
+        'css'
       ],
     });
 
@@ -43,7 +46,8 @@ module.exports = (eleventyConfig, options) => {
                 themes: {
                   light: "light-plus",
                   dark: "NomosBlack"
-                }
+                },
+                transformers: [ transformerNotationDiff() ]
               });
           }
         }

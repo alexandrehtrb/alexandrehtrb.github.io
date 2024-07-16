@@ -1,5 +1,9 @@
 module.exports = (eleventyConfig, options) => {
-  let mermaid_config = {...options?.mermaid_config || {}, ...{loadOnSave: true}};
+  let mermaid_config = {
+    startOnLoad: false,
+    theme: 'default',
+    loadOnSave: true
+  };
   let src = options?.mermaid_js_src || "https://unpkg.com/mermaid/dist/mermaid.esm.min.mjs";
 
   eleventyConfig.addLiquidShortcode("mermaid_js_scripts", () => {
