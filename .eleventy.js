@@ -1,9 +1,11 @@
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const { minify: minify_html } = require("html-minifier-terser");
+const is_production = typeof process.env.NODE_ENV === "string" && process.env.NODE_ENV === "production";
 
 async function do_minifyhtml(source, output_path) {
-  if(!output_path.endsWith(".html")) return source;
+
+  if(!is_production || !output_path.endsWith(".html")) return source;
 
   const result = await minify_html(source, {
       collapseBooleanAttributes: true,

@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "npx @11ty/eleventy ; npx tailwindcss -i ./tailwind.css -o _site/assets/styles/tailwind.css"
+    "build": "NODE_ENV=production npx @11ty/eleventy ; npx tailwindcss --minify -i ./tailwind.css -o _site/assets/styles/tailwind.css",
+    "buildWindows": "set NODE_ENV=production&& npx @11ty/eleventy && npx tailwindcss --minify -i ./tailwind.css -o _site/assets/styles/tailwind.css"
   },
   "keywords": [],
   "author": "",
