@@ -176,18 +176,18 @@ Para resolver o bloqueio de cabeça de fila do TCP, o QUIC opta por utilizar o U
 ```mermaid
 sequenceDiagram
     rect rgb(255, 179, 217)
-        Cliente->>Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
+        Cliente->>Servidor: req1: #9993;1/1<br>+<br>req2: #9993;1/1
     end
     rect rgb(179, 205, 230)
-        Servidor--xCliente: res1: #9993;1/2<br>+<br>res2: #9993;1/2
+        Servidor--xCliente: res1: #9993;1/2
     end
     Note over Cliente,Servidor: pacote QUIC perdido<br>não bloqueia outros pacotes
     rect rgb(179, 205, 230)
-        Servidor-->>Cliente: res1: #9993;2/2<br>+<br>res2: #9993;2/2<br>+<br>res3: #9993;1/1
+        Servidor-->>Cliente: res1: #9993;2/2<br>+<br>res2: #9993;1/1
     end
-    Note over Cliente,Servidor: reenvio do pacote perdido.<br>res3 não foi afetado
+    Note over Cliente,Servidor: reenvio do pacote perdido.<br>res2 não foi afetado
     rect rgb(179, 205, 230)
-        Servidor-->>Cliente: res1: #9993;1/2<br>+<br>res2: #9993;1/2
+        Servidor-->>Cliente: res1: #9993;1/2
     end
 ```
 
