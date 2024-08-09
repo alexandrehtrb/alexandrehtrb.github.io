@@ -27,6 +27,16 @@ h2 > a.header-anchor {
   font-weight: 700;
 }
 
+html mark {
+  background-color: yellow;
+  color: var(--tw-prose-body);
+}
+
+html.dark mark {
+  background-color: rgba(238, 255, 0, 0.24);
+  color: var(--tw-prose-body);
+}
+
 /* Shiki alternate between light and dark colour themes */
 html.dark .shiki,
 html.dark .shiki span {
