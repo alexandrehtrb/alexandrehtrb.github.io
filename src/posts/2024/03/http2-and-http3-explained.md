@@ -176,18 +176,18 @@ To solve TCP's head-of-line blocking, QUIC decided to use UDP for its transport 
 ```mermaid
 sequenceDiagram
     rect rgb(255, 179, 217)
-        Client->>Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1<br>+<br>req3: #9993;1/1
+        Client->>Server: req1: #9993;1/1<br>+<br>req2: #9993;1/1
     end
     rect rgb(179, 205, 230)
-        Server--xClient: res1: #9993;1/2<br>+<br>res2: #9993;1/2
+        Server--xClient: res1: #9993;1/2
     end
     Note over Client,Server: lost QUIC packet<br>doesn't block sending<br>other packets
     rect rgb(179, 205, 230)
-        Server-->>Client: res1: #9993;2/2<br>+<br>res2: #9993;2/2<br>+<br>res3: #9993;1/1
+        Server-->>Client: res1: #9993;2/2<br>+<br>res2: #9993;1/1
     end
-    Note over Client,Server: resending lost packet.<br>res3 wasn't delayed
+    Note over Client,Server: resending lost packet.<br>res2 wasn't delayed
     rect rgb(179, 205, 230)
-        Server-->>Client: res1: #9993;1/2<br>+<br>res2: #9993;1/2
+        Server-->>Client: res1: #9993;1/2
     end
 ```
 
