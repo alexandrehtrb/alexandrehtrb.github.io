@@ -445,7 +445,7 @@ ORDER BY i.[Id] ASC, t.[Id] ASC
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_08_friends_pivot.avif" alt="Ross asking to rotate the couch - Friends" />
-  <img src="/assets/img/posts/2024_08_friends_pivot.png" alt="Ross asking to rotate the couch - Friends" />
+  <img src="/assets/img/posts/2024_08_friends_pivot.jpg" alt="Ross asking to rotate the couch - Friends" />
 </picture>
 
 The PIVOT instruction is very interesting. It transforms lines into columns, by rotating part of the table in 90º. It is very good for crossing two or more columns of a table.
@@ -975,7 +975,7 @@ Custom DLLs are interesting for use cases where there is no native similar, like
 
 DLLs must be .NET Framework source code and signed with a strong name.
 
-The process is a bit complex and is based on [this article](https://www.c-sharpcorner.com/article/assembly-in-ms-sql-server/) from C-Sharp Corner. Steps:
+The process is a bit complex and the steps here are based on [this article](https://www.c-sharpcorner.com/article/assembly-in-ms-sql-server/) from C-Sharp Corner.:
 
 1. Create a Class Library project in .NET Framework
 2. C# code example below:

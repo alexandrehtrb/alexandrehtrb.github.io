@@ -446,7 +446,7 @@ ORDER BY s.[Id] ASC, c.[Id] ASC
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_08_friends_pivot.avif" alt="Ross pedindo para girar o sofá - Friends" />
-  <img src="/assets/img/posts/2024_08_friends_pivot.png" alt="Ross pedindo para girar o sofá - Friends" />
+  <img src="/assets/img/posts/2024_08_friends_pivot.jpg" alt="Ross pedindo para girar o sofá - Friends" />
 </picture>
 
 A instrução PIVOT é muito interessante. Ela transforma linhas em colunas, ou seja, rotaciona em 90º uma parte da tabela. Ela é muito boa para cruzar duas ou mais colunas de uma mesma tabela.
