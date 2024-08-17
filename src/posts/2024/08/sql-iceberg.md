@@ -777,7 +777,7 @@ However, a simple console application could read lines from the database and out
 
 ## PRIMARY KEY, FOREIGN KEY
 
-The primary key determines what is the main search column in a table, structuring it in a [B-tree](https://en.wikipedia.org/wiki/B-tree); this makes reading it much faster.
+The primary key uniquely\* identifies each row of a table and determines what is the main search column, structuring the table in a [B-tree](https://en.wikipedia.org/wiki/B-tree); this makes reading it much faster.
 
 The foreign key is a link between the column of one table to the primary key of another. This increases performance of joins between those tables and is also a form of validation, because a value is only valid if it exists in the foreign table.
 
@@ -790,6 +790,8 @@ CREATE TABLE [dbo].[Fruit](
   [IdFamily] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[Family](Id),
   [Calories] INT NOT NULL)
 ```
+
+\* A row can have multiple unique identifiers, but the primary key is the most important one.
 
 ## INDEXES
 
@@ -812,7 +814,7 @@ ON [dbo].[Address]([City],[State],[Country]);
 
 ## UNIQUE
 
-It's a special type of index that blocks repeated values in a column.
+It's a special type of constraint that blocks repeated values in a column. In most databases, creating an unique constraint also creates an index for this column.
 
 ```sql
 CREATE TABLE [dbo].[Person] (  
@@ -889,7 +891,7 @@ With columnar storage, a page is exclusive for a column:
 ```mermaid
 flowchart TB
   subgraph pageC[Page]
-    subgraph columnC[Column]
+    subgraph columnC[Column A]
     direction LR
       direction LR
       C1
@@ -898,7 +900,7 @@ flowchart TB
     end
   end
   subgraph pageB[Page]
-    subgraph columnB[Column]
+    subgraph columnB[Column B]
     direction LR
       direction LR
       B1
@@ -907,7 +909,7 @@ flowchart TB
     end
   end  
   subgraph pageA[Page]
-    subgraph columnA[Column]
+    subgraph columnA[Column C]
     direction LR
       direction LR
       A1
