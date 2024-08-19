@@ -779,8 +779,6 @@ However, a simple console application could read lines from the database and out
 
 The primary key uniquely identifies each row of a table and determines what is the main search column, structuring the table in a [B-tree](https://en.wikipedia.org/wiki/B-tree); this makes reading it much faster.
 
-A row can have more than one unique identifier, but the primary key is the most important one.
-
 The foreign key is a link between the column of one table to the primary key of another. This increases performance of joins between those tables and is also a form of validation, because a value is only valid if it exists in the foreign table.
 
 Taking the initial example:

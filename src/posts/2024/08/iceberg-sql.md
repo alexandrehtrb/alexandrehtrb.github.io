@@ -781,8 +781,6 @@ Todavia, é possível criar um programa que lê linhas do banco de dados e gera 
 
 A chave primária é um identificador exclusivo para cada linha da tabela e determina qual é a principal coluna de pesquisa, estruturando a tabela em uma [árvore B](https://pt.wikipedia.org/wiki/%C3%81rvore_B); isto torna a leitura muito mais rápida.
 
-Uma linha pode ter mais de um identificador exclusivo (unique), mas a chave primária é o mais importante deles.
-
 Uma chave estrangeira é uma ligação entre a coluna de uma tabela com a chave primária de outra. Isso aumenta a performance dos JOINs entre essas tabelas e serve como validação de entradas, pois um valor só é válido se estiver cadastrado na tabela estrangeira.
 
 Retomando o exemplo do início:
