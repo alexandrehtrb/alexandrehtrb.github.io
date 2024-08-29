@@ -40,9 +40,9 @@ ORDER BY [Name];
 
 | Name | Encoding | Considers casing in comparisons | Considers accents in comparisons |
 |:-:|:-:|:-:|:-:|
-| Latin1_General_CI_AS | Windows-1252 | No | Yes |
-| Latin1_General_100_CI_AS_KS_SC_UTF8 | UTF-8<br>(code page 65001) | No | Yes |
-| Latin1_General_100_CS_AS_KS_SC_UTF8 | UTF-8<br>(code page 65001) | Yes | Yes |
+| Latin1_General_<br>CI_AS | Windows-1252 | No | Yes |
+| Latin1_General_<br>100_CI_AS_<br>KS_SC_UTF8 | UTF-8<br>(code page 65001) | No | Yes |
+| Latin1_General_<br>100_CS_AS_<br>KS_SC_UTF8 | UTF-8<br>(code page 65001) | Yes | Yes |
 
 ## Unicode, UTF-8 and UTF-16
 
