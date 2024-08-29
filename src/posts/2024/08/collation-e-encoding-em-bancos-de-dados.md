@@ -63,14 +63,14 @@ O UTF-8 usa uma quantidade variável de bytes, de 1 a 4 por caractér. É o prin
 
 A escolha do encoding afeta diretamente o tamanho usado para armazenamento de textos. Se a maioria dos caractéres estiver no intervalo de alfabeto latino básico, o UTF-8 é melhor, porque usa menos bytes do que o UTF-16; mas, se a escrita for asiática, o UTF-16 tem vantagem, pois o caractér ocupa 2 bytes, contra 3 do UTF-8.
 
-A tabela abaixo mostra como um número Unicode é convertido para UTF-8 ou UTF-16.
+A tabela abaixo mostra como um número Unicode é convertido para UTF-8 ou UTF-16, para cada intervalo acima.
 
-| Intervalo Unicode | Caractér de exemplo | Code point em binário | Em UTF-8 | Em UTF-16 |
-|:-:|:-:|:-:|:-:|:-:|
-| 0x0000 a 0x007F | **P** (0x0050) | 00110010 | 00110010 | 00000000 00110010 |
-| 0x0080 a 0x07FF | **Ω** (0x03A9) | 00000<span style="color:green">011</span> <span style="color:red">1010</span><span style="color:purple">1001</span> | **110<span style="color:green">011</span></span><span style="color:red">10</span> 10<span style="color:red">10</span><span style="color:purple">1001</span>** | 00000011 10101001 |
-| 0x0800 a 0xFFFF | **€** (0x20AC) | <span style="color:blue">0010</span><span style="color:green">0000</span> <span style="color:red">1010</span><span style="color:purple">1100</span> | **1110<span style="color:blue">0010</span> 10<span style="color:green">0000</span><span style="color:red">10</span> 10<span style="color:red">10</span><span style="color:purple">1100</span>** | 00100000 10101100 |
-| 0x010000 a 0x10FFFF | 🐎 (0x1F40E) | 000<span style="color:SeaGreen">0</span><span style="color:sienna">0001</span> <span style="color:blue">1111</span><span style="color:green">0100</span> <span style="color:red">0000</span><span style="color:purple">1110</span> | **11110<span style="color:SeaGreen">0</span><span style="color:sienna">00</span> 10<span style="color:sienna">01</span><span style="color:blue">1111</span> 10<span style="color:green">0100</span><span style="color:red">00</span> 10<span style="color:red">00</span><span style="color:purple">1110</span>** | **110110<span style="color:mediumvioletred">00</span> <span style="color:mediumvioletred">00</span><span style="color:blue">1111</span><span style="color:green">01</span> 110111<span style="color:green">00</span> <span style="color:red">0000</span><span style="color:purple">1110</span>** |
+| Caractér de exemplo | Code point em binário | Em UTF-8 | Em UTF-16 |
+|:-:|:-:|:-:|:-:|
+| **P** (0x0050) | 00110010 | 00110010 | 00000000 00110010 |
+| **Ω** (0x03A9) | 00000<span style="color:green">011</span> <span style="color:red">1010</span><span style="color:purple">1001</span> | **110<span style="color:green">011</span></span><span style="color:red">10</span> 10<span style="color:red">10</span><span style="color:purple">1001</span>** | 00000011 10101001 |
+| **€** (0x20AC) | <span style="color:blue">0010</span><span style="color:green">0000</span> <span style="color:red">1010</span><span style="color:purple">1100</span> | **1110<span style="color:blue">0010</span> 10<span style="color:green">0000</span><span style="color:red">10</span> 10<span style="color:red">10</span><span style="color:purple">1100</span>** | 00100000 10101100 |
+| 🐎 (0x1F40E) | 000<span style="color:SeaGreen">0</span><span style="color:sienna">0001</span> <span style="color:blue">1111</span><span style="color:green">0100</span> <span style="color:red">0000</span><span style="color:purple">1110</span> | **11110<span style="color:SeaGreen">0</span><span style="color:sienna">00</span> 10<span style="color:sienna">01</span><span style="color:blue">1111</span> 10<span style="color:green">0100</span><span style="color:red">00</span> 10<span style="color:red">00</span><span style="color:purple">1110</span>** | **110110<span style="color:mediumvioletred">00</span> <span style="color:mediumvioletred">00</span><span style="color:blue">1111</span><span style="color:green">01</span> 110111<span style="color:green">00</span> <span style="color:red">0000</span><span style="color:purple">1110</span>** |
 
 A lógica do UTF-16 para code points acima de 0x010000 é:
 

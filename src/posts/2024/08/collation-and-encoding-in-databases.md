@@ -63,14 +63,14 @@ UTF-8 uses a variable number of bytes, starting at 1 and up to 4 for a char. It'
 
 The choice of encoding directly affects the size of text storage. If most characters lie in the basic latin range, UTF-8 is better, because it uses fewer bytes than UTF-16; however, if it's an asian text, UTF-16 is the best, because each character occupies 2 bytes, instead of 3 on UTF-8.
 
-The table below shows how an Unicode number is converted to UTF-8 or UTF-16.
+The table below shows how an Unicode number is converted to UTF-8 or UTF-16, for each range above.
 
-| Unicode range | Example character | Code point, in binary | In UTF-8 | In UTF-16 |
-|:-:|:-:|:-:|:-:|:-:|
-| 0x0000 - 0x007F | **P** (0x0050) | 00110010 | 00110010 | 00000000 00110010 |
-| 0x0080 - 0x07FF | **Ω** (0x03A9) | 00000<span style="color:green">011</span> <span style="color:red">1010</span><span style="color:purple">1001</span> | **110<span style="color:green">011</span></span><span style="color:red">10</span> 10<span style="color:red">10</span><span style="color:purple">1001</span>** | 00000011 10101001 |
-| 0x0800 - 0xFFFF | **€** (0x20AC) | <span style="color:blue">0010</span><span style="color:green">0000</span> <span style="color:red">1010</span><span style="color:purple">1100</span> | **1110<span style="color:blue">0010</span> 10<span style="color:green">0000</span><span style="color:red">10</span> 10<span style="color:red">10</span><span style="color:purple">1100</span>** | 00100000 10101100 |
-| 0x010000 - 0x10FFFF | 🐎 (0x1F40E) | 000<span style="color:SeaGreen">0</span><span style="color:sienna">0001</span> <span style="color:blue">1111</span><span style="color:green">0100</span> <span style="color:red">0000</span><span style="color:purple">1110</span> | **11110<span style="color:SeaGreen">0</span><span style="color:sienna">00</span> 10<span style="color:sienna">01</span><span style="color:blue">1111</span> 10<span style="color:green">0100</span><span style="color:red">00</span> 10<span style="color:red">00</span><span style="color:purple">1110</span>** | **110110<span style="color:mediumvioletred">00</span> <span style="color:mediumvioletred">00</span><span style="color:blue">1111</span><span style="color:green">01</span> 110111<span style="color:green">00</span> <span style="color:red">0000</span><span style="color:purple">1110</span>** |
+| Example character | Code point, in binary | In UTF-8 | In UTF-16 |
+|:-:|:-:|:-:|:-:|
+| **P** (0x0050) | 00110010 | 00110010 | 00000000 00110010 |
+| **Ω** (0x03A9) | 00000<span style="color:green">011</span> <span style="color:red">1010</span><span style="color:purple">1001</span> | **110<span style="color:green">011</span></span><span style="color:red">10</span> 10<span style="color:red">10</span><span style="color:purple">1001</span>** | 00000011 10101001 |
+| **€** (0x20AC) | <span style="color:blue">0010</span><span style="color:green">0000</span> <span style="color:red">1010</span><span style="color:purple">1100</span> | **1110<span style="color:blue">0010</span> 10<span style="color:green">0000</span><span style="color:red">10</span> 10<span style="color:red">10</span><span style="color:purple">1100</span>** | 00100000 10101100 |
+| 🐎 (0x1F40E) | 000<span style="color:SeaGreen">0</span><span style="color:sienna">0001</span> <span style="color:blue">1111</span><span style="color:green">0100</span> <span style="color:red">0000</span><span style="color:purple">1110</span> | **11110<span style="color:SeaGreen">0</span><span style="color:sienna">00</span> 10<span style="color:sienna">01</span><span style="color:blue">1111</span> 10<span style="color:green">0100</span><span style="color:red">00</span> 10<span style="color:red">00</span><span style="color:purple">1110</span>** | **110110<span style="color:mediumvioletred">00</span> <span style="color:mediumvioletred">00</span><span style="color:blue">1111</span><span style="color:green">01</span> 110111<span style="color:green">00</span> <span style="color:red">0000</span><span style="color:purple">1110</span>** |
 
 The logic for UTF-16 code points above 0x010000 is:
 
