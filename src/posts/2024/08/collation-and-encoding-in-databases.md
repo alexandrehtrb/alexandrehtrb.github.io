@@ -38,11 +38,11 @@ FROM sys.fn_helpcollations()
 ORDER BY [Name];
 ```
 
-| Name | Encoding | Considers casing in comparisons | Considers accents in comparisons |
+| Name | Encoding | Compares casing | Compares accents |
 |:-:|:-:|:-:|:-:|
 | Latin1_General_<br>CI_AS | Windows-1252 | No | Yes |
-| Latin1_General_<br>100_CI_AS_<br>KS_SC_UTF8 | UTF-8<br>(code page 65001) | No | Yes |
-| Latin1_General_<br>100_CS_AS_<br>KS_SC_UTF8 | UTF-8<br>(code page 65001) | Yes | Yes |
+| Latin1_General_<br>100_CI_AS_<br>KS_SC_UTF8 | UTF-8 (65001) | No | Yes |
+| Latin1_General_<br>100_CS_AS_<br>KS_SC_UTF8 | UTF-8 (65001) | Yes | Yes |
 
 ## Unicode, UTF-8 and UTF-16
 
@@ -54,7 +54,7 @@ UTF-16 uses 2 bytes for most chars and 4 for those above the standard range. Thi
 
 UTF-8 uses a variable number of bytes, starting at 1 and up to 4 for a char. It's the main encoding on the Internet.
 
-| Unicode range | Groups | No. of bytes per char w/ UTF-8 | No. of bytes per char w/ UTF-16 |
+| Unicode range | Groups | Bytes per char, UTF-8 | Bytes per char, UTF-16 |
 |:-:|:-:|:-:|:-:|
 | 0x0000 - 0x007F | Basic latin alphabet, arabic digits (0-9), basic keyboard symbols | 1 | 2 |
 | 0x0080 - 0x07FF | Extended latin alphabet, greek, cyrillic, arabic, hebrew | 2 | 2 |
@@ -122,7 +122,7 @@ FROM [dbo].[Person];
 DROP TABLE [dbo].[Person];
 ```
 
-### Latin1_General_CI_AS
+### Latin1 General CI AS
 
 | VARCHAR name | Size in bytes | NVARCHAR name | Size in bytes |
 |:-:|:-:|:-:|:-:|
@@ -133,7 +133,7 @@ DROP TABLE [dbo].[Person];
 
 Note that Windows-1252 encoding does not support greek characters and emojis, that are replaced by '?'. Despite that, it handles very well latin words, with only 1 byte per letter, even on those with accents or *cedillas*.
 
-### Latin1_General_100_CI_AS_KS_SC_UTF8
+### Latin1 General 100 CI AS KS SC UTF8
 
 | VARCHAR name | Size in bytes | NVARCHAR name | Size in bytes |
 |:-:|:-:|:-:|:-:|

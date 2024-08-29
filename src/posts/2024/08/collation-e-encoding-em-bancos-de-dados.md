@@ -38,11 +38,11 @@ FROM sys.fn_helpcollations()
 ORDER BY [Name];
 ```
 
-| Nome | Encoding | Considera *casing* em comparações | Considera acentos em comparações |
+| Nome | Encoding | Compara *casing* | Compara acentos |
 |:-:|:-:|:-:|:-:|
 | Latin1_General_<br>CI_AS | Windows-1252 | Não | Sim |
-| Latin1_General_<br>100_CI_AS_<br>KS_SC_UTF8 | UTF-8<br>(code page 65001) | Não | Sim |
-| Latin1_General_<br>100_CS_AS_<br>KS_SC_UTF8 | UTF-8<br>(code page 65001) | Sim | Sim |
+| Latin1_General_<br>100_CI_AS_<br>KS_SC_UTF8 | UTF-8 (65001) | Não | Sim |
+| Latin1_General_<br>100_CS_AS_<br>KS_SC_UTF8 | UTF-8 (65001) | Sim | Sim |
 
 ## Unicode, UTF-8 e UTF-16
 
@@ -54,7 +54,7 @@ O UTF-16 usa 2 bytes para a maioria dos caractéres e 4 para aqueles acima do in
 
 O UTF-8 usa uma quantidade variável de bytes, de 1 a 4 por caractér. É o principal encoding da Internet.
 
-| Intervalo Unicode | Grupos | Nº de bytes por caractér com UTF-8 | Nº de bytes por caractér com UTF-16 |
+| Intervalo Unicode | Grupos | Bytes por char, UTF-8 | Bytes por char, UTF-16 |
 |:-:|:-:|:-:|:-:|
 | 0x0000 a 0x007F | Alfabeto latino básico, algarismos arábicos (0 a 9), símbolos básicos do teclado | 1 | 2 |
 | 0x0080 a 0x07FF | Alfabetos latino estendido (com acentos, cê-cedilha), grego, cirílico, árabe, hebraico | 2 | 2 |
@@ -122,7 +122,7 @@ FROM [dbo].[Pessoa];
 DROP TABLE [dbo].[Pessoa];
 ```
 
-### Latin1_General_CI_AS
+### Latin1 General CI AS
 
 | Nome VARCHAR | Tamanho em bytes | Nome NVARCHAR | Tamanho em bytes |
 |:-:|:-:|:-:|:-:|
@@ -133,7 +133,7 @@ DROP TABLE [dbo].[Pessoa];
 
 Podemos perceber que o encoding Windows-1252 não suporta caractéres gregos e emojis, que são substituídos por '?'. Apesar disso, consegue atender muito bem palavras latinas, gastando apenas 1 byte por letra, mesmo naquelas com acento ou cê-cedilha.
 
-### Latin1_General_100_CI_AS_KS_SC_UTF8
+### Latin1 General 100 CI AS KS SC UTF8
 
 | Nome VARCHAR | Tamanho em bytes | Nome NVARCHAR | Tamanho em bytes |
 |:-:|:-:|:-:|:-:|
