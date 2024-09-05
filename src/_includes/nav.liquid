@@ -2,12 +2,12 @@
   <ul class="flex py-2 border-b-2 mb-6">
     <li class="mr-6"><a href="/">Home</a></li>
     {% if published == nil %}
-      <li class="mr-6"><a href="/tags/em%20portugu%C3%AAs" title="Artigos em português">🇵🇹 🇧🇷</a></li>
+      <li class="mr-6"><a href="/tags/em%20portugu%C3%AAs" title="Artigos em português">🇵🇹🇧🇷</a></li>
     {% else %}    
       {% if lang == "en" %}
-        <li class="mr-6"><a href="{{ langPtLink }}" title="Ler em português">🇵🇹 🇧🇷</a></li>
+        <li class="mr-6"><a href="{{ langPtLink }}" title="Ler em português">🇵🇹🇧🇷</a></li>
       {% else %}
-        <li class="mr-6"><a href="{{ langEnLink }}" title="Read in english">🇬🇧 🇺🇸</a></li>
+        <li class="mr-6"><a href="{{ langEnLink }}" title="Read in english">🇬🇧🇺🇸</a></li>
       {% endif %}
     {% endif %}    
     <li class="mr-6"><a href="/tags">Tags</a></li>
