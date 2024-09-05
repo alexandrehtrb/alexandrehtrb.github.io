@@ -1,6 +1,9 @@
 ---
+lang: pt
+langEnLink: ../shiki-and-mermaid-in-11ty
 title: Shiki e Mermaid no 11ty
 date: 2024-07-16
+excerpt: Veja como integrar o Shiki no seu projeto 11ty, com suporte a diagramas Mermaid.
 published: true
 enableMermaid: true
 tags:
@@ -10,9 +13,6 @@ tags:
 - shiki
 - mermaid
 ---
-Veja como integrar o Shiki no seu projeto 11ty, com suporte a diagramas Mermaid.<!-- excerpt -->
-
-[Read in english](../shiki-and-mermaid-in-11ty)
 
 ## 11ty, Shiki e Mermaid
 

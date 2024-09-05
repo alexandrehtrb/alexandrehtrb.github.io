@@ -1,6 +1,9 @@
 ---
+lang: pt
+langEnLink: ../pipelines-for-dotnet
 title: Pipelines para .NET
 date: 2024-04-29
+excerpt: Saiba como montar uma esteira automatizada para seu programa ou biblioteca em .NET, com exemplos em GitHub Actions.
 published: true
 enableMermaid: true
 tags:
@@ -8,9 +11,6 @@ tags:
 - pipeline
 - dotnet
 ---
-Saiba como montar uma esteira automatizada para seu programa ou biblioteca em .NET, com exemplos em GitHub Actions.<!-- excerpt -->
-
-[Read in english](../pipelines-for-dotnet)
 
 ## *Pipelines*
 

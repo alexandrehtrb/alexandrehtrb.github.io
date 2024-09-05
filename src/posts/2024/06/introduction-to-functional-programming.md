@@ -1,15 +1,15 @@
 ---
+lang: en
+langPtLink: ../introducao-a-programacao-funcional
 title: Introduction to functional programming
 date: 2024-06-05
+excerpt: Come learn more about functional programming and in which situations it can help you.
 published: true
 tags:
 - in english
 - functional programming
 - dotnet
 ---
-Come learn more about functional programming and in which situations it can help you.<!-- excerpt -->
-
-[Ler em português](../introducao-a-programacao-funcional)
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_06_cassino_royale_le_chiffre.avif" alt="Le Chiffre, 007 Casino Royale" />

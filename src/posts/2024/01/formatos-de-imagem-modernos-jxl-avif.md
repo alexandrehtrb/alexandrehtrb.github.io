@@ -1,7 +1,10 @@
 ---
+lang: pt
+langEnLink: ../modern-image-formats-jxl-and-avif
 title: >
   Formatos de imagem modernos: JXL e AVIF
 date: 2024-01-28
+excerpt: Conheça os formatos de imagem de última geração, com qualidade gráfica superior e tamanho em bytes reduzido.
 published: true
 enableMermaid: false
 tags:
@@ -9,9 +12,6 @@ tags:
 - images
 - graphics
 ---
-Conheça os formatos de imagem de última geração, com qualidade gráfica superior e tamanho em bytes reduzido.<!-- excerpt -->
-
-[Read in english](../modern-image-formats-jxl-and-avif)
 
 ## Computação, fotografia e imagens
 

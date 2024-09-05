@@ -1,7 +1,10 @@
 ---
+lang: en
+langPtLink: ../http2-e-http3-explicados
 title: >
   HTTP/2 and HTTP/3 explained
 date: 2024-03-11
+excerpt: Understand better how HTTP works in each version.
 published: true
 enableMermaid: true
 tags:
@@ -10,9 +13,6 @@ tags:
 - http
 - quic
 ---
-Understand better how HTTP works in each version.<!-- excerpt -->
-
-[Ler em português](../http2-e-http3-explicados)
 
 In the beginning of the 1990s, Tim Berners-Lee and his team at [CERN](https://home.cern) worked together to elaborate the basis of the World Wide Web, defining four building blocks for the Internet:
 

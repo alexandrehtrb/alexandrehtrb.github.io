@@ -1,6 +1,9 @@
 ---
+lang: en
+langPtLink: ../iceberg-sql
 title: SQL iceberg
 date: 2024-08-14
+excerpt: Discover special SQL commands and keywords.
 published: true
 enableMermaid: true
 tags:
@@ -10,9 +13,6 @@ tags:
 - sql server
 - cheatsheet
 ---
-Discover special SQL commands and keywords.<!-- excerpt -->
-
-[Ler em português](../iceberg-sql)
 
 ## Introduction
 

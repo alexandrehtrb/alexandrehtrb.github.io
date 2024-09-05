@@ -10,13 +10,10 @@ eleventyComputed:
 ---  
 
 {% for post in collections[tag] %}
-<div class="py-4 sm:py-10">
+<div class="py-4">
   <p>
-    <span class="text-2xl sm:text-4xl font-bold hover:underline"><a href="{{ post.url }}">{{ post.data.title }}</a></span>
+    <span class="text-large sm:text-xl font-bold hover:text-blue-700 leading-tight"><a href="{{ post.url }}">{{ post.data.title }}</a></span>
   </p>
-  <em>{{ post.date | date: "%Y-%m-%d" }}</em>
-  <p class="mt-4">{{ post.data.post_excerpt }}... 
-    <span class="hover:underline text-indigo-500"><a href="{{ post.url }}">Read More</a></span>
-  </p>
+  <span class="text-xs sm:text-sm font-normal">{{ post.date | date: "%Y-%m-%d" }}</span>
 </div>
 {% endfor %}

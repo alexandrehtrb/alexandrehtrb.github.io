@@ -24,6 +24,11 @@ layout: main
   </div>
 
 <div class="prose dark:prose-invert hover:prose-a:text-blue-500">
+  {% if lang == "en" %}
+    <p><a href="{{ langPtLink }}">Ler em português</a></p>
+  {% else %}
+    <p><a href="{{ langEnLink }}">Read in english</a></p>
+  {% endif %}
   {{ content }}
 </div>
 

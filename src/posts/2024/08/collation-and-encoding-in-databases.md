@@ -1,6 +1,9 @@
 ---
+lang: en
+langPtLink: ../collation-e-encoding-em-bancos-de-dados
 title: Collation and encoding in databases
 date: 2024-08-29
+excerpt: Understand better the concepts of collation and encoding.
 published: true
 enableMermaid: false
 tags:
@@ -9,9 +12,6 @@ tags:
 - sql
 - sql server
 ---
-Understand better the concepts of collation and encoding.<!-- excerpt -->
-
-[Ler em português](../collation-e-encoding-em-bancos-de-dados)
 
 ## Introduction
 
@@ -48,7 +48,7 @@ ORDER BY [Name];
 
 Unicode is a table that defines a number for each character, covering symbols, digits and letters from many languages. The number attributed to a character is called **code point**.
 
-UTF-8 and UTF-16 are encodings that follow Unicode. Basically, they are ways of storing these numbers in bytes.
+UTF-8 and UTF-16 are encodings that follow Unicode. Basically, they are ways of storing those numbers into bytes.
 
 UTF-16 uses 2 bytes for most chars and 4 for those above the standard range. This encoding is used in the strings of most programming languages.
 

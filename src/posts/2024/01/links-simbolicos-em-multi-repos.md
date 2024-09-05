@@ -1,6 +1,9 @@
 ---
+lang: pt
+langEnLink: ../symlinks-for-multi-repos
 title: Links simbólicos em multi-repos
 date: 2024-01-19
+excerpt: Cansado de ter vários arquivos repetidos nos seus projetos? Saiba mais sobre os links simbólicos - arquivos que apontam para outros arquivos.
 published: true
 enableMermaid: true
 tags:
@@ -9,9 +12,6 @@ tags:
 - architecture
 - git
 ---
-Cansado de ter vários arquivos repetidos nos seus projetos? Saiba mais sobre os links simbólicos - arquivos que apontam para outros arquivos.<!-- excerpt -->
-
-[Read in english](../symlinks-for-multi-repos)
 
 ## Arquivos repetidos
 

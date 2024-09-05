@@ -1,6 +1,9 @@
 ---
+lang: pt
+langEnLink: ../asynchronous-architecture-without-queues
 title: Arquitetura assíncrona sem filas
 date: 2024-06-24
+excerpt: Conheça alternativas mais práticas e baratas do que filas dedicadas.
 published: true
 tags:
 - em português
@@ -9,9 +12,6 @@ tags:
 - redis
 - dotnet
 ---
-Conheça alternativas mais práticas e baratas do que filas dedicadas.<!-- excerpt -->
-
-[Read in english](../asynchronous-architecture-without-queues)
 
 {% asset_img '2024_06_fila_ingressos_paul_mccartney.jpg' 'Fila de pessoas para comprar ingresso para show do Paul McCartney' %}
 

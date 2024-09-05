@@ -1,6 +1,9 @@
 ---
+lang: pt
+langEnLink: ../collation-and-encoding-in-databases
 title: Collation e encoding em bancos de dados
 date: 2024-08-29
+excerpt: Entenda melhor os conceitos de collation e encoding.
 published: true
 enableMermaid: false
 tags:
@@ -9,9 +12,6 @@ tags:
 - sql
 - sql server
 ---
-Entenda melhor os conceitos de collation e encoding.<!-- excerpt -->
-
-[Read in english](../collation-and-encoding-in-databases)
 
 ## Introdução
 
@@ -131,7 +131,7 @@ DROP TABLE [dbo].[Pessoa];
 | ?e?????? | 8 | Περικλῆς | 16 |
 | Papai Noel ?? | 13 | Papai Noel 🎅 | 26 |
 
-Podemos perceber que o encoding Windows-1252 não suporta caractéres gregos e emojis, que são substituídos por '?'. Apesar disso, consegue atender muito bem palavras latinas, gastando apenas 1 byte por letra, mesmo naquelas com acento ou cê-cedilha.
+Podemos perceber que o encoding Windows-1252 não suporta caractéres gregos e emojis, que são substituídos por '?'. Apesar disso, consegue atender muito bem palavras latinas, gastando apenas 1 byte por letra, mesmo naquelas com acentos ou cedilhas.
 
 ### Latin1 General 100 CI AS KS SC UTF8
 

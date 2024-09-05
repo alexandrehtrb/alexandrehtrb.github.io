@@ -1,15 +1,15 @@
 ---
+lang: pt
+langEnLink: ../introduction-to-functional-programming
 title: Introdução a programação funcional
 date: 2024-06-05
+excerpt: Venha saber mais sobre programação funcional e em que situações ela pode te ajudar.
 published: true
 tags:
 - em português
 - functional programming
 - dotnet
 ---
-Venha saber mais sobre programação funcional e em que situações ela pode te ajudar.<!-- excerpt -->
-
-[Read in english](../introduction-to-functional-programming)
 
 <picture class="my-4">
   <source type="image/avif" srcset="/assets/img/posts/2024_06_cassino_royale_le_chiffre.avif" alt="Le Chiffre, 007 Casino Royale" />

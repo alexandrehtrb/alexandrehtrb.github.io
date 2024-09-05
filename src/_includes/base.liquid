@@ -1,12 +1,16 @@
 <!doctype html>
-<html lang="en">
+{% if published %}
+  <html lang="{{ lang }}">
+{% else %}
+  <html lang="en">
+{% endif %}
   <head>
     <meta charset="utf-8">
   	<meta name='viewport' content='width=device-width'>
     {% if published %}
       <title>{{ title }} - {{ site.title }}</title>
       <meta property="og:title" content="{{ title }} - {{ site.title }}"/>
-      <meta name='description' content="{{ post_excerpt }}">
+      <meta name='description' content="{{ excerpt }}">
     {% else %}
       <title>{{ site.title }}</title>
       <meta property="og:title" content="{{ site.title }}"/>

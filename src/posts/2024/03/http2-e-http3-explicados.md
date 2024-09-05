@@ -1,7 +1,10 @@
 ---
+lang: pt
+langEnLink: ../http2-and-http3-explained
 title: >
   HTTP/2 e HTTP/3 explicados
 date: 2024-03-11
+excerpt: Entenda melhor como funciona o protocolo HTTP em cada uma de suas versões.
 published: true
 enableMermaid: true
 tags:
@@ -10,9 +13,6 @@ tags:
 - http
 - quic
 ---
-Entenda melhor como funciona o protocolo HTTP em cada uma de suas versões.<!-- excerpt -->
-
-[Read in english](../http2-and-http3-explained)
 
 No início da década de 1990, Tim Berners-Lee e sua equipe no [CERN](https://home.cern) trabalharam juntos para formar a base da World Wide Web, definindo quatro peças-chaves para a rede mundial de computadores:
 

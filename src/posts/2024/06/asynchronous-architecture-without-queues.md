@@ -1,6 +1,9 @@
 ---
+lang: en
+langPtLink: ../arquitetura-assincrona-sem-filas
 title: Asynchronous architecture without queues
 date: 2024-06-24
+excerpt: Meet cheaper and more pratical alternatives to dedicated queues.
 published: true
 tags:
 - in english
@@ -9,9 +12,6 @@ tags:
 - redis
 - dotnet
 ---
-Meet cheaper and more pratical alternatives to dedicated queues.<!-- excerpt -->
-
-[Ler em português](../arquitetura-assincrona-sem-filas)
 
 {% asset_img '2024_06_fila_ingressos_paul_mccartney.jpg' 'People in a queue to buy tickets for Paul McCartney concert' %}
 

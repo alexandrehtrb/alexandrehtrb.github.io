@@ -1,6 +1,9 @@
 ---
+lang: en
+langPtLink: ../pipelines-para-dotnet
 title: Pipelines for .NET
 date: 2024-04-29
+excerpt: Learn how to make a pipeline for your .NET program or library, with GitHub Actions examples.
 published: true
 enableMermaid: true
 tags:
@@ -8,9 +11,6 @@ tags:
 - pipeline
 - dotnet
 ---
-Learn how to make a pipeline for your .NET program or library, with GitHub Actions examples.<!-- excerpt -->
-
-[Ler em português](../pipelines-para-dotnet)
 
 ## *Pipelines*
 
