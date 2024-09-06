@@ -23,7 +23,7 @@ No início da década de 1990, Tim Berners-Lee e sua equipe no [CERN](https://ho
 
 O HTTP, em questão, aproveitou os protocolos TCP/IP já existentes como meio de transporte de dados. Os bytes de uma mensagem HTTP ficam na [camada de aplicação](https://pt.wikipedia.org/wiki/Camada_de_aplica%C3%A7%C3%A3o), em azul claro na imagem abaixo.
 
-{% asset_img '2024_03_osi_model_tcp_ip.png' 'Modelo OSI' %}
+{% post_img '2024_03_osi_model_tcp_ip.png' 'Modelo OSI' %}
 
 ## HTTP/0.9
 
@@ -103,7 +103,7 @@ Expires: 0
 {"name":"Orange","id":2,"family":"Rutaceae","order":"Sapindales","genus":"Citrus","nutritions":{"calories":43,"fat":0.2,"sugar":8.2,"carbohydrates":8.3,"protein":1.0}}
 ```
 
-{% asset_img '2024_03_http1_tcp_packets.png' 'HTTP1 em pacotes TCP' %}
+{% post_img '2024_03_http1_tcp_packets.png' 'HTTP1 em pacotes TCP' %}
 
 ## HTTP/2
 
@@ -140,7 +140,7 @@ sequenceDiagram
 
 A imagem abaixo mostra como os *frames* entram em pacotes TCP. O *stream* 1 representa uma resposta HTTP de um arquivo JavaScript e o *stream* 2 representa uma resposta HTTP de um arquivo CSS, transmitidos via HTTP/2.
 
-{% asset_img '2024_03_http2_tcp_packets.png' 'Frames HTTP2 em pacotes TCP' %}
+{% post_img '2024_03_http2_tcp_packets.png' 'Frames HTTP2 em pacotes TCP' %}
 
 ## HTTP/3
 
@@ -191,7 +191,7 @@ sequenceDiagram
     end
 ```
 
-{% asset_img '2024_03_http3_quic_packets.png' 'Pacotes QUIC HTTP3' %}
+{% post_img '2024_03_http3_quic_packets.png' 'Pacotes QUIC HTTP3' %}
 
 O bloqueio de cabeça de fila relacionado ao TLS (criptografia SSL) ocorre no TCP porque a criptografia é geralmente aplicada sobre a mensagem inteira, de modo que todos os seus pacotes precisam chegar ao destino para então ocorrer a decriptação. No caso do QUIC, a criptografia é individual para cada pacote QUIC, que é decriptado na chegada, sem haver a necessidade de receber todos os pacotes primeiro.
 

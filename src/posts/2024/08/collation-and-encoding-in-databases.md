@@ -21,7 +21,7 @@ But what about texts? A text is a sequence of characters, a character being a le
 
 The table below is for Windows-1252 encoding, which addresses 255 possible characters, each represented by one byte. You can see this table on Windows Character Map (Win+R, `charmap`).
 
-{% asset_img '2024_08_windows_1252_table.gif' 'Windows-1252 encoding table' %}
+{% post_img '2024_08_windows_1252_table.gif' 'Windows-1252 encoding table' %}
 
 The **collation** is the ordering and comparison rule for texts. It also determines which encoding is used.
 

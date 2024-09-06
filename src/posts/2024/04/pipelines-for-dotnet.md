@@ -18,10 +18,7 @@ Pipelines are sequences of commands that are executed to ensure the integrity of
 
 Having a pipeline means having a consistent process that mitigates the risk of human errors in the final product and saves the programmer's time, because he/she can take care of other tasks while the code is compiled, verified and packed.
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_04_conveyor_belt.avif" alt="Conveyor belt" />
-  <img src="/assets/img/posts/2024_04_conveyor_belt.jpg" alt="Conveyor belt" />
-</picture>
+{% post_avif_img '2024_04_conveyor_belt.avif' '2024_04_conveyor_belt.jpg' 'Conveyor belt' %}
 
 ## Steps
 

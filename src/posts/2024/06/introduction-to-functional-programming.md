@@ -11,10 +11,7 @@ tags:
 - dotnet
 ---
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_06_cassino_royale_le_chiffre.avif" alt="Le Chiffre, 007 Casino Royale" />
-  <img src="/assets/img/posts/2024_06_cassino_royale_le_chiffre.jpg" alt="Le Chiffre, 007 Casino Royale" />
-</picture>
+{% post_avif_img '2024_06_cassino_royale_le_chiffre.avif' '2024_06_cassino_royale_le_chiffre.jpg' 'Le Chiffre, 007 Casino Royale' %}
 
 ## Paradigms
 

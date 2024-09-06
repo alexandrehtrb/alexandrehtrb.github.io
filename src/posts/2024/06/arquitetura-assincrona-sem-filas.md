@@ -13,7 +13,7 @@ tags:
 - dotnet
 ---
 
-{% asset_img '2024_06_fila_ingressos_paul_mccartney.jpg' 'Fila de pessoas para comprar ingresso para show do Paul McCartney' %}
+{% post_img '2024_06_fila_ingressos_paul_mccartney.jpg' 'Fila de pessoas para comprar ingresso para show do Paul McCartney' %}
 
 ## Arquitetura assíncrona
 

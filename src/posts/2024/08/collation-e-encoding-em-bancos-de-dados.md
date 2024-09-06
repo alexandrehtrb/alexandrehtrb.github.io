@@ -21,7 +21,7 @@ Mas e os textos? Um texto é uma seqüência de caractéres, um caractér sendo 
 
 A tabela abaixo é do encoding Windows-1252, que contempla 255 caractéres possíveis, cada um representado por um *byte*. Você pode ver essa tabela com o Mapa de Caractéres do Windows (Win+R, `charmap`).
 
-{% asset_img '2024_08_windows_1252_table.gif' 'Tabela do encoding Windows-1252' %}
+{% post_img '2024_08_windows_1252_table.gif' 'Tabela do encoding Windows-1252' %}
 
 A **collation**, por sua vez, é a regra de ordenação usada para comparar textos. Ela também determina, junto consigo, qual é o encoding utilizado.
 

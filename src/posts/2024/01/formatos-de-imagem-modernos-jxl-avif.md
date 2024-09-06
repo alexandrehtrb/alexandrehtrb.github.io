@@ -19,7 +19,7 @@ A visualização de imagens é fundamental em vários setores, como artes plást
 
 Em uma tela de computador, uma imagem é representada por milhares de *pixels* (**pic**ture **el**ement), cada *pixel* correspondendo a uma cor e sua intensidade. Considere uma imagem de tamanho 1.024px x 768px = 786.432 *pixels*; se cada pixel for RGBA e tiver 4 *bytes*, 1 para vermelho, 1 para verde, 1 para azul e 1 para transparência, essa imagem terá um tamanho de 3,1MB, o que é bastante alto. Contudo, escolhendo técnicas de compressão e um formato de arquivo adequados, podemos ter essa imagem com a mesma qualidade e ocupando muito menos espaço em memória.
 
-{% asset_img '2024_01_hires_images_examples.jpg' 'Exemplos de imagens de alta resolução' %}
+{% post_img '2024_01_hires_images_examples.jpg' 'Exemplos de imagens de alta resolução' %}
 
 ## Novos formatos
 
@@ -62,14 +62,11 @@ Exemplos:
 
 A imagem original abaixo é um JPG de dimensões 8192x5464, com tamanho de 11MB. Em formato JXL (q=90), o tamanho ficou em 7,3MB. Em AVIF (q=90), ficou em 8,3MB.
 
-{% asset_img '2024_01_subway_escalators.jpg' 'Escadas-rolantes de uma estação de metrô' %}
+{% post_img '2024_01_subway_escalators.jpg' 'Escadas-rolantes de uma estação de metrô' %}
 
 O GIF original abaixo tem tamanho de 3,1MB. Em formato JXL (q=90), o tamanho ficou em 2,5MB. Em AVIF (q=90), ficou em 79kB. Impressionante!
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_01_emilia_clarke.avif" alt="Emilia Clarke" />
-  <img src="/assets/img/posts/2024_01_emilia_clarke.gif" alt="Emilia Clarke" />
-</picture>
+{% post_avif_img '2024_01_emilia_clarke.avif' '2024_01_emilia_clarke.gif' 'Emilia Clarke' %}
 
 Este repositório no GitHub ([link](https://github.com/alexandrehtrb/jxl-avif-simple-benchmark)) executa testes para comparar as velocidades e taxas de compressão do JXL e do AVIF. A comparação não é qualitativa, nem científica. Como imagens de entrada, estão:
 
@@ -136,10 +133,7 @@ Se você quer usar esses novos formatos, mas quer garantir compatibilidade com n
 
 Se o navegador tiver suporte, tentará primeiro carregar a imagem em formato AVIF; senão, carregará a imagem em formato GIF. A animação abaixo está dentro de uma tag `<picture>` - você pode conferir o formato ao salvar o arquivo.
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_01_curtains.avif" alt="Cortinas balançando com o vento" />
-  <img src="/assets/img/posts/2024_01_curtains.gif" alt="Cortinas balançando com o vento" />
-</picture>
+{% post_avif_img '2024_01_curtains.avif' '2024_01_curtains.gif' 'Cortinas balançando com o vento' %}
 
 Devido ao tamanho menor das imagens, as páginas carregam mais rápido.
 

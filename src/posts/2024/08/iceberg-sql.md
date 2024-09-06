@@ -26,7 +26,7 @@ Os exemplos aqui são em Microsoft SQL Server, porém, a maioria deles existe de
 
 <br>
 
-{% asset_img '2024_08_sql_iceberg.jpg' 'Iceberg de comandos SQL' %}
+{% post_img '2024_08_sql_iceberg.jpg' 'Iceberg de comandos SQL' %}
 
 <br>
 
@@ -191,10 +191,7 @@ Entrelaça duas ou mais tabelas com base em colunas de referência; esse entrela
 
 Aqui vamos focar apenas no INNER JOIN e no LEFT JOIN.
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_08_sql_joins.avif" alt="Diferentes tipos de JOINs no SQL" />
-  <img src="/assets/img/posts/2024_08_sql_joins.png" alt="Diferentes tipos de JOINs no SQL" />
-</picture>
+{% post_avif_img '2024_08_sql_joins.avif' '2024_08_sql_joins.png' 'Diferentes tipos de JOINs no SQL' %}
 
 ### INNER JOIN
 
@@ -444,10 +441,7 @@ ORDER BY s.[Id] ASC, c.[Id] ASC
 
 ## PIVOT
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_08_friends_pivot.avif" alt="Ross pedindo para girar o sofá - Friends" />
-  <img src="/assets/img/posts/2024_08_friends_pivot.jpg" alt="Ross pedindo para girar o sofá - Friends" />
-</picture>
+{% post_avif_img '2024_08_friends_pivot.avif' '2024_08_friends_pivot.jpg' 'Ross pedindo para girar o sofá - Friends' %}
 
 A instrução PIVOT é muito interessante. Ela transforma linhas em colunas, ou seja, rotaciona em 90º uma parte da tabela. Ela é muito boa para cruzar duas ou mais colunas de uma mesma tabela.
 
@@ -1095,13 +1089,13 @@ No SSMS, basta habilitar a opção *Incluir plano de execução* no menu superio
 
 Ao analisar o custo de cada etapa, você pode entender quais são os gargalos de performance e a partir daí implementar melhorias, tais como criar índices, refazer os critérios de WHERE e JOIN nas consultas, entre outras.
 
-{% asset_img '2024_08_sql_execution_plan.jpg' 'Plano de execução SQL' %}
+{% post_img '2024_08_sql_execution_plan.jpg' 'Plano de execução SQL' %}
 
 <br>
 
 # Conclusões finais
 
-{% asset_img '2024_08_titanic.jpg' 'Jack e Rose no Titanic' %}
+{% post_img '2024_08_titanic.jpg' 'Jack e Rose no Titanic' %}
 
 O SQL é uma ferramenta extremamente poderosa e completa, e adquiriu novas capacidades ao longo dos anos. Não é à toa que é o *mainstream* de banco de dados até hoje - ele é a base de desenvolvimento de sistemas complexos.
 

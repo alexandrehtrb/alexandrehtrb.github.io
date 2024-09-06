@@ -18,10 +18,7 @@ As esteiras automatizadas, também conhecidas como *pipelines*, são seqüência
 
 Ter uma *pipeline* significa ter um processo consistente que minimiza o risco de erros humanos no produto final e economiza tempo do programador, pois ele pode se ocupar de outras tarefas enquanto o código é compilado, verificado e empacotado.
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_04_conveyor_belt.avif" alt="Esteira de produção" />
-  <img src="/assets/img/posts/2024_04_conveyor_belt.jpg" alt="Esteira de produção" />
-</picture>
+{% post_avif_img '2024_04_conveyor_belt.avif' '2024_04_conveyor_belt.jpg' 'Esteira de produção' %}
 
 ## Etapas
 

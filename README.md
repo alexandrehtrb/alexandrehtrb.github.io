@@ -32,7 +32,7 @@ A blog that still runs without javascript. Hence, no bundlers.
 
 + Shortcode to handle images
   - Add image under `src/assets/img/posts` and use the asset_img short code
-  - `{% asset_img 'filename' 'alt_text' %}` eg. `{% asset_img 'mailbox.jpg' 'mailbox' %}`
+  - `{% post_img 'filename' 'alt_text' %}` eg. `{% post_img 'mailbox.jpg' 'mailbox' %}`
 
 - Draft posts using the `published` frontmatter
 

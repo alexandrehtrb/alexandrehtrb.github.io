@@ -19,7 +19,7 @@ The visualization of images is fundamental in many areas, such as arts, professi
 
 On a computer screen, an image is represented by thousands of *pixels* (**pic**ture **el**ement), each *pixel* corresponding to a colour and its intensity. Consider an image of 1,024px x 768px = 768,432 *pixels*; if each pixel is RGBA and has 4 *bytes*, 1 for red, 1 for green, 1 for blue and 1 for transparency, this image will have a size of 3.1MB, which is quite large. However, by choosing proper compression techniques and file formats, we can have this image with the same quality and with a much lower file size.
 
-{% asset_img '2024_01_hires_images_examples.jpg' 'Examples of high-resolution images' %}
+{% post_img '2024_01_hires_images_examples.jpg' 'Examples of high-resolution images' %}
 
 ## Newer formats
 
@@ -62,14 +62,11 @@ Examples:
 
 The original image below is a JPEG of 8192x5464, file size 11MB. In JXL format (q=90), the size is 7.3MB. In AVIF (q=90), is 8.3MB.
 
-{% asset_img '2024_01_subway_escalators.jpg' 'Escalators in a subway station' %}
+{% post_img '2024_01_subway_escalators.jpg' 'Escalators in a subway station' %}
 
 The original GIF below has a file size of 3.1MB. In JXL format (q=90), the size is 2.5MB. In AVIF (q=90), is 79kB. Impressive!
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_01_emilia_clarke.avif" alt="Emilia Clarke" />
-  <img src="/assets/img/posts/2024_01_emilia_clarke.gif" alt="Emilia Clarke" />
-</picture>
+{% post_avif_img '2024_01_emilia_clarke.avif' '2024_01_emilia_clarke.gif' 'Emilia Clarke' %}
 
 This [GitHub repo](https://github.com/alexandrehtrb/jxl-avif-simple-benchmark) executes tests to compare compression rates and speeds of JXL and AVIF. The comparison is not qualitative, nor scientific. The input images include:
 
@@ -136,10 +133,7 @@ If you want to use these new formats, but also want to guarantee compatibility w
 
 If the browser supports, it will first try to load the picture in AVIF format; else, a GIF will be loaded. The animation below is inside a `<picture>` tag - you can verify which format is it by saving the picture.
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_01_curtains.avif" alt="Curtains moving with the wind" />
-  <img src="/assets/img/posts/2024_01_curtains.gif" alt="Curtains moving with the wind" />
-</picture>
+{% post_avif_img '2024_01_curtains.avif' '2024_01_curtains.gif' 'Curtains moving with the wind' %}
 
 Due to the reduced file size of the images, the web pages will load faster.
 

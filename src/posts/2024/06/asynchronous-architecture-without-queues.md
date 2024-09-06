@@ -13,7 +13,7 @@ tags:
 - dotnet
 ---
 
-{% asset_img '2024_06_fila_ingressos_paul_mccartney.jpg' 'People in a queue to buy tickets for Paul McCartney concert' %}
+{% post_img '2024_06_fila_ingressos_paul_mccartney.jpg' 'People in a queue to buy tickets for Paul McCartney concert' %}
 
 ## Asynchronous architecture
 

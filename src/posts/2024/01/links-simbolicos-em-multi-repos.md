@@ -129,7 +129,7 @@ C:\MeusProjetos\
 
 No VS Code, *symlinks* têm uma setinha ao lado direito do nome do arquivo.
 
-{% asset_img '2024_01_vscode_symlinks.png' 'Symlinks no VS Code' %}
+{% post_img '2024_01_vscode_symlinks.png' 'Symlinks no VS Code' %}
 
 O comando para criar links simbólicos no Linux e no Mac OSX é:
 
@@ -157,11 +157,11 @@ O Git suporta ter arquivos *symlink* commitados nos repositórios.
 
 No GitHub, eles aparecem com uma setinha e nome em azul.
 
-{% asset_img '2024_01_github_symlink_repo.png' 'Symlinks repo' %}
+{% post_img '2024_01_github_symlink_repo.png' 'Symlinks repo' %}
 
 Na navegação online e em pull requests, o conteúdo do arquivo aparece como um texto do caminho, absoluto ou relativo.
 
-{% asset_img '2024_01_github_symlink_file.png' 'Symlinks repo file' %}
+{% post_img '2024_01_github_symlink_file.png' 'Symlinks repo file' %}
 
 ## Quando devo usar essa abordagem?
 
@@ -177,7 +177,7 @@ Diretórios simbólicos podem ser uma boa alternativa a submódulos do Git.
 
 1) Se você estiver usando Windows, é necessário habilitar links simbólicos durante a instalação do Git:
 
-{% asset_img '2024_01_git_windows_setup_symlinks.png' 'Git for Windows setup Symlinks' %}
+{% post_img '2024_01_git_windows_setup_symlinks.png' 'Git for Windows setup Symlinks' %}
 
 2) Alguns sistemas de arquivos não suportam links simbólicos, por exemplo, FAT32 e exFAT. Esses sistemas de arquivos são comuns em pen-drives e cartões SD.
 

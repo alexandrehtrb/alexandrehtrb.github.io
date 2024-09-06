@@ -129,7 +129,7 @@ C:\MyProjects\
 
 On VS Code, symlinks have an arrow icon to the right of the file name.
 
-{% asset_img '2024_01_vscode_symlinks.png' 'Symlinks on VS Code' %}
+{% post_img '2024_01_vscode_symlinks.png' 'Symlinks on VS Code' %}
 
 The command to create symlinks on Linux and Mac OSX is:
 
@@ -157,11 +157,11 @@ Git supports symlink files committed in repositories.
 
 On GitHub, they appear with an arrow and name coloured in blue.
 
-{% asset_img '2024_01_github_symlink_repo.png' 'Symlinks repo' %}
+{% post_img '2024_01_github_symlink_repo.png' 'Symlinks repo' %}
 
 On online navigation and in pull requests, the file content appears as the symlink's path, either absolute or relative.
 
-{% asset_img '2024_01_github_symlink_file.png' 'Symlinks repo file' %}
+{% post_img '2024_01_github_symlink_file.png' 'Symlinks repo file' %}
 
 ## When should I use this approach?
 
@@ -177,7 +177,7 @@ Symbolic directories can be a good alternative to Git submodules, in some cases.
 
 1) If you are using Windows, you need to enable symbolic links during the Git installation:
 
-{% asset_img '2024_01_git_windows_setup_symlinks.png' 'Git for Windows setup Symlinks' %}
+{% post_img '2024_01_git_windows_setup_symlinks.png' 'Git for Windows setup Symlinks' %}
 
 2) Some file systems do not support symlinks, such as FAT32 and exFAT. These two are commonly found in pen-drives and SD cards.
 

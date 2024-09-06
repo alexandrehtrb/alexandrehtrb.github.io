@@ -25,7 +25,7 @@ This article is a SQL cheatsheet, covering some of the most common commands to t
 The examples here are for Microsoft SQL Server, but most of them apply in a similar or equal way for other databases, such as PostgreSQL, MySQL and Oracle.
 <br>
 
-{% asset_img '2024_08_sql_iceberg.jpg' 'SQL iceberg' %}
+{% post_img '2024_08_sql_iceberg.jpg' 'SQL iceberg' %}
 
 <br>
 
@@ -190,10 +190,7 @@ Interlaces two or more tables by reference columns; this interlacing can be used
 
 Here we'll focus only on INNER JOIN and LEFT JOIN.
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_08_sql_joins.avif" alt="Different types of JOINs on SQL" />
-  <img src="/assets/img/posts/2024_08_sql_joins.png" alt="Different types of JOINs on SQL" />
-</picture>
+{% post_avif_img '2024_08_sql_joins.avif' '2024_08_sql_joins.png' 'Different types of JOINs on SQL' %}
 
 ### INNER JOIN
 
@@ -443,10 +440,7 @@ ORDER BY i.[Id] ASC, t.[Id] ASC
 
 ## PIVOT
 
-<picture class="my-4">
-  <source type="image/avif" srcset="/assets/img/posts/2024_08_friends_pivot.avif" alt="Ross asking to rotate the couch - Friends" />
-  <img src="/assets/img/posts/2024_08_friends_pivot.jpg" alt="Ross asking to rotate the couch - Friends" />
-</picture>
+{% post_avif_img '2024_08_friends_pivot.avif' '2024_08_friends_pivot.jpg' 'Ross asking to rotate the couch - Friends' %}
 
 The PIVOT instruction is very interesting. It transforms lines into columns, by rotating part of the table in 90º. It is very good for crossing two or more columns of a table.
 
@@ -1093,13 +1087,13 @@ On SSMS, enabling the *Include execution plan* on the top menu will include the 
 
 By analyzing the cost of each step, you can understand which performance bottlenecks exist and from there improve your query, by creating indexes, rewriting WHERE and JOIN criteria, and others.
 
-{% asset_img '2024_08_sql_execution_plan.jpg' 'SQL execution plan' %}
+{% post_img '2024_08_sql_execution_plan.jpg' 'SQL execution plan' %}
 
 <br>
 
 # Final conclusions
 
-{% asset_img '2024_08_titanic.jpg' 'Jack and Rose on the Titanic' %}
+{% post_img '2024_08_titanic.jpg' 'Jack and Rose on the Titanic' %}
 
 SQL is an extremely powerful and complete tool, and acquired new capabilities over the years. It is no wonder that remains being the mainstream for databases up to today; it is the basis for complex systems.
 

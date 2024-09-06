@@ -23,7 +23,7 @@ In the beginning of the 1990s, Tim Berners-Lee and his team at [CERN](https://ho
 
 HTTP reused for data transport the existing TCP/IP protocols, with HTTP message bytes residing in the [application layer](https://en.wikipedia.org/wiki/Application_layer), light blue in the image below.
 
-{% asset_img '2024_03_osi_model_tcp_ip.png' 'OSI model' %}
+{% post_img '2024_03_osi_model_tcp_ip.png' 'OSI model' %}
 
 ## HTTP/0.9
 
@@ -103,7 +103,7 @@ Expires: 0
 {"name":"Orange","id":2,"family":"Rutaceae","order":"Sapindales","genus":"Citrus","nutritions":{"calories":43,"fat":0.2,"sugar":8.2,"carbohydrates":8.3,"protein":1.0}}
 ```
 
-{% asset_img '2024_03_http1_tcp_packets.png' 'HTTP1 in TCP packets' %}
+{% post_img '2024_03_http1_tcp_packets.png' 'HTTP1 in TCP packets' %}
 
 ## HTTP/2
 
@@ -140,7 +140,7 @@ sequenceDiagram
 
 The image below shows how frames go inside a TCP packet. Stream 1 carries a HTTP response for a JavaScript file and stream 2 carries a HTTP response for a CSS file.
 
-{% asset_img '2024_03_http2_tcp_packets.png' 'HTTP2 frames in TCP packets' %}
+{% post_img '2024_03_http2_tcp_packets.png' 'HTTP2 frames in TCP packets' %}
 
 ## HTTP/3
 
@@ -191,7 +191,7 @@ sequenceDiagram
     end
 ```
 
-{% asset_img '2024_03_http3_quic_packets.png' 'HTTP3 QUIC packets' %}
+{% post_img '2024_03_http3_quic_packets.png' 'HTTP3 QUIC packets' %}
 
 The head-of-line blocking related to TLS (SSL) happens on TCP because the cryptography is usually applied over the entire message content, meaning that all data (all packets) needs to be received for the decryption to happen. With QUIC, the cryptography is individual for each QUIC packet, that is decrypted on arrival, without having to receive all packets beforehand.
 

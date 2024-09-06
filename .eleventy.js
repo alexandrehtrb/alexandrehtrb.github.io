@@ -81,9 +81,14 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.setLibrary('md', md);
 
-  // asset_img shortcode
-  eleventyConfig.addLiquidShortcode('asset_img', (filename, alt) => {
+  // post_img shortcode
+  eleventyConfig.addLiquidShortcode('post_img', (filename, alt) => {
     return `<img class="my-4" src="/assets/img/posts/${filename}" alt="${alt}" />`
+  })
+
+  // post_avif_img shortcode
+  eleventyConfig.addLiquidShortcode('post_avif_img', (avif_filename, fallback_filename, alt) => {
+    return `<picture class="my-4"><source type="image/avif" srcset="/assets/img/posts/${avif_filename}" alt="${alt}"/><img src="/assets/img/posts/${fallback_filename}" alt="${alt}"/></picture>`
   })
 
   eleventyConfig.addTransform("htmlmin", do_minifyhtml);
