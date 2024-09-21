@@ -859,11 +859,11 @@ O modo padrão de armazenamento de uma tabela é linear, por linhas, que ficam d
 flowchart TB
   subgraph page[Página]
     direction LR
-    subgraph row3[Linha 3]
+    subgraph row1[Linha 1]
       direction TB
-      A3
-      B3
-      C3
+      A1
+      B1
+      C1
     end
     subgraph row2[Linha 2]
       direction TB
@@ -871,11 +871,11 @@ flowchart TB
       B2
       C2
     end    
-    subgraph row1[Linha 1]
+    subgraph row3[Linha 3]
       direction TB
-      A1
-      B1
-      C1
+      A3
+      B3
+      C3
     end
 end
 ```

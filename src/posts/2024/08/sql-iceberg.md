@@ -857,11 +857,11 @@ The default storage mode of a table is linear, with rows laid inside pages. A, B
 flowchart TB
   subgraph page[Page]
     direction LR
-    subgraph row3[Row 3]
+    subgraph row1[Row 1]
       direction TB
-      A3
-      B3
-      C3
+      A1
+      B1
+      C1
     end
     subgraph row2[Row 2]
       direction TB
@@ -869,11 +869,11 @@ flowchart TB
       B2
       C2
     end    
-    subgraph row1[Row 1]
+    subgraph row3[Row 3]
       direction TB
-      A1
-      B1
-      C1
+      A3
+      B3
+      C3
     end
 end
 ```
