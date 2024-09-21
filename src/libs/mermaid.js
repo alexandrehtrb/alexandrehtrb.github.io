@@ -4,7 +4,7 @@ module.exports = (eleventyConfig, options) => {
     theme: 'default',
     loadOnSave: true
   };
-  let src = options?.mermaid_js_src || "https://unpkg.com/mermaid/dist/mermaid.esm.min.mjs";
+  let src = options?.mermaid_js_src || "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
 
   eleventyConfig.addLiquidShortcode("mermaid_js_scripts", () => {
     return `<script type="module" async>
