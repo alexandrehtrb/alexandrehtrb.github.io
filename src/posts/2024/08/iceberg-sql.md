@@ -856,26 +856,26 @@ CREATE TABLE [dbo].[Pessoa] (
 O modo padrão de armazenamento de uma tabela é linear, por linhas, que ficam dentro de páginas. A, B e C são colunas:
 
 ```mermaid
-flowchart TD
+flowchart TB
   subgraph page[Página]
     direction LR
-    subgraph row1[Linha 1]
+    subgraph row3[Linha 3]
       direction TB
-      A1
-      B1
-      C1
+      A3
+      B3
+      C3
     end
     subgraph row2[Linha 2]
       direction TB
       A2
       B2
       C2
-    end
-    subgraph row3[Linha 3]
+    end    
+    subgraph row1[Linha 1]
       direction TB
-      A3
-      B3
-      C3
+      A1
+      B1
+      C1
     end
 end
 ```
@@ -886,7 +886,6 @@ No armazenamento colunar, uma página é exclusiva de uma coluna:
 flowchart TB
   subgraph pageC[Página]
     subgraph columnC[Coluna C]
-    direction LR
       direction LR
       C1
       C2
@@ -895,7 +894,6 @@ flowchart TB
   end
   subgraph pageB[Página]
     subgraph columnB[Coluna B]
-    direction LR
       direction LR
       B1
       B2
@@ -904,7 +902,6 @@ flowchart TB
   end  
   subgraph pageA[Página]
     subgraph columnA[Coluna A]
-    direction LR
       direction LR
       A1
       A2

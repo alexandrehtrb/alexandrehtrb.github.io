@@ -854,26 +854,26 @@ CREATE TABLE [dbo].[Person] (
 The default storage mode of a table is linear, with rows laid inside pages. A, B and C are columns:
 
 ```mermaid
-flowchart TD
+flowchart TB
   subgraph page[Page]
     direction LR
-    subgraph row1[Row 1]
+    subgraph row3[Row 3]
       direction TB
-      A1
-      B1
-      C1
+      A3
+      B3
+      C3
     end
     subgraph row2[Row 2]
       direction TB
       A2
       B2
       C2
-    end
-    subgraph row3[Row 3]
+    end    
+    subgraph row1[Row 1]
       direction TB
-      A3
-      B3
-      C3
+      A1
+      B1
+      C1
     end
 end
 ```
@@ -883,8 +883,7 @@ With columnar storage, a page is exclusive for a column:
 ```mermaid
 flowchart TB
   subgraph pageC[Page]
-    subgraph columnC[Column A]
-    direction LR
+    subgraph columnC[Column C]
       direction LR
       C1
       C2
@@ -893,7 +892,6 @@ flowchart TB
   end
   subgraph pageB[Page]
     subgraph columnB[Column B]
-    direction LR
       direction LR
       B1
       B2
@@ -901,8 +899,7 @@ flowchart TB
     end
   end  
   subgraph pageA[Page]
-    subgraph columnA[Column C]
-    direction LR
+    subgraph columnA[Column A]
       direction LR
       A1
       A2
