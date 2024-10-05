@@ -821,11 +821,11 @@ CREATE TABLE [dbo].[Person] (
 
 Sparse is a column modifier that optimizes storage when there are many null values.
 
-In traditional storage, a field has a reserved amount of bytes for it in the line even when its value is null, which is a waste.
+In traditional storage, a field has a reserved amount of bytes for it in the row even when the value is null, which is a waste.
 
-With sparse columns, a null value occupies zero bytes on the line and a non-null value occupies the original size plus 4 bytes.
+With sparse columns, a null value occupies zero bytes on the row and a non-null value occupies the original size plus 4 bytes.
 
-Practical example, `NVARCHAR(16)` column needs 32 bytes on each line. With sparse, if null, 0 bytes will be used; if not null, 36 bytes.
+Practical example, `NVARCHAR(16)` column needs 32 bytes on each row. With sparse, if null, 0 bytes will be used; if not null, 36 bytes.
 
 | Percentage of nulls | Column size difference<br>with SPARSE |
 |:-:|:-:|
