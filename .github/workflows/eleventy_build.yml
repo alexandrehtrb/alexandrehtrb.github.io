@@ -30,11 +30,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: NPM install
-        run: npm install
+      - name: Setup PNPM
+        run: npm install -g pnpm
+      
+      - name: Download packages
+        run: pnpm install
       
       - name: Build
-        run: npm run build
+        run: pnpm build
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
