@@ -28,9 +28,9 @@ Deming graduated in electrical engineering and later specialized in mathematical
 
 Shewhart taught Deming many tools that served as the basis for his future works, among them, control charts and PDCA cycles.
 
-### Control charts
+### Control chart
 
-Show how much something stays within a margin of tolerance over time.
+Shows how much something stays within a margin of tolerance over time.
 
 Some real-life examples: the size of produced mechanical parts; the amount of active ingredient in each tablet; the travel time between two cities.
 
