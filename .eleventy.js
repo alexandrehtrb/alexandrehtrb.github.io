@@ -91,6 +91,11 @@ module.exports = function(eleventyConfig) {
     return `<picture class="my-4"><source type="image/avif" srcset="/assets/img/posts/${avif_filename}" alt="${alt}"/><img src="/assets/img/posts/${fallback_filename}" alt="${alt}"/></picture>`
   })
 
+  // image_caption shortcode
+  eleventyConfig.addLiquidShortcode('image_caption', (text) => {
+    return `<em class="text-sm italic">${text}</em>`
+  })
+
   eleventyConfig.addTransform("htmlmin", do_minifyhtml);
 
   return {
