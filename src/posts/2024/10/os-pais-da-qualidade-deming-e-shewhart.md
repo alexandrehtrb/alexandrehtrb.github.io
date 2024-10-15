@@ -14,7 +14,7 @@ tags:
 
 Nos anos 1980, havia um pensamento na cultura pop que o Japão conquistaria o mundo - não pela força, mas por sua economia pujante, que foi a segunda maior do mundo entre 1990 e 2010. Podemos ver isso em vários filmes, como no *De Volta Para o Futuro Parte II*, em que o chefe do Marty McFly no futuro é japonês; e em *Duro de Matar*, em que a esposa do protagonista trabalha numa empresa japonesa, no fim da década de 80. O chefe dela é o Sr. Takagi, na imagem abaixo.
 
-{% post_img '2024_10_die_hard_takagi.jpg' 'Duro de Matar - John McClane, Ellis, Takagi e Holly Gennaro' %}
+{% post_avif_img '2024_10_die_hard_takagi.avif' '2024_10_die_hard_takagi.jpg' 'Duro de Matar - John McClane, Ellis, Takagi e Holly Gennaro' %}
 
 A palavra-chave que resume o milagre econômico japonês é **qualidade**. Ao focar em produtos com melhor qualidade, melhor acabamento, menos defeitos e com processos industriais mais eficientes, a indústria japonesa ganhou a atenção dos consumidores e espaço na economia global.
 

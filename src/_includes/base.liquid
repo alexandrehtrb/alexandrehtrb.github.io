@@ -1,24 +1,25 @@
 <!doctype html>
 {% if published %}
-  <html lang="{{ lang }}">
+<html lang="{{ lang }}">
 {% else %}
-  <html lang="en">
+<html lang="en">
 {% endif %}
   <head>
     <meta charset="utf-8">
   	<meta name='viewport' content='width=device-width'>
-    {% if published %}
-      <title>{{ title }} - {{ site.title }}</title>
-      <meta property="og:title" content="{{ title }} - {{ site.title }}"/>
-      <meta name='description' content="{{ excerpt }}">
-    {% else %}
-      <title>{{ site.title }}</title>
-      <meta property="og:title" content="{{ site.title }}"/>
-      <meta name='description' content="{{ site.description }}">
-    {% endif %}
+  {% if published %}
+    <title>{{ title }} - {{ site.title }}</title>
+    <meta property="og:title" content="{{ title }} - {{ site.title }}"/>
+    <meta name='description' content="{{ excerpt }}">
+  {% else %}
+    <title>{{ site.title }}</title>
+    <meta property="og:title" content="{{ site.title }}"/>
+    <meta name='description' content="{{ site.description }}">
+  {% endif %}
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#E5E7EB" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
+    <meta name="generator" content="{{ eleventy.generator }}">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
