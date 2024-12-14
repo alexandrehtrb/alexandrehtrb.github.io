@@ -16,7 +16,7 @@ In the 1980s, there was a prevailing thought in popular culture that Japan would
 
 {% post_avif_img '2024_10_die_hard_takagi.avif' '2024_10_die_hard_takagi.jpg' 'Die Hard - John McClane, Ellis, Takagi and Holly Gennaro' %}
 
-The keyword that summarizes the Japanese economic miracle is **quality**. By focusing on products with higher quality, fewer defects and more efficient processes, their industry gained the attention of consumers and space in the global economy.
+The keyword that summarizes the Japanese economic miracle is **quality**. By focusing on better products, with fewer defects and more efficient processes, their industry gained the attention of consumers and space in the global economy.
 
 This transformation began with two men, whose works changed Japan and companies around the whole world.
 
@@ -42,11 +42,11 @@ With a control chart we can detect anomalies in a production line, or estimate w
 
 ## Second World War and post-war
 
-During World War II, Deming was part of the U.S. Emergency Technical Committee, focused on improving productivity and quality of wartime production. Statistical quality control was used on factories and reduced the number of failures in American weaponry.
+During World War II, Deming was part of the U.S. Emergency Technical Committee, focused on improving the wartime production. Statistical quality control was used on factories and reduced the number of failures in American weaponry.
 
 After the war, Deming was convoked to prepare the 1951 Japanese census and his effort and involvement in Japanese society caught attention, to the point that the Japanese Union of Scientists and Engineers (JUSE) invited him to teach them about statistics and quality. His lessons were a tremendous success and were transcribed into books with thousands of copies sold.
 
-In a lecture to Japanese executives in 1950, Deming told them that implementing statistical quality control on their companies would lower costs and waste, increase productivity and attract consumers, allured by better products. The executives then applied these ideas into their businesses, which exhibited significant gains in productivity and quality.
+In a lecture to Japanese executives in 1950, Deming told them that implementing statistical quality control on their companies would lower costs and waste, increase productivity and attract consumers, allured by better products. The executives applied these ideas into their businesses and had very positive results.
 
 In the following decades, Japan witnessed its economy rise from the ashes and become one of the largest in the world, largely due to the implementation of Deming's ideas. The GDP growth was around 8-10% yearly.
 

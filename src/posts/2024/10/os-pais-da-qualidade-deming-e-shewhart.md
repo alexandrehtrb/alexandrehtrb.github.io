@@ -16,7 +16,7 @@ Nos anos 1980, havia um pensamento na cultura pop que o Japão conquistaria o mu
 
 {% post_avif_img '2024_10_die_hard_takagi.avif' '2024_10_die_hard_takagi.jpg' 'Duro de Matar - John McClane, Ellis, Takagi e Holly Gennaro' %}
 
-A palavra-chave que resume o milagre econômico japonês é **qualidade**. Ao focar em produtos com melhor qualidade, melhor acabamento, menos defeitos e com processos industriais mais eficientes, a indústria japonesa ganhou a atenção dos consumidores e espaço na economia global.
+A palavra-chave que resume o milagre econômico japonês é **qualidade**. Ao focar em produtos melhores, com menos defeitos e com processos industriais mais eficientes, a indústria japonesa ganhou a atenção dos consumidores e espaço na economia global.
 
 Essa transformação começou com dois homens, cujos trabalhos mudaram o Japão e as empresas de todo o mundo.
 
@@ -24,7 +24,7 @@ Essa transformação começou com dois homens, cujos trabalhos mudaram o Japão 
 
 William Edwards Deming (1900-1993) foi um estatístico, engenheiro, economista e consultor americano. Por seu trabalho, ele é conhecido como *o pai da qualidade*.
 
-Deming fez graduação em engenharia elétrica, e depois mestrado e doutorado em matemática e física. Em 1927, ele começou a trabalhar no Departamento de Agricultura dos EUA e lá, por meio de colegas, conheceu Walter Andrew Shewhart (1891-1967), este que é conhecido como *o pai do controle estatístico de qualidade*. Shewhart era um engenheiro da Bell Telephone Company e utilizava matemática estatística para melhorar a confiabilidade e clareza sonora das linhas telefônicas.
+Deming fez graduação em engenharia elétrica, e depois mestrado e doutorado em matemática e física. Em 1927, ele começou a trabalhar no Departamento de Agricultura dos EUA e lá, por meio de colegas, conheceu Walter Andrew Shewhart (1891-1967), este que é conhecido como *o pai do controle estatístico de qualidade*. Shewhart era um engenheiro da Bell Telephone Company e usava estatística para melhorar a confiabilidade e clareza sonora das linhas telefônicas.
 
 Shewhart ensinou a Deming muitas ferramentas que serviram de base para seus trabalhos futuros, dentre elas, os gráficos de controle e os ciclos PDCA.
 
@@ -42,11 +42,11 @@ Com um gráfico de controle podemos detectar anomalias numa linha de produção,
 
 ## Segunda Guerra Mundial e pós-guerra
 
-Durante a Segunda Guerra Mundial, Deming fez parte do Comitê Técnico Emergencial dos EUA, focado em melhorar a produtividade e qualidade da indústria armamentícia. O controle estatístico de qualidade foi aplicado nas fábricas e diminuiu o número de falhas em armamentos americanos.
+Durante a Segunda Guerra Mundial, Deming fez parte do Comitê Técnico Emergencial dos EUA, focado em melhorar a indústria armamentícia. O controle estatístico de qualidade foi aplicado nas fábricas e diminuiu o número de falhas em armamentos americanos.
 
 Após a guerra, Deming foi convocado para preparar o censo japonês de 1951 e seu trabalho e envolvimento na sociedade japonesa o fizeram ser notado, a ponto de a União Japonesa de Cientistas e Engenheiros (JUSE) chamá-lo para lhes ensinar sobre estatística e qualidade. Suas aulas foram um tremendo sucesso e foram transcritas em livros com milhares de cópias vendidas.
 
-Em uma palestra a executivos japoneses em 1950, Deming lhes disse que implementar o controle estatístico de qualidade nas suas empresas diminuiria custos e desperdícios, aumentaria a produtividade e cativaria os consumidores, atraídos por produtos melhores. Os executivos levaram essas idéias para suas companhias, que mostraram aumentos expressivos de produtividade e qualidade.
+Em uma palestra a executivos japoneses em 1950, Deming lhes disse que implementar o controle estatístico de qualidade nas suas empresas diminuiria custos e desperdícios, aumentaria a produtividade e cativaria os consumidores, atraídos por produtos melhores. Os executivos levaram essas idéias para suas companhias e tiveram resultados muito positivos.
 
 Nas décadas seguintes, o Japão viu sua economia ressurgir das cinzas e ganhar destaque mundial, em grande parte devido à implementação das idéias de Deming. O crescimento do PIB girava entre 8-10% ao ano.
 
