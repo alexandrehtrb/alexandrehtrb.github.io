@@ -1,3 +1,4 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const { minify: minify_html } = require("html-minifier-terser");
@@ -36,6 +37,7 @@ module.exports = function(eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(require("./src/libs/shiki.js"));
   eleventyConfig.addPlugin(require("./src/libs/mermaid.js"));
+  eleventyConfig.addPlugin(pluginRss);
   
   // To enable merging of tags
   eleventyConfig.setDataDeepMerge(true)

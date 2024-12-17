@@ -17,6 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "3.0.0",
+    "@11ty/eleventy-plugin-rss": "2.0.2",
     "concurrently": "8.2.2",
     "eslint": "9.6.0",
     "postcss": "8.4.41"
