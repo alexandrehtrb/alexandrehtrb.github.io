@@ -2,7 +2,7 @@
 lang: pt
 langEnLink: ../special-properties-in-dotnet-projects
 title: Propriedades especiais em projetos .NET
-date: 2024-12-02
+date: 2024-12-17
 excerpt: Conheça formas de customizar seu projeto .NET, melhorando performance e tamanho do programa.
 published: true
 enableMermaid: false
