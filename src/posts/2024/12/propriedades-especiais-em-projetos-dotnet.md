@@ -67,7 +67,13 @@ Diz para quais versões do .NET seu projeto deve compilar. Geralmente, especific
 
 ```xml
 <PropertyGroup>
+
+  <!-- apenas um -->
   <TargetFramework>net8.0</TargetFramework>
+
+  <!-- múltiplos. note o plural. -->
+  <TargetFrameworks>netstandard1.4;net40;net45</TargetFrameworks>
+
 </PropertyGroup>
 ```
 
@@ -94,7 +100,7 @@ public int ConverterParaInt(string stringNumerica) =>
 public int ConverterParaInt(string? stringNumerica)
 {
     if (stringNumerica == null)
-        throw new Exception("String não pode ser nula.");
+        throw new ArgumentNullException(nameof(stringNumerica));
     else
         return int.Parse(stringNumerica);
 }
@@ -318,3 +324,6 @@ Coloca um ícone no programa para exibição no Windows Explorer.
 - [.NET Docs - Native AOT deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/)
 - [GitHub Dotnet Core repo - How to set application icon on Windows?](https://github.com/dotnet/core/issues/6260)
 - [.NET Docs - NuGet Package authoring best practices](https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices)
+- [.NET Docs - MSBuild reference for .NET SDK projects](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props)
+- [MSBuild Docs - Common MSBuild project properties](https://learn.microsoft.com/en-us/visualstudio/msbuild/common-msbuild-project-properties?view=vs-2022)
+- [MSBuild Docs - MSBuild reserved and well-known properties](https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2022)
