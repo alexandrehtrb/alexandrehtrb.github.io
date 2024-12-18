@@ -269,6 +269,8 @@ In NativeAOT compilation, the runtime is no longer needed and many processor arc
 
 **This compilation option is not so easy to use, though.** It requires that all code paths can be statically analysed, in other words, *reflection cannot be used in the code*, which affects for example JSON and XML (de)serialization.
 
+For JSON (de)serialization, a solution is using System.Text.Json source generators, that write and read JSONs through compile-time generated code.
+
 WPF and Windows Forms are heavily reflection-based and because of that they don't support NativeAOT. However, console and ASP\.NET minimal APIs do have support for NativeAOT.
 
 Just like trimming, using this feature requires caution and the [official docs](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/) should be read.
@@ -324,6 +326,7 @@ Sets an icon on the program for Windows Explorer.
 - [.NET Docs - ReadyToRun Compilation](https://learn.microsoft.com/en-us/dotnet/core/deploying/ready-to-run)
 - [.NET Docs - Trimming options](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/trimming-options)
 - [.NET Docs - Native AOT deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/)
+- [.NET Docs - How to use source generation in System.Text.Json](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation)
 - [GitHub Dotnet Core repo - How to set application icon on Windows?](https://github.com/dotnet/core/issues/6260)
 - [.NET Docs - NuGet Package authoring best practices](https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices)
 - [.NET Docs - MSBuild reference for .NET SDK projects](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props)

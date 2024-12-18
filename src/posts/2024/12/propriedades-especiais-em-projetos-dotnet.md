@@ -267,6 +267,8 @@ Ao compilar diretamente para linguagem nativa, o intermediário é removido e po
 
 **Essa opção de compilação não é simples de usar, contudo.** Ela requer que todos os caminhos de código possam ser analisados estaticamente, em outras palavras, *não é possível usar reflection no programa*, o que afeta por exemplo a serialização e desserialização de JSON e XML.
 
+Para (des)serialização de JSON, uma solução é usar source generators do System.Text.Json, que escrevem e lêem JSONs através de código gerado em tempo de compilação.
+
 WPF e Windows Forms são baseados em reflection e por isso não suportam NativeAOT; mas aplicações console e ASP\.NET minimal APIs têm suporte ao NativeAOT.
 
 Assim como o trimming, usar essa funcionalidade requer cuidado e vale ler a [documentação oficial](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/).
@@ -322,6 +324,7 @@ Coloca um ícone no programa para exibição no Windows Explorer.
 - [.NET Docs - ReadyToRun Compilation](https://learn.microsoft.com/en-us/dotnet/core/deploying/ready-to-run)
 - [.NET Docs - Trimming options](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/trimming-options)
 - [.NET Docs - Native AOT deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/)
+- [.NET Docs - How to use source generation in System.Text.Json](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation)
 - [GitHub Dotnet Core repo - How to set application icon on Windows?](https://github.com/dotnet/core/issues/6260)
 - [.NET Docs - NuGet Package authoring best practices](https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices)
 - [.NET Docs - MSBuild reference for .NET SDK projects](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props)
