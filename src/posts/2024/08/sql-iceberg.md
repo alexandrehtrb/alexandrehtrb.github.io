@@ -47,6 +47,7 @@ The examples here are for Microsoft SQL Server, but most of them apply in a simi
   * [PIVOT](#pivot)
   * [ROLLUP, CUBE, GROUPING SETS](#rollup%2C-cube%2C-grouping-sets)
   * [WINDOW FUNCTION](#window-function)
+  * [NOLOCK](#nolock)
 
 [**Data changes**](#data-changes)
 
@@ -599,6 +600,20 @@ Analyzes the subgroups of each column, but without crossing them. `GROUP BY GROU
 They are functions that generate values looking over slices (or windows) of a table. They are very useful for pagination, like product searches.
 
 This is a lengthy subject and with many possibilities, which is why I will not cover it here, but, I recommend [this article](https://www.sqlshack.com/use-window-functions-sql-server/) that explains very well how window functions work.
+
+## NOLOCK
+
+NOLOCK, or READ UNCOMMITTED, is a query hint that as the name suggests, ignores insert, update and delete locks.
+
+A regular query uses the standard isolation level, READ COMMITTED, that reads only committed data from a table. In a table with heavy traffic (many simultaneous operations), a query may face concurrency problems with inserts, updates and deletes.
+
+With the NOLOCK hint, the read does not compete with other operations. However, this reading mode includes uncommitted records, in such a way that *inconsistent data may appear in the results*. Generally speaking, NOLOCK should be used only if there actually is a concurrency problem, and if small and eventual inconsistencies are tolerable. An example of usage is the extraction of analytical reports.
+
+```sql
+SELECT *
+FROM [dbo].[Fruit] WITH (NOLOCK)
+WHERE [Calories] < 50
+```
 
 <br>
 

@@ -48,6 +48,7 @@ Os exemplos aqui são em Microsoft SQL Server, porém, a maioria deles existe de
   * [PIVOT](#pivot)
   * [ROLLUP, CUBE, GROUPING SETS](#rollup%2C-cube%2C-grouping-sets)
   * [WINDOW FUNCTION](#window-function)
+  * [NOLOCK](#nolock)
 
 [**Alterações de dados**](#alterações-de-dados)
 
@@ -600,6 +601,20 @@ Junta os subgrupos possíveis de cada coluna em análise, mas não cruza colunas
 São funções que atribuem valores olhando para fatias (ou janelas) da tabela. São muito úteis para fazer paginação, por exemplo, em pesquisas de produtos.
 
 É um tema extenso e com várias possibilidades, por isso, não vou entrar em detalhes aqui, contudo, recomendo [este artigo](https://www.sqlshack.com/use-window-functions-sql-server/) que explica muito bem como as window functions funcionam.
+
+## NOLOCK
+
+NOLOCK, ou READ UNCOMMITTED, é um modo de leitura que como o nome diz, ignora locks de inserção, alteração e exclusão de dados.
+
+Uma consulta normal usa o nível de isolamento padrão, READ COMMITTED, que lê apenas dados commitados na tabela. Em uma tabela com tráfego intenso (muitas operações simultâneas), uma consulta pode enfrentar problemas de concorrência com inserts, updates e deletes.
+
+Com a opção NOLOCK, a leitura não compete com outras operações. Porém, esse tipo de leitura inclui registros não-commitados, tal que *dados inconsistentes podem aparecer nos resultados*. De forma geral, NOLOCK deve ser usado apenas se houver de fato um problema de concorrência, e se pequenas e eventuais inconsistências forem toleráveis. Um exemplo de uso é a extração de relatórios analíticos.
+
+```sql
+SELECT *
+FROM [dbo].[Fruta] WITH (NOLOCK)
+WHERE [Calorias] < 50
+```
 
 <br>
 
