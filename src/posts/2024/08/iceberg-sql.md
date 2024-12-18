@@ -608,7 +608,7 @@ NOLOCK, ou READ UNCOMMITTED, é um modo de leitura que como o nome diz, ignora l
 
 Uma consulta normal usa o nível de isolamento padrão, READ COMMITTED, que lê apenas dados commitados na tabela. Em uma tabela com tráfego intenso (muitas operações simultâneas), uma consulta pode enfrentar problemas de concorrência com inserts, updates e deletes.
 
-Com a opção NOLOCK, a leitura não compete com outras operações. Porém, esse tipo de leitura inclui registros não-commitados, tal que *dados inconsistentes podem aparecer nos resultados*. De forma geral, NOLOCK deve ser usado apenas se houver de fato um problema de concorrência, e se pequenas e eventuais inconsistências forem toleráveis. Um exemplo de uso é a extração de relatórios analíticos.
+Com a opção NOLOCK, a leitura não compete com outras operações. Porém, esse tipo de leitura inclui registros não-commitados, tal que *dados inconsistentes podem aparecer nos resultados*. De forma geral, NOLOCK deve ser usado apenas se houver de fato um problema de concorrência, e se eventuais inconsistências forem toleráveis. Um exemplo de uso é a extração de relatórios analíticos.
 
 ```sql
 SELECT *

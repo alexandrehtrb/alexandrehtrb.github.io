@@ -607,7 +607,7 @@ NOLOCK, or READ UNCOMMITTED, is a query hint that as the name suggests, ignores 
 
 A regular query uses the standard isolation level, READ COMMITTED, that reads only committed data from a table. In a table with heavy traffic (many simultaneous operations), a query may face concurrency problems with inserts, updates and deletes.
 
-With the NOLOCK hint, the read does not compete with other operations. However, this reading mode includes uncommitted records, in such a way that *inconsistent data may appear in the results*. Generally speaking, NOLOCK should be used only if there actually is a concurrency problem, and if small and eventual inconsistencies are tolerable. An example of usage is the extraction of analytical reports.
+With the NOLOCK hint, the read does not compete with other operations. However, this reading mode includes uncommitted records, in such a way that *inconsistent data may appear in the results*. Generally speaking, NOLOCK should be used only if there actually is a concurrency problem, and if eventual inconsistencies are tolerable. An example of usage is the extraction of analytical reports.
 
 ```sql
 SELECT *
