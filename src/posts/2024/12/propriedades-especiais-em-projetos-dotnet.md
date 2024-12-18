@@ -267,7 +267,7 @@ Ao compilar diretamente para linguagem nativa, o intermediário é removido e po
 
 **Essa opção de compilação não é simples de usar, contudo.** Ela requer que todos os caminhos de código possam ser analisados estaticamente, em outras palavras, *não é possível usar reflection no programa*, o que afeta por exemplo a serialização e desserialização de JSON e XML.
 
-Para (des)serialização de JSON, uma solução é usar source generators do System.Text.Json, que escrevem e lêem JSONs através de código gerado em tempo de compilação.
+Para (des)serialização de JSON, uma solução é os source generators do System.Text.Json, que escrevem e lêem JSONs através de código gerado em tempo de compilação.
 
 WPF e Windows Forms são baseados em reflection e por isso não suportam NativeAOT; mas aplicações console e ASP\.NET minimal APIs têm suporte ao NativeAOT.
 
