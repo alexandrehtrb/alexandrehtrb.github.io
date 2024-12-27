@@ -57,7 +57,7 @@ O UTF-8 usa uma quantidade variável de bytes, de 1 a 4 por caractér. É o prin
 | Intervalo Unicode | Grupos | Bytes por char, UTF-8 | Bytes por char, UTF-16 |
 |:-:|:-:|:-:|:-:|
 | 0x0000 a 0x007F | Alfabeto latino básico, algarismos arábicos (0 a 9), símbolos básicos do teclado | 1 | 2 |
-| 0x0080 a 0x07FF | Alfabetos latino estendido (com acentos, cê-cedilha), grego, cirílico, árabe, hebraico | 2 | 2 |
+| 0x0080 a 0x07FF | Alfabetos latino estendido (com acentos, cedilhas), grego, cirílico, árabe, hebraico | 2 | 2 |
 | 0x0800 a 0xFFFF | Ideogramas japoneses e chineses; símbolos variados; operadores matemáticos | 3 | 2 |
 | 0x010000 a 0x10FFFF | Pictogramas de escritas antigas (ex.: hieróglifos egípcios); emojis; símbolos musicais | 4 | 4 |
 
@@ -111,6 +111,7 @@ INSERT INTO [dbo].[Pessoa] VALUES
 ('Pericles','Pericles'), -- latino sem acento
 ('Péricles','Péricles'), -- latino com acento
 (N'Περικλῆς',N'Περικλῆς'), -- grego
+(N'美しいキモノ',N'美しいキモノ'), -- japonês katakana
 (N'Papai Noel 🎅',N'Papai Noel 🎅'); -- com emoji
 -- o prefixo N é necessário para strings unicode
 
@@ -129,9 +130,10 @@ DROP TABLE [dbo].[Pessoa];
 | Pericles | 8 | Pericles | 16 |
 | Péricles | 8 | Péricles | 16 |
 | ?e?????? | 8 | Περικλῆς | 16 |
+| ?????? | 6 | 美しいキモノ | 12 |
 | Papai Noel ?? | 13 | Papai Noel 🎅 | 26 |
 
-Podemos perceber que o encoding Windows-1252 não suporta caractéres gregos e emojis, que são substituídos por '?'. Apesar disso, consegue atender muito bem palavras latinas, gastando apenas 1 byte por letra, mesmo naquelas com acentos ou cedilhas.
+Podemos perceber que o encoding Windows-1252 não suporta caractéres gregos, japoneses e emojis, que são substituídos por '?'. Apesar disso, consegue atender muito bem palavras latinas, gastando apenas 1 byte por letra, mesmo naquelas com acentos ou cedilhas.
 
 ### Latin1 General 100 CI AS KS SC UTF8
 
@@ -140,9 +142,10 @@ Podemos perceber que o encoding Windows-1252 não suporta caractéres gregos e e
 | Pericles | 8 | Pericles | 16 |
 | Péricles | 9 | Péricles | 16 |
 | Περικλῆς | 17 | Περικλῆς | 16 |
+| 美しいキモノ | 18 | 美しいキモノ | 12 |
 | Papai Noel 🎅 | 15 | Papai Noel 🎅 | 26 |
 
-Com a collation UTF-8, o campo VARCHAR suportou com sucesso emojis e caractéres gregos e teve maior eficiência em geral. O terceiro nome, Περικλῆς, precisou de 17 bytes porque a letra ῆ (unicode 0x1FC6) é do grego antigo e requer 3 bytes em UTF-8.
+Com a collation UTF-8, o campo VARCHAR suportou com sucesso todos os caractéres e teve maior eficiência em geral. O terceiro nome, Περικλῆς, precisou de 17 bytes porque a letra ῆ (unicode 0x1FC6) é do grego antigo e requer 3 bytes em UTF-8. Para japonês katakana, UTF-16 provou-se mais eficiente.
 
 ## Fontes e leituras interessantes
 

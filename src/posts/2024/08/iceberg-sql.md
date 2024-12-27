@@ -604,11 +604,11 @@ São funções que atribuem valores olhando para fatias (ou janelas) da tabela. 
 
 ## NOLOCK
 
-NOLOCK, ou READ UNCOMMITTED, é um modo de leitura que como o nome diz, ignora locks de inserção, alteração e exclusão de dados.
+NOLOCK, ou READ UNCOMMITTED, é um modo de leitura que, como o nome sugere, ignora locks.
 
 Uma consulta normal usa o nível de isolamento padrão, READ COMMITTED, que lê apenas dados commitados na tabela. Em uma tabela com tráfego intenso (muitas operações simultâneas), uma consulta pode enfrentar problemas de concorrência com inserts, updates e deletes.
 
-Com a opção NOLOCK, a leitura não compete com outras operações. Porém, esse tipo de leitura inclui registros não-commitados, tal que *dados inconsistentes podem aparecer nos resultados*. De forma geral, NOLOCK deve ser usado apenas se houver de fato um problema de concorrência, e se eventuais inconsistências forem toleráveis. Um exemplo de uso é a extração de relatórios analíticos.
+Com a opção NOLOCK, a leitura não compete com essas operações. Porém, esse tipo de leitura inclui registros não-commitados, tal que *dados inconsistentes podem aparecer nos resultados*. De forma geral, NOLOCK deve ser usado apenas se houver de fato um problema de concorrência, e se eventuais inconsistências forem toleráveis. Um exemplo de uso é a extração de relatórios analíticos.
 
 ```sql
 SELECT *

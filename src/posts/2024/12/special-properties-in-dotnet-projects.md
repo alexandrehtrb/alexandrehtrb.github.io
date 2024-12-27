@@ -15,7 +15,7 @@ tags:
 
 # .NET project files
 
-Certain configurations in .NET project files can modify how a project is compiled, and the performance and size of published apps.
+Certain configurations in .NET project files modify how a project is compiled, and the performance and size of published apps.
 
 These configurations reside in .csproj (C#), .fsproj (F#) and .vbproj (VB\.NET) files; they can also be passed via command-line arguments, when running `dotnet run`, `dotnet build` and `dotnet publish`.
 
@@ -44,6 +44,8 @@ dotnet publish `
   -p:PublishSingleFile=true `
   --output "./out/"
 ```
+
+<br/>
 
 # Properties
 

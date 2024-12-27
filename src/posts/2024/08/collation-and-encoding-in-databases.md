@@ -99,7 +99,7 @@ The storage size is specified on the column type declaration, such as `NVARCHAR(
 
 ### Practical example
 
-Let's have two databases, one with the Latin1_General_CI_AS collation (Windows-1252 encoding) and another with Latin1_General_100_CI_AS_KS_SC_UTF8 collation (UTF-8 encoding). For each of them, we will compare the storage sizes between VARCHAR and NVARCHAR, for texts in basic and extended latin alphabet, greek and emojis. Below, the script to run:
+Let's have two databases, one with the Latin1_General_CI_AS collation (Windows-1252 encoding) and another with Latin1_General_100_CI_AS_KS_SC_UTF8 collation (UTF-8 encoding). For each of them, we will compare the storage sizes between VARCHAR and NVARCHAR, for texts in basic and extended latin alphabet, greek, japanese and emojis. Below, the script to run:
 
 ```sql
 CREATE TABLE [dbo].[Person] (
@@ -111,6 +111,7 @@ INSERT INTO [dbo].[Person] VALUES
 ('Pericles','Pericles'), -- latin without accent
 ('Péricles','Péricles'), -- latin with accent
 (N'Περικλῆς',N'Περικλῆς'), -- greek
+(N'美しいキモノ',N'美しいキモノ'), -- japanese katakana
 (N'Santa Claus 🎅',N'Santa Claus 🎅'); -- with emoji
 -- the N prefix is necessary for unicode strings
 
@@ -129,9 +130,10 @@ DROP TABLE [dbo].[Person];
 | Pericles | 8 | Pericles | 16 |
 | Péricles | 8 | Péricles | 16 |
 | ?e?????? | 8 | Περικλῆς | 16 |
+| ?????? | 6 | 美しいキモノ | 12 |
 | Santa Claus ?? | 14 | Santa Claus 🎅 | 28 |
 
-Note that Windows-1252 encoding does not support greek characters and emojis, that are replaced by '?'. Despite that, it handles very well latin words, with only 1 byte per letter, even on those with accents or *cedillas*.
+Note that Windows-1252 encoding does not support greek and japanese characters, nor emojis, that are replaced by '?'. Despite that, it handles very well latin words, with only 1 byte per letter, even on those with accents or *cedillas*.
 
 ### Latin1 General 100 CI AS KS SC UTF8
 
@@ -140,9 +142,10 @@ Note that Windows-1252 encoding does not support greek characters and emojis, th
 | Pericles | 8 | Pericles | 16 |
 | Péricles | 9 | Péricles | 16 |
 | Περικλῆς | 17 | Περικλῆς | 16 |
+| 美しいキモノ | 18 | 美しいキモノ | 12 |
 | Santa Claus 🎅 | 16 | Santa Claus 🎅 | 28 |
 
-With an UTF-8 collation, the VARCHAR field successfully supported emojis and greek characters and had a higher efficiency for most cases. The third name, Περικλῆς, needed 17 bytes because the letter ῆ (unicode 0x1FC6) is from ancient greek and requires 3 bytes in UTF-8 encoding.
+With an UTF-8 collation, the VARCHAR field successfully supported all characters and had a higher efficiency for most cases. The third name, Περικλῆς, needed 17 bytes because the letter ῆ (unicode 0x1FC6) is from ancient greek and requires 3 bytes in UTF-8 encoding. For japanese katakana, UTF-16 proved more efficient.
 
 ## Sources and interesting reads
 

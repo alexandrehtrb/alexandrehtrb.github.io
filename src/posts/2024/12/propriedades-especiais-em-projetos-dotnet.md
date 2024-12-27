@@ -15,7 +15,7 @@ tags:
 
 # Arquivos de projeto .NET
 
-Certas configurações em projetos .NET podem modificar como o projeto é compilado, e a performance e tamanho dos programas publicados.
+Certas configurações em projetos .NET modificam como o projeto é compilado, e a performance e tamanho dos programas publicados.
 
 Essas configurações ficam nos arquivos .csproj (C#), .fsproj (F#) e .vbproj (VB\.NET); também podem ser passadas via linha de comando, ao executar `dotnet run`, `dotnet build` e `dotnet publish`.
 
@@ -44,6 +44,8 @@ dotnet publish `
   -p:PublishSingleFile=true `
   --output "./out/"
 ```
+
+<br/>
 
 # Propriedades
 
