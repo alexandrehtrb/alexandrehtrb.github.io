@@ -27,6 +27,10 @@ h2 > a.header-anchor {
   font-weight: 700;
 }
 
+html {
+  background-color: rgb(255, 252, 240); /* alabaster */
+}
+
 html mark {
   background-color: yellow;
   color: var(--tw-prose-body);
