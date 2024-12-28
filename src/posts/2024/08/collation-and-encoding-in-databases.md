@@ -23,11 +23,11 @@ The table below is for Windows-1252 encoding, which addresses 255 possible chara
 
 {% post_img '2024_08_windows_1252_table.gif' 'Windows-1252 encoding table' %}
 
-The **collation** is the ordering and comparison rule for texts. It also determines which encoding is used.
+The **collation** is the ordering and comparison rule for texts. It also determines which encoding is used for storage.
 
-On Microsoft SQL Server, in the collation's name, CI / CS means case (in)sensitive; AI / AS, accent (in)sensitive.
+On Microsoft SQL Server, in the collation's name, CI / CS means case (in)sensitive; AI / AS, accent (in)sensitive. With a case-insensitive (CI) collation, for example, searching for either `silva` or `SILVA` yields the same results; with an accent-insensitive (AI) collation, `Acucar` and `Açúcar` are considered equal for comparisons.
 
-With a case-insensitive (CI) collation, for example, searching for either `João da Silva` or `joão da silva` yields the same results.
+Accent-insensitive is insensitive actually for all the [diacritics](https://en.wikipedia.org/wiki/Diacritic) of a language, like *cedillas* (ç, ş) and accents (é, ã, ô, etc). Some older collations do not cover all diacritics on comparisons ([link](https://dba.stackexchange.com/questions/343799/a-collation-that-ignores-cedillas-for-comparison)), so newer collations should be preferred.
 
 ```sql
 SELECT
