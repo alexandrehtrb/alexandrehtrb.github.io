@@ -46,10 +46,22 @@ module.exports = (eleventyConfig, options) => {
   eleventyConfig.amendLibrary('md', () => { });
 
   eleventyConfig.on('eleventy.before', async () => {
+    const shiki = await import('shiki');
+
+    // highlighter config
+    const highlighter = await shiki.createHighlighter(
+    {
+      themes: ["light-plus", "dark-plus"],
+      langs: [
+        'shell', 'html', 'yaml',
+        'sql', 'xml', 'javascript'
+      ]
+    });
+
     eleventyConfig.amendLibrary('md', (mdLib) =>
       mdLib.set({
         highlight: (code, lang) => {
-          return options.highlighter.codeToHtml(code,
+          return highlighter.codeToHtml(code,
           {
             lang: lang,
             themes: {
@@ -66,30 +78,8 @@ module.exports = (eleventyConfig, options) => {
 
 ### Chamar plug-in do Shiki no `.eleventy.js`
 
-Em uma função separada, vamos criar um singleton do Shiki highlighter, que será passado dentro de um objeto para o plug-in.
-
 ```javascript
-async function makeShikiOptions() {
-  const shiki = await import('shiki');
-
-  // highlighter config
-  const highlighter = await shiki.createHighlighter(
-  {
-    themes: ["light-plus", "dark-plus"],
-    langs: [
-      'shell', 'html', 'yaml',
-      'sql', 'xml', 'javascript'
-    ]
-  });
-
-  const options = {
-    highlighter: highlighter
-  };
-
-  return options;
-}
-
-module.exports = async function(eleventyConfig) {
+module.exports = function(eleventyConfig) {
   ...
 
   // IMPORTANTE!
@@ -97,8 +87,8 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight) // [!code --]
 
   // Adicionar:
-  const shikiOptions = await makeShikiOptions(); // [!code ++]
-  eleventyConfig.addPlugin(require("./src/libs/shiki.js"), shikiOptions); // [!code ++]
+  eleventyConfig.addPlugin(require("./src/libs/shiki.js")); // [!code ++]
+
   ...
 }
 ```

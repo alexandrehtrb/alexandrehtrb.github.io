@@ -33,7 +33,7 @@ async function do_minifyhtml(source, output_path) {
   return result;
 }
 
-async function makeShikiOptions() {
+async function makeShikiHighlighterOptions() {
   const shiki = await import('shiki');
     const fs = await import('fs');
     const { transformerNotationDiff } = await import('@shikijs/transformers');
@@ -70,7 +70,7 @@ async function makeShikiOptions() {
 
 module.exports = async function(eleventyConfig) {
   // Plugins  
-  var shikiOptions = await makeShikiOptions(); // singleton Shiki highlighter
+  var shikiOptions = await makeShikiHighlighterOptions(); // singleton Shiki highlighter
   eleventyConfig.addPlugin(require("./src/libs/shiki.js"), shikiOptions);
   eleventyConfig.addPlugin(require("./src/libs/mermaid.js"));
   eleventyConfig.addPlugin(pluginRss);
