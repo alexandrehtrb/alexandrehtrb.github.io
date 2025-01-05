@@ -33,45 +33,9 @@ async function do_minifyhtml(source, output_path) {
   return result;
 }
 
-async function makeShikiHighlighterOptions() {
-  const shiki = await import('shiki');
-    const fs = await import('fs');
-    const { transformerNotationDiff } = await import('@shikijs/transformers');
-
-    // Load the theme object from a file, a network request, or anywhere
-    const darkColourTheme = JSON.parse(fs.readFileSync('src/libs/nomos-black-colour-theme.json', 'utf8'))
-    const highlighter = await shiki.createHighlighter(
-    {
-      themes: ["light-plus"],
-      langs: [
-        'shell',
-        'html',
-        'batch',
-        'powershell',
-        'yaml',
-        'sql',
-        'csharp',
-        'fsharp',
-        'xml',
-        'javascript',
-        'css'
-      ],
-    });
-
-    await highlighter.loadTheme(darkColourTheme);
-
-    const options = {
-      highlighter: highlighter,
-      transformerNotationDiff: transformerNotationDiff
-    };
-
-    return options;
-}
-
-module.exports = async function(eleventyConfig) {
-  // Plugins  
-  var shikiOptions = await makeShikiHighlighterOptions(); // singleton Shiki highlighter
-  eleventyConfig.addPlugin(require("./src/libs/shiki.js"), shikiOptions);
+module.exports = function(eleventyConfig) {
+  // Plugins
+  eleventyConfig.addPlugin(require("./src/libs/shiki.js"));
   eleventyConfig.addPlugin(require("./src/libs/mermaid.js"));
   eleventyConfig.addPlugin(pluginRss);
   

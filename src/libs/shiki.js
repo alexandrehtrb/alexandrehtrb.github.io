@@ -6,8 +6,31 @@ module.exports = (eleventyConfig, options) => {
   eleventyConfig.amendLibrary('md', () => { });
 
   eleventyConfig.on('eleventy.before', async () => {
-    const highlighter = options.highlighter;
-    const transformerNotationDiff = options.transformerNotationDiff;
+    const shiki = await import('shiki');
+    const fs = await import('fs');
+    const { transformerNotationDiff } = await import('@shikijs/transformers');
+
+    // Load the theme object from a file, a network request, or anywhere
+    const darkColourTheme = JSON.parse(fs.readFileSync('src/libs/nomos-black-colour-theme.json', 'utf8'))
+    const highlighter = await shiki.createHighlighter(
+    {
+      themes: ["light-plus"],
+      langs: [
+        'shell',
+        'html',
+        'batch',
+        'powershell',
+        'yaml',
+        'sql',
+        'csharp',
+        'fsharp',
+        'xml',
+        'javascript',
+        'css'
+      ],
+    });
+
+    await highlighter.loadTheme(darkColourTheme);
 
     eleventyConfig.amendLibrary('md', (mdLib) =>
       mdLib.set({
