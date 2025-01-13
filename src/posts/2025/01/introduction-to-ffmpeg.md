@@ -57,21 +57,8 @@ ffmpeg -version
 
 ### Windows
 
-- Download the latest FFMpeg for Windows release ([link](https://github.com/GyanD/codexffmpeg/releases)). The `essentials` version is the most appropriate for most users.
-- Unzip the file.
-- Add the `bin` folder to PATH. For that:
-  - On Windows Explorer, mouse right-click on *This Computer* > *Properties*.
-  - On the next window, click on *Advanced system configurations*.
-  - On *System Properties*, click on *Environment Variables...*.
-  - On *User Variables for X*, select the line with **Path** and click on *Edit...*.
-  - Add the bin folder path to the list. It will be something like: `C:\Users\user\Downloads\ffmpeg-7.0.1-essentials_build\bin` (change for the path in your machine).
-  - Click OK on the windows to save the changes.
-  
-- FFmpeg is used via Command Prompt or PowerShell. In your computer, open one of those programs.
-- In the examples below, the file paths are specified without their folders, which implies the current folder in the command line. To change the current directory:
-
 ```ps1
-cd C:\Users\user\Videos\
+winget install --id=Gyan.FFmpeg  -e
 ```
 
 If the files are (or will be generated) in other folders, the full file path is required:
