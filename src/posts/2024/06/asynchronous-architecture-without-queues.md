@@ -138,10 +138,10 @@ LPUSH my_queue "Task1"
 # inserts at the end of the queue
 LPUSH my_queue "Task2"
 
-# takes the head of the line: "Task1"
+# pops the head of the queue: "Task1"
 RPOP my_queue
 
-# takes the head of the line: "Task2"
+# pops the head of the line: "Task2"
 RPOP my_queue
 ```
 
@@ -164,7 +164,7 @@ We must take into account that this processing implies higher CPU and RAM usage 
 
 ### Practical example
 
-The code below is an ASP.NET minimal API that uses channels to process messages, that are received on an HTTP endpoint and handled by a  `MyMessageProcessor`.
+The code below is an ASP\.NET minimal API that uses channels to process messages, that are received on an HTTP endpoint and handled by a  `MyMessageProcessor`.
 
 To run the program below:
 
@@ -258,7 +258,7 @@ public sealed class MyMessageProcessor
 
 To test, open a browser and go to the URL: `http://localhost:{port}/message?content=my_message_here`
 
-<video controls="controls" src="/assets/img/posts/2024_06_dotnet_channels_en.mp4"></video>
+<video controls="controls" src="/assets/videos/posts/2024_06_dotnet_channels_en.mp4"></video>
 
 ## Criteria analysis
 

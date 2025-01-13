@@ -164,7 +164,7 @@ Devemos levar em conta que esse processamento implica maior consumo de CPU e mem
 
 ### Exemplo prático
 
-O código abaixo é de uma Minimal API do ASP.NET que usa channels para processar mensagens, que são recebidas em um endpoint HTTP e repassadas para um `MyMessageProcessor`.
+O código abaixo é de uma Minimal API do ASP\.NET que usa channels para processar mensagens, que são recebidas em um endpoint HTTP e repassadas para um `MyMessageProcessor`.
 
 Para rodar o programa abaixo:
 
@@ -258,7 +258,7 @@ public sealed class MyMessageProcessor
 
 Para testar, basta ir no navegador Web e acessar a URL `http://localhost:{porta}/message?content=minha_mensagem_aqui`
 
-<video controls="controls" src="/assets/img/posts/2024_06_dotnet_channels_pt.mp4"></video>
+<video controls="controls" src="/assets/videos/posts/2024_06_dotnet_channels_pt.mp4"></video>
 
 ## Critérios de análise
 

@@ -27,13 +27,13 @@ h2 > a.header-anchor {
   font-weight: 700;
 }
 
-html {
-  background-color: rgb(255, 252, 240); /* alabaster */
+/*html {
+  background-color: #FFFCF0;
 }
 
 html.dark {
   background-color: rgb(0, 0, 0);
-}
+}*/
 
 html mark {
   background-color: yellow;
@@ -67,6 +67,10 @@ html.dark .shiki span {
 .shiki span.line.diff.remove span
 {
   background-color: rgba(244, 63, 94, 0.14) !important
+}
+
+pre.shiki.wrapped {
+  white-space: pre-wrap;
 }
 
 /* Copy code buttons on code blocks */
