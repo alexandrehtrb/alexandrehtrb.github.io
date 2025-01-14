@@ -38,9 +38,30 @@ Neste artigo, vamos aprender como usá-lo, através de exemplos práticos.
 
 ### Linux
 
+Debian / Ubuntu:
+
 ```sh
 sudo apt update
 sudo apt install ffmpeg
+ffmpeg -version
+```
+
+Fedora:
+
+```sh
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf upgrade --refresh
+sudo dnf install ffmpeg --allowerasing
+sudo dnf install ffmpeg-devel --allowerasing
+ffmpeg -version
+```
+
+Arch Linux:
+
+```sh
+sudo pacman -Sy 
+sudo pacman -S ffmpeg 
 ffmpeg -version
 ```
 
@@ -57,6 +78,14 @@ ffmpeg -version
 
 ### Windows
 
+Você pode instalar via Winget (disponível para Windows 11, Windows Server 2025):
+
+```ps1
+winget install --id=Gyan.FFmpeg -e
+```
+
+Ou instalar manualmente:
+
 - Baixar a versão mais recente do FFmpeg para Windows ([link](https://github.com/GyanD/codexffmpeg/releases)). A versão `essentials` é a mais indicada para a maioria dos usuários.
 - Descompactar o zip baixado.
 - Adicionar o caminho da pasta `bin` ao PATH. Para isto:
@@ -66,7 +95,10 @@ ffmpeg -version
   - Em *Variáveis de usuário para X*, selecionar a linha com **Path** e clicar em *Editar...*.
   - Adicionar o caminho da pasta na lista. Vai ser algo como: `C:\Users\usuario\Downloads\ffmpeg-7.0.1-essentials_build\bin` (alterar para o caminho na sua máquina).
   - Clicar em OK nas janelas para salvar as alterações.
-- O FFmpeg é usado via Prompt de Comando ou PowerShell. No seu computador, abra um desses programas.
+
+### Como usar
+
+- O FFmpeg é usado via Terminal, Prompt de Comando ou PowerShell. No seu computador, abra um desses programas.
 - Nos exemplos, os arquivos são especificados sem a pasta, o que implica a pasta atual da linha de comando. Para mudar o diretório atual:
 
 ```ps1
