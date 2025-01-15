@@ -69,8 +69,22 @@ html.dark .shiki span {
   background-color: rgba(244, 63, 94, 0.14) !important
 }
 
+/* wrapped --> 
+   for long single-lines of code,
+   such as for command-line cmds.
+   
+   styles below make the line of code 
+   overflow into other lines in <code>,
+   and make the code not go under the 
+   copy code buttons.*/
+
 pre.shiki.wrapped {
   white-space: pre-wrap;
+}
+
+pre.shiki.wrapped code {
+  margin-right: 48px;
+  display: inline-block;
 }
 
 /* Copy code buttons on code blocks */
