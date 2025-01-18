@@ -207,8 +207,16 @@ ffmpeg -i input.mp4 -c:v libx265 -crf 28 -tag:v hvc1 -c:a copy output.mp4
 ## Cut part of a video
 
 ```ps1
-ffmpeg -ss 00:00:19.4 -to 00:03:50 -i input.mp4 -c copy output.mp4
+ffmpeg -i input.mp4 -ss 00:00:19.4 -to 00:03:50 -c copy output.mp4
 ```
+
+The time parameters can be placed before or after the input parameter.
+
+When placed before (`-ss -to -i`), the operation is faster because the cut is made on the input, which is processed afterwards; however, the cut may be imprecise, and there may dyssynchrony between audio and video.
+
+When placed after (`-i -ss -to`), the cut is more precise and there is no risk of dyssynchrony, but the operation is slower because the cut is made on the output, after the video is processed.
+
+When in doubt, you can first try the input cut (first option) and check the result. If the result is not good, then try the output cut (second option).
 
 ## Increase and decrease audio volume
 
@@ -323,6 +331,7 @@ ffprobe video.mp4
 - [Unix Stack Exchange - How can I reduce a video's size with ffmpeg?](https://unix.stackexchange.com/questions/28803/how-can-i-reduce-a-videos-size-with-ffmpeg)
 - [FFmpeg - Scaling](https://trac.ffmpeg.org/wiki/Scaling)
 - [FFmpeg - Seeking](https://trac.ffmpeg.org/wiki/Seeking)
+- [Stack Overflow - FFmpeg -ss weird behaviour](https://stackoverflow.com/questions/6984628/ffmpeg-ss-weird-behaviour)
 - [Super User - How to resize a video to make it smaller with FFmpeg](https://superuser.com/questions/624563/how-to-resize-a-video-to-make-it-smaller-with-ffmpeg)
 - [What Hi-Fi? - MP3, AAC, WAV, FLAC: all the audio file formats explained](https://www.whathifi.com/advice/mp3-aac-wav-flac-all-the-audio-file-formats-explained)
 - [Stack Overflow - ffmpeg subtitles alignment and position](https://stackoverflow.com/questions/57869367/ffmpeg-subtitles-alignment-and-position)

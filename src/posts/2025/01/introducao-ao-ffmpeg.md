@@ -207,8 +207,16 @@ ffmpeg -i entrada.mp4 -c:v libx265 -crf 28 -tag:v hvc1 -c:a copy saida.mp4
 ## Cortar trecho do vídeo
 
 ```ps1
-ffmpeg -ss 00:00:19.4 -to 00:03:50 -i entrada.mp4 -c copy saida.mp4
+ffmpeg -i entrada.mp4 -ss 00:00:19.4 -to 00:03:50 -c copy saida.mp4
 ```
+
+Os parâmetros de tempo podem ser colocados antes ou depois do parâmetro de entrada.
+
+Colocados antes (`-ss -to -i`), resulta-se em uma operação mais rápida pois o corte é na entrada, que depois é processada; porém, o corte pode ser impreciso e pode haver dissincronia entre o áudio e o vídeo.
+
+Colocados depois (`-i -ss -to`), o corte é mais preciso e não há risco de dissincronia; contudo, a operação é mais lenta porque o corte é na saída, após todo o processamento do vídeo.
+
+Em dúvida, pode-se experimentar primeiro o corte na entrada (primeira opção) e ver o resultado; se o resultado não for correto, então partir para o corte na saída (segunda opção).
 
 ## Aumentar e diminuir volume de som
 
@@ -321,6 +329,7 @@ ffprobe video.mp4
 - [Unix Stack Exchange - How can I reduce a video's size with ffmpeg?](https://unix.stackexchange.com/questions/28803/how-can-i-reduce-a-videos-size-with-ffmpeg)
 - [FFmpeg - Scaling](https://trac.ffmpeg.org/wiki/Scaling)
 - [FFmpeg - Seeking](https://trac.ffmpeg.org/wiki/Seeking)
+- [Stack Overflow - FFmpeg -ss weird behaviour](https://stackoverflow.com/questions/6984628/ffmpeg-ss-weird-behaviour)
 - [Super User - How to resize a video to make it smaller with FFmpeg](https://superuser.com/questions/624563/how-to-resize-a-video-to-make-it-smaller-with-ffmpeg)
 - [Tribuna de Jundiaí - FLAC, AAC, Opus e MP3: entenda as diferenças entre os arquivos de áudio](https://tribunadejundiai.com.br/mais/inovacao/flac-aac-opus-e-mp3-entenda-as-diferencas-entre-os-arquivos-de-audio/)
 - [Stack Overflow - ffmpeg subtitles alignment and position](https://stackoverflow.com/questions/57869367/ffmpeg-subtitles-alignment-and-position)
