@@ -21,11 +21,11 @@ In programming, a code can be written in many different ways with equivalent res
 
 There are some programming paradigms that are the most popular, among them:
 
-* **Imperative programming**: Here, the focus is on the actions of the program, which are *orders*: "do this"; "do that"; "if this, then do this other thing".
+* **Imperative programming**: Here, the program is organized around *orders*: "do this", "do that", "if this, then do this other thing".
 
-* **Object-oriented programming (OOP)**: The protagonism is on *who (or what)* performs an action. Each object is an actor responsible for an action and can call other objects to execute other actions.
+* **Object-oriented programming (OOP)**: The focus is on *who (or what)* performs an action. Each object is an actor responsible for an action, and can call other objects to execute other actions.
 
-* **Functional programming (FP)**: In this paradigm, the model revolves around *how actions interconnect*: they are like Lego blocks, joined together for something larger and more complex; like a production line, where the end of a step arrives at the beginning of the next step and in the end there is a final product.
+* **Functional programming (FP)**: In this paradigm, the model revolves around *how actions interconnect*. They are like Lego blocks, joined together to form something larger and more complex; similar to an assembly line, where the end of a step arrives at the beginning of the next one, and in the end there is a final product.
 
 ## A little bit about FP
 

@@ -21,11 +21,11 @@ Em programação, um código pode ser escrito de múltiplas formas e com resulta
 
 Existem alguns paradigmas de programação que são os mais difundidos, entre eles:
 
-* **Programação imperativa**: Aqui, o foco é nas ações do programa, que são *ordens*: "faça isto"; "faça aquilo"; "se isso, então faça mais isso".
+* **Programação imperativa**: Aqui, o programa é organizado em *ordens*: "faça isto", "faça aquilo", "se isso, então faça mais isso".
 
-* **Programação orientada a objetos (POO)**: O protagonismo é em *quem (ou o quê)* realiza uma ação. Cada objeto é um ator responsável por uma ação e pode chamar outros objetos para realizarem outras ações.
+* **Programação orientada a objetos (POO)**: O foco é em *quem (ou o quê)* realiza uma ação. Cada objeto é um ator responsável por uma ação, e pode chamar outros objetos para realizarem outras ações.
 
-* **Programação funcional (PF)**: Neste paradigma, o modelo é em torno de *como se juntam* as ações: elas são como blocos de Lego, que se encaixam para algo maior e mais complexo; como em uma linha de produção industrial, em que o resultado de uma etapa desemboca no início da etapa seguinte e ao fim há um produto bem-acabado.
+* **Programação funcional (PF)**: Neste paradigma, o modelo é em torno de *como se juntam* as ações. Elas são como blocos de Lego, que se encaixam para algo maior e mais complexo; como em uma linha de montagem, em que o fim de uma etapa desemboca no início da etapa seguinte, e no fim há um produto bem-acabado.
 
 ## Um pouco sobre PF
 
