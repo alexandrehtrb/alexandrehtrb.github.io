@@ -141,7 +141,7 @@ In some cases, nevertheless, creating your own interfaces, or "cutting out the m
 # Sources and interesting reads
 
 - [Mermaid diagrams](https://mermaid.live)
-- [Wikipédia - Interchangeable parts](https://en.wikipedia.org/wiki/Interchangeable_parts)
+- [Wikipedia - Interchangeable parts](https://en.wikipedia.org/wiki/Interchangeable_parts)
 - [One Day Testing Blog - Shift Left Testing: A prática de teste que antecipa problemas e acelera entregas](https://blog.onedaytesting.com.br/shift-left-testing/)
 - [Lightrun - Shift Left Testing: 6 Essentials for Successful Implementation](https://lightrun.com/shift-left-testing/)
 - [How Stuff Works - How Motherboards Work](https://computer.howstuffworks.com/motherboard1.htm)
