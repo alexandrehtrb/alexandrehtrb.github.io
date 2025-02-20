@@ -47,7 +47,9 @@ module.exports = (eleventyConfig, options) => {
                   light: "light-plus",
                   dark: "NomosBlack"
                 },
-                transformers: [ transformerNotationDiff() ]
+                transformers: [ transformerNotationDiff({
+                  matchAlgorithm: 'v3'
+                })]
               });
           }
         }
