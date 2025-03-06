@@ -3,6 +3,7 @@ const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const { minify: minify_html } = require("html-minifier-terser");
 const is_production = typeof process.env.NODE_ENV === "string" && process.env.NODE_ENV === "production";
+const fs = require("fs");
 
 async function do_minifyhtml(source, output_path) {
 
@@ -97,6 +98,20 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLiquidShortcode('image_caption', (text) => {
     return `<em class="text-sm italic">${text}</em>`
   })
+
+  // inline SVGs shortcodes
+  eleventyConfig.addLiquidShortcode('svg_2025_03_least_ordinary_squares_linear_fitting_a', () => {
+    return fs.readFileSync('src/assets/img/posts/2025_03_least_ordinary_squares_linear_fitting_a.svg', 'utf8')
+  })
+  eleventyConfig.addLiquidShortcode('svg_2025_03_least_ordinary_squares_linear_fitting_b', () => {
+    return fs.readFileSync('src/assets/img/posts/2025_03_least_ordinary_squares_linear_fitting_b.svg', 'utf8')
+  }) 
+  eleventyConfig.addLiquidShortcode('svg_2025_03_least_ordinary_squares_exponential_fitting_a', () => {
+    return fs.readFileSync('src/assets/img/posts/2025_03_least_ordinary_squares_exponential_fitting_a.svg', 'utf8')
+  })
+  eleventyConfig.addLiquidShortcode('svg_2025_03_least_ordinary_squares_exponential_fitting_b', () => {
+    return fs.readFileSync('src/assets/img/posts/2025_03_least_ordinary_squares_exponential_fitting_b.svg', 'utf8')
+  })  
 
   eleventyConfig.addTransform("htmlmin", do_minifyhtml);
 
