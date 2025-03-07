@@ -54,7 +54,10 @@ xychart-beta
 
 # Base teórica
 
-Considere **f(x)** sendo a equação que queremos gerar e **(x<sub>i</sub>, y<sub>i</sub>)** as medições coletadas. A melhor equação é aquela cujas diferenças entre aproximações e medições sejam as menores possíveis; em outras palavras, **Σ|f(x<sub>i</sub>) - y<sub>i</sub>|** deve ser o mais próximo de zero.
+Considere **f(x)** sendo a equação que queremos gerar e **(x<sub>i</sub>, y<sub>i</sub>)** as medições coletadas. A melhor equação é aquela cujas diferenças entre aproximações e medições sejam as menores possíveis; em outras palavras:
+  - **|f(x<sub>i</sub>) - y<sub>i</sub>|** é a distância entre aproximação e realidade;
+  - **Σ** é o somatório.
+  - **Σ|f(x<sub>i</sub>) - y<sub>i</sub>|** deve ser o mais próximo de zero.
 
 {% post_img '2025_03_least_ordinary_squares_errors.png' 'Diferenças entre aproximação e medições.' %}
 

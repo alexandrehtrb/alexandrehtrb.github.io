@@ -54,7 +54,10 @@ xychart-beta
 
 # Theory
 
-Consider **f(x)** the equation we want to generate and **(x<sub>i</sub>, y<sub>i</sub>)** the measurements we have. The best equation is the one where the differences between approximations and measurements are the smallest possible; in other words, **Σ|f(x<sub>i</sub>) - y<sub>i</sub>|** should be the closest to zero.
+Consider **f(x)** the equation we want to generate and **(x<sub>i</sub>, y<sub>i</sub>)** the measurements we have. The best equation is the one where the differences between approximations and measurements are the smallest possible; in other words:
+  - **|f(x<sub>i</sub>) - y<sub>i</sub>|** is the distance between approximation and reality;
+  - **Σ** is the summation.
+  - **Σ|f(x<sub>i</sub>) - y<sub>i</sub>|** should be the closest to zero.
 
 {% post_img '2025_03_least_ordinary_squares_errors.png' 'Differences between approximations and measurements.' %}
 
