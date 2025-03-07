@@ -2,7 +2,7 @@
 lang: en
 langPtLink: ../metodo-dos-minimos-quadrados-com-programacao-funcional
 title: Least squares fitting with functional programming
-date: 2025-03-10
+date: 2025-03-07
 excerpt: Find out more about the Least Ordinary Squares method, how it can help you and how to implement it with functional programming.
 published: true
 enableMermaid: true
@@ -241,4 +241,4 @@ xychart-beta
 - [MathJax - LaTeX renderer](https://www.mathjax.org/)
 - [Our World In Data - Metals and Minerals](https://ourworldindata.org/metals-minerals)
 - [Mining.com - World’s top 10 silver mines](https://www.mining.com/worlds-top-10-silver-mines/)
-- Graphs made using [Mermaid.js XY Charts](https://mermaid.live/).
+- Graphs made with [Mermaid.js XY Charts](https://mermaid.live/).

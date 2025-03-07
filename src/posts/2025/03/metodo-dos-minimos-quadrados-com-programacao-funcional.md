@@ -2,7 +2,7 @@
 lang: pt
 langEnLink: ../least-squares-fitting-with-functional-programming
 title: Método dos mínimos quadrados com programação funcional
-date: 2025-03-10
+date: 2025-03-07
 excerpt: Descubra o que é o Método dos Mínimos Quadrados, como ele pode te ajudar e como implementá-lo em programação funcional.
 published: true
 enableMermaid: true
