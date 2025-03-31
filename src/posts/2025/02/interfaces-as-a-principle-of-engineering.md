@@ -40,9 +40,9 @@ Let's analyse here some benefits of interfaces.
 
 Interfaces enable a component to be designed to support multiple systems.
 
-### Recycling
+### Repurposing
 
-It's similar to reuse, but reuse is about designing a component to support many use cases; recycling is about repurposing an existing component, instead of creating a new one.
+It's similar to reuse, but reuse is about designing a component to support many use cases; repurposing is about using an existing component, instead of creating a new one.
 
 ### Interchangeability
 
@@ -126,6 +126,8 @@ At small and medium-sized airports, kerosene is delivered by tanker trucks to st
 
 These pipelines are expensive to build, but the high demand justifies their cost, and the operation is cheaper and more efficient than relying on tanker trucks.
 
+During the 2018 Brazil truck drivers' strike, airports that relied on tanker trucks suffered from fuel shortages and some of them had their operations paralysed. On the other hand, airports served by pipelines (Cumbica and Galeão) kept their operations as usual.
+
 {% post_img '2025_02_aviation_fuel_tanks.jpg' 'Aviation fuel storage in Guarulhos airport' %}
 
 <br/>
@@ -145,4 +147,6 @@ In some cases, nevertheless, creating your own interfaces, or "cutting out the m
 - [One Day Testing Blog - Shift Left Testing: A prática de teste que antecipa problemas e acelera entregas](https://blog.onedaytesting.com.br/shift-left-testing/)
 - [Lightrun - Shift Left Testing: 6 Essentials for Successful Implementation](https://lightrun.com/shift-left-testing/)
 - [How Stuff Works - How Motherboards Work](https://computer.howstuffworks.com/motherboard1.htm)
+- [Wikipedia - 2018 Brazil truck drivers' strike](https://en.wikipedia.org/wiki/2018_Brazil_truck_drivers%27_strike)
+- [G1 - Só 8 aeroportos no país estão sendo reabastecidos regularmente, entre eles Guarulhos, Congonhas, Galeão e Santos Dumont (05/25/2018)](https://g1.globo.com/economia/noticia/so-8-aeroportos-no-pais-estao-sendo-reabastecidos-regularmente-entre-eles-guarulhos-congonhas-galeao-e-santos-dumont.ghtml)
 - [Confederação Nacional do Transporte - Saiba como funciona o abastecimento em dois dos maiores aeroportos do Brasil](https://www.cnt.org.br/agencia-cnt/saiba-como-funciona-abastecimento-maiores-aeroportos)

@@ -40,9 +40,9 @@ Vamos analisar aqui benefícios das interfaces com um olhar para produtos de eng
 
 Interfaces permitem que um componente seja projetado para atender mais de um sistema.
 
-### Reciclagem
+### Reaproveitamento
 
-O raciocínio é parecido com o do reúso, porém, o reúso trata da concepção de um componente visando atender vários casos de uso; a reciclagem trata de aproveitar um componente já existente, ao invés de criar um novo.
+O raciocínio é parecido com o do reúso, porém, o reúso trata da concepção de um componente visando atender vários casos de uso; reaproveitamento trata-se de usar um componente já existente, ao invés de criar um novo.
 
 ### Intercambialidade
 
@@ -147,5 +147,6 @@ Em alguns casos, contudo, desenhar sua própria interface, ou então "cortar o i
 - [One Day Testing Blog - Shift Left Testing: A prática de teste que antecipa problemas e acelera entregas](https://blog.onedaytesting.com.br/shift-left-testing/)
 - [Lightrun - Shift Left Testing: 6 Essentials for Successful Implementation](https://lightrun.com/shift-left-testing/)
 - [How Stuff Works - How Motherboards Work](https://computer.howstuffworks.com/motherboard1.htm)
+- [Wikipédia - Greve dos caminhoneiros no Brasil em 2018](https://pt.wikipedia.org/wiki/Greve_dos_caminhoneiros_no_Brasil_em_2018)
 - [G1 - Só 8 aeroportos no país estão sendo reabastecidos regularmente, entre eles Guarulhos, Congonhas, Galeão e Santos Dumont (25/05/2018)](https://g1.globo.com/economia/noticia/so-8-aeroportos-no-pais-estao-sendo-reabastecidos-regularmente-entre-eles-guarulhos-congonhas-galeao-e-santos-dumont.ghtml)
 - [Confederação Nacional do Transporte - Saiba como funciona o abastecimento em dois dos maiores aeroportos do Brasil](https://www.cnt.org.br/agencia-cnt/saiba-como-funciona-abastecimento-maiores-aeroportos)
