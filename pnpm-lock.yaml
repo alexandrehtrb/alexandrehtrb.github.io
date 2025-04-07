@@ -7,7 +7,13 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
+      '@11ty/eleventy':
+        specifier: 3.0.0
+        version: 3.0.0
+      '@11ty/eleventy-plugin-rss':
+        specifier: 2.0.3
+        version: 2.0.3
       '@shikijs/transformers':
         specifier: 3.2.1
         version: 3.2.1
@@ -17,6 +23,12 @@ importers:
       autoprefixer:
         specifier: 10.4.21
         version: 10.4.21(postcss@8.5.3)
+      concurrently:
+        specifier: 9.1.2
+        version: 9.1.2
+      eslint:
+        specifier: 9.23.0
+        version: 9.23.0(jiti@1.21.7)
       html-minifier-terser:
         specifier: 7.2.0
         version: 7.2.0
@@ -29,6 +41,9 @@ importers:
       markdown-it-anchor:
         specifier: 9.2.0
         version: 9.2.0(@types/markdown-it@13.0.7)(markdown-it@14.1.0)
+      postcss:
+        specifier: 8.5.3
+        version: 8.5.3
       shiki:
         specifier: 3.2.1
         version: 3.2.1
@@ -38,22 +53,6 @@ importers:
       terser:
         specifier: 5.39.0
         version: 5.39.0
-    devDependencies:
-      '@11ty/eleventy':
-        specifier: 3.0.0
-        version: 3.0.0
-      '@11ty/eleventy-plugin-rss':
-        specifier: 2.0.3
-        version: 2.0.3
-      concurrently:
-        specifier: 9.1.2
-        version: 9.1.2
-      eslint:
-        specifier: 9.23.0
-        version: 9.23.0(jiti@1.21.7)
-      postcss:
-        specifier: 8.5.3
-        version: 8.5.3
 
 packages:
 
