@@ -101,7 +101,7 @@ As a solution, we will make a JSON logger with the help of source generators. On
 
 5) We'll use the [**CLEF**](https://clef-json.org/) format.
 
-6) The `scopeProvider` is responsible for reading the captured scopes. We'll use the `LoggerExternalScopeProvider` implementation, from `Microsoft.Extensions.Logging.Abstractions`.
+6) The `scopeProvider` is responsible for reading the captured scopes. We'll use the `LoggerExternalScopeProvider` default implementation.
 
 ### Code
 

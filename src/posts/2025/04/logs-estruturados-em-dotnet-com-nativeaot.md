@@ -101,7 +101,7 @@ Como solução, vamos fazer um log em JSON com o apoio de *source generators*. N
 
 5) Usaremos o formato [**CLEF**](https://clef-json.org/).
 
-6) O `scopeProvider` é responsável por ler os escopos capturados. Usaremos a implementação `LoggerExternalScopeProvider`, da própria biblioteca `Microsoft.Extensions.Logging.Abstractions`.
+6) O `scopeProvider` é responsável por ler os escopos capturados. Usaremos a implementação padrão `LoggerExternalScopeProvider`.
 
 ### Código
 
