@@ -26,7 +26,8 @@ module.exports = (eleventyConfig, options) => {
         'fsharp',
         'xml',
         'javascript',
-        'css'
+        'css',
+        'json'
       ],
     });
 
