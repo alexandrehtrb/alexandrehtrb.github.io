@@ -61,7 +61,7 @@ Consider **f(x)** the equation we want to generate and **(x<sub>i</sub>, y<sub>i
 
 {% post_img '2025_03_least_ordinary_squares_errors.png' 'Differences between approximations and measurements.' %}
 
-In order to find the equation parameters, partial derivatives are applied over the summation. In this article, we won't go deep into the theory, but if you are interested and want to understand better how it works, I recommend this [lesson from the University of Regina](/assets/misc/least_squares_fitting_lesson.pdf).
+In order to find the equation parameters, partial derivatives are applied over the summation. In this article, we won't go deep into the theory, but if you are interested and want to understand better how it works, I recommend this [lesson by Stan Brown](https://brownmath.com/stat/leastsq.htm).
 
 <br/>
 
@@ -236,7 +236,9 @@ xychart-beta
 
 # Sources and interesting reads
 
-- [University of Regina - Linear Regression and Least Squares](https://uregina.ca/~kozdron/Teaching/Regina/252Winter05/Handouts/least_squares.pdf) ([backup](/assets/misc/least_squares_fitting_lesson.pdf))
+- [Stan Brown - Least Squares — the Gory Details](https://brownmath.com/stat/leastsq.htm) ([backup](/assets/misc/least_squares_fitting_lesson.html))
+- [Princeton University - Data Modeling and Least Squares Fitting](https://www.cs.princeton.edu/courses/archive/fall11/cos323/notes/cos323_f11_lecture07_lsq.pdf)
+- [University of Regina - Linear Regression and Least Squares](https://uregina.ca/~kozdron/Teaching/Regina/252Winter05/Handouts/least_squares.pdf)
 - [Wolfram MathWorld - Least Squares Fitting, Linear](https://mathworld.wolfram.com/LeastSquaresFitting.html) ([WebArchive](https://web.archive.org/web/20250228131909/https://mathworld.wolfram.com/LeastSquaresFitting.html))
 - [Wolfram MathWorld - Least Squares Fitting, Exponential](https://mathworld.wolfram.com/LeastSquaresFittingExponential.html) ([WebArchive](https://web.archive.org/web/20250212183347/https://mathworld.wolfram.com/LeastSquaresFittingExponential.html))
 - [Wolfram MathWorld - Least Squares Fitting, Power Law](https://mathworld.wolfram.com/LeastSquaresFittingPowerLaw.html) ([WebArchive](https://web.archive.org/web/20250212183356/https://mathworld.wolfram.com/LeastSquaresFittingPowerLaw.html))

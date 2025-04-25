@@ -236,8 +236,8 @@ xychart-beta
 
 # Fontes e leituras interessantes
 
-- [Universidade Federal do Paraná - Ajuste de Curva pelo Método dos
-Quadrados Mínimos](https://docs.ufpr.br/~agnelo.vieira/MetodosNumericos/MMQ.pdf) ([backup](/assets/misc/aula_ufpr_mínimos_quadrados.pdf))
+- [Universidade Federal do Paraná - Ajuste de Curva pelo Método dos Quadrados Mínimos](https://docs.ufpr.br/~agnelo.vieira/MetodosNumericos/MMQ.pdf) ([backup](/assets/misc/aula_ufpr_mínimos_quadrados.pdf))
+- [Instituto de Física da USP - Mini curso de Método dos Mínimos Quadrados, Otaviano Helene](https://indico.ifsc.usp.br/event/1/attachments/1/21/CursoMMQSifscUSPAgosto2019OtavianoHelene.pdf)
 - [Wolfram MathWorld - Least Squares Fitting, Linear](https://mathworld.wolfram.com/LeastSquaresFitting.html) ([WebArchive](https://web.archive.org/web/20250228131909/https://mathworld.wolfram.com/LeastSquaresFitting.html))
 - [Wolfram MathWorld - Least Squares Fitting, Exponential](https://mathworld.wolfram.com/LeastSquaresFittingExponential.html) ([WebArchive](https://web.archive.org/web/20250212183347/https://mathworld.wolfram.com/LeastSquaresFittingExponential.html))
 - [Wolfram MathWorld - Least Squares Fitting, Power Law](https://mathworld.wolfram.com/LeastSquaresFittingPowerLaw.html) ([WebArchive](https://web.archive.org/web/20250212183356/https://mathworld.wolfram.com/LeastSquaresFittingPowerLaw.html))
