@@ -1,7 +1,7 @@
 module.exports = (eleventyConfig, options) => {
   let mermaid_config = {
     startOnLoad: false,
-    theme: 'default',
+    theme: "default",
     loadOnSave: true
   };
   let src = options?.mermaid_js_src || "https://cdn.jsdelivr.net/npm/mermaid@10.6.0/dist/mermaid.esm.min.mjs";
@@ -36,7 +36,7 @@ module.exports = (eleventyConfig, options) => {
                   }
                 }
               });
-            </script>`
+            </script>`;
   });
-  return {}
+  return {};
 };
