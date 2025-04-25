@@ -44,11 +44,11 @@ Log estruturado em JSON:
 
 ```json
 {
-  "Timestamp":"2025-04-12T20:25:57.8532799Z",
+  "Timestamp": "2025-04-12T20:25:57.8532799Z",
   "Level": "Information",
-  "Template":"Previsão do tempo para {Municipio} em {Data}",
-  "Municipio":"Bento Gonçalves / RS",
-  "Data":"2025-04-13",
+  "Template": "Previsão do tempo para {Municipio} em {Data}",
+  "Municipio": "Bento Gonçalves / RS",
+  "Data": "2025-04-13",
   "@PrevisaoTempo": {
     "TemperaturaMinimaEmC": 16,
     "TemperaturaMaximaEmC": 21,
