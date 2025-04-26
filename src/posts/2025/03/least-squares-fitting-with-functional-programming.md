@@ -77,7 +77,7 @@ This [post](/posts/2024/06/introduction-to-functional-programming/#f%23-language
 
 # Linear approximation
 
-The equation will be `f(x) = a*x + b`.
+The equation will be `f(x) = a * x + b`.
 
 From a set of values (x<sub>i</sub>, y<sub>i</sub>), a and b are determined by:
 
@@ -128,7 +128,7 @@ let linearApproximation(x: double[])(y: double[]): (double * double) =
 
 # Exponential approximation
 
-The equation will be `f(x) = A * e^(B*x)`. **e** is the [natural base](https://en.wikipedia.org/wiki/E_(mathematical_constant)), approximately equal to 2.71828.
+The equation will be `f(x) = A * e^(B * x)`. **e** is the [natural base](https://en.wikipedia.org/wiki/E_(mathematical_constant)), approximately equal to 2.71828.
 
 From a set of values (x<sub>i</sub>, y<sub>i</sub>), a and b are determined by:
 

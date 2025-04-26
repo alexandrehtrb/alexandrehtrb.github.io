@@ -77,7 +77,7 @@ Este [post](/posts/2024/06/introducao-a-programacao-funcional/#linguagem-f%23) e
 
 # Aproximação linear
 
-A equação gerada será do tipo `f(x) = a*x + b`.
+A equação gerada será do tipo `f(x) = a * x + b`.
 
 Tendo um conjunto de valores medidos (x<sub>i</sub>, y<sub>i</sub>), a e b são calculados por:
 
@@ -128,7 +128,7 @@ let aproximacaoLinear(x: double[])(y: double[]): (double * double) =
 
 # Aproximação exponencial
 
-A equação gerada será do tipo `f(x) = A * e^(B*x)`. **e** é a [base natural](https://pt.wikipedia.org/wiki/E_(constante_matem%C3%A1tica)), aproximadamente igual a 2,71828.
+A equação gerada será do tipo `f(x) = A * e^(b * x)`. **e** é a [base natural](https://pt.wikipedia.org/wiki/E_(constante_matem%C3%A1tica)), aproximadamente igual a 2,71828.
 
 Tendo um conjunto de valores medidos (x<sub>i</sub>, y<sub>i</sub>), a e b são calculados por:
 
