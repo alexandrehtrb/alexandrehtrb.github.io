@@ -61,15 +61,59 @@ Considere **f(x)** sendo a equação que queremos gerar e **(x<sub>i</sub>, y<su
 
 {% post_img '2025_03_least_ordinary_squares_errors.png' 'Diferenças entre aproximação e medições.' %}
 
-Para encontrar os parâmetros da equação, usa-se derivadas parciais sobre o somatório. Neste artigo, não iremos muito a fundo na teoria, porém, se você ficou interessado e quer entender mais como o método funciona, recomendo esta [aula da UFPR](/assets/misc/aula_ufpr_mínimos_quadrados.pdf).
+Vamos chamar de SQE a soma dos quadrados dos erros: **SQE = Σ(f(x<sub>i</sub>) - y<sub>i</sub>)<sup>2</sup>**. Como o objetivo é "medir a distância" entre aproximação e realidade, simplesmente elevaremos a diferença ao quadrado, ao invés de aplicar o módulo; isso porque tem o mesmo efeito prático e é mais fácil.
+
+*Precisamos aplicar módulo para medir a distância pois a diferença pode resultar em um valor negativo, e não existe distância negativa.*
+
+O mínimo de SQE depende do tipo de função que queremos aproximar:
+
+- Linear: **f(x) = ax + b**
+- Exponencial: **f(x) = a * e<sup>bx</sup>**
+- Potencial: **f(x) = a * x<sup>b</sup>**
+- Logarítmica: **f(x) = a + b * ln(x)**
+
+Substituindo f(x) pelas funções acima em SQE, teremos que ela depende das variáveis a e b. No caso da aproximação linear: **SQE(a,b) = Σ(a * x<sub>i</sub> + b - y<sub>i</sub>)<sup>2</sup>**.
+
+O mínimo de uma função acontece quando sua derivada (leia-se inclinação) é igual a zero:
+
+```mermaid
+---
+config:
+    xyChart:
+        width: 540
+    themeVariables:
+        xyChart:
+            backgroundColor: "#00000000"
+            plotColorPalette: "#A00, #f59316, #f59316, #f59316"
+---
+xychart-beta
+    title "y = x²"
+    x-axis "x" -4 --> 4
+    y-axis "y" 0 --> 18
+    line [16,9,4,1,0,1,4,9,16]
+	line [15,9,3,-3,-9,-15,-21,-27,-33]
+    line [0,0,0,0,0,0,0,0,0]
+    line [-33,-27,-21,-15,-9,-3,3,9,15]
+
+```
+
+{% image_caption 'Em vermelho: y = x². Em laranja: as derivadas (retas de inclinação) em x = -3, x = 0 e x = 3.' %}
+
+Temos que SQE vai ter seu ponto mínimo quando as derivadas parciais em **a** e **b** tiverem valor zero, resolvendo o sistema de equações:
+
+**∂SQE(a,b) / ∂a = 0**
+
+**∂SQE(a,b) / ∂b = 0**
+
+Essa é a base teórica do método dos mínimos quadrados. Se você ficou interessado e quer se aprofundar na teoria, há links no final desta página com explicações adicionais sobre o assunto. Particularmente, recomendo esta [aula da UFPR](/assets/misc/aula_ufpr_mínimos_quadrados.pdf).
 
 <br/>
 
 # Programação funcional
 
-A programação funcional é um paradigma que foca nas transformações dos dados - como em uma função matemática, um valor `x` entra e é transformado por `f(x)`. Num código funcional, transformações muitas vezes são aplicadas em cascata, ex.: `f(g(h(x)))`.
+A programação funcional é um paradigma que foca nas transformações dos dados: como em uma função matemática, um valor `x` entra e é transformado por `f(x)`. Num código funcional, transformações muitas vezes são aplicadas em cascata, ex.: `f(g(h(x)))`.
 
-Neste artigo, vamos usar a linguagem funcional F#, que usa o [*runtime* .NET](https://dotnet.microsoft.com).
+Neste artigo, vamos usar a linguagem F#, que usa o [*runtime* .NET](https://dotnet.microsoft.com).
 
 Este [post](/posts/2024/06/introducao-a-programacao-funcional/#linguagem-f%23) explica como montar seu ambiente e tem dicas de sintaxe da linguagem.
 

@@ -61,13 +61,57 @@ Consider **f(x)** the equation we want to generate and **(x<sub>i</sub>, y<sub>i
 
 {% post_img '2025_03_least_ordinary_squares_errors.png' 'Differences between approximations and measurements.' %}
 
-In order to find the equation parameters, partial derivatives are applied over the summation. In this article, we won't go deep into the theory, but if you are interested and want to understand better how it works, I recommend this [lesson by Stan Brown](https://brownmath.com/stat/leastsq.htm).
+Let's name SSE the sum of squared errors: **SSE = Σ(f(x<sub>i</sub>) - y<sub>i</sub>)<sup>2</sup>**. As our objective is to measure the distance between approximation and reality, we'll simply power square the difference, instead of applying the absolute function; it's easier.
+
+*We need to apply an absolute or power square operation for distance measurement because the difference may result in a negative value, which isn't valid for distances.*
+
+The minimum of SSE depends on the type of desired approximation:
+
+- Linear: **f(x) = ax + b**
+- Exponential: **f(x) = a * e<sup>bx</sup>**
+- Power law: **f(x) = a * x<sup>b</sup>**
+- Logarithmic: **f(x) = a + b * ln(x)**
+
+Substituting f(x) by the functions above in SSE, we'll see that it depends on variables a and b. In the case of linear approximation: **SSE(a,b) = Σ(a * x<sub>i</sub> + b - y<sub>i</sub>)<sup>2</sup>**.
+
+The minimum of a function happens when its derivative (slope) equals zero:
+
+```mermaid
+---
+config:
+    xyChart:
+        width: 540
+    themeVariables:
+        xyChart:
+            backgroundColor: "#00000000"
+            plotColorPalette: "#A00, #f59316, #f59316, #f59316"
+---
+xychart-beta
+    title "y = x²"
+    x-axis "x" -4 --> 4
+    y-axis "y" 0 --> 18
+    line [16,9,4,1,0,1,4,9,16]
+	line [15,9,3,-3,-9,-15,-21,-27,-33]
+    line [0,0,0,0,0,0,0,0,0]
+    line [-33,-27,-21,-15,-9,-3,3,9,15]
+
+```
+
+{% image_caption 'In red: y = x². In orange: the derivatives (slopes) for x = -3, x = 0 and x = 3.' %}
+
+SSE will have its minimum point when the partial derivatives on **a** and **b** are zero, solving the following system:
+
+**∂SQE(a,b) / ∂a = 0**
+
+**∂SQE(a,b) / ∂b = 0**
+
+This is the basics for the least squares fitting method. If you are interested and would like to know more, there are links in the end of this page with additional explanations on this topic. Particularly, I recommend this [lesson by Stan Brown](https://brownmath.com/stat/leastsq.htm).
 
 <br/>
 
 # Functional programming
 
-Functional programming is a paradigm that focuses on data transformations - like in a mathematical function, a value `x` is transformed by `f(x)`. In functional code, transformations are often chained, e.g., `f(g(h(x)))`.
+Functional programming is a paradigm that focuses on data transformations: like in a mathematical function, a value `x` is transformed by `f(x)`. In functional code, transformations are often chained, e.g., `f(g(h(x)))`.
 
 In this article, we will use the F# language, that uses the [.NET runtime](https://dotnet.microsoft.com).
 
