@@ -38,7 +38,7 @@ config:
     themeVariables:
         xyChart:
             backgroundColor: "#00000000"
-            plotColorPalette: "#A00, #22F"
+            plotColorPalette: "#C00, #22F"
 ---
 xychart-beta
     title "Vendas por mês (R$)"
@@ -74,7 +74,7 @@ O mínimo de SQE depende do tipo de função que queremos aproximar:
 
 Substituindo f(x) pelas funções acima em SQE, teremos que ela depende das variáveis a e b. No caso da aproximação linear: **SQE(a,b) = Σ(a * x<sub>i</sub> + b - y<sub>i</sub>)<sup>2</sup>**.
 
-O mínimo de uma função acontece quando sua derivada (leia-se inclinação) é igual a zero:
+O mínimo de uma função fica no ponto em que sua derivada (leia-se inclinação) é igual a zero:
 
 ```mermaid
 ---
@@ -84,7 +84,7 @@ config:
     themeVariables:
         xyChart:
             backgroundColor: "#00000000"
-            plotColorPalette: "#A00, #f59316, #f59316, #f59316"
+            plotColorPalette: "#CC0000, #f59316, #f59316, #f59316"
 ---
 xychart-beta
     title "y = x²"
@@ -97,9 +97,9 @@ xychart-beta
 
 ```
 
-{% image_caption 'Em vermelho: y = x². Em laranja: as derivadas (retas de inclinação) em x = -3, x = 0 e x = 3.' %}
+{% image_caption 'Em vermelho: y = x². Em laranja: as derivadas (retas de inclinação) em x = -3, 0 e 3.' %}
 
-Temos que SQE vai ter seu ponto mínimo quando as derivadas parciais em **a** e **b** tiverem valor zero, resolvendo o sistema de equações:
+Temos que SQE vai ter seu ponto mínimo onde as derivadas parciais em relação a **a** e **b** tiverem valor zero, resolvendo o sistema de equações:
 
 **∂SQE(a,b) / ∂a = 0**
 
@@ -260,7 +260,7 @@ config:
     themeVariables:
         xyChart:
             backgroundColor: "#00000000"
-            plotColorPalette: "#AA0000, #2222FF, #00AA00"
+            plotColorPalette: "#CC0000, #2222FF, #00CC00"
 ---
 xychart-beta
     title "Produção anual de prata (ton. mét.)"

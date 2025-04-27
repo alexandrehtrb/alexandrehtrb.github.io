@@ -38,7 +38,7 @@ config:
     themeVariables:
         xyChart:
             backgroundColor: "#00000000"
-            plotColorPalette: "#A00, #22F"
+            plotColorPalette: "#C00, #22F"
 ---
 xychart-beta
     title "Sales per month ($)"
@@ -74,7 +74,7 @@ The minimum of SSE depends on the type of desired approximation:
 
 Substituting f(x) by the functions above in SSE, we'll see that it depends on variables a and b. In the case of linear approximation: **SSE(a,b) = Σ(a * x<sub>i</sub> + b - y<sub>i</sub>)<sup>2</sup>**.
 
-The minimum of a function happens when its derivative (slope) equals zero:
+The minimum of a function happens on the point where its derivative (slope) equals zero:
 
 ```mermaid
 ---
@@ -84,7 +84,7 @@ config:
     themeVariables:
         xyChart:
             backgroundColor: "#00000000"
-            plotColorPalette: "#A00, #f59316, #f59316, #f59316"
+            plotColorPalette: "#CC0000, #f59316, #f59316, #f59316"
 ---
 xychart-beta
     title "y = x²"
@@ -97,9 +97,9 @@ xychart-beta
 
 ```
 
-{% image_caption 'In red: y = x². In orange: the derivatives (slopes) for x = -3, x = 0 and x = 3.' %}
+{% image_caption 'In red: y = x². In orange: the derivatives (slopes) for x = -3, 0 and 3.' %}
 
-SSE will have its minimum point when the partial derivatives on **a** and **b** are zero, solving the following system:
+SSE will have its minimum point where the partial derivatives relative to **a** and **b** are zero, solving the following system:
 
 **∂SQE(a,b) / ∂a = 0**
 
@@ -260,7 +260,7 @@ config:
     themeVariables:
         xyChart:
             backgroundColor: "#00000000"
-            plotColorPalette: "#AA0000, #2222FF, #00AA00"
+            plotColorPalette: "#CC0000, #2222FF, #00CC00"
 ---
 xychart-beta
     title "Silver mining production (metric tonnes)"
