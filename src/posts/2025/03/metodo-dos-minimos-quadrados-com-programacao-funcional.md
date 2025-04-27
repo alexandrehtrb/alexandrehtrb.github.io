@@ -61,9 +61,9 @@ Considere **f(x)** sendo a equação que queremos gerar e **(x<sub>i</sub>, y<su
 
 {% post_img '2025_03_least_ordinary_squares_errors.png' 'Diferenças entre aproximação e medições.' %}
 
-Vamos chamar de SQE a soma dos quadrados dos erros: **SQE = Σ(f(x<sub>i</sub>) - y<sub>i</sub>)<sup>2</sup>**. Como o objetivo é "medir a distância" entre aproximação e realidade, simplesmente elevaremos a diferença ao quadrado, ao invés de aplicar o módulo; isso porque tem o mesmo efeito prático e é mais fácil.
+Vamos chamar de SQE a soma dos quadrados dos erros: **SQE = Σ(f(x<sub>i</sub>) - y<sub>i</sub>)<sup>2</sup>**. Como o objetivo é "medir a distância" entre aproximação e realidade, simplesmente elevaremos a diferença ao quadrado, ao invés de aplicar o módulo; é mais fácil.
 
-*Precisamos aplicar módulo para medir a distância pois a diferença pode resultar em um valor negativo, e não existe distância negativa.*
+*Precisamos aplicar módulo ou elevar ao quadrado para medição de distância pois uma subtração simples poderia resultar em um valor negativo, e não existe distância negativa.*
 
 O mínimo de SQE depende do tipo de função que queremos aproximar:
 

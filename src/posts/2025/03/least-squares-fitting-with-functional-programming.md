@@ -63,7 +63,7 @@ Consider **f(x)** the equation we want to generate and **(x<sub>i</sub>, y<sub>i
 
 Let's name SSE the sum of squared errors: **SSE = Σ(f(x<sub>i</sub>) - y<sub>i</sub>)<sup>2</sup>**. As our objective is to measure the distance between approximation and reality, we'll simply power square the difference, instead of applying the absolute function; it's easier.
 
-*We need to apply an absolute or power square operation for distance measurement because the difference may result in a negative value, which isn't valid for distances.*
+*We need to apply an absolute or power square operation for distance measurement because a simple subtraction could result in a negative value, which isn't valid for distances.*
 
 The minimum of SSE depends on the type of desired approximation:
 
