@@ -17,11 +17,11 @@ tags:
 
 ## Asynchronous architecture
 
-A common strategy in complex systems is asynchronism, which is leaving heavier tasks running on background and getting a return from them only when they are finished. The idea is to deliver an immediate response to the user, allowing him / her to do other activities in the meanwhile. This approach exists both in programming languages, by the use of the `async / await` keywords, and in systems architectures, with an event or message oriented processing, through queues.
+A common strategy in complex systems is asynchronism, which is leaving heavier tasks running on background and getting a return from them only when they are finished. The idea is to deliver an immediate response to the user, allowing him / her to do other activities in the meanwhile. This approach exists both in programming languages, by the use of the `async / await` keywords, and in systems architectures, with an event or message oriented processing.
 
-There are dedicated queue systems that are very popular today, among them, Apache Kafka, RabbitMQ, Azure Service Bus and Amazon SQS. They adopt partitions and consumer groups to deal with high volumes of messages received and processed in parallel, also taking care of concurrency and post-processing confirmation.
+There are dedicated queues that are very popular today, among them, Apache Kafka and RabbitMQ, that are used for asynchronous processing. They can handle high volumes of messages received and processed in parallel, taking care of concurrency and post-processing confirmation.
 
-Despite the popularity of those tools, other lighter and more practical alternatives can be used in substitution, solving the same problems in a simpler and even cheaper way. Let's see them.
+Despite the popularity of those queues, other lighter and more practical alternatives can be used in substitution, solving the same problems in a simpler and even cheaper way. Let's see them.
 
 * [Messages in databases](#messages-in-databases)
 * [Messages in distributed caches](#messages-in-distributed-caches)

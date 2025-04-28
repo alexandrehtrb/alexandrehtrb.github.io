@@ -17,11 +17,11 @@ tags:
 
 ## Arquitetura assíncrona
 
-Uma estratégia comum em sistemas complexos é o assincronismo, que é deixar tarefas mais pesadas rodando em segundo plano e apenas quando elas forem acabadas receber um retorno delas. A idéia é entregar uma resposta mais imediata ao usuário, permitindo que ele possa fazer outras atividades enquanto isso. Essa abordagem existe tanto nas próprias linguagens de programação, por exemplo, através das palavras-chaves `async / await`, como também em arquitetura de sistemas, com um processamento orientado a mensagens ou eventos, através de filas.
+Uma estratégia comum em sistemas complexos é o assincronismo, que é deixar tarefas mais pesadas rodando em segundo plano e apenas quando elas forem acabadas receber um retorno delas. A idéia é entregar uma resposta mais imediata ao usuário, permitindo que ele possa fazer outras atividades enquanto isso. Essa abordagem existe tanto nas próprias linguagens de programação, por exemplo, através das palavras-chaves `async / await`, como também em arquitetura de sistemas, com um processamento orientado a mensagens ou eventos.
 
-Existem sistemas dedicados de filas que são muito populares atualmente, entre eles, o Apache Kafka, o RabbitMQ, o Azure Service Bus e o Amazon SQS. Eles adotam partições e grupos de consumo para lidar com altos volumes de mensagens recebidas e processadas em paralelo, preocupando-se também com concorrência de leitura e confirmação pós-processamento.
+Existem filas dedicadas que são muito populares atualmente, como Apache Kafka e RabbitMQ, que são usadas para processamento assíncrono. Elas podem lidar com altos volumes de mensagens recebidas e processadas em paralelo, atentando-se também a concorrência de leitura e confirmação pós-processamento.
 
-Apesar da popularidade dessas ferramentas, outras alternativas mais leves e práticas podem ser utilizadas em substituição, resolvendo os mesmos problemas de maneira mais simples e até mais barata. Vamos conhecê-las.
+Apesar da popularidade dessas filas, outras alternativas mais leves e práticas podem ser utilizadas em substituição, resolvendo os mesmos problemas de maneira mais simples e até mais barata. Vamos conhecê-las.
 
 * [Mensagens em bancos de dados](#mensagens-em-bancos-de-dados)
 * [Mensagens em caches distribuídos](#mensagens-em-caches-distribuídos)
