@@ -19,7 +19,7 @@ tags:
 
 Uma estratégia comum em sistemas complexos é o assincronismo, que é deixar tarefas mais pesadas rodando em segundo plano e apenas quando elas forem acabadas receber um retorno delas. A idéia é entregar uma resposta mais imediata ao usuário, permitindo que ele possa fazer outras atividades enquanto isso. Essa abordagem existe tanto nas próprias linguagens de programação, por exemplo, através das palavras-chaves `async / await`, como também em arquitetura de sistemas, com um processamento orientado a mensagens ou eventos.
 
-Existem filas dedicadas que são muito populares atualmente, como Apache Kafka e RabbitMQ, que são usadas para processamento assíncrono. Elas podem lidar com altos volumes de mensagens recebidas e processadas em paralelo, atentando-se também a concorrência de leitura e confirmação pós-processamento.
+Existem filas dedicadas que são muito populares atualmente, como Apache Kafka e RabbitMQ, que são usadas para processamento assíncrono. Elas podem lidar com altos volumes de mensagens recebidas e processadas em paralelo, tratando também de concorrência de leitura e confirmação pós-processamento.
 
 Apesar da popularidade dessas filas, outras alternativas mais leves e práticas podem ser utilizadas em substituição, resolvendo os mesmos problemas de maneira mais simples e até mais barata. Vamos conhecê-las.
 
