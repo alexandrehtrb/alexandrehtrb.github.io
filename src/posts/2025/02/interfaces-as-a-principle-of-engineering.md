@@ -15,7 +15,7 @@ tags:
 
 An interface is how two different things communicate with each other.
 
-In the field of engineering, interfaces are very useful for abstracting the macro logic of a system - with them, components can focus on specific tasks, and interfaces define how they connect to the system.
+In the field of engineering, interfaces are very useful for abstracting the macro logic of a system. With them, components can focus on specific tasks, and interfaces define how they connect to each other.
 
 ```mermaid
 flowchart LR

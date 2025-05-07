@@ -15,7 +15,7 @@ tags:
 
 Uma interface é o modo como duas coisas diferentes se comunicam.
 
-Em engenharia, interfaces são muito úteis para abstrair a lógica macro de um sistema - com elas, componentes focam em funções específicas e as interfaces definem como eles se conectam ao sistema.
+Em engenharia, interfaces são muito úteis para abstrair a lógica macro de um sistema. Com elas, componentes podem focar em funções específicas e as interfaces definem como eles se conectam.
 
 ```mermaid
 flowchart LR
