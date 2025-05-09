@@ -62,6 +62,11 @@ module.exports = function (eleventyConfig) {
     return Math.max(1, Math.floor(textOnly.length / readingSpeedPerMin));
   });
 
+  // Portuguese date format
+  eleventyConfig.addFilter("localizedDateFormat", function(date, locale) {
+    return new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format(date);
+  });
+
   // Enable us to iterate over all the tags, excluding posts and all
   eleventyConfig.addCollection("tagList", collection => {
     const tagsSet = new Set();
