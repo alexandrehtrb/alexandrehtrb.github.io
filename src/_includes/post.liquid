@@ -11,10 +11,10 @@ layout: main
 <div>
 {% if lang == "pt" %}
     <em>{{ date | localizedDateFormat: "pt-BR" }}</em> &middot; 
-    <span>⏳ {{ content | readTime }} min de leitura</span>
+    <span>{{ content | readTime }} min de leitura</span>
 {% else %}
     <em>{{ date | date: "%B %d%q, %Y" }}</em> &middot; 
-    <span>⏳ {{ content | readTime }} min read</span>
+    <span>{{ content | readTime }} min read</span>
 {% endif %}
 </div>
 

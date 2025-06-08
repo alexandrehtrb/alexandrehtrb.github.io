@@ -131,7 +131,7 @@ If you want to use these new formats, but also want to guarantee compatibility w
 </html>
 ```
 
-If the browser supports, it will first try to load the picture in AVIF format; else, a GIF will be loaded. The animation below is inside a `<picture>` tag - you can verify which format is it by saving the picture.
+If the browser supports, it will first try to load the picture in AVIF format; else, a GIF will be loaded. The animation below is inside a `<picture>` tag — you can verify which format is it by saving the picture.
 
 {% post_avif_img '2024_01_curtains.avif' '2024_01_curtains.gif' 'Curtains moving with the wind' %}
 

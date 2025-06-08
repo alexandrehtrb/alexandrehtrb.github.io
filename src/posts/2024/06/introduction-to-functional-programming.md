@@ -17,7 +17,7 @@ tags:
 
 A paradigm is a manner of thinking, observing and describing something; it's a mental model, through which we understand the things around us. Each person has its own way of seeing the world and this reflects on the things he / she does and makes.
 
-In programming, a code can be written in many different ways with equivalent results - that means that the concept of paradigm also applies.
+In programming, a code can be written in many different ways with equivalent results — which means that the concept of paradigm also applies.
 
 There are some programming paradigms that are the most popular, among them:
 

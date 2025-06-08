@@ -66,7 +66,7 @@ Times e empresas com conhecimentos específicos sobre um tipo de componente os p
 
 ### Testes unitários
 
-Interfaces possibilitam testes de forma isolada no componente, tal que as dependências externas são substituídas por simulações ou imitações - em inglês, ***mocks***. Por serem testes individualizados, há mais atenção e foco no componente em si, além de não ser necessário ter todo o sistema pronto para então validá-lo.
+Interfaces possibilitam testes de forma isolada no componente, tal que as dependências externas são substituídas por simulações ou imitações — em inglês, ***mocks***. Por serem testes individualizados, há mais atenção e foco no componente em si, além de não ser necessário ter todo o sistema pronto para então validá-lo.
 
 Isso também contribui para o ***shift-left testing***, que é a idéia de antecipar validações no fluxo de trabalho: ao realizar testes isoladamente, problemas ficam visíveis mais cedo no processo.
 

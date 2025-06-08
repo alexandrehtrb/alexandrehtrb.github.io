@@ -260,7 +260,7 @@ LEFT JOIN [dbo].[Fruit] fr ON fr.[IdFamily] = fa.[Id]
 
 ## VIEWS
 
-VIEWS are encapsulated queries: instead of always typing a complex query, you can "alias" this query with a view, which simplifies the call. This technique is good for abstracting logic and to control access permissions - an user can call the view, but be blocked from querying the source tables.
+VIEWS are encapsulated queries: instead of always typing a complex query, you can "alias" this query with a view, which simplifies the call. This technique is good for abstracting logic and to control access permissions — an user can call the view, but be blocked from querying the source tables.
 
 View creation:
 
@@ -322,7 +322,7 @@ HAVING COUNT(fr.[Id]) >= 2 -- family w/ 2 or more fruits
 
 ## UNION, INTERSECT, EXCEPT
 
-These are set operators (see [set theory](https://en.wikipedia.org/wiki/Set_theory) in mathematics). They are different from the interlacing that happens in JOINs - while in JOINs the interlacing is between columns, with sets the interlacing is between lines. The examples below show this visually.
+These are set operators (see [set theory](https://en.wikipedia.org/wiki/Set_theory) in mathematics). They are different from the interlacing that happens in JOINs — while in JOINs the interlacing is between columns, with sets the interlacing is between lines. The examples below show this visually.
 
 * UNION: Returns elements that belong to one set **or** another. 
 * INTERSECT: Returns elements that belong to one set **and** another, at the same time.
@@ -714,7 +714,7 @@ BULK INSERT is a mass insertion of data coming from a file, usually in CSV or XM
 
 This is a strategy to move large volumes of data from one place to another, especially if flat files are chosen, because they are very compact and have very high compression rates (example: a 900MB flat file, when zipped, can be reduced to 30MB, depending on the situation).
 
-Consider the flat file below. Note that the starting positions of each field are always the same on a line - fruit name (0..16), family name (16..32), calories (32..35):
+Consider the flat file below. Note that the starting positions of each field are always the same on a line — fruit name (0..16), family name (16..32), calories (32..35):
 
 ```
 Graviola        Annonaceae      66 

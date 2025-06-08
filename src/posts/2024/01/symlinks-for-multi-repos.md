@@ -3,7 +3,7 @@ lang: en
 langPtLink: ../links-simbolicos-em-multi-repos
 title: Symlinks for multi-repos
 date: 2024-01-19
-excerpt: Tired of having repeated files across many projects? Know more about symlinks - files that point to other files.
+excerpt: Tired of having repeated files across many projects? Know more about symlinks — files that point to other files.
 published: true
 enableMermaid: true
 tags:
@@ -65,7 +65,7 @@ If you have many repositories with repeated files, it becomes tiresome to change
 
 ## Pointers?
 
-In programming, there is the concept of pointers - something that points to something else. Usually, we think on memory pointers, that point to a value or structure in RAM memory. However, this concept also exists in file systems: it's called symbolic links, ***symlinks*, files that point to other files.**
+In programming, there is the concept of pointers — something that points to something else. Usually, we think on memory pointers, that point to a value or structure in RAM memory. However, this concept also exists in file systems: it's called symbolic links, ***symlinks*, files that point to other files.**
 
 Symbolic links are a mature technology, that showed as early as in 1960's computers. They are fully supported on Linux, Mac OSX and Windows, even in older versions.
 

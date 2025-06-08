@@ -46,7 +46,7 @@ It's similar to reuse, but reuse is about designing a component to support many 
 
 ### Interchangeability
 
-Parts can be replaced with equivalent ones - from a different supplier, for example.
+Parts can be replaced with equivalent ones — from a different supplier, for example.
 
 ### Work parallelism
 
@@ -68,7 +68,7 @@ Teams and companies with specific knowledge of a type of component produce them 
 
 Interfaces enable isolated testing of a component, such that external dependencies are ***mocked***, i.e., replaced with simulations or imitations. Because these are individualized tests, there is a higher level of attention and focus on the component itself, and it's not necessary for the entire system to be finished in order to test the component.
 
-This also contributes to ***shift-left testing***, which is the anticipation of quality assurance on the workflow - unit tests highlight problems earlier in the process.
+This also contributes to ***shift-left testing***, which is the anticipation of quality assurance on the workflow — unit tests highlight problems earlier in the process.
 
 {% post_avif_img '2025_02_shift_left_testing.avif' '2025_02_shift_left_testing.jpg' '' %}
 

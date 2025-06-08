@@ -131,7 +131,7 @@ Se você quer usar esses novos formatos, mas quer garantir compatibilidade com n
 </html>
 ```
 
-Se o navegador tiver suporte, tentará primeiro carregar a imagem em formato AVIF; senão, carregará a imagem em formato GIF. A animação abaixo está dentro de uma tag `<picture>` - você pode conferir o formato ao salvar o arquivo.
+Se o navegador tiver suporte, tentará primeiro carregar a imagem em formato AVIF; senão, carregará a imagem em formato GIF. A animação abaixo está dentro de uma tag `<picture>` — você pode conferir o formato ao salvar o arquivo.
 
 {% post_avif_img '2024_01_curtains.avif' '2024_01_curtains.gif' 'Cortinas balançando com o vento' %}
 

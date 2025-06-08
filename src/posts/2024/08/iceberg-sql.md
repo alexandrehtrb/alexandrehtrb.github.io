@@ -323,7 +323,7 @@ HAVING COUNT(fr.[Id]) >= 2 -- família c/ 2 ou mais frutas
 
 ## UNION, INTERSECT, EXCEPT
 
-São operadores de conjuntos (ver [teoria dos conjuntos](https://brasilescola.uol.com.br/matematica/conjunto.htm) na matemática). São diferentes do entrelaçamento que acontece nos JOINS - enquanto que nos JOINS o entrelaçamento é com colunas, nos conjuntos o entrelaçamento é com linhas. Os exemplos abaixo mostram visualmente.
+São operadores de conjuntos (ver [teoria dos conjuntos](https://brasilescola.uol.com.br/matematica/conjunto.htm) na matemática). São diferentes do entrelaçamento que acontece nos JOINS — enquanto que nos JOINS o entrelaçamento é com colunas, nos conjuntos o entrelaçamento é com linhas. Os exemplos abaixo mostram visualmente.
 
 * UNION: Retorna elementos que pertencem a um conjunto **ou** outro. 
 * INTERSECT: Retorna elementos que pertencem a um conjunto **e** a outro, ao mesmo tempo.
@@ -715,7 +715,7 @@ O BULK INSERT é uma inserção em massa de dados vindos de um arquivo, geralmen
 
 Essa é uma estratégia para mover uma grande quantidade de registros de um lugar para outro, principalmente se forem usados arquivos posicionais, pois eles são muito "sucintos" e têm altas taxas de compressão quando zipados (exemplo: um arquivo posicional de 900MB, quando zipado, pode ser reduzido a 30MB, dependendo do caso).
 
-Considere o arquivo posicional a seguir. Repare que as posições de início de cada campo são sempre as mesmas - nome da fruta (0..16), nome da família (16..32), calorias (32..35):
+Considere o arquivo posicional a seguir. Repare que as posições de início de cada campo são sempre as mesmas — nome da fruta (0..16), nome da família (16..32), calorias (32..35):
 
 ```
 Graviola        Annonaceae      66 
@@ -1109,6 +1109,6 @@ Ao analisar o custo de cada etapa, você pode entender quais são os gargalos de
 
 {% post_img '2024_08_titanic.jpg' 'Jack e Rose no Titanic' %}
 
-O SQL é uma ferramenta extremamente poderosa e completa, e adquiriu novas capacidades ao longo dos anos. Não é à toa que é o *mainstream* de banco de dados até hoje - ele é a base de desenvolvimento de sistemas complexos.
+O SQL é uma ferramenta extremamente poderosa e completa, e adquiriu novas capacidades ao longo dos anos. Não é à toa que é o *mainstream* de banco de dados até hoje — ele é a base de desenvolvimento de sistemas complexos.
 
 Esse artigo cobriu funções comuns e desconhecidas do SQL, e ainda assim existem inúmeras outras que poderiam ser abordadas aqui e com aplicações na vida real, por isso, vale a pena "fuçar" a documentação do seu banco de dados, pois muitas vezes ela tem a resposta para o desafio que você tem.

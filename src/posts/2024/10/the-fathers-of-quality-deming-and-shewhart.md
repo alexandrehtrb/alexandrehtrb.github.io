@@ -12,7 +12,7 @@ tags:
 - economy
 ---
 
-In the 1980s, there was a prevailing thought in popular culture that Japan would take over the world - not by force, but by its vigorous economy, which was the second largest in the world between 1990 and 2010. We can see this in many movies, such as *Back To The Future Part II*, where Marty McFly has a Japanese boss in the future; and in *Die Hard*, where John McClane's wife works for a Japanese company. Her boss is Mr. Takagi, in the picture below.
+In the 1980s, there was a prevailing thought in popular culture that Japan would take over the world — not by force, but by its vigorous economy, which was the second largest in the world between 1990 and 2010. We can see this in many movies, such as *Back To The Future Part II*, where Marty McFly has a Japanese boss in the future; and in *Die Hard*, where John McClane's wife works for a Japanese company. Her boss is Mr. Takagi, in the picture below.
 
 {% post_avif_img '2024_10_die_hard_takagi.avif' '2024_10_die_hard_takagi.jpg' 'Die Hard - John McClane, Ellis, Takagi and Holly Gennaro' %}
 

@@ -17,7 +17,7 @@ tags:
 
 Um paradigma é uma maneira de se pensar, de se observar e de se descrever algo ou um raciocínio; é um modelo mental, no qual nos baseamos para entender as coisas ao nosso redor. Cada pessoa tem um jeito próprio de enxergar o mundo e isso se reflete nas coisas que ela faz e produz.
 
-Em programação, um código pode ser escrito de múltiplas formas e com resultados equivalentes - ou seja, o conceito de paradigmas se aplica.
+Em programação, um código pode ser escrito de múltiplas formas e com resultados equivalentes — ou seja, o conceito de paradigmas se aplica.
 
 Existem alguns paradigmas de programação que são os mais difundidos, entre eles:
 

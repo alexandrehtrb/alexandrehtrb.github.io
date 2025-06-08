@@ -151,7 +151,7 @@ Distributed caches can provide locks to prevent read concurrencies. Redis docume
 
 ## Parallel threads
 
-This option is very practical when you want to condense the processing in a single application - it produces and consumes the message internally, in separate threads.
+This option is very practical when you want to condense the processing in a single application — it produces and consumes the message internally, in separate threads.
 
 The communication between production and consumption threads is through thread-safe concurrent queues, like channels, in .NET, or ConcurrentLinkedQueue, in Java. The consumption thread must run indefinitely in background, processing messages as they arrive in the queue.
 

@@ -3,7 +3,7 @@ lang: pt
 langEnLink: ../symlinks-for-multi-repos
 title: Links simbólicos em multi-repos
 date: 2024-01-19
-excerpt: Cansado de ter vários arquivos repetidos nos seus projetos? Saiba mais sobre os links simbólicos - arquivos que apontam para outros arquivos.
+excerpt: Cansado de ter vários arquivos repetidos nos seus projetos? Saiba mais sobre os links simbólicos — arquivos que apontam para outros arquivos.
 published: true
 enableMermaid: true
 tags:
@@ -65,7 +65,7 @@ Se você tem vários repositórios com arquivos repetidos, fica cansativo altera
 
 ## Ponteiros?
 
-Em programação, existe o conceito de ponteiro - algo que aponta para outra coisa. Geralmente, associamos ponteiros a memória, algo que aponta para um valor ou estrutura na memória RAM. Porém, o conceito de ponteiros existe também em sistemas de arquivos: são os links simbólicos, ***symlinks*, arquivos que apontam para outros arquivos.**
+Em programação, existe o conceito de ponteiro — algo que aponta para outra coisa. Geralmente, associamos ponteiros a memória, algo que aponta para um valor ou estrutura na memória RAM. Porém, o conceito de ponteiros existe também em sistemas de arquivos: são os links simbólicos, ***symlinks*, arquivos que apontam para outros arquivos.**
 
 Os links simbólicos são uma tecnologia consolidada, tendo surgido já na década de 1960. Há suporte amplo no Linux, Mac OSX e Windows, mesmo em versões mais antigas.
 

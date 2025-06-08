@@ -25,7 +25,7 @@ A tabela abaixo é do encoding Windows-1252, que contempla 255 caractéres poss�
 
 A **collation**, por sua vez, é a regra de ordenação usada para comparar textos. Ela também determina qual é o encoding utilizado para armazenamento.
 
-No Microsoft SQL Server, no nome de uma collation, CI / CS significa case (in)sensitive - diferenciação por maiúsculas e minúsculas; AI / AS, accent (in)sensitive - diferenciação por acentos. Com uma collation case-insensitive (CI), por exemplo, tanto faz pesquisar `silva` ou `SILVA`. Com uma collation accent-insensitive (AI), `Acucar` e `Açúcar` são considerados iguais em comparações.
+No Microsoft SQL Server, no nome de uma collation, CI / CS significa case (in)sensitive — diferenciação por maiúsculas e minúsculas; AI / AS, accent (in)sensitive — diferenciação por acentos. Com uma collation case-insensitive (CI), por exemplo, tanto faz pesquisar `silva` ou `SILVA`. Com uma collation accent-insensitive (AI), `Acucar` e `Açúcar` são considerados iguais em comparações.
 
 Accent-insensitive na verdade é insensível para todos os [diacríticos](https://pt.wikipedia.org/wiki/Diacr%C3%ADtico) de um idioma, como cedilhas (ç, ş) e acentos (é, ã, ô, etc). Algumas collations mais antigas não cobrem todos os diacríticos nas comparações ([link](https://dba.stackexchange.com/questions/343799/a-collation-that-ignores-cedillas-for-comparison)), por isso, collations mais novas são preferíveis.
 

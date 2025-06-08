@@ -151,7 +151,7 @@ Caches distribuídos podem fornecer trancas para evitar concorrência de leitura
 
 ## Threads paralelas
 
-Esta opção é muito prática quando se quer condensar o processamento em uma mesma aplicação - ela mesma produz e consome a mensagem internamente, em threads separadas.
+Esta opção é muito prática quando se quer condensar o processamento em uma mesma aplicação — ela mesma produz e consome a mensagem internamente, em threads separadas.
 
 A comunicação entre as threads de produção e consumo se dá através de filas concorrentes (thread-safe) no código, como os channels, em .NET, ou ConcurrentLinkedQueue, em Java. A thread de consumo deve rodar indefinidamente em plano de fundo, processando mensagens conforme elas chegam na fila.
 

@@ -12,7 +12,7 @@ tags:
 - economy
 ---
 
-Nos anos 1980, havia um pensamento na cultura pop que o Japão conquistaria o mundo - não pela força, mas por sua economia pujante, que foi a segunda maior do mundo entre 1990 e 2010. Podemos ver isso em vários filmes, como no *De Volta Para o Futuro Parte II*, em que o chefe do Marty McFly no futuro é japonês; e em *Duro de Matar*, em que a esposa do protagonista trabalha numa empresa japonesa, no fim da década de 80. O chefe dela é o Sr. Takagi, na imagem abaixo.
+Nos anos 1980, havia um pensamento na cultura pop que o Japão conquistaria o mundo — não pela força, mas por sua economia pujante, que foi a segunda maior do mundo entre 1990 e 2010. Podemos ver isso em vários filmes, como no *De Volta Para o Futuro Parte II*, em que o chefe do Marty McFly no futuro é japonês; e em *Duro de Matar*, em que a esposa do protagonista trabalha numa empresa japonesa, no fim da década de 80. O chefe dela é o Sr. Takagi, na imagem abaixo.
 
 {% post_avif_img '2024_10_die_hard_takagi.avif' '2024_10_die_hard_takagi.jpg' 'Duro de Matar - John McClane, Ellis, Takagi e Holly Gennaro' %}
 
@@ -106,7 +106,7 @@ No livro *Saia da Crise*, Deming cita os seguintes pontos para a boa gestão de 
 
 9) Quebrar as barreiras entre departamentos. Os colaboradores dos setores de pesquisa, projetos, vendas, compras ou produção devem trabalhar em equipe, para antever problemas na produção ou nos produtos e serviços.
 
-10) Eliminar *slogans*, exortações e pedidos para que a produtividade aumente e não ocorram erros. Tais exortações apenas instigam rivalidades entre as pessoas, sendo que o grosso das causas de baixa qualidade e produtividade está no sistema como um todo e não na força de trabalho.<br><br>a) Eliminar metas numéricas para o chão de fábrica.<br><br>b) Eliminar administração por objetivos - líderes devem conhecer o sistema e prover um plano de trabalho.
+10) Eliminar *slogans*, exortações e pedidos para que a produtividade aumente e não ocorram erros. Tais exortações apenas instigam rivalidades entre as pessoas, sendo que o grosso das causas de baixa qualidade e produtividade está no sistema como um todo e não na força de trabalho.<br><br>a) Eliminar metas numéricas para o chão de fábrica.<br><br>b) Eliminar administração por objetivos — líderes devem conhecer o sistema e prover um plano de trabalho.
 
 11) Remover barreiras que roubem das pessoas o sentimento de orgulho no trabalho. A atenção dos supervisores deve voltar-se para a qualidade e não para números. 
 
