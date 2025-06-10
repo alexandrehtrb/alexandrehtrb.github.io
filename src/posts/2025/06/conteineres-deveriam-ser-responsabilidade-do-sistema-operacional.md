@@ -26,7 +26,7 @@ O Docker resolveu dois problemas: a preparação do ambiente e a segurança de e
 
 A preparação do ambiente se dá porque as imagens dos contêineres vêm com o necessário para a execução do programa, que geralmente são o *runtime* da aplicação e pacotes relacionados. Isso pode ser complexo principalmente em ambientes Linux, pois há toda uma árvore de dependências que é sensível a mudanças e atualizações. Ter uma árvore de dependências rígida e reproduzível garante estabilidade, evitando que a aplicação pare de funcionar corretamente por incompatibilidade com alguma nova versão de um pacote.
 
-A segurança de execução decorre de o contêiner ser um processo com volume de arquivos isolado, sem risco de invadir e infectar arquivos da máquina principal. O mapeamento de conexões de rede também é isolado.
+A segurança de execução decorre de o contêiner ser um processo com mapeamento de rede e volume de arquivos isolados, sem risco de invadir e infectar arquivos da máquina principal.
 
 ### Preparação de ambiente, sem contêineres
 
@@ -34,11 +34,11 @@ Existem várias formas de se preparar um ambiente sem recorrer a contêineres.
 
 Uma é realmente instalar as dependências necessárias na máquina.
 
-Outra é compilação autocontida (*self-contained deployment*), em que o executável carrega consigo o *runtime* da linguagem e todas suas dependências. Assim, a máquina não precisa ter o *runtime* instalado.
+Outra é compilação autocontida (*self-contained deployment*), em que o executável carrega consigo o *runtime* da linguagem e todas suas dependências. Assim, a máquina não precisa ter ele instalado.
 
 Algumas linguagens oferecem compilação para código de máquina, chamada de AOT (*ahead-of-time compilation*), que faz com que o *runtime* não seja necessário e também reduz o número de dependências externas, além de oferecer maior performance e menor consumo de memória aos programas.
 
-A base de uma imagem de contêiner Docker é a *user space*, que é o sistema operacional, menos sua *kernel*. São programas essenciais, bibliotecas, serviços em background e outros arquivos.
+A base de uma imagem Docker de sistema operacional é a *user space*, que é o sistema operacional, menos sua *kernel*. São programas essenciais, bibliotecas, serviços em background e outros arquivos.
 
 Carregar uma *user space* de sistema operacional para cada contêiner desperdiça memória RAM e disco rígido. A imagem Docker do Ubuntu, por exemplo, ocupa 188MB, o que é bastante. Existem imagens ultra-leves que deixam apenas o que é estritamente necessário; por exemplo, a imagem Alpine Linux ocupa apenas 5MB. Ainda assim, é um peso extra para cada aplicação.
 
