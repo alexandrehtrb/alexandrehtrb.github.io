@@ -11,7 +11,7 @@ tags:
 - functional programming
 ---
 
-Currying is a strategy for creating functions that share logic. With it, functions pre-fill arguments of a parent function.
+Currying is a strategy for creating functions that share logic. With it, arguments of a parent function are pre-filled.
 
 JavaScript example:
 
