@@ -11,7 +11,7 @@ tags:
 - functional programming
 ---
 
-*Currying* é uma técnica para criar funções que compartilham uma mesma lógica. Nela, subfunções aplicam argumentos fixos a uma função-mãe.
+*Currying* é uma técnica para criar funções que compartilham uma mesma lógica. Nela, subfunções aplicam argumentos fixos a uma função-mãe e herdam os parâmetros restantes dela.
 
 Exemplo em JavaScript:
 
