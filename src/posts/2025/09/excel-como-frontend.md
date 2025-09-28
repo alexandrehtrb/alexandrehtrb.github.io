@@ -1,6 +1,6 @@
 ---
 lang: pt
-langEnLink: ../excel-frontends
+langEnLink: ../excel-as-a-frontend
 title: Excel como frontend
 date: 2025-09-29
 excerpt: Analisando a idéia de usar o Microsoft Excel como frontend de um sistema.
@@ -18,7 +18,7 @@ As finanças pessoais e das empresas. Relatórios governamentais e gerenciais. E
 
 Todas elas passam pelo Excel.
 
-Nos projetos em que trabalhei, uma das funcionalidades mais pedidas pelos clientes é exportar dados para o Excel, principalmente em setores de *back-office*, para que os analistas possam encontrar informações, produzir relatórios e calcular somas com maior facilidade. Não só *back-office* — agentes de campo, atendentes e vendedores também usam essa ferramenta.
+Nos projetos em que trabalhei, uma das funcionalidades mais pedidas pelos clientes é exportar dados para o Excel, principalmente em setores de *back-office*, para que os analistas possam encontrar informações, produzir relatórios e calcular somas com maior facilidade. Não só *back-office* — profissionais de campo, atendentes e vendedores também usam essa ferramenta.
 
 Alguns exemplos da vida real:
 
@@ -103,3 +103,7 @@ Os *UserForms* são janelas e formulários customizáveis para que o usuário in
 Deve-se ter em mente que sempre que for necessária uma mudança nessas integrações, os usuários terão de baixar versões atualizadas da planilha.
 
 Recomendo os seguintes tutoriais de userforms: um do [Excel Easy](https://www.excel-easy.com/vba/userform.html) e outro da [Wise Owl Training](https://www.wiseowl.co.uk/vba-macros/guides/user-forms/vba-userform/).
+
+## Conclusão
+
+Acredito que o Excel é sim uma alternativa viável a páginas Web e programas desktop, principalmente em serviços internos de empresas. Para aplicações voltadas a consumidores finais, contudo, não é uma boa solução, pois a pessoa precisaria ter um computador com Excel instalado, além de o visual não ser atrativo; nesses casos, sites Web e aplicativos de celular são mais adequados.
