@@ -18,7 +18,7 @@ Corporate and personal finances. Governmental and management reports. Account st
 
 They go through Excel.
 
-On the projects I have worked on, one of the most common features requested by the clients is exporting data to Excel, especially for back-office operations, so analysts can more easily find information, make reports and calculate sums. Not just back-office — field agents, support and sales people also use it.
+On the projects I have worked on, one of the most common features requested by clients is exporting data to Excel, especially for back-office operations, so analysts can more easily find information, make reports and calculate sums. Not just back-office — field agents, support and sales people also use it.
 
 Some real life examples:
 
@@ -106,4 +106,4 @@ I recommend the following userform tutorials: one from [Excel Easy](https://www.
 
 ## Conclusion
 
-I believe that Excel actually is a good alternative to websites and desktop programs, especially for internal services within a business. For customer facing applications, however, it's not a good solution, as it requires a PC with Excel installed, and the UI is not very appealing; in those cases, websites and phone apps are the better choice.
+For customer facing applications, Excel may not be a good frontend solution, as it requires a PC with it installed, and the UI is not very appealing; in those cases, websites and phone apps are the better choice. However, for internal services within a business, Excel can definitely be a good alternative to websites and desktop programs.

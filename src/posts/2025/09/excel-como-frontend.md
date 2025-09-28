@@ -106,4 +106,4 @@ Recomendo os seguintes tutoriais de userforms: um do [Excel Easy](https://www.ex
 
 ## Conclusão
 
-Acredito que o Excel é sim uma alternativa viável a páginas Web e programas desktop, principalmente em serviços internos de empresas. Para aplicações voltadas a consumidores finais, contudo, não é uma boa solução, pois a pessoa precisaria ter um computador com Excel instalado, além de o visual não ser atrativo; nesses casos, sites Web e aplicativos de celular são mais adequados.
+Para aplicações voltadas a consumidores finais, o Excel não é muito adequado, pois a pessoa precisaria ter um computador com ele instalado, além de o visual não ser atrativo; nesses casos, sites Web e aplicativos de celular são mais adequados. Contudo, para serviços internos de empresas, o Excel pode sim ser uma alternativa viável a páginas Web e programas desktop.
