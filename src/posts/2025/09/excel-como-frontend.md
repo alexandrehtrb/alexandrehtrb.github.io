@@ -1,6 +1,6 @@
 ---
 lang: pt
-langEnLink: ../excel-as-frontend
+langEnLink: ../excel-as-a-frontend
 title: Excel como frontend
 date: 2025-09-29
 excerpt: Analisando a idéia de usar o Microsoft Excel como frontend de um sistema.
