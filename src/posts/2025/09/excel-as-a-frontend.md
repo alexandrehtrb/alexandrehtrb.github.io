@@ -20,7 +20,7 @@ They go through Excel.
 
 On the projects I have worked on, one of the most common features requested by clients is exporting data to Excel, especially for back-office operations, so analysts can more easily find information, make reports and calculate sums. Not just back-office — field agents, support and sales people also use it.
 
-Some real life examples:
+Some real-life examples:
 
 - Internal reports of transactions per individual;
 - Reports of sales grouped by business partners;
