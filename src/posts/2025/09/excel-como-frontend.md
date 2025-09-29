@@ -85,7 +85,7 @@ Até mesmo a segurança de acesso às informações já está resolvida:
 
 - Se a fonte de dados for um arquivo remoto, basta controlar as permissões de acesso a esse arquivo.
 - Se a fonte de dados for um banco de dados ou endpoint HTTP, pode-se passar uma credencial com permissões apenas para consultas autorizadas.
-- Autenticação Windows pode ser usada nos casos acima.
+- Autenticação Windows é uma opção para os casos acima.
 
 Outra vantagem é que uma vez baixados, os dados ficam disponíveis para uso mesmo sem conexão com a Internet.
 
@@ -101,7 +101,7 @@ Os *UserForms* são janelas e formulários customizáveis para que o usuário in
 
 {% image_caption 'Exemplo de userform no Excel.' %}
 
-Deve-se ter em mente que sempre que for necessária uma mudança nessas integrações com o backend, os usuários terão de baixar versões atualizadas da planilha.
+Deve-se ter em mente que sempre que for necessária uma mudança nessas integrações de escrita, os usuários terão de baixar versões atualizadas da planilha.
 
 Recomendo os seguintes tutoriais de userforms: um do [Excel Easy](https://www.excel-easy.com/vba/userform.html) e outro da [Wise Owl Training](https://www.wiseowl.co.uk/vba-macros/guides/user-forms/vba-userform/).
 

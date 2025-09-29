@@ -85,7 +85,7 @@ Even information security is solved for us:
 
 - If the data source is a remote file, we just need to control access permission on it.
 - If the data source is a database or HTTP endpoint, we can provide a personalized credential with permissions only for specific queries.
-- Windows Authentication can be used for the cases above.
+- Windows Authentication is an option for the cases above.
 
 Another advantage is that once downloaded, the data is available for usage even if there is no internet connection.
 
@@ -101,7 +101,7 @@ UserForms are custom dialogs for user data input. Macros on the other hand are t
 
 {% image_caption 'Userform example on Excel.' %}
 
-Keep in mind that whenever a change is required on those backend integrations, users will need to download updated versions of the spreadsheet.
+Keep in mind that whenever a change is required on those write integrations, users will need to download updated versions of the spreadsheet.
 
 I recommend the following userform tutorials: one from [Excel Easy](https://www.excel-easy.com/vba/userform.html) and another from [Wise Owl Training](https://www.wiseowl.co.uk/vba-macros/guides/user-forms/vba-userform/).
 
