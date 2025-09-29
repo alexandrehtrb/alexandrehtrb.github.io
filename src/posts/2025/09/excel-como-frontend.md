@@ -1,6 +1,6 @@
 ---
 lang: pt
-langEnLink: ../excel-as-a-frontend
+langEnLink: ../excel-as-frontend
 title: Excel como frontend
 date: 2025-09-29
 excerpt: Analisando a idéia de usar o Microsoft Excel como frontend de um sistema.
@@ -109,4 +109,4 @@ Recomendo os seguintes tutoriais de userforms: um do [Excel Easy](https://www.ex
 
 Para serviços internos de uma empresa, ou que usem muita matemática e dados em tabela, o Excel pode sim ser uma ótima alternativa.
 
-Quando descobri que o Excel podia se conectar a fontes externas de dados, pensei "como que eu não sabia disso até hoje?". É muito prático. Por ser um software que não é usado diariamente pelos profissionais de TI, ele acaba não sendo conhecido em profundidade por nós, e às vezes, funcionalidades interessantes como essas passam despercebidas.
+Quando descobri que o Excel podia se conectar a fontes externas de dados, pensei "como que eu não sabia disso até hoje?". É muito mais prático. Por ser um software que não é usado diariamente pelos profissionais de TI, ele acaba não sendo conhecido em profundidade por nós, e às vezes, funcionalidades interessantes como essas passam despercebidas.
