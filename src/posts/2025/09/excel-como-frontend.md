@@ -107,4 +107,6 @@ Recomendo os seguintes tutoriais de userforms: um do [Excel Easy](https://www.ex
 
 ## Conclusão
 
-Para aplicações voltadas a consumidores finais, o Excel não é muito adequado, pois a pessoa precisaria ter um computador com ele instalado, além de o visual não ser atrativo; nesses casos, sites Web e aplicativos de celular são mais apropriados. Contudo, para serviços internos de empresas, o Excel pode sim ser uma alternativa viável a páginas Web e programas desktop.
+Para serviços internos de uma empresa, ou que usem muita matemática e dados em tabela, o Excel pode sim ser uma ótima alternativa.
+
+Quando descobri que o Excel podia se conectar a fontes externas de dados, pensei "como que eu não sabia disso até hoje?". É muito prático. Por ser um software que não é usado diariamente pelos profissionais de TI, ele acaba não sendo conhecido em profundidade por nós, e às vezes, funcionalidades interessantes como essas passam despercebidas.

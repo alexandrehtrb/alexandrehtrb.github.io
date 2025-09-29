@@ -105,6 +105,8 @@ Keep in mind that whenever a change is required on those backend integrations, u
 
 I recommend the following userform tutorials: one from [Excel Easy](https://www.excel-easy.com/vba/userform.html) and another from [Wise Owl Training](https://www.wiseowl.co.uk/vba-macros/guides/user-forms/vba-userform/).
 
-## Conclusion
+## Final thoughts
 
-For customer facing applications, Excel may not be a good frontend solution, as it requires a PC with it installed, and the UI is not very appealing; in those cases, websites and phone apps are the better choice. However, for internal services within a business, Excel can definitely be a good alternative to websites and desktop programs.
+For internal services within a business, or those that heavily rely on mathematics and reports, Excel can definitely be a good frontend solution.
+
+When I discovered that Excel can connect to external data sources, I thought "how come I didn't know about this earlier?". It makes a lot of sense. Since it's a software not widely used by IT professionals, interesting features like this may go unnoticed by us, even though they could help us a lot.
