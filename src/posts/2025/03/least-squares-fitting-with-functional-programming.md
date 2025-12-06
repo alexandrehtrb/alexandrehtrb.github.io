@@ -55,24 +55,24 @@ xychart-beta
 # Theory
 
 Consider **f(x)** the equation we want to generate and **(x<sub>i</sub>, y<sub>i</sub>)** the measurements we have. The best equation is the one where the differences between approximations and measurements are the smallest possible; in other words:
-  - **|f(x<sub>i</sub>) - y<sub>i</sub>|** is the distance between approximation and reality;
+  - **|f(x<sub>i</sub>) − y<sub>i</sub>|** is the distance between approximation and reality;
   - **Σ** is the summation.
-  - **Σ|f(x<sub>i</sub>) - y<sub>i</sub>|** should be the closest to zero.
+  - **Σ|f(x<sub>i</sub>) − y<sub>i</sub>|** should be the closest to zero.
 
 {% post_img '2025_03_least_ordinary_squares_errors.png' 'Differences between approximations and measurements.' %}
 
-Let's name SSE the sum of squared errors: **SSE = Σ(f(x<sub>i</sub>) - y<sub>i</sub>)<sup>2</sup>**. As our objective is to measure the distance between approximation and reality, we'll simply power square the difference, instead of applying the absolute function; it's easier.
+Let's name SSE the sum of squared errors: **SSE = Σ(f(x<sub>i</sub>) − y<sub>i</sub>)<sup>2</sup>**. As our objective is to measure the distance between approximation and reality, it's easier to simply power square the difference, instead of applying the absolute function.
 
 *We need to apply an absolute or power square operation for distance measurement because a simple subtraction could result in a negative value, which isn't valid for distances.*
 
 The minimum of SSE depends on the type of desired approximation:
 
 - Linear: **f(x) = ax + b**
-- Exponential: **f(x) = a * e<sup>bx</sup>**
-- Power law: **f(x) = a * x<sup>b</sup>**
-- Logarithmic: **f(x) = a + b * ln(x)**
+- Exponential: **f(x) = a ⋅ e<sup>bx</sup>**
+- Power law: **f(x) = ax<sup>b</sup>**
+- Logarithmic: **f(x) = a + b ⋅ ln(x)**
 
-Substituting f(x) by the functions above in SSE, we'll see that it depends on variables a and b. In the case of linear approximation: **SSE(a,b) = Σ(a * x<sub>i</sub> + b - y<sub>i</sub>)<sup>2</sup>**.
+Substituting f(x) by the functions above in SSE, we'll see that it depends on variables a and b. In the case of linear approximation: **SSE(a,b) = Σ(ax<sub>i</sub> + b − y<sub>i</sub>)<sup>2</sup>**. x<sub>i</sub> and y<sub>i</sub> are constants, due to being known values.
 
 The minimum of a function happens on the point where its derivative (slope) equals zero:
 
@@ -97,7 +97,7 @@ xychart-beta
 
 ```
 
-{% image_caption 'In red: y = x². In orange: the derivatives (slopes) for x = -3, 0 and 3.' %}
+{% image_caption 'In red: y = x². In orange: the derivatives (slopes) for x = −3, 0 and 3.' %}
 
 SSE will have its minimum point where the partial derivatives relative to **a** and **b** are zero, solving the following system:
 
@@ -111,7 +111,7 @@ This is the basics for the least squares fitting method. If you are interested a
 
 # Functional programming
 
-Functional programming is a paradigm that focuses on data transformations: like in a mathematical function, a value `x` is transformed by `f(x)`. In functional code, transformations are often chained, e.g., `f(g(h(x)))`.
+Functional programming is a paradigm that focuses on data transformations: like in a mathematical function, a value **x** is transformed by **f(x)**. In functional code, transformations are often chained, e.g., **f(g(h(x)))**.
 
 In this article, we will use the F# language, that uses the [.NET runtime](https://dotnet.microsoft.com).
 
@@ -121,7 +121,7 @@ This [post](/posts/2024/06/introduction-to-functional-programming/#f%23-language
 
 # Linear approximation
 
-The equation will be `f(x) = a * x + b`.
+The equation will be **f(x) = ax + b**.
 
 From a set of values (x<sub>i</sub>, y<sub>i</sub>), a and b are determined by:
 
@@ -140,7 +140,8 @@ The F# code below calculates the linear approximation.
 - `x` and `y` are the input values.
 - `Seq.sumBy` sums the results of a function applied over elements of a sequence:
     - `x = [1, 2, 3]`
-    - `x |> Seq.sumBy(fun i -> i * 2) = 12` (2\*1 + 2\*2 + 2\*3 = 12)
+    - `x |> Seq.sumBy(fun i -> 2 * i) = 12`
+    - (2\*1 + 2\*2 + 2\*3 = 12)
 - `Seq.zip` makes a sequence of pairs coming from two other sequences:
   - `x = [1, 2, 3]`
   - `y = [9, 8, 7]`
@@ -172,7 +173,9 @@ let linearApproximation(x: double[])(y: double[]): (double * double) =
 
 # Exponential approximation
 
-The equation will be `f(x) = A * e^(B * x)`. **e** is the [natural base](https://en.wikipedia.org/wiki/E_(mathematical_constant)), approximately equal to 2.71828.
+The equation will be **f(x) = A ⋅ e<sup>bx</sup>**.
+
+**e** is the [natural base](https://en.wikipedia.org/wiki/E_(mathematical_constant)), approximately equal to 2.71828.
 
 From a set of values (x<sub>i</sub>, y<sub>i</sub>), a and b are determined by:
 
@@ -188,8 +191,8 @@ From a set of values (x<sub>i</sub>, y<sub>i</sub>), a and b are determined by:
 
 The F# code below calculates the exponential approximation.
 
-- `ln` is the natural logarithm, on base **e**.
-- `A = e^a`.
+- **ln** is the natural logarithm, on base **e**.
+- **A = e<sup>a</sup>**.
 - `Seq.zip3` follows the same logic as `Seq.zip`, but forms a sequence of groups of three, coming from three other sequences.
 - **Important**: the values of y need to be all greater than 0, because there is no logarithm of zero or negative numbers.
 
@@ -248,9 +251,9 @@ CSV data available [here](/assets/misc/1900-2023-silver_mining_production.csv).
 
 Results:
 
-- `f(x)` is the mining production in metric tonnes, x is the year.
-- Linear: `f(x) = 162.897 * x - 308090.816`
-- Exponential: `f(x) = 0.000000002257 * e^(x * 0.01485166)`
+- **f(x)** is the mining production in metric tonnes, x is the year.
+- Linear: **f(x) = 162.897x − 308090.816**
+- Exponential: **f(x) = 0.000000002257 ⋅ e<sup>0.01485166x</sup>**
 
 ```mermaid
 ---

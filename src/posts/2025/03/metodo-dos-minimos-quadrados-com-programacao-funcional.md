@@ -55,24 +55,24 @@ xychart-beta
 # Base teórica
 
 Considere **f(x)** sendo a equação que queremos gerar e **(x<sub>i</sub>, y<sub>i</sub>)** as medições coletadas. A melhor equação é aquela cujas diferenças entre aproximações e medições sejam as menores possíveis; em outras palavras:
-  - **|f(x<sub>i</sub>) - y<sub>i</sub>|** é a distância entre aproximação e realidade;
+  - **|f(x<sub>i</sub>) − y<sub>i</sub>|** é a distância entre aproximação e realidade;
   - **Σ** é o somatório.
-  - **Σ|f(x<sub>i</sub>) - y<sub>i</sub>|** deve ser o mais próximo de zero.
+  - **Σ|f(x<sub>i</sub>) − y<sub>i</sub>|** deve ser o mais próximo de zero.
 
 {% post_img '2025_03_least_ordinary_squares_errors.png' 'Diferenças entre aproximação e medições.' %}
 
-Vamos chamar de SQE a soma dos quadrados dos erros: **SQE = Σ(f(x<sub>i</sub>) - y<sub>i</sub>)<sup>2</sup>**. Como o objetivo é "medir a distância" entre aproximação e realidade, simplesmente elevaremos a diferença ao quadrado, ao invés de aplicar o módulo; é mais fácil.
+Vamos chamar de SQE a soma dos quadrados dos erros: **SQE = Σ(f(x<sub>i</sub>) − y<sub>i</sub>)<sup>2</sup>**. Como o objetivo é "medir a distância" entre aproximação e realidade, é mais fácil elevarmos a diferença ao quadrado, ao invés de aplicar o módulo.
 
 *Precisamos aplicar módulo ou elevar ao quadrado para medição de distância pois uma subtração simples poderia resultar em um valor negativo, e não existe distância negativa.*
 
 O mínimo de SQE depende do tipo de função que queremos aproximar:
 
 - Linear: **f(x) = ax + b**
-- Exponencial: **f(x) = a * e<sup>bx</sup>**
-- Potencial: **f(x) = a * x<sup>b</sup>**
-- Logarítmica: **f(x) = a + b * ln(x)**
+- Exponencial: **f(x) = a ⋅ e<sup>bx</sup>**
+- Potencial: **f(x) = ax<sup>b</sup>**
+- Logarítmica: **f(x) = a + b ⋅ ln(x)**
 
-Substituindo f(x) pelas funções acima em SQE, teremos que ela depende das variáveis a e b. No caso da aproximação linear: **SQE(a,b) = Σ(a * x<sub>i</sub> + b - y<sub>i</sub>)<sup>2</sup>**.
+Substituindo f(x) pelas funções acima em SQE, teremos que ela depende das variáveis a e b. No caso da aproximação linear: **SQE(a,b) = Σ(ax<sub>i</sub> + b − y<sub>i</sub>)<sup>2</sup>**. x<sub>i</sub> e y<sub>i</sub> são constantes, por serem pré-fornecidos.
 
 O mínimo de uma função fica no ponto em que sua derivada (leia-se inclinação) é igual a zero:
 
@@ -97,7 +97,7 @@ xychart-beta
 
 ```
 
-{% image_caption 'Em vermelho: y = x². Em laranja: as derivadas (retas de inclinação) em x = -3, 0 e 3.' %}
+{% image_caption 'Em vermelho: y = x². Em laranja: as derivadas (retas de inclinação) em x = −3, 0 e 3.' %}
 
 Temos que SQE vai ter seu ponto mínimo onde as derivadas parciais em relação a **a** e **b** tiverem valor zero, resolvendo o sistema de equações:
 
@@ -111,7 +111,7 @@ Essa é a base teórica do método dos mínimos quadrados. Se você ficou intere
 
 # Programação funcional
 
-A programação funcional é um paradigma que foca nas transformações dos dados: como em uma função matemática, um valor `x` entra e é transformado por `f(x)`. Num código funcional, transformações muitas vezes são aplicadas em cascata, ex.: `f(g(h(x)))`.
+A programação funcional é um paradigma que foca nas transformações dos dados: como em uma função matemática, um valor **x** entra e é transformado por **f(x)**. Num código funcional, transformações muitas vezes são aplicadas em cascata, ex.: **f(g(h(x)))**.
 
 Neste artigo, vamos usar a linguagem F#, que usa o [*runtime* .NET](https://dotnet.microsoft.com).
 
@@ -121,7 +121,7 @@ Este [post](/posts/2024/06/introducao-a-programacao-funcional/#linguagem-f%23) e
 
 # Aproximação linear
 
-A equação gerada será do tipo `f(x) = a * x + b`.
+A equação gerada será do tipo **f(x) = ax + b**.
 
 Tendo um conjunto de valores medidos (x<sub>i</sub>, y<sub>i</sub>), a e b são calculados por:
 
@@ -140,7 +140,8 @@ O código em F# abaixo calcula a aproximação linear.
 - `x` e `y` são os valores de entrada.
 - `Seq.sumBy` soma os resultados de uma função aplicada aos valores de uma seqüência:
     - `x = [1, 2, 3]`
-    - `x |> Seq.sumBy(fun i -> i * 2) = 12` (2\*1 + 2\*2 + 2\*3 = 12)
+    - `x |> Seq.sumBy(fun i -> 2 * i) = 12`
+    - (2\*1 + 2\*2 + 2\*3 = 12)
 - `Seq.zip` forma uma seqüência de pares vindos de duas outras seqüências. Por exemplo:
   - `x = [1, 2, 3]`
   - `y = [9, 8, 7]`
@@ -172,7 +173,9 @@ let aproximacaoLinear(x: double[])(y: double[]): (double * double) =
 
 # Aproximação exponencial
 
-A equação gerada será do tipo `f(x) = A * e^(b * x)`. **e** é a [base natural](https://pt.wikipedia.org/wiki/E_(constante_matem%C3%A1tica)), aproximadamente igual a 2,71828.
+A equação gerada será do tipo **f(x) = A ⋅ e<sup>bx</sup>**.
+
+**e** é a [base natural](https://pt.wikipedia.org/wiki/E_(constante_matem%C3%A1tica)), aproximadamente igual a 2,71828.
 
 Tendo um conjunto de valores medidos (x<sub>i</sub>, y<sub>i</sub>), a e b são calculados por:
 
@@ -188,8 +191,8 @@ Tendo um conjunto de valores medidos (x<sub>i</sub>, y<sub>i</sub>), a e b são 
 
 O código em F# abaixo calcula a aproximação exponencial.
 
-- `ln` é o logaritmo natural, na base **e**.
-- `A = e^a`.
+- **ln** é o logaritmo natural, na base **e**.
+- **A = e<sup>a</sup>**.
 - `Seq.zip3` segue a mesma lógica que o `Seq.zip`, porém forma uma seqüência de trios vindos de três outras seqüências.
 - **Importante**: os valores de y precisam ser todos maiores do que zero, pois não existe logaritmo de valor zero ou negativo.
 
@@ -248,9 +251,9 @@ Arquivo CSV disponível neste [link](/assets/misc/1900-2023-silver_mining_produc
 
 Resultados:
 
-- `f(x)` é a mineração em toneladas, x é o ano.
-- Linear: `f(x) = 162,897 * x - 308090,816`
-- Exponencial: `f(x) = 0,000000002257 * e^(x * 0,01485166)`
+- **f(x)** é a mineração em toneladas, x é o ano.
+- Linear: **f(x) = 162,897x − 308090,816**
+- Exponencial: **f(x) = 0,000000002257 ⋅ e<sup>0,01485166x</sup>**
 
 ```mermaid
 ---
