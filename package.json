@@ -21,16 +21,23 @@
     "concurrently": "9.2.1",
     "eslint": "8.57.0",
     "postcss": "8.5.6",
-    "autoprefixer": "10.4.21",
+    "autoprefixer": "10.4.22",
     "html-minifier-terser": "7.2.0",
     "htmlencode": "0.0.4",
     "markdown-it": "14.1.0",
     "markdown-it-anchor": "9.2.0",
-    "shiki": "3.12.2",
-    "@shikijs/transformers": "3.12.2",
-    "terser": "5.44.0",
+    "shiki": "3.19.0",
+    "@shikijs/transformers": "3.19.0",
+    "terser": "5.44.1",
     "@tailwindcss/typography": "0.5.16",
-    "tailwindcss": "3.4.17",
-    "brace-expansion": "2.0.2"
+    "tailwindcss": "3.4.17"
+  },
+  "pnpm": {
+    "overrides": {
+      "js-yaml@<4.1.1": "4.1.1",
+      "glob@<10.5.0": "10.5.0",
+      "brace-expansion@<1.1.12": "1.1.12",
+      "mdast-util-to-hast@<13.2.1": "13.2.1"
+    }
   }
 }
