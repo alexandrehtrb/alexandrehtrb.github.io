@@ -11,24 +11,37 @@ tags:
 - functional programming
 ---
 
-Currying is a strategy for sharing logic in programming. With it, derived functions pre-fill arguments of a parent function and inherit the declaration of remaining parameters.
+Currying is a strategy for sharing logic in programming. With it, functions are nested inside others, each one responsible for a parameter of the whole logic.
 
 JavaScript example:
 
 ```js
-// curryfied function
-function sum(a) {
+// curried function
+function multiplyAndSum(a) {
   return function(b) {
-    return a + b;
+    return function(x) {
+      return a*x + b;
+    }
   }
 }
 
-const sum2 = sum(2);
+const f = multiplyAndSum(2)(1);
+// f(x) = 2x + 1
 
-// usage
-console.log(sum(2)(7)); // 9
-console.log(sum2(7)); // 9
+console.log(f(4)); // 9
+
+const g = multiplyAndSum(3);
+// g(x) = 3x + b
+// b unspecified
+
+console.log(g(2)(1)); // 5, b = 2
 ```
+
+With currying, derived functions can pre-fill arguments of a parent function and inherit the declaration of remaining parameters.
+
+Curried functions can be imagined as [*matryoshka*](https://en.wikipedia.org/wiki/Matryoshka_doll) Russian dolls — one inside another, inside another.
+
+{% post_img '2025_09_matryoshka.jpg' 'Matryoshka Russian dolls' %}
 
 This style comes from functional programming and is very useful for mathematics.
 

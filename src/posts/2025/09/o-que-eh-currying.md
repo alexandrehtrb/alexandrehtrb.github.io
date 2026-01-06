@@ -11,24 +11,37 @@ tags:
 - functional programming
 ---
 
-*Currying* é uma técnica para criar funções que compartilham uma mesma lógica. Nela, subfunções aplicam argumentos fixos a uma função-mãe e herdam a declaração dos parâmetros restantes.
+*Currying* é uma técnica para criar funções que compartilham uma mesma lógica. Nela, funções são aninhadas dentro de outras, cada uma sendo responsável por um parâmetro da lógica total. 
 
 Exemplo em JavaScript:
 
 ```js
 // função curryficada
-function soma(a) {
+function multiplicarESomar(a) {
   return function(b) {
-    return a + b;
+    return function(x) {
+      return a*x + b;
+    }
   }
 }
 
-const somar2 = soma(2);
+const f = multiplicarESomar(2)(1);
+// f(x) = 2x + 1
 
-// usos
-console.log(soma(2)(7)); // 9
-console.log(somar2(7)); // 9
+console.log(f(4)); // 9
+
+const g = multiplicarESomar(3);
+// g(x) = 3x + b
+// b não especificado ainda
+
+console.log(g(2)(1)); // 5, b = 2
 ```
+
+Com *currying*, subfunções podem aplicar argumentos fixos a uma função-mãe e herdar a declaração dos parâmetros restantes.
+
+Uma forma de imaginar funções *curryficadas* é como se fossem bonecas russas ([*matryoshkas*](https://pt.wikipedia.org/wiki/Matriosca)) — uma dentro de outra, dentro de outra.
+
+{% post_img '2025_09_matryoshka.jpg' 'Bonecas russas matryoshkas' %}
 
 Essa técnica vem da programação funcional e é muito útil para cálculos e matemática.
 
