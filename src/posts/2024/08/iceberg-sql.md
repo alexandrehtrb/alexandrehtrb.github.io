@@ -1091,7 +1091,7 @@ Podem ser usadas para controle de concorrência, por exemplo, para leitura de me
 
 As funções no SQL Server são `sp_getapplock` e `sp_releaseapplock`.
 
-Confira mais no artigo sobre [arquitetura assíncrona sem filas](https://alexandrehtrb.github.io/posts/2024/06/arquitetura-assincrona-sem-filas/#mensagens-em-bancos-de-dados).
+Confira mais no artigo sobre [arquitetura assíncrona sem filas](/posts/2024/06/arquitetura-assincrona-sem-filas/#mensagens-em-bancos-de-dados).
 
 ## VIEW EXECUTION PLAN
 

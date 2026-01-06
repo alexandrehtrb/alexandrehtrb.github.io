@@ -1089,7 +1089,7 @@ Can be used for concurrency control, such as for reading messages with multiple 
 
 The SQL Server functions are `sp_getapplock` and `sp_releaseapplock`.
 
-Learn more in the article about [asynchronous architecture without queues](https://alexandrehtrb.github.io/posts/2024/06/asynchronous-architecture-without-queues/#messages-in-databases).
+Learn more in the article about [asynchronous architecture without queues](/posts/2024/06/asynchronous-architecture-without-queues/#messages-in-databases).
 
 ## VIEW EXECUTION PLAN
 
