@@ -39,7 +39,7 @@ console.log(g(2)(1)); // 5, b = 2
 
 With currying, derived functions can pre-fill arguments of a parent function and inherit the declaration of remaining parameters.
 
-Curried functions can be imagined as [*matryoshka*](https://en.wikipedia.org/wiki/Matryoshka_doll) Russian dolls — one inside another, inside another.
+Curried functions can be imagined as [*matryoshka*](https://en.wikipedia.org/wiki/Matryoshka_doll) Russian dolls: one inside another, inside another.
 
 {% post_img '2025_09_matryoshka.jpg' 'Matryoshka Russian dolls' %}
 

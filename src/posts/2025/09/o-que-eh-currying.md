@@ -39,7 +39,7 @@ console.log(g(2)(1)); // 5, b = 2
 
 Com *currying*, subfunções podem aplicar argumentos fixos a uma função-mãe e herdar a declaração dos parâmetros restantes.
 
-Uma forma de imaginar funções *curryficadas* é como se fossem bonecas russas ([*matryoshkas*](https://pt.wikipedia.org/wiki/Matriosca)) — uma dentro de outra, dentro de outra.
+Uma forma de imaginar funções *curryficadas* é como se fossem bonecas russas ([*matryoshkas*](https://pt.wikipedia.org/wiki/Matriosca)): uma dentro de outra, dentro de outra.
 
 {% post_img '2025_09_matryoshka.jpg' 'Bonecas russas matryoshkas' %}
 
