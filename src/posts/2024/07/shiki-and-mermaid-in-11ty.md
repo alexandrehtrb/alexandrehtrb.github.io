@@ -171,7 +171,7 @@ export default (eleventyConfig, options) => {
 import shikiPlugin from "./shiki.config.mjs";
 import mermaidPlugin from "./mermaid.config.mjs"; // [!code ++]
 
-module.exports = function(eleventyConfig) {
+export default function (eleventyConfig) {
   // ...
   eleventyConfig.addPlugin(shikiPlugin);
   eleventyConfig.addPlugin(mermaidPlugin); // [!code ++]
