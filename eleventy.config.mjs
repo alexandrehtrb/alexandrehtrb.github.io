@@ -1,15 +1,17 @@
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const { minify: minify_html } = require("html-minifier-terser");
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import htmlMinifierTerser from "html-minifier-terser";
+import shikiPlugin from "./shiki.config.mjs";
+import mermaidPlugin from "./mermaid.config.mjs";
+import rssPlugin from "@11ty/eleventy-plugin-rss";
+import fs from "fs";
 const is_production = typeof process.env.NODE_ENV === "string" && process.env.NODE_ENV === "production";
-const fs = require("fs");
 
-async function do_minifyhtml(source, output_path) {
+async function minifyHtml(source, output_path) {
 
   if (!is_production || !output_path.endsWith(".html")) return source;
 
-  const result = await minify_html(source, {
+  const result = await htmlMinifierTerser.minify(source, {
     collapseBooleanAttributes: true,
     collapseWhitespace: true,
     collapseInlineTagWhitespace: false, // precisa ser false senão deixa links grudados com texto
@@ -34,11 +36,11 @@ async function do_minifyhtml(source, output_path) {
   return result;
 }
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   // Plugins
-  eleventyConfig.addPlugin(require("./src/libs/shiki.js"));
-  eleventyConfig.addPlugin(require("./src/libs/mermaid.js"));
-  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(shikiPlugin);
+  eleventyConfig.addPlugin(mermaidPlugin);
+  eleventyConfig.addPlugin(rssPlugin);
 
   // To enable merging of tags
   eleventyConfig.setDataDeepMerge(true);
@@ -118,7 +120,7 @@ module.exports = function (eleventyConfig) {
     return fs.readFileSync("src/assets/img/posts/2025_03_least_ordinary_squares_exponential_fitting_b.svg", "utf8");
   });
 
-  eleventyConfig.addTransform("htmlmin", do_minifyhtml);
+  eleventyConfig.addTransform("htmlmin", minifyHtml);
 
   return {
     dir: {

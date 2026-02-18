@@ -1,4 +1,4 @@
-module.exports = (eleventyConfig, options) => {
+export default (eleventyConfig, options) => {
   let mermaid_config = {
     startOnLoad: false,
     theme: "default",

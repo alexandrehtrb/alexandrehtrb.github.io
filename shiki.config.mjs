@@ -1,18 +1,12 @@
-const htmlencode = require("htmlencode");
+import htmlencode from "htmlencode";
+import fs from "fs";
+import { transformerNotationDiff } from "@shikijs/transformers";
+import { createHighlighter } from "shiki";
 
-module.exports = (eleventyConfig, options) => {
-  // empty call to notify 11ty that we use this feature
-  // eslint-disable-next-line no-empty-function
-  eleventyConfig.amendLibrary("md", () => { });
-
-  eleventyConfig.on("eleventy.before", async () => {
-    const shiki = await import("shiki");
-    const fs = await import("fs");
-    const { transformerNotationDiff } = await import("@shikijs/transformers");
-
-    // Load the theme object from a file, a network request, or anywhere
-    const darkColourTheme = JSON.parse(fs.readFileSync("src/libs/nomos-black-colour-theme.json", "utf8"));
-    const highlighter = await shiki.createHighlighter(
+async function createCustomHighlighter() {
+  // Load the theme object from a file, a network request, or anywhere
+    const darkColourTheme = JSON.parse(fs.readFileSync("./nomos-black-colour-theme.json", "utf8"));
+    const highlighter = await createHighlighter(
       {
         themes: ["light-plus"],
         langs: [
@@ -32,6 +26,18 @@ module.exports = (eleventyConfig, options) => {
       });
 
     await highlighter.loadTheme(darkColourTheme);
+
+    return highlighter;
+}
+
+export default function (eleventyConfig, options) {
+  // empty call to notify 11ty that we use this feature
+  // eslint-disable-next-line no-empty-function
+  eleventyConfig.amendLibrary("md", () => { });
+
+  eleventyConfig.on("eleventy.before", async () => {
+
+    const highlighter = await createCustomHighlighter();
 
     eleventyConfig.amendLibrary("md", (mdLib) =>
       mdLib.set({

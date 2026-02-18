@@ -37,25 +37,22 @@ npm install -D shiki
 
 ### Plug-in para o Shiki
 
-Criar um arquivo Javascript para configuração do Shiki no seu projeto, por exemplo, no caminho `src/libs/shiki.js`:
+Criar um arquivo Javascript para configuração do Shiki no seu projeto, por exemplo, no caminho `./shiki.config.mjs` (vamos fazer usando ES Modules). O `highlighter` deve ser usado preferencialmente como um singleton.
 
 ```javascript
-module.exports = (eleventyConfig, options) => {
+import { createHighlighter } from "shiki";
+
+export default function (eleventyConfig, options) {
   // empty call to notify 11ty that we use this feature
   // eslint-disable-next-line no-empty-function
   eleventyConfig.amendLibrary('md', () => { });
 
   eleventyConfig.on('eleventy.before', async () => {
-    const shiki = await import('shiki');
 
-    // highlighter config
-    const highlighter = await shiki.createHighlighter(
+    const highlighter = await createHighlighter(
     {
       themes: ["light-plus", "dark-plus"],
-      langs: [
-        'shell', 'html', 'yaml',
-        'sql', 'xml', 'javascript'
-      ]
+      langs: ['html', 'sql', 'xml', 'javascript']
     });
 
     eleventyConfig.amendLibrary('md', (mdLib) =>
@@ -76,20 +73,17 @@ module.exports = (eleventyConfig, options) => {
 };
 ```
 
-### Chamar plug-in do Shiki no `.eleventy.js`
+### Chamar plug-in do Shiki no `eleventy.config.mjs`
 
 ```javascript
-module.exports = function(eleventyConfig) {
-  ...
+import shikiPlugin from "./shiki.config.mjs"; // [!code ++]
 
-  // IMPORTANTE!
-  // remover plug-in de syntax highlight padrão do 11ty
+export default function (eleventyConfig) {
+  // ...
+  // substituir plug-in de syntax highlight padrão do 11ty
   eleventyConfig.addPlugin(syntaxHighlight) // [!code --]
-
-  // Adicionar:
-  eleventyConfig.addPlugin(require("./src/libs/shiki.js")); // [!code ++]
-
-  ...
+  eleventyConfig.addPlugin(shikiPlugin); // [!code ++]
+  // ...
 }
 ```
 
@@ -106,24 +100,20 @@ npm install -D htmlencode
 ### Modificar o plug-in do Shiki
 
 ```javascript
-const htmlencode = require('htmlencode'); // [!code ++]
+import { createHighlighter } from "shiki";
+import htmlencode from "htmlencode"; // [!code ++]
 
-module.exports = (eleventyConfig, options) => {
+export default function (eleventyConfig, options) {
   // empty call to notify 11ty that we use this feature
   // eslint-disable-next-line no-empty-function
   eleventyConfig.amendLibrary('md', () => { });
 
   eleventyConfig.on('eleventy.before', async () => {
-    const shiki = await import('shiki');
 
-    // highlighter config
-    const highlighter = await shiki.createHighlighter(
+    const highlighter = await createHighlighter(
     {
       themes: ["light-plus", "dark-plus"],
-      langs: [
-        'shell', 'html', 'yaml',
-        'sql', 'xml', 'javascript'
-      ]
+      langs: ['html', 'sql', 'xml', 'javascript']
     });
 
     eleventyConfig.amendLibrary('md', (mdLib) =>
@@ -152,10 +142,10 @@ module.exports = (eleventyConfig, options) => {
 
 ### Plug-in para o Mermaid
 
-Criar um arquivo Javascript para configuração do Mermaid no seu projeto, por exemplo, no caminho `src/libs/mermaid.js`:
+Criar um arquivo Javascript para configuração do Mermaid no seu projeto, por exemplo, no caminho `./mermaid.config.mjs` (vamos fazer usando ES Modules):
 
 ```javascript
-module.exports = (eleventyConfig, options) => {
+export default (eleventyConfig, options) => {
   let mermaid_config = {
     startOnLoad: false,
     theme: "default",
@@ -176,15 +166,16 @@ module.exports = (eleventyConfig, options) => {
   return {}
 };
 ```
-### Chamar plug-in do Mermaid no `.eleventy.js`
+### Chamar plug-in do Mermaid no `eleventy.config.mjs`
 ```javascript
+import shikiPlugin from "./shiki.config.mjs";
+import mermaidPlugin from "./mermaid.config.mjs"; // [!code ++]
+
 module.exports = function(eleventyConfig) {
-  ...
-
-  eleventyConfig.addPlugin(require("./src/libs/shiki.js"));
-  eleventyConfig.addPlugin(require("./src/libs/mermaid.js")); // [!code ++]
-
-  ...
+  // ...
+  eleventyConfig.addPlugin(shikiPlugin);
+  eleventyConfig.addPlugin(mermaidPlugin); // [!code ++]
+  // ...
 }
 ```
 

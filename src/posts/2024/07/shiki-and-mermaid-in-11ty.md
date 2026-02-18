@@ -37,25 +37,22 @@ npm install -D shiki
 
 ### Shiki custom plug-in
 
-Create a Javascript file to configure Shiki for your project, for example, at `src/libs/shiki.js`:
+Create a Javascript file to configure Shiki for your project, for example, at `./shiki.config.mjs` (let's make it using ES Modules). The `highlighter` ideally should be used as a singleton.
 
 ```javascript
-module.exports = (eleventyConfig, options) => {
+import { createHighlighter } from "shiki";
+
+export default function (eleventyConfig, options) {
   // empty call to notify 11ty that we use this feature
   // eslint-disable-next-line no-empty-function
   eleventyConfig.amendLibrary('md', () => { });
 
   eleventyConfig.on('eleventy.before', async () => {
-    const shiki = await import('shiki');
 
-    // highlighter config
-    const highlighter = await shiki.createHighlighter(
+    const highlighter = await createHighlighter(
     {
       themes: ["light-plus", "dark-plus"],
-      langs: [
-        'shell', 'html', 'yaml',
-        'sql', 'xml', 'javascript'
-      ]
+      langs: ['html', 'sql', 'xml', 'javascript']
     });
 
     eleventyConfig.amendLibrary('md', (mdLib) =>
@@ -76,20 +73,17 @@ module.exports = (eleventyConfig, options) => {
 };
 ```
 
-### Call Shiki custom plug-in in `.eleventy.js`
+### Call Shiki custom plug-in in `eleventy.config.mjs`
 
 ```javascript
-module.exports = function(eleventyConfig) {
-  ...
+import shikiPlugin from "./shiki.config.mjs"; // [!code ++]
 
-  // IMPORTANT!
-  // remove 11ty syntax highlighter plugin, if present:
+export default function (eleventyConfig) {
+  // ...
+  // replace 11ty default syntax highlight plugin
   eleventyConfig.addPlugin(syntaxHighlight) // [!code --]
-
-  // Add:
-  eleventyConfig.addPlugin(require("./src/libs/shiki.js")); // [!code ++]
-
-  ...
+  eleventyConfig.addPlugin(shikiPlugin); // [!code ++]
+  // ...
 }
 ```
 
@@ -106,24 +100,20 @@ npm install -D htmlencode
 ###  Modify Shiki plug-in
 
 ```javascript
-const htmlencode = require('htmlencode'); // [!code ++]
+import { createHighlighter } from "shiki";
+import htmlencode from "htmlencode"; // [!code ++]
 
-module.exports = (eleventyConfig, options) => {
+export default function (eleventyConfig, options) {
   // empty call to notify 11ty that we use this feature
   // eslint-disable-next-line no-empty-function
   eleventyConfig.amendLibrary('md', () => { });
 
   eleventyConfig.on('eleventy.before', async () => {
-    const shiki = await import('shiki');
 
-    // highlighter config
-    const highlighter = await shiki.createHighlighter(
+    const highlighter = await createHighlighter(
     {
       themes: ["light-plus", "dark-plus"],
-      langs: [
-        'shell', 'html', 'yaml',
-        'sql', 'xml', 'javascript'
-      ]
+      langs: ['html', 'sql', 'xml', 'javascript']
     });
 
     eleventyConfig.amendLibrary('md', (mdLib) =>
@@ -152,10 +142,10 @@ module.exports = (eleventyConfig, options) => {
 
 ### Mermaid custom plug-in
 
-Create a Javascript file to configure Mermaid for your project, for example, at `src/libs/mermaid.js`:
+Create a Javascript file to configure Mermaid for your project, for example, at `./mermaid.config.mjs` (let's make it using ES Modules):
 
 ```javascript
-module.exports = (eleventyConfig, options) => {
+export default (eleventyConfig, options) => {
   let mermaid_config = {
     startOnLoad: false,
     theme: "default",
@@ -176,15 +166,16 @@ module.exports = (eleventyConfig, options) => {
   return {}
 };
 ```
-### Call Mermaid custom plug-in in `.eleventy.js`
+### Call Mermaid custom plug-in in `eleventy.config.mjs`
 ```javascript
+import shikiPlugin from "./shiki.config.mjs";
+import mermaidPlugin from "./mermaid.config.mjs"; // [!code ++]
+
 module.exports = function(eleventyConfig) {
-  ...
-
-  eleventyConfig.addPlugin(require("./src/libs/shiki.js"));
-  eleventyConfig.addPlugin(require("./src/libs/mermaid.js")); // [!code ++]
-
-  ...
+  // ...
+  eleventyConfig.addPlugin(shikiPlugin);
+  eleventyConfig.addPlugin(mermaidPlugin); // [!code ++]
+  // ...
 }
 ```
 
