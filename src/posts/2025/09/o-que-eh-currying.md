@@ -43,6 +43,8 @@ Uma forma de imaginar funções *curryficadas* é como se fossem bonecas russas 
 
 {% post_img '2025_09_matryoshka.jpg' 'Bonecas russas matryoshkas' %}
 
+<em class="text-sm italic">Fonte da imagem: <a href="https://pt.aliexpress.com/item/1005010505814497.html">AliExpress</a>.</em>
+
 Essa técnica vem da programação funcional e é muito útil para cálculos e matemática.
 
 Outro exemplo, em F#:

@@ -43,6 +43,8 @@ Curried functions can be imagined as [*matryoshka*](https://en.wikipedia.org/wik
 
 {% post_img '2025_09_matryoshka.jpg' 'Matryoshka Russian dolls' %}
 
+<em class="text-sm italic">Image source: <a href="https://pt.aliexpress.com/item/1005010505814497.html">AliExpress</a>.</em>
+
 This style comes from functional programming and is very useful for mathematics.
 
 Another example, in F#:
