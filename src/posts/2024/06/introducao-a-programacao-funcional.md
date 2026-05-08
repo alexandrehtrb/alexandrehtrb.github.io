@@ -25,7 +25,7 @@ Existem alguns paradigmas de programação que são os mais difundidos, entre el
 
 * **Programação orientada a objetos (POO)**: O foco é em *quem (ou o quê)* realiza uma ação. Cada objeto é um ator responsável por uma ação, e pode chamar outros objetos para realizarem outras ações.
 
-* **Programação funcional (PF)**: Neste paradigma, o modelo é em torno de *como se juntam* as ações. Elas são como blocos de Lego, que se encaixam para algo maior e mais complexo; como em uma linha de montagem, em que o fim de uma etapa desemboca no início da etapa seguinte, e no fim há um produto bem-acabado.
+* **Programação funcional (PF)**: Neste paradigma, o modelo é em torno de *como se juntam* as ações. Elas se encaixam como em uma linha de montagem, em que o fim de uma etapa desemboca no início da etapa seguinte, e no fim há um produto pronto.
 
 ## Um pouco sobre PF
 

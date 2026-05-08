@@ -25,7 +25,7 @@ There are some programming paradigms that are the most popular, among them:
 
 * **Object-oriented programming (OOP)**: The focus is on *who (or what)* performs an action. Each object is an actor responsible for an action, and can call other objects to execute other actions.
 
-* **Functional programming (FP)**: In this paradigm, the model revolves around *how actions interconnect*. They are like Lego blocks, joined together to form something larger and more complex; similar to an assembly line, where the end of a step arrives at the beginning of the next one, and in the end there is a final product.
+* **Functional programming (FP)**: In this paradigm, the model revolves around *how actions interconnect*. They are joined together like in an assembly line, where the end of a step arrives at the beginning of the next one, and in the end there is a finished product.
 
 ## A little bit about FP
 

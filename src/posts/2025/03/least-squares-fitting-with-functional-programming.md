@@ -145,7 +145,7 @@ The F# code below calculates the linear approximation.
 - `Seq.zip` makes a sequence of pairs coming from two other sequences:
   - `x = [1, 2, 3]`
   - `y = [9, 8, 7]`
-  - `Seq.zip(x)(y) = [ (1, 9), (2, 8), (3, 7) ]`.
+  - `Seq.zip(x)(y) = [ (1, 9), (2, 8), (3, 7) ]`
 
 ```fs
 // s = sum

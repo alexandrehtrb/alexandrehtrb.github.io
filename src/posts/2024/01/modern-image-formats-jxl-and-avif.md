@@ -53,7 +53,7 @@ JXL is better for:
 
 AVIF is better for:
 
-- Images in Web pages, because most of the browsers support AVIF (95%), while only few browsers support JXL (13%). Data obtained from [caniuse](https://caniuse.com/avif) (01/12/2025).
+- Images in Web pages, because most of the browsers support AVIF (94%), while only few browsers support JXL (15%). Data obtained from [caniuse](https://caniuse.com/avif) (05/08/2025).
 - Videos and animations, because it has excellent compression rates for them, over 90% in some cases. It's a great substitute for GIFs.
 
 ## Compression and performance tests

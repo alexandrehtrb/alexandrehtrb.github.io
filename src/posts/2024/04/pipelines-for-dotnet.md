@@ -12,7 +12,7 @@ tags:
 - dotnet
 ---
 
-## *Pipelines*
+## Pipelines
 
 Pipelines are sequences of commands that are executed to ensure the integrity of the code and to produce a final artifact, such as an executable program or a library.
 

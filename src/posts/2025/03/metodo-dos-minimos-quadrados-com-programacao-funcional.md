@@ -145,7 +145,7 @@ O código em F# abaixo calcula a aproximação linear.
 - `Seq.zip` forma uma seqüência de pares vindos de duas outras seqüências. Por exemplo:
   - `x = [1, 2, 3]`
   - `y = [9, 8, 7]`
-  - `Seq.zip(x)(y) = [ (1, 9), (2, 8), (3, 7) ]`.
+  - `Seq.zip(x)(y) = [ (1, 9), (2, 8), (3, 7) ]`
 
 ```fs
 // s = soma
