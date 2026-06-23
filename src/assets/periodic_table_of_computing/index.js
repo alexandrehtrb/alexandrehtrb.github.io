@@ -1360,6 +1360,7 @@ function OpenDialog(eID,elName) {
 	document.getElementById('dialog-element-source').href = elm.source;
     // Show dialog
 	dialog.showModal();
+	document.getElementById('dialog-element-scroll-area').scrollTop = 0;
     // Kill the page scroll
     body[0].style.overflow = "hidden";
     // Put focus on the close button
