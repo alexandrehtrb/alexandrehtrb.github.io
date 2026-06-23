@@ -1366,7 +1366,8 @@ function OpenDialog(eID,elName) {
     // Put focus on the close button
     // Normally I would put it on the modal, but this fits
     closeBtn.setAttribute("onclick","CloseDialog('" + eID + "');");
-    closeBtn.focus();
+    // Disabling focus on close button because looks weird on mobile
+	//closeBtn.focus();
   } catch (e) {
     console.log("OpenDialog(): " + e);
   }
