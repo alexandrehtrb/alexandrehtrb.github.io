@@ -48,6 +48,7 @@ export default function (eleventyConfig) {
   // Copy these static files to _site folder
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/manifest.json");
+  eleventyConfig.addPassthroughCopy("src/periodic_table_of_computing.html");
 
   // To create excerpts
   eleventyConfig.setFrontMatterParsingOptions({

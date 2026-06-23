@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Periodic Table of Computing - AlexandreHTRB</title>
+  <meta name='description' content="A periodic table containing some important elements of modern and historic computing.">
+  <link href="assets/periodic_table_of_computing/style.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json" />
+</head>
+
+<body>
+
+<header>
+  <h1>Periodic Table of Computing</h1>
+</header>
+
+<main>
+  <div id="Elements">
+    <p>
+      The JSON is good, but my parsing script is broken.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <p>
+  Made by <a href="https://alexandrehtrb.github.io/">AlexandreHTRB</a>, based on the excellent <a href="http://adrianroselli.com/2019/05/periodic-table-of-the-elements.html"><cite>Periodic Table of the Elements</cite></a> by Adrian Roselli. Detail dialog taken from Mohammed Abdelmajeed's <a href="https://codepen.io/mhmajeid/pen/NPRqXwM">work</a>. This page works offline and can be printed to paper; mark the <i>Include background</i> option in printing dialog for colouring. Licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+  </p>
+</footer>
+
+<dialog id="myDialog">
+  <div class="dialog-content">
+    <div class="dialog-header">
+      <h2 id="dialog-element-name"></h2>
+	  <button id="dialog-element-close-btn">✕</button>
+    </div>
+    <div class="scroll-area">
+      <p id="dialog-element-summary"></p>
+	  <p><b>Symbol: </b><span id="dialog-element-symbol"><span/></p>
+	  <p><b>Type: </b><span id="dialog-element-type"></span></p>
+    </div>
+    <div class="dialog-footer">
+	  <a id="dialog-element-source" href="" target="_blank">Read more</a>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/periodic_table_of_computing/index.js"></script>
+</body>
+</html>
