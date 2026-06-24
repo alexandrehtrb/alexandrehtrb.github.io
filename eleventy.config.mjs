@@ -42,13 +42,17 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(mermaidPlugin);
   eleventyConfig.addPlugin(rssPlugin);
 
-  // Ignore RSS and Atom generation unless it's production environment
+  // Ignore Sitemap, RSS and Atom generation unless it's production environment
+  // tagList.md is also ignored to avoid regenerating lists on every article text change,
+  // when running dev server.
   if (!is_production) {
     eleventyConfig.ignores.add("./src/atom.njk");
     eleventyConfig.ignores.add("./src/atom_pt.njk");
     eleventyConfig.ignores.add("./src/feed.njk");
     eleventyConfig.ignores.add("./src/feed_pt.njk");
     eleventyConfig.ignores.add("./src/sitemap.md");
+    // Comment line below to generate tagList when running locally
+    eleventyConfig.ignores.add("./src/tagList.md");
   }
 
   // To enable merging of tags
