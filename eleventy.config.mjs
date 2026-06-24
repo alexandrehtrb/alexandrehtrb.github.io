@@ -42,6 +42,15 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(mermaidPlugin);
   eleventyConfig.addPlugin(rssPlugin);
 
+  // Ignore RSS and Atom generation unless it's production environment
+  if (!is_production) {
+    eleventyConfig.ignores.add("./src/atom.njk");
+    eleventyConfig.ignores.add("./src/atom_pt.njk");
+    eleventyConfig.ignores.add("./src/feed.njk");
+    eleventyConfig.ignores.add("./src/feed_pt.njk");
+    eleventyConfig.ignores.add("./src/sitemap.md");
+  }
+
   // To enable merging of tags
   eleventyConfig.setDataDeepMerge(true);
 
