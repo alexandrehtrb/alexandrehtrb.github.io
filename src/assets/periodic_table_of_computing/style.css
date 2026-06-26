@@ -35,40 +35,38 @@
 }
 
 /*:has(#dark-mode-toggle:checked) {*/
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body-bg-color: #010101;
-    --body-text-color: #eee;
-    --dialog-separator-color: #333;
-    --header-footer-bg-color: #333;
-    --header-footer-text-color: #fff;
-    --header-footer-link-color: #fff;
-    --header-footer-link-hover-color: #ccf;
-    --btn-close-dialog-bg-color: #110d59;
-    --btn-close-dialog-bg-hover-color: #151070;
-    --btn-close-dialog-bg-text-color: #ccf;
-    --elements-border-color: #fff;
-    --elements-button-color: #fff;
-    --elements-button-hover-color: #000;
-    --elements-button-bg-color: #000;
-    --elements-button-bg-hover-color: #fff;
-    --elements-key-button-bg-hover-color: #fff;
-    --category-zoom-icon-svg: var(--zoom-white-icon-svg);
-    --category-zoom-icon-hover-svg: var(--zoom-black-icon-svg);
-    --detail-zoom-icon-svg: var(--zoom-white-icon-svg);
-    --detail-zoom-icon-hover-svg: var(--zoom-black-icon-svg);
-    --cat-developer_tool-bg-color: #7F637F;
-    --cat-operating_system-bg-color: #627279;
-    --cat-structured_data_format-bg-color: #7E6856;
-    --cat-internet_file_format-bg-color: #807355;
-    --cat-type_of_computing-bg-color: #58805B;
-    --cat-database_system-bg-color: #686180;
-    --cat-scripting_language-bg-color: #6D6B49;
-    --cat-programming_language-bg-color: #676C4A;
-    --cat-physical_protocol-bg-color: #5F6C49;
-    --cat-logic_protocol-bg-color: #566C49;
-    --cat-unknown-bg-color: #555;
-  }
+:root.dark {
+  --body-bg-color: #010101;
+  --body-text-color: #eee;
+  --dialog-separator-color: #333;
+  --header-footer-bg-color: #333;
+  --header-footer-text-color: #fff;
+  --header-footer-link-color: #fff;
+  --header-footer-link-hover-color: #ccf;
+  --btn-close-dialog-bg-color: #110d59;
+  --btn-close-dialog-bg-hover-color: #151070;
+  --btn-close-dialog-bg-text-color: #ccf;
+  --elements-border-color: #fff;
+  --elements-button-color: #fff;
+  --elements-button-hover-color: #000;
+  --elements-button-bg-color: #000;
+  --elements-button-bg-hover-color: #fff;
+  --elements-key-button-bg-hover-color: #fff;
+  --category-zoom-icon-svg: var(--zoom-white-icon-svg);
+  --category-zoom-icon-hover-svg: var(--zoom-black-icon-svg);
+  --detail-zoom-icon-svg: var(--zoom-white-icon-svg);
+  --detail-zoom-icon-hover-svg: var(--zoom-black-icon-svg);
+  --cat-developer_tool-bg-color: #7F637F;
+  --cat-operating_system-bg-color: #627279;
+  --cat-structured_data_format-bg-color: #7E6856;
+  --cat-internet_file_format-bg-color: #807355;
+  --cat-type_of_computing-bg-color: #58805B;
+  --cat-database_system-bg-color: #686180;
+  --cat-scripting_language-bg-color: #6D6B49;
+  --cat-programming_language-bg-color: #676C4A;
+  --cat-physical_protocol-bg-color: #5F6C49;
+  --cat-logic_protocol-bg-color: #566C49;
+  --cat-unknown-bg-color: #555;
 }
 
 body {
@@ -715,6 +713,10 @@ li#Key {
   #Elements ol {
     font-size: .7vw;
   }
+  #darkModeSwitch {
+    display: none;
+    visibility: collapse;
+  }
 }
 
 @media print and (orientation: landscape) {
@@ -776,4 +778,24 @@ dialog::backdrop {
   padding: 1rem;
   border-top: 1px solid var(--dialog-separator-color);
   text-align: left;
+}
+
+/* Light-dark mode switch*/
+
+#darkModeSwitch {
+  cursor: pointer;
+  display: inline-flex;
+}
+
+/* Hide SVG 2 by default */
+#darkModeSwitch .darkModeSwitchIconMoon {
+  display: none;
+}
+
+/* When the checkbox is checked, swap the SVGs */
+#darkModeSwitch:has(input:checked) .darkModeSwitchIconSun {
+  display: none;
+}
+#darkModeSwitch:has(input:checked) .darkModeSwitchIconMoon {
+  display: block;
 }

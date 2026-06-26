@@ -1404,3 +1404,24 @@ document.onkeydown = function(evt) {
   }
 };
 
+// Light-dark mode switch
+
+const isDarkMode = () => localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+if (isDarkMode()) {
+  document.getElementById('darkModeSwitchCheckbox').checked = true;
+  document.documentElement.classList.add('dark')
+} else {
+  document.getElementById('darkModeSwitchCheckbox').checked = false;
+  document.documentElement.classList.remove('dark')
+}
+
+document.getElementById('darkModeSwitchCheckbox').addEventListener('change', function(event) {
+  if (isDarkMode()) {
+    localStorage.theme = 'light'
+    document.documentElement.classList.remove('dark')
+  } else {
+    localStorage.theme = 'dark'
+    document.documentElement.classList.add('dark')
+  }
+});
