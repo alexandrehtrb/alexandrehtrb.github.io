@@ -1,15 +1,93 @@
+:root {
+  --body-bg-color: #fefefe;
+  --body-text-color: #333;
+  --dialog-separator-color: #dedede;
+  --header-footer-bg-color: #333;
+  --header-footer-text-color: #fff;
+  --header-footer-link-color: #fff;
+  --header-footer-link-hover-color: #ccf;
+  --btn-close-dialog-bg-color: #4f46e5;
+  --btn-close-dialog-bg-hover-color: #4338ca;
+  --btn-close-dialog-bg-text-color: #ccf;
+  --elements-border-color: #000;
+  --elements-button-color: #fff;
+  --elements-button-hover-color: #000;
+  --elements-button-bg-color: #000;
+  --elements-button-bg-hover-color: #fff;
+  --elements-key-button-bg-hover-color: #000;
+  --zoom-black-icon-svg: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M71.77069 61.87311a36.53064 36.53064 0 1 0-9.89917 9.89868l21.1792 21.17792a6.9996 6.9996 0 1 0 9.89844-9.89942zM41.49994 64a22.5 22.5 0 1 1 22.5-22.5 22.52554 22.52554 0 0 1-22.5 22.5z' fill='%23000'/%3E%3C/svg%3E");
+  --zoom-white-icon-svg: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M71.77069 61.87311a36.53064 36.53064 0 1 0-9.89917 9.89868l21.1792 21.17792a6.9996 6.9996 0 1 0 9.89844-9.89942zM41.49994 64a22.5 22.5 0 1 1 22.5-22.5 22.52554 22.52554 0 0 1-22.5 22.5z' fill='%23fff'/%3E%3C/svg%3E");
+  --category-zoom-icon-svg: var(--zoom-black-icon-svg);
+  --category-zoom-icon-hover-svg: var(--zoom-white-icon-svg);
+  --detail-zoom-icon-svg: var(--zoom-white-icon-svg);
+  --detail-zoom-icon-hover-svg: var(--zoom-black-icon-svg);
+  --cat-developer_tool-bg-color: #FDC7FE;
+  --cat-operating_system-bg-color: #CBECFB;
+  --cat-structured_data_format-bg-color: #FCD0AC;
+  --cat-internet_file_format-bg-color: #FFE5AA;
+  --cat-type_of_computing-bg-color: #AFFFB5;
+  --cat-database_system-bg-color: #D0C1FF;
+  --cat-scripting_language-bg-color: #FFFAA9;
+  --cat-programming_language-bg-color: #F0FEAB;
+  --cat-physical_protocol-bg-color: #DDFDAA;
+  --cat-logic_protocol-bg-color: #CAFEA9;
+  --cat-unknown-bg-color: #ddd;
+}
+
+/*:has(#dark-mode-toggle:checked) {*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg-color: #010101;
+    --body-text-color: #eee;
+    --dialog-separator-color: #333;
+    --header-footer-bg-color: #333;
+    --header-footer-text-color: #fff;
+    --header-footer-link-color: #fff;
+    --header-footer-link-hover-color: #ccf;
+    --btn-close-dialog-bg-color: #110d59;
+    --btn-close-dialog-bg-hover-color: #151070;
+    --btn-close-dialog-bg-text-color: #ccf;
+    --elements-border-color: #fff;
+    --elements-button-color: #fff;
+    --elements-button-hover-color: #000;
+    --elements-button-bg-color: #000;
+    --elements-button-bg-hover-color: #fff;
+    --elements-key-button-bg-hover-color: #fff;
+    --category-zoom-icon-svg: var(--zoom-white-icon-svg);
+    --category-zoom-icon-hover-svg: var(--zoom-black-icon-svg);
+    --detail-zoom-icon-svg: var(--zoom-white-icon-svg);
+    --detail-zoom-icon-hover-svg: var(--zoom-black-icon-svg);
+    --cat-developer_tool-bg-color: #7F637F;
+    --cat-operating_system-bg-color: #627279;
+    --cat-structured_data_format-bg-color: #7E6856;
+    --cat-internet_file_format-bg-color: #807355;
+    --cat-type_of_computing-bg-color: #58805B;
+    --cat-database_system-bg-color: #686180;
+    --cat-scripting_language-bg-color: #6D6B49;
+    --cat-programming_language-bg-color: #676C4A;
+    --cat-physical_protocol-bg-color: #5F6C49;
+    --cat-logic_protocol-bg-color: #566C49;
+    --cat-unknown-bg-color: #555;
+  }
+}
+
 body {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.4;
-  background: #fefefe;
-  color: #333;
+  background: var(--body-bg-color);
+  color: var(--body-text-color);
   margin: 0;
 }
 
+dialog {
+  background: var(--body-bg-color);
+  color: var(--body-text-color);
+}
+
 header, footer {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--header-footer-bg-color);
+  color: var(--header-footer-text-color);
   margin: 0;
   padding: .5rem 1rem;
 }
@@ -21,11 +99,11 @@ header > *, footer > *, main > *:not(#Elements) {
 }
 
 footer a:link, footer a:visited {
-  color: #fff;
+  color: var(--header-footer-link-color);
 }
 
 footer a:focus, footer a:hover {
-  color: #ccf;
+  color: var(--header-footer-link-hover-color);
 }
 
 main {
@@ -33,9 +111,9 @@ main {
 }
 
 /* الزر الرئيسي لفتح المربع */
-button {
-  background-color: #4f46e5; /* لون أرجواني عصري */
-  color: white;
+button.dialogCloseBtn {
+  background-color: var(--btn-close-dialog-bg-color); /* لون أرجواني عصري */
+  color: var(--btn-close-dialog-bg-text-color);
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
@@ -46,22 +124,22 @@ button {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-button:hover {
-  background-color: #4338ca;
+button.dialogCloseBtn:hover {
+  background-color: var(--btn-close-dialog-bg-hover-color);
   transform: translateY(-2px); /* تأثير ارتفاع بسيط */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 #Elements ol {
   padding: 0;
-  color: #000;
+  color: var(--elements-border-color);
   margin: 2rem 0;
 /*   font-size: 30%; */
 }
 
 #Elements li {
   list-style-type: none;
-  outline: .1em solid #000;
+  outline: .1em solid var(--elements-border-color);
   box-sizing: border-box;
   padding: .5em .75em;
   width: 8em;
@@ -90,25 +168,26 @@ button:hover {
   padding: 0;
   text-indent: 5em;
   border: none;
-  color: #fff;
-  border-right: .1em solid #000;
-  border-bottom: .1em solid #000;
+  cursor: pointer;
+  color: var(--elements-button-color);
+  border-right: .1em solid var(--elements-border-color);
+  border-bottom: .1em solid var(--elements-border-color);
   border-radius: 0 0 67% 0;
   width: 2em;
   height: 2em;
   overflow: hidden;
-  background-color: #000;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M71.77069 61.87311a36.53064 36.53064 0 1 0-9.89917 9.89868l21.1792 21.17792a6.9996 6.9996 0 1 0 9.89844-9.89942zM41.49994 64a22.5 22.5 0 1 1 22.5-22.5 22.52554 22.52554 0 0 1-22.5 22.5z' fill='%23fff'/%3E%3C/svg%3E");
+  background-color: var(--elements-button-bg-color);
+  background-image: var(--detail-zoom-icon-svg);
   background-repeat: no-repeat;
   background-size: 1em 1em;
   background-position: 30% 40%;
 }
 
 #Elements li button:focus, #Elements li button:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--elements-button-bg-hover-color);
+  color: var(--elements-button-hover-color);
   outline: none;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M71.77069 61.87311a36.53064 36.53064 0 1 0-9.89917 9.89868l21.1792 21.17792a6.9996 6.9996 0 1 0 9.89844-9.89942zM41.49994 64a22.5 22.5 0 1 1 22.5-22.5 22.52554 22.52554 0 0 1-22.5 22.5z' fill='%23000'/%3E%3C/svg%3E");
+  background-image: var(--detail-zoom-icon-hover-svg);
 }
 
 #Elements li#Key button {
@@ -118,51 +197,52 @@ button:hover {
   height: 1.5em;
   width: 1.5em;
   background-color: transparent;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M71.77069 61.87311a36.53064 36.53064 0 1 0-9.89917 9.89868l21.1792 21.17792a6.9996 6.9996 0 1 0 9.89844-9.89942zM41.49994 64a22.5 22.5 0 1 1 22.5-22.5 22.52554 22.52554 0 0 1-22.5 22.5z' fill='%23000'/%3E%3C/svg%3E");
+  background-image: var(--category-zoom-icon-svg);
   background-position: 100% 100%;
 }
 
 #Elements li#Key button:focus, #Elements li#Key button:hover {
-  background-color: #000;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M71.77069 61.87311a36.53064 36.53064 0 1 0-9.89917 9.89868l21.1792 21.17792a6.9996 6.9996 0 1 0 9.89844-9.89942zM41.49994 64a22.5 22.5 0 1 1 22.5-22.5 22.52554 22.52554 0 0 1-22.5 22.5z' fill='%23fff'/%3E%3C/svg%3E");
+  background-color: var(--elements-key-button-bg-hover-color);
+  background-image: var(--category-zoom-icon-hover-svg);
 }
 
 /* Colors */
+
 .cat-developer_tool {
-  background-color: #FDC7FE;
+  background-color: var(--cat-developer_tool-bg-color);
 }
 .cat-operating_system {
-  background-color: #CBECFB;
+  background-color: var(--cat-operating_system-bg-color);
 }
 .cat-structured_data_format {
-  background-color: #FCD0AC;
+  background-color: var(--cat-structured_data_format-bg-color);
 }
 .cat-internet_file_format {
-  background-color: #FFE5AA;
+  background-color: var(--cat-internet_file_format-bg-color);
 }
 .cat-type_of_computing {
-  background-color: #AFFFB5;
+  background-color: var(--cat-type_of_computing-bg-color);
 }
 .cat-database_system {
-  background-color: #D0C1FF;
+  background-color: var(--cat-database_system-bg-color);
 }
 .cat-scripting_language {
-  background-color: #FFFAA9;
+  background-color: var(--cat-scripting_language-bg-color);
 }
 .cat-programming_language {
-  background-color: #F0FEAB;
+  background-color: var(--cat-programming_language-bg-color);
 }
 .cat-physical_protocol {
-  background-color: #DDFDAA;
+  background-color: var(--cat-physical_protocol-bg-color);
 }
 .cat-logic_protocol {
-  background-color: #CAFEA9;
+  background-color: var(--cat-logic_protocol-bg-color);
 }
 .cat-unknown,
 .cat-educational_language,
 .cat-hardware_description_language,
 .cat-esoteric_language {
-  background-color: #ddd;
+  background-color: var(--cat-unknown-bg-color);
 }
 
 #Key h2 {
@@ -188,12 +268,15 @@ button:hover {
 #Key dt {
   width: 1.5em;
   height: 1.5em;
-  outline: .1em solid #000;
+  outline: .1em solid var(--elements-border-color);
   clear: left;
   margin-right: 1em;
 }
 
-#Key dt[class*=unknown], #Key dt[class*=unknown] + dd, #Key dt[class*=educational], #Key dt[class*=educational] + dd, #Key dt[class*=hardware], #Key dt[class*=hardware] + dd, #Key dt[class*=esoteric], #Key dt[class*=esoteric] + dd {
+#Key dt[class*=unknown], #Key dt[class*=unknown] + dd,
+#Key dt[class*=educational], #Key dt[class*=educational] + dd,
+#Key dt[class*=hardware], #Key dt[class*=hardware] + dd,
+#Key dt[class*=esoteric], #Key dt[class*=esoteric] + dd {
   display: none;
 }
 
@@ -400,7 +483,6 @@ li#Key {
     transform-origin: right;
   }
 }
-
 @media all and (min-width: 60em) {
   #Elements ol {
     font-size: .67vw;
@@ -574,81 +656,6 @@ li#Key {
   }
 }
 
-/* Dark mode */
-@media all and (prefers-color-scheme: dark) {
-  body, dialog {
-    background-color: #010101;
-    color: #eee;
-  }
-  a, a:link, a:visited {
-    color: #fff;
-  }
-  button {
-    background-color: #110d59;
-  }
-  button:hover {
-    background-color: #151070;
-  }  
-  #Elements ol {
-    color: #fff;
-  }
-  #Elements li, #Key dt {
-    outline-color: #fff;
-  }
-  #Elements li button {
-    border-right: .1em solid #fff;
-    border-bottom: .1em solid #fff;
-  }
-  #Elements li button:focus, #Elements li button:hover {
-    border-right-color: #000;
-    border-bottom-color: #000;
-  }
-  .cat-developer_tool {
-    background-color: #7F637F;
-  }
-  .cat-operating_system {
-    background-color: #627279;
-  }
-  .cat-structured_data_format {
-    background-color: #7E6856;
-  }
-  .cat-internet_file_format {
-    background-color: #807355;
-  }
-  .cat-type_of_computing {
-    background-color: #58805B;
-  }
-  .cat-database_system {
-    background-color: #686180
-  }
-  .cat-scripting_language {
-    background-color: #6D6B49;
-  }
-  .cat-programming_language {
-    background-color: #676C4A;
-  }
-  .cat-physical_protocol {
-    background-color: #5F6C49;
-  }
-  .cat-logic_protocol {
-    background-color: #566C49;
-  }
-  .cat-unknown,
-  .cat-educational_language,
-  .cat-hardware_description_language,
-  .cat-esoteric_language {
-    background-color: #555;
-  }
-  #Elements li#Key button {
-    background-color: treansparent;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M71.77069 61.87311a36.53064 36.53064 0 1 0-9.89917 9.89868l21.1792 21.17792a6.9996 6.9996 0 1 0 9.89844-9.89942zM41.49994 64a22.5 22.5 0 1 1 22.5-22.5 22.52554 22.52554 0 0 1-22.5 22.5z' fill='%23fff'/%3E%3C/svg%3E");
-  }
-  #Elements li#Key button:focus, #Elements li#Key button:hover {
-    background-color: #fff;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M71.77069 61.87311a36.53064 36.53064 0 1 0-9.89917 9.89868l21.1792 21.17792a6.9996 6.9996 0 1 0 9.89844-9.89942zM41.49994 64a22.5 22.5 0 1 1 22.5-22.5 22.52554 22.52554 0 0 1-22.5 22.5z' fill='%23000'/%3E%3C/svg%3E");
-  }
-}
-
 /* Reduced motion */
 @media screen and (prefers-reduced-motion: reduce) {
   #Elements li {
@@ -754,7 +761,7 @@ dialog::backdrop {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--dialog-separator-color);
 }
 
 /* منطقة التمرير (الطفل الداخلي) */
@@ -767,6 +774,6 @@ dialog::backdrop {
 /* تذييل المربع (ثابت في الأسفل) */
 .dialog-footer {
   padding: 1rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--dialog-separator-color);
   text-align: left;
 }
