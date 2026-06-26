@@ -6,6 +6,8 @@
   --header-footer-text-color: #fff;
   --header-footer-link-color: #fff;
   --header-footer-link-hover-color: #ccf;
+  --dialog-link-color: #00F;
+  --dialog-link-hover-color: #44F;
   --btn-close-dialog-bg-color: #4f46e5;
   --btn-close-dialog-bg-hover-color: #4338ca;
   --btn-close-dialog-bg-text-color: #ccf;
@@ -43,6 +45,8 @@
   --header-footer-text-color: #fff;
   --header-footer-link-color: #fff;
   --header-footer-link-hover-color: #ccf;
+  --dialog-link-color: #FFF;
+  --dialog-link-hover-color: #CCF;
   --btn-close-dialog-bg-color: #110d59;
   --btn-close-dialog-bg-hover-color: #151070;
   --btn-close-dialog-bg-text-color: #ccf;
@@ -102,6 +106,14 @@ footer a:link, footer a:visited {
 
 footer a:focus, footer a:hover {
   color: var(--header-footer-link-hover-color);
+}
+
+.dialog-footer > a:link, .dialog-footer > footer a:visited {
+  color: var(--dialog-link-color);
+}
+
+.dialog-footer > a:focus, .dialog-footer > footer a:hover {
+  color: var(--dialog-link-hover-color);
 }
 
 main {
