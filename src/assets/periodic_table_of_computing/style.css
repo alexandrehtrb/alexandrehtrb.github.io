@@ -211,9 +211,12 @@ button.dialogCloseBtn:hover {
   background-position: 100% 100%;
 }
 
-#Elements li#Key button:focus, #Elements li#Key button:hover {
-  background-color: var(--elements-key-button-bg-hover-color);
-  background-image: var(--category-zoom-icon-hover-svg);
+@media screen and (forced-colors: none) {
+
+  #Elements li#Key button:focus, #Elements li#Key button:hover {
+    background-color: var(--elements-key-button-bg-hover-color);
+    background-image: var(--category-zoom-icon-hover-svg);
+  }
 }
 
 /* Colors */
@@ -674,50 +677,74 @@ li#Key {
 }
 
 /* Windows High Contrast Mode Support */
-@media screen and (-ms-high-contrast: active) {
+@media screen and (forced-colors: active) {
   #Elements li button:focus, #Elements li button:hover {
     outline: 1px windowText dotted;
     background-color: windowText;
   }
 }
-@media screen and (-ms-high-contrast: white-on-black) {
+
+@media screen and (forced-colors: active) and (prefers-color-scheme: light) {
   #Elements li button {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M71.77069 61.87311a36.53064 36.53064 0 1 0-9.89917 9.89868l21.1792 21.17792a6.9996 6.9996 0 1 0 9.89844-9.89942zM41.49994 64a22.5 22.5 0 1 1 22.5-22.5 22.52554 22.52554 0 0 1-22.5 22.5z' fill='%23fff'/%3E%3C/svg%3E");
+    background-image: var(--zoom-black-icon-svg);
   }
   #Elements li button:focus, #Elements li button:hover {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M71.77069 61.87311a36.53064 36.53064 0 1 0-9.89917 9.89868l21.1792 21.17792a6.9996 6.9996 0 1 0 9.89844-9.89942zM41.49994 64a22.5 22.5 0 1 1 22.5-22.5 22.52554 22.52554 0 0 1-22.5 22.5z' fill='%23000'/%3E%3C/svg%3E");
+    background-image: var(--zoom-white-icon-svg);
+  }
+  #Elements li#Key button {
+    background-image: var(--zoom-black-icon-svg);
+  }
+  #Elements li#Key button:focus, #Elements li#Key button:hover {
+    background-color: AccentColor;
+    background-image: var(--zoom-white-icon-svg);
+  }
+}
+
+@media screen and (forced-colors: active) and (prefers-color-scheme: dark) {
+  #Elements li button {
+    background-image: var(--zoom-white-icon-svg);
+  }
+  #Elements li button:focus, #Elements li button:hover {
+    background-image: var(--zoom-black-icon-svg);
+  }
+  #Elements li#Key button {
+    background-image: var(--zoom-white-icon-svg);
+  }
+  #Elements li#Key button:focus, #Elements li#Key button:hover {
+    background-color: AccentColor;
+    background-image: var(--zoom-black-icon-svg);
   }
 }
 
 @media print {
-  body {
-    background-color: #fff;
-    color: #000;	
-    font-size: 8pt;
-  }  
-  /* TODO: Print dark mode with black background (not working) */
-  @media (prefers-color-scheme: dark) {
-    body {
-      /* Specific dark mode print overrides */
-      background-color: #010101 !important;
-      color: #eee !important;
-      -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
-      print-color-adjust: exact !important; /* Modern browsers */
-      color-adjust: exact !important; /* Firefox */
-    }
+  :root {
+    --body-bg-color: #fff;
+    --body-text-color: #000;
+    --header-footer-bg-color: transparent;
+    --header-footer-text-color: #000;
+    --header-footer-link-color: #000;
   }
+  :root.dark {
+    --body-bg-color: #000;
+    --body-text-color: #fff;
+    --header-footer-bg-color: transparent;
+    --header-footer-text-color: #fff;
+    --header-footer-link-color: #fff;
+  }
+  body {
+    font-size: 8pt;
+    margin: 36px;
+    -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
+    print-color-adjust: exact !important; /* Modern browsers */
+    color-adjust: exact !important; /* Firefox */
+  }  
   header, footer, header > *, footer > *, main > *:not(#Elements) {
     width: 100%;
     max-width: 100%;
-    background-color: transparent;
-    color: #000;
   }
   main, header, footer, h1 {
     margin: 0;
     padding: 0;
-  }
-  a:link, a:visited, footer a:link, footer a:visited {
-    color: #000;
   }
   #Elements li button {
     display: none;
@@ -792,7 +819,7 @@ dialog::backdrop {
   text-align: left;
 }
 
-/* Light-dark mode switch*/
+/* Light-dark mode switch */
 
 #darkModeSwitch {
   cursor: pointer;

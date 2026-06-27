@@ -1333,7 +1333,7 @@ function ToggleStyleBlock(strClass, showhide) {
         "@media screen and (prefers-color-scheme: dark) { #Elements li:not(#Key):not(." + strClass + ") { background-color: #333; opacity: .5; } }",1
       );
       styleBlock.sheet.insertRule(
-        "@media screen and (-ms-high-contrast: active) { #Elements li:not(#Key):not(." + strClass + ") { opacity: .25; } }",2
+        "@media screen and (forced-colors: active) { #Elements li:not(#Key):not(." + strClass + ") { opacity: .25; } #Elements li." + strClass + " { background-color: AccentColor; color: AccentColorText; } }",2
       );
     } else {
       var node = document.getElementById("ShowCat");
