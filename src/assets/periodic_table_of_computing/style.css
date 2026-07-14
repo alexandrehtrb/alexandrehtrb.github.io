@@ -120,6 +120,10 @@ main {
   margin: 2rem .5rem;
 }
 
+#langSwitch {    
+  visibility: collapse;
+}
+
 /* الزر الرئيسي لفتح المربع */
 button.dialogCloseBtn {
   background-color: var(--btn-close-dialog-bg-color); /* لون أرجواني عصري */
@@ -307,7 +311,7 @@ button.dialogCloseBtn:hover {
 
 li#Key {
   clear: left;
-  width: auto;
+  width: fit-content;
   outline: none;
   padding-top: 1em;
   width: 100%;
@@ -338,9 +342,16 @@ li#Key {
     clear: none;
     margin-right: 0;
   }
+  #Key dd {
+    min-width: 240px
+  }
 }
 
 @media all and (min-width: 40em) {
+  #darkModeSwitch {
+    margin-left: 32px;
+    margin-top: 8px;
+  }  
   #Elements ol {
     font-size: 1.18vw;
     display: -ms-grid;
@@ -497,6 +508,17 @@ li#Key {
   }
 }
 @media all and (min-width: 60em) {
+  #darkModeSwitch {
+    margin-left: 64px;
+  }
+  #langSwitch {
+    margin-left: 32px;
+    margin-top: 8px;
+    visibility: visible;
+  }
+  #langSwitch a {
+    color: var(--header-footer-link-color);
+  }
   #Elements ol {
     font-size: .67vw;
     display: -ms-grid;
@@ -754,6 +776,9 @@ li#Key {
   }
   #darkModeSwitch {
     display: none;
+    visibility: collapse;
+  }
+  #langSwitch {
     visibility: collapse;
   }
 }

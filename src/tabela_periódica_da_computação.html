@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
-  <title>Periodic Table of Computing - AlexandreHTRB</title>
-  <meta name='description' content="A periodic table containing some important elements of modern and historic computing.">
+  <title>Tabela Periódica da Computação - AlexandreHTRB</title>
+  <meta name='description' content="Uma tabela periódica contendo alguns elementos importantes da computação moderna e histórica.">
   <link href="assets/periodic_table_of_computing/style.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
@@ -16,8 +16,8 @@
 
 <header>
   <div style="display:flex;flex-direction:row;align-items: center;">
-    <h1>Periodic Table of Computing</h1>
-    <label id="darkModeSwitch" style="margin-left:64px;margin-top:8px;">
+    <h1>Tabela Periódica da Computação</h1>
+    <label id="darkModeSwitch">
       <input type="checkbox" id="darkModeSwitchCheckbox" hidden>      
       <!-- SVG 1: Shown when unchecked -->
       <svg class="darkModeSwitchIcon darkModeSwitchIconSun" viewBox="0 0 48 48" width="28" height="28" fill="currentColor">
@@ -28,21 +28,21 @@
         <path d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"></path>
       </svg>
     </label>
-    <span id="langSwitch"><b>EN</b> / <a href="tabela_periódica_da_computação.html">PT</a></span>
+    <span id="langSwitch"><a href="periodic_table_of_computing.html">EN</a> / <b>PT</b></span>
   </div>
 </header>
 
 <main>
   <div id="Elements">
     <p>
-      Loading...
+      Carregando...
     </p>
   </div>
 </main>
 
 <footer>
   <p>
-  Made by <a href="https://alexandrehtrb.github.io/">AlexandreHTRB</a>, based on the excellent <a href="http://adrianroselli.com/2019/05/periodic-table-of-the-elements.html"><cite>Periodic Table of the Elements</cite></a> by Adrian Roselli. Detail dialog taken from Mohammed Abdelmajeed's <a href="https://codepen.io/mhmajeid/pen/NPRqXwM">work</a>. This page works offline and can be printed to paper; mark the <i>Include background</i> option in printing dialog for colouring. Licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+  Feita por <a href="https://alexandrehtrb.github.io/">AlexandreHTRB</a>, baseada na excelente <a href="http://adrianroselli.com/2019/05/periodic-table-of-the-elements.html"><cite>Periodic Table of the Elements</cite></a> de Adrian Roselli. Diálogo de detalhes feito por <a href="https://codepen.io/mhmajeid/pen/NPRqXwM">Mohammed Abdelmajeed</a>. Esta página funciona offline e pode ser impressa em papel; marque a opção <i>Incluir fundo</i> nas opções de impressão. Licença de uso <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
   </p>
 </footer>
 
@@ -54,16 +54,16 @@
     </div>
     <div id="dialog-element-scroll-area" class="scroll-area">
       <p id="dialog-element-summary"></p>
-	    <p><b>Symbol: </b><span id="dialog-element-symbol"></span></p>
-	    <p><b>Type: </b><span id="dialog-element-type"></span></p>
+	    <p><b>Símbolo: </b><span id="dialog-element-symbol"></span></p>
+	    <p><b>Categoria: </b><span id="dialog-element-type"></span></p>
     </div>
     <div class="dialog-footer">
-	    <a id="dialog-element-source" href="" target="_blank">Read more</a>
+	    <a id="dialog-element-source" href="" target="_blank">Leia mais</a>
     </div>
   </div>
 </dialog>
-<script src="assets/periodic_table_of_computing/elements_en.js"></script>
+<script src="assets/periodic_table_of_computing/elements_pt.js"></script>
 <script src="assets/periodic_table_of_computing/index.js"></script>
-<script>ParseElements(elements, "Elements", "en");</script>
+<script>ParseElements(elements, "Elements", "pt");</script>
 </body>
 </html>
