@@ -62,6 +62,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/manifest.json");
   eleventyConfig.addPassthroughCopy("src/periodic_table_of_computing.html");
+  eleventyConfig.addPassthroughCopy("src/tabela_periódica_da_computação.html");
 
   // To create excerpts
   eleventyConfig.setFrontMatterParsingOptions({
