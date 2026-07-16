@@ -149,7 +149,7 @@ var elements = [
   "symbol": "Mn",
   "category": "database system",
   "source": "https://www.mongodb.com/",
-  "summary": "MongoDB é um banco de dados NoSQL, orientado a documentos. Ao invés de armazenar registros em tabelas com colunas, o MongoDB armazena itens em formato BSON (uma versão modificada do JSON que permite campos com valores binários) dentro de coleções.<br/><br/>A primeira versão foi publicada em fevereiro de 2009 pela empresa 10gen (atualmente MongoDB Inc.).<br/><br/>O MongoDB suporta funcionalidades como sharding, replicação e transações ACID (a partir da versão 4.0)."
+  "summary": "MongoDB é um banco de dados NoSQL, orientado a documentos. Ao invés de armazenar registros em tabelas com colunas, o MongoDB armazena itens em formato BSON (uma versão modificada do JSON que permite campos com valores binários) dentro de coleções.<br/><br/>A primeira versão foi publicada em fevereiro de 2009 pela empresa 10gen (atualmente MongoDB Inc.).<br/><br/>O MongoDB suporta funcionalidades como sharding, replicação e transações ACID (a partir da versão 4.0).<br/><br/>Alguns bancos de dados orientados a documentos e alternativos ao MongoDB: RavenDB, Elasticsearch, Azure Cosmos DB, e outros."
 },
 {
   "ypos": 3,
@@ -159,7 +159,7 @@ var elements = [
   "symbol": "Rd",
   "category": "database system",
   "source": "https://redis.io/",
-  "summary": "O Redis, acrônimo em inglês de <i>Remote Dictionary Server</i>, Servidor de Dicionário Remoto, é um banco de dados NoSQL e que é volátil, ou seja, os dados permanecem na memória RAM apenas. Vários tipos de estruturas de dados podem ser armazenadas no Redis, como pares chave-valor, filas, listas, HyperLogLog, etc.<br/><br/>Por guardar os dados em memória RAM, o Redis oferece uma velocidade muito maior do que outros bancos de dados, ao custo da não-retenção em caso de crashes da aplicação ou desligamento do sistema. A principal aplicação do Redis é usá-lo como cache.<br/><br/>O projeto foi criado por Salvatore Sanfilippo, começando em 2009."
+  "summary": "O Redis, acrônimo em inglês de <i>Remote Dictionary Server</i>, Servidor de Dicionário Remoto, é um banco de dados NoSQL e que é volátil, ou seja, os dados permanecem na memória RAM apenas. Vários tipos de estruturas de dados podem ser armazenadas no Redis, como pares chave-valor, filas, listas, HyperLogLog, etc.<br/><br/>Por guardar os dados em memória RAM, o Redis oferece uma velocidade muito maior do que outros bancos de dados, ao custo da não-retenção em caso de crashes da aplicação ou desligamento do sistema. A principal aplicação do Redis é usá-lo como cache.<br/><br/>O projeto foi criado por Salvatore Sanfilippo, começando em 2009.<br/><br/>Alguns bancos de dados tipo cache e alternativos ao Redis: Garnet, Memcached, Dragonfly, e outros."
 },
 {
   "ypos": 3,

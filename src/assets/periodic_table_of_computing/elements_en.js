@@ -149,7 +149,7 @@ var elements = [
   "symbol": "Mn",
   "category": "database system",
   "source": "https://www.mongodb.com/",
-  "summary": "MongoDB is a NoSQL document-oriented database program. Instead od storing data on tables with columns, MongoDB stores items in BSON format (a modified version of JSON that allows fields with binary values) inside collections.<br/><br/>Released in February 2009 by 10gen (now MongoDB Inc.), it supports features like sharding, replication, and ACID transactions (from version 4.0)."
+  "summary": "MongoDB is a NoSQL document-oriented database program. Instead od storing data on tables with columns, MongoDB stores items in BSON format (a modified version of JSON that allows fields with binary values) inside collections.<br/><br/>Released in February 2009 by 10gen (now MongoDB Inc.), it supports features like sharding, replication, and ACID transactions (from version 4.0).<br/><br/>Some document-oriented database alternatives to MongoDB are: RavenDB, Elasticsearch, Azure Cosmos DB, any many more."
 },
 {
   "ypos": 3,
@@ -159,7 +159,7 @@ var elements = [
   "symbol": "Rd",
   "category": "database system",
   "source": "https://redis.io/",
-  "summary": "Redis (Remote Dictionary Server) is an in-memory NoSQL database that is volatile, meaning that its data live only in the RAM. Many kinds of data structures can be stored in Redis, such as key-value pairs, queues, lists, HyperLogLog, etc.<br/><br/>Because it stores data only in volatile memory, Redis offers a much higher speed than other databases, at the cost of not retaining data in case of crashes or system shutdown. The main usage for Redis is as a cache.<br/><br/>The project was developed and maintained by Salvatore Sanfilippo, starting in 2009."
+  "summary": "Redis (Remote Dictionary Server) is an in-memory NoSQL database that is volatile, meaning that its data live only in the RAM. Many kinds of data structures can be stored in Redis, such as key-value pairs, queues, lists, HyperLogLog, etc.<br/><br/>Because it stores data only in volatile memory, Redis offers a much higher speed than other databases, at the cost of not retaining data in case of crashes or system shutdown. The main usage for Redis is as a cache.<br/><br/>The project was developed and maintained by Salvatore Sanfilippo, starting in 2009.<br/><br/>Some cache-like database alternatives to Redis are: Garnet, Memcached, Dragonfly, and many more."
 },
 {
   "ypos": 3,
