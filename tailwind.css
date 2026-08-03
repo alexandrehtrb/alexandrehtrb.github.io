@@ -1,6 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+.paginator-text {
+  @apply text-gray-600 font-bold py-2 px-4;
+}
+
+.post-tag {
+  @apply inline-block text-xs rounded-full py-2 px-4 mt-1 mr-1 bg-gray-300 dark:bg-gray-500;
+}
+
+
+/************************************************************************/
 
 pre {
   /* this is to avoid background colour in mermaid diagrams */

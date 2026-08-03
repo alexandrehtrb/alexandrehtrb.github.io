@@ -52,7 +52,7 @@ export default function (eleventyConfig) {
     eleventyConfig.ignores.add("./src/feed_pt.njk");
     eleventyConfig.ignores.add("./src/sitemap.md");
     // Comment line below to generate tagList when running locally
-    eleventyConfig.ignores.add("./src/tagList.md");
+    //eleventyConfig.ignores.add("./src/tagList.md");
   }
 
   // To enable merging of tags

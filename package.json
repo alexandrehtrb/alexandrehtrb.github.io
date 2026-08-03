@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "concurrently --kill-others \"npx @11ty/eleventy --serve --incremental\" \"npx tailwindcss -i ./tailwind.css -o _site/assets/styles/tailwind.css --watch\"",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve & npx tailwindcss -i ./tailwind.css -o _site/assets/styles/tailwind.css --watch",
+    "dev": "concurrently --kill-others \"npx @11ty/eleventy --serve --incremental\" \"npx @tailwindcss/cli -i ./tailwind.css -o _site/assets/styles/tailwind.css --watch\"",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve & npx @tailwindcss/cli -i ./tailwind.css -o _site/assets/styles/tailwind.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "NODE_ENV=production npx @11ty/eleventy ; npx tailwindcss --minify -i ./tailwind.css -o _site/assets/styles/tailwind.css",
-    "buildWindows": "set NODE_ENV=production&& npx @11ty/eleventy && npx tailwindcss --minify -i ./tailwind.css -o _site/assets/styles/tailwind.css"
+    "build": "NODE_ENV=production npx @11ty/eleventy ; npx @tailwindcss/cli --minify -i ./tailwind.css -o _site/assets/styles/tailwind.css",
+    "buildWindows": "set NODE_ENV=production&& npx @11ty/eleventy && npx @tailwindcss/cli --minify -i ./tailwind.css -o _site/assets/styles/tailwind.css"
   },
   "keywords": [],
   "author": "",
@@ -27,7 +27,9 @@
     "shiki": "4.4.1",
     "@shikijs/transformers": "4.4.1",
     "terser": "5.49.0",
+    "@tailwindcss/cli": "4.3.3",
+    "@tailwindcss/postcss": "4.3.3",
     "@tailwindcss/typography": "0.5.20",
-    "tailwindcss": "3.4.19"
+    "tailwindcss": "4.3.3"
   }
 }

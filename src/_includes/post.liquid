@@ -4,7 +4,7 @@ layout: main
 
 {% include "nav.liquid" %}
 
-<h1 class="text-5xl md:text-6xl font-black pt-10 md:pt-30 pb-4 leading-tight">
+<h1 class="text-5xl md:text-6xl font-black pt-10 pb-4 leading-15">
     {{ title}}
 </h1>
 
@@ -28,7 +28,7 @@ layout: main
   {% endfor %}
   </div>
 
-<div class="prose dark:prose-invert hover:prose-a:text-blue-500 prose-code:before:content-none prose-code:after:content-none">
+<div class="prose dark:prose-invert prose-a:hover:text-blue-500 prose-code:before:content-none prose-code:after:content-none">
   {% if lang == "en" %}
     <p><a href="{{ langPtLink }}">Ler em português</a></p>
   {% endif %}
