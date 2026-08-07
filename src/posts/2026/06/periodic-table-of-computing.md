@@ -16,4 +16,4 @@ The best HTML periodic table I found on the Internet was the one from [Adrian Ro
 
 I tried to make a table including everything I consider important on computing as a whole, in a broader sense. There was no space left for things like architecture and design patterns. Maybe that would be better in a periodic table of software, instead of computing. There were also some other protocols that I wanted to include, such as BGP and ARP, and file formats like MP3, but again, no space.
 
-Click [here](https://alexandrehtrb.github.io/periodic_table_of_computing.html) to view the table.
+Click [here](../../../../periodic_table_of_computing.html) to view the table.

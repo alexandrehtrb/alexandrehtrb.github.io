@@ -16,4 +16,4 @@ A melhor tabela periódica em HTML que encontrei na internet foi a do [Adrian Ro
 
 Procurei fazer uma tabela colocando o que considero de importante da computação como um todo e num sentido mais geral. Acabou sem espaço para coisas como padrões de arquitetura e design. Talvez para isso seja melhor uma tabela periódica de software, ao invés de uma da computação. Também queria incluir alguns outros protocolos, como o BGP e o ARP, e formatos de arquivos, como o MP3, mas como eu disse, faltou espaço.
 
-Clique [aqui](https://alexandrehtrb.github.io/tabela_periódica_da_computação.html) para acessar a tabela.
+Clique [aqui](../../../../tabela_periódica_da_computação.html) para acessar a tabela.
